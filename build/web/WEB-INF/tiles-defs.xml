@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    <definition name="welcome" path="/layout/baseLayout.jsp">
+        <put name="title"  value="RGE Framework" />
+        <put name="header" value="/layout/header.jsp" />
+        <put name="menu"   value="/layout/menu.jsp" />
+        <put name="body"   value="/layout/body.jsp" />
+        <put name="footer"   value="/layout/footer.jsp" />
+    </definition>
+    <!-- ส่วนที่เป้นตัวอย่างที่พี่บี๋ทำ   -->
+    <definition name="gotoPageBootstrapExample" extends="welcome">
+        <put name="title"  value="Bootstrap Example" />
+        <put name="body"   value="/jsp/bootstrap-example.jsp" />
+    </definition>
+        <definition name="gotoPageBootstrapForm" extends="welcome">
+        <put name="title"  value="Form Login" />
+        <put name="body"   value="/jsp/bootstrap-form.jsp" />
+     </definition>
+    
+    <definition name="gotoPageHome" extends="welcome">
+        <put name="title"  value="Get Bootstrap Example Template" />
+        <put name="body"   value="/layout/body.jsp" />
+    </definition>
+    
+     <definition name="gotoPageRegister" extends="welcome">
+        <put name="title"  value="formregister" />
+        <put name="body"   value="/jsp/register.jsp" />
+    </definition>
+     <definition name="gotoPageLoanRequest" extends="welcome">
+        <put name="title"  value="formloanrequrst" />
+        <put name="body"   value="/user/loanrequst.jsp" />
+    </definition>
+      <definition name="gotorequestloansuccess" extends="welcome">   <!-- _____fยังไม่ทำ_____  -->
+        <put name="title"  value="loanrequstform" />
+        <put name="body"   value="/user/detlerequest.jsp" />
+    </definition>
+      <definition name="gotoPageDetleRequest" extends="welcome">
+        <put name="title"  value="formloanrequrst" />
+        <put name="body"   value="/jsp/detleloan.jsp" />
+    </definition>
+    
+   <!--/////////////  groubmenu /////////////////-->
+      <definition name="gotoPageAdminManagermentProfile" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/AdminManagermantProfile.jsp" />
+    </definition>
+    
+      <definition name="gotoPageManagermentLoan" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/AdminManagermentLoanRcheck.jsp" />
+    </definition>
+     <definition name="gotoPageManagermentNofile" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/AdminManagermentLoanNofile.jsp" />
+    </definition> 
+    <definition name="gotoPageManagermentNo" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/AdminManagermentLoanNoAp.jsp" />
+    </definition>
+    
+     <definition name="gotoPageManagermentR" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/AdminManagermentRAp.jsp" />
+    </definition>
+     <definition name="gotoPageManagermentAp" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/AdminManagermentLoanAp.jsp" />
+    </definition>
+       <!--////////////////////// ditel ///////////////////////////-->
+       <definition name="gotoDetle_requestloan" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/detleloancheck.jsp" />
+         </definition>
+    <!--/////////////////////////////////////////////////-->
+    
+    <definition name="gotoPageLogin" extends="welcome">
+        <put name="title"  value="Form Login" />
+        <put name="body"   value="/jsp/login.jsp" />
+    </definition>
+    <definition name="gotoPageProfile" extends="welcome">
+        <put name="title"  value="formprofile" />
+        <put name="body"   value="/jsp/profile.jsp" />
+    </definition>
+      <definition name="gotouserEdit" extends="welcome">
+        <put name="title"  value="formprofile" />
+        <put name="body"   value="/jsp/profile.jsp" />
+    </definition>
+        <definition name="gotoadminEdit" extends="welcome">
+        <put name="title"  value="formprofile" />
+        <put name="body"   value="/admin/edit_profile.jsp" />
+    </definition>
+    
+      <definition name="gotoDetle" extends="welcome">
+        <put name="title"  value="detleform" />
+        <put name="body"   value="/jsp/detle_user.jsp" />
+    </definition>
+       <definition name="gotoPagedatleuserlogin" extends="welcome">
+        <put name="title"  value="detleuserform" />
+        <put name="body"   value="/user/detleuser.jsp" />
+    </definition>
+    
+     <definition name="gotoPageChangePassword" extends="welcome">
+        <!--<put name="title"  value="Form Login" />-->
+        <put name="body"   value="/jsp/Chahgepassword.jsp" />
+    </definition>
+
+ <definition name="fwdSuccess" extends="welcome">
+        <!--<put name="title"  value="Form Login" />-->
+        <put name="body"   value="/jsp/body.jsp" />
+    </definition>
+
+  
+  
+  
+  
+  
+  <!--For RGE Developer-->
+    <definition name="welcomeDeveloper" path="/developer/layout/baseLayout.jsp">
+        <put name="title"  value="RGE Developer Framework" />
+        <put name="header" value="/developer/layout/header.jsp" />
+        <put name="menu"   value="/developer/layout/menu.jsp" />
+        <put name="body"   value="/developer/layout/body.jsp" />
+        <put name="footer"   value="/developer/layout/footer.jsp" />
+    </definition>
+    <definition name="gotoHome" extends="welcomeDeveloper">
+        <put name="title"  value="RGE Developer Framework" />
+        <put name="body"   value="/developer/layout/body.jsp" />
+    </definition>
+    <definition name="gotoRoleManagement" extends="welcomeDeveloper">
+        <put name="title"  value="Role Management" />
+        <put name="body"   value="/developer/jsp/role_management.jsp" />
+    </definition>
+    <definition name="gotoMenuManagement" extends="welcomeDeveloper">
+        <put name="title"  value="Menu Management" />
+        <put name="body"   value="/developer/jsp/menu_management.jsp" />
+    </definition>
+  
+  
+  
+
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+</tiles-definitions>
