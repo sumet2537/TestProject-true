@@ -73,31 +73,31 @@
                                                             <input name="nationality" type="hidden" <%=bean.getNationality()%> >
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >สถานะสมรส <span style="color:#0033FF; font-size: 17px;">*</span></label>
+                                                            <label >สถานะสมรส :<span style="color:#0033FF; font-size: 17px;">*</span></label>
                                                             <input type="hidden" name="statustype" value="<%=bean.getStatustype()%>"/>
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>เบอร์โทร <span style="color:#0033FF; font-size: 17px;">*</span></label>
+                                                            <label>เบอร์โทร :<span style="color:#0033FF; font-size: 17px;">*</span></label>
                                                             <input type="hidden" name="mobile" value="<%=bean.getMobile()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >อีเมล์ <span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail()%></span></label>
+                                                            <label >อีเมล์ :<span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail()%></span></label>
                                                             <input type="hidden" name="email"  value="<%=bean.getEmail()%>"/>
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>อาชีพ <span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
+                                                            <label>อาชีพ :<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             <input type="hidden" name="joptype" value="<%=bean.getJobtype()%>">
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label >ที่อยู่ตามทะเบียนบ้าน  <span style="color:#0033FF; font-size: 17px;">*</span></label>
+                                                            <label >ที่อยู่ตามทะเบียนบ้าน  :<span style="color:#0033FF; font-size: 17px;">*</span></label>
                                                             <textarea hidden name="addressregistration" ><%=bean.getAddressregistration()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label>ที่อยู่ปัจจุบัน  <span style="color:#0033FF; font-size: 17px;">*</span></label>
+                                                            <label>ที่อยู่ปัจจุบัน  :<span style="color:#0033FF; font-size: 17px;">*</span></label>
                                                             <textarea hidden name="addresscurrent" > <%=bean.getAddresscurrent()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;">*</span></label>
+                                                            <label>ที่อยู่จัดส่งเอกสาร  :<span style="color:#0033FF; font-size: 17px;">*</span></label>
                                                             <textarea hidden name="addresssenddoc"> <%=bean.getAddresssenddoc()%></textarea>
                                                         </div>
                                                     </div>
@@ -108,27 +108,25 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-4">
-                                                            <label >ประเภทที่อยู่อาศัย <span style="color:#0033FF; font-size: 17px;"><%=bean.getHometype()%></span></label>
+                                                            <label >ประเภทที่อยู่อาศัย :<span style="color:#0033FF; font-size: 17px;"><%=bean.getHometype()%></span></label>
                                                             <input type="hidden"  name="hometype" value="<%=bean.getHometype()%>" />
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >ราคาซื้อขาย <span class="require" style="color:red;">*</span></label>
+                                                            <label >ราคาซื้อขาย :<span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control" type="text" name="tradingprice" maxlength="11" placeholder="ประเภทที่อยู่อาศัย">
+                                                                <input type="text" name="tradingprice" >
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label class="col-md-4 control-label" for="creditloan">วงเงินสินเชื่อที่ขอกู้ <span class="require" style="color:red;">*</span></label>
+                                                            <label >วงเงินสินเชื่อที่ขอกู้ :<span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control" type="text" name="creditloan" maxlength="11" placeholder="วงเงินสินเชื่อที่ขอกู้">
+                                                                <input type="text" name="creditloan" >
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label class="col-md-4 control-label" for="lncome_per_month">ระยะเวลาที่ขอกู้ <span class="require" style="color:red;">*</span></label>
+                                                            <label >ระยะเวลาที่ขอกู้ :<span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8 col-lg-4">
-                                                                <!--<input  class="form-control"type="number" name="lncome_per_month" maxlength="2" placeholder="1-2">-->
-                                                                <select  name="lncome_per_month" class="form-control">
-                                                                </select>
+                                                                <input type="hidden" name="lncome_per_month" >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -140,16 +138,16 @@
                                                 </div>
                                                 <div class="panel-body">
                                                     <div class="form-group col-md-4">
-                                                        <label class="col-md-4 control-label" for="periodloan">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                        <label >รายได้ประจำต่อเดือน :<span class="require" style="color:red;">*</span></label>
                                                         <div class="col-md-8">
-                                                            <input  class="form-control" type="text" name="periodloan" maxlength="11" placeholder="50,000">
+                                                            <input type="text" name="periodloan">
                                                         </div>
                                                     </div>
                                                     <div class="box-body">
                                                         <div class="form-group col-md-4">
-                                                            <label class="col-md-4 control-label" for="netprofit">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                            <label >รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน :<span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control" type="text" name="netprofit" maxlength="11" placeholder="100,000">
+                                                                <input type="text" name="netprofit" >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -198,9 +196,7 @@
                                                 <div class="panel-body">
                                                     <div class="form-group col-md-12">
                                                         <label>ธนาคารที่ต้องการขอกู้ <span class="require" style="color:red;"><%=bean.getBanktype()%></span></label>
-                                                        <div class="col-md-8">
                                                             <input  type="hidden" name="banktype1" value="<%=bean.getBanktype()%>">
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
