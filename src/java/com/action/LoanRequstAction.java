@@ -134,6 +134,7 @@ public class LoanRequstAction extends DispatchAction {
 
         request.getSession().setAttribute("loanList", loanList);
         return mapping.findForward("gotorequestloansuccess");
+        
 
     }
    

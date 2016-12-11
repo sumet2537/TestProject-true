@@ -79,11 +79,11 @@
                     <body class="hold-transition login-page" >
                         <div class="login-box">
                             <div class="login-logo">
-                                <a href="#"><b>Login</b>Loan Request</a>
+                                <a href="#"><b>เข้าสู่ระบบ</b>สินเชื่อบ้าน</a>
                             </div>
                             <!-- /.login-logo -->
                             <div class="login-box-body" >
-                                <p class="login-box-msg">Sign in to start your session</p>
+                                <p class="login-box-msg">เข้าสู่ระบบเพื่อการใช้งานของคุณ</p>
 
                                 <form name="AuthenAuthorizeForm" action="AuthenAuthorizeAction.do"  method="post">
                                     <input  type="hidden" name="todo" value="login" />
@@ -108,19 +108,19 @@
                                         <div class="col-xs-8">
                                             <div class="checkbox icheck">
                                                 <label>
-                                                    <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Remember Me
+                                                    <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> จดจำฉัน
                                                 </label>
                                             </div>
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-xs-4">
-                                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                                            <button type="submit" class="btn btn-primary btn-block btn-flat">เข้าสู้ระบบ</button>
                                         </div>
                                         <!-- /.col -->
                                     </div>
                                 </form>
-                                <a href="#">I forgot my password</a><br>
-                                <!--<a href="RegisterAction.do?todo=gotosave" class="text-center">Register a new membership</a>-->
+                                <a href="#">ฉันลืมรหัสผ่าน</a>|
+                                <a href="PageAction.do?todo=gotoPageRegister" class="text-center">สมัครสมาชิกเดียวนี้</a>
                             </div>
                             <!-- /.login-box-body -->
                         </div>

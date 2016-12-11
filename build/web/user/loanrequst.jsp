@@ -3,7 +3,7 @@
 <%@page import="com.bean.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html >
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ระบบขอสินเชื่อบ้าน</title>
@@ -19,7 +19,7 @@
             <!-- Info boxes -->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal" id="loanrequstform" name="loanrequstform" action="LoanRequstAction.do" method="post" >
+                    <form class="form-horizontal" id="loanrequstform" name="loanrequstform" action="LoanRequstAction.do" method="post" enctype="multipart/form-data">
                         <!--<div align="center">-->
                         <div class="box box-solid" >
                             <!--box box-solid-->
@@ -130,9 +130,9 @@
                                                     </div>
                                                         
                                                     <div class="form-group col-md-12">
-                                                        <label class="col-md-4 control-label" for="joptype">อาชีพ <span class="require" style="color:red;">*</span></label>
+                                                        <label class="col-md-4 control-label" for="jobtype">อาชีพ <span class="require" style="color:red;">*</span></label>
                                                         <div class="col-md-8">
-                                                            <input class="form-control" type="text" name="joptype" placeholder="อาชีพ">
+                                                            <input class="form-control" type="text" name="jobtype" placeholder="อาชีพ">
                                                         </div>
                                                     </div>
                                                 </div>

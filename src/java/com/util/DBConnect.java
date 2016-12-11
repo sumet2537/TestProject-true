@@ -78,12 +78,12 @@ public class DBConnect {
         }
     }
 
-    public static void main(String args[]) {
-        DBConnect dbConnect = new DBConnect();
-        try {
-            System.out.println("#: mySQL connection opened :=  " + dbConnect.openNewConnection());
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
+//    public static void main(String args[]) {
+//        DBConnect dbConnect = new DBConnect();
+//        try {
+//            System.out.println("#: mySQL connection opened :=  " + dbConnect.openNewConnection());
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 }
