@@ -33,7 +33,7 @@
                     <form name="formshowdaterequestloan" method="post" action="LoanRequstAction.do">
                         <section class="content-header">
                             <h1>
-                                ข้อมูลลูกค้า
+                                ข้อมูลสินเชื่อรอตรวจสอบ
                                 <small>ของระบบ</small>
                             </h1>
                             <ol class="breadcrumb">
@@ -58,7 +58,7 @@
                                 <div class="col-xs-12">
                                     <div class="box">
                                         <div class="box-header">
-                                            <h3 class="box-title"> ข้อมูลสมาชิก</h3>
+                                            <h3 class="box-title"> รอตรวจสอบ</h3>
                                         </div>
                                         <!--.box-header-->
                                         <div class="box-body">
@@ -181,7 +181,7 @@
         }
         function callActionGotoDetle(loanreq_id) {
             document.formshowdaterequestloan.loanreq_id.value = loanreq_id;
-            document.formshowdaterequestloan.todo.value = 'Detle';
+            document.formshowdaterequestloan.todo.value = 'DetleRcheck';
             document.formshowdaterequestloan.submit();
 
         }

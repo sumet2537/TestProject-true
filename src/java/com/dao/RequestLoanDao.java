@@ -655,7 +655,7 @@ bean.setUpdated(rs.getString("updated"));
         con = dbConnect.openNewConnection();
         ResultSet rs = null;
         RequestLoanBean bean = null;
-        String sql = "select * from tbl_requestloan  where loanstatustype = 'ไม่อนุมัติ'";
+        String sql = "select * from tbl_requestloan  where loanstatustype = 'เอกสารไม่ผ่าน'";
         PreparedStatement p = null;
 ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {

@@ -16,14 +16,14 @@
         <title>JSP Page</title>
     </head>
     <body>
- 
+
         <%!
             List<RequestLoanBean> loanlist = new ArrayList<RequestLoanBean>();
 
         %>
         <%  loanlist = (List<RequestLoanBean>) request.getSession().getAttribute("loanList");
-        DecimalFormat formatter = new DecimalFormat("###,###.00");
-        DecimalFormat phone = new DecimalFormat("###-###-####");
+            DecimalFormat formatter = new DecimalFormat("###,###.00");
+            DecimalFormat phone = new DecimalFormat("###-###-####");
         %>
         <section class="content">
             <!-- Info boxes -->
@@ -33,7 +33,7 @@
                     <form name="formshowdaterequestloan" method="post" action="LoanRequstAction.do">
                         <section class="content-header">
                             <h1>
-                                ข้อมูลลูกค้า
+                                ข้อมูลสินเชื่อรอตรวจสอบ
                                 <small>ของระบบ</small>
                             </h1>
                             <ol class="breadcrumb">
@@ -58,14 +58,14 @@
                                 <div class="col-xs-12">
                                     <div class="box">
                                         <div class="box-header">
-                                            <h3 class="box-title"> ข้อมูลสมาชิก</h3>
+                                            <h3 class="box-title"> รอตรวจสอบ</h3>
                                         </div>
                                         <!--.box-header-->
                                         <div class="box-body">
                                             <div >
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <table id="example1" class="table table-bordered table-striped dataTable">
+                                                        <table id="example1" class="table table-striped table-bordered">
                                                             <thead>
                                                                 <tr>
                                                                     <th>ลำดับ  </th>
@@ -102,38 +102,38 @@
                                                                             <%--<td class="sorting_1"><button class="btn btn-sm btn-success" type="submit" value="แก้ไข" onclick="callActionGotoEdit(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-edit"></i></button></td>--%>
                                                                     <td><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getLoanreq_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
                                                                 </tr>
-                                                                                                 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content center">
+                                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content center">
 
-                                                    <div class="modal-header  center">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                        <h4 class="modal-title" id="myModalLabel">ยืนยันการลบ</h4>
-                                                    </div>
-                                                    <div class="modal-body center">
-                                                        คุณต้องการลบข้อมูลใช่หรือไม่
-                                                        <hr class="hrsuccess">
-                                                        <br>
-                                                    </div>
-                                                    <div class="center">
-                                                        <br>
-                                                    <div class=" ">
-                                                     <button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)"><i class="fa fa-close">ลบ</i></button>
-                                                       <button class="btn btn-danger " data-dismiss="modal" >ยกเลิก</button>
-                                                        <br>
-                                                        <br>
-                                                    </div>
-                                                    </div>
+                                                                        <div class="modal-header  center">
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                            <h4 class="modal-title" id="myModalLabel">ยืนยันการลบ</h4>
+                                                                        </div>
+                                                                        <div class="modal-body center">
+                                                                            คุณต้องการลบข้อมูลใช่หรือไม่
+                                                                            <hr class="hrsuccess">
+                                                                            <br>
+                                                                        </div>
+                                                                        <div class="center">
+                                                                            <br>
+                                                                            <div class=" ">
+                                                                                <button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)"><i class="fa fa-close">ลบ</i></button>
+                                                                                <button class="btn btn-danger " data-dismiss="modal" >ยกเลิก</button>
+                                                                                <br>
+                                                                                <br>
+                                                                            </div>
+                                                                        </div>
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                                                <%}%>
-                                                                <%} else {%>
-                                                            <br><br>
-                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <%}%>
-                           
+                                                            <%} else {%>
+<!--                                                            <br><br>
+                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        -->
+                                                            <%}%>
+
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
@@ -172,6 +172,7 @@
         </section>
     </body>
     <script type="text/javascript">
+  
         function callActionGotoDelete(loanreq_id) {
 //        alert(คุณต้องการลบขอ้มูลใช่หรือไม่);
             document.formshowdaterequestloan.loanreq_id.value = loanreq_id;
@@ -180,7 +181,7 @@
         }
         function callActionGotoDetle(loanreq_id) {
             document.formshowdaterequestloan.loanreq_id.value = loanreq_id;
-            document.formshowdaterequestloan.todo.value = 'Detle';
+            document.formshowdaterequestloan.todo.value = 'DetleRcheck';
             document.formshowdaterequestloan.submit();
 
         }
@@ -193,8 +194,9 @@
             document.formshowdaterequestloan.todo.value = select;
             document.formshowdaterequestloan.submit();
         }
- $(function () {
-$("#example1, #example2").DataTable();
-});
-    </script>
+
+
+       
+    </script>       
+    
 </html>

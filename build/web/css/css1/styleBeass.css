@@ -52,4 +52,6 @@ hr.hrbrue {
     font-family: inherit;
 }
 
-
+.panel {
+    margin-bottom: 0px !important;
+}

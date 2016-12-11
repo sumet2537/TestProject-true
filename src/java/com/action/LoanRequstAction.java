@@ -152,20 +152,20 @@ public class LoanRequstAction extends DispatchAction {
         return mapping.findForward("gotoshowdatarequest");
     }
     
-      public ActionForward gotoapprov(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception  {
-     RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-      RequestLoanBean loanbean = new RequestLoanBean();
-      
- loanbean = loandao.selectloanstatustype(loanform.getLoanstatustype());
-     
-     request.getSession().setAttribute("loanbean", loanbean);
-        return mapping.findForward("gotoapprov");
-    }
+//      public ActionForward gotoapprov(ActionMapping mapping, ActionForm form,
+//            HttpServletRequest request, HttpServletResponse response)
+//            throws Exception  {
+//     RequestLoanForm loanform = (RequestLoanForm)form;
+//     RequestLoanDao loandao  =new RequestLoanDao();
+//      RequestLoanBean loanbean = new RequestLoanBean();
+//      
+// loanbean = loandao.selectloanstatustype(loanform.getLoanstatustype());
+//     
+//     request.getSession().setAttribute("loanbean", loanbean);
+//        return mapping.findForward("gotoapprov");
+//    }
 //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
-          public ActionForward Detle(ActionMapping mapping, ActionForm form,
+          public ActionForward DetleRcheck(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
          RequestLoanForm loanform = (RequestLoanForm)form;
@@ -190,4 +190,112 @@ public class LoanRequstAction extends DispatchAction {
       return mapping.findForward("gotoPageManagermentLoan");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
+      
+//       =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
+          public ActionForward DetleAp(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+         RequestLoanForm loanform = (RequestLoanForm)form;
+     RequestLoanDao loandao  =new RequestLoanDao();
+       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+        
+        request.getSession().setAttribute("editBean", bean);
+        return mapping.findForward("gotoDetle_requestloan");
+    }
+          
+      public ActionForward deleteAp (ActionMapping mapping,ActionForm form,
+              HttpServletRequest request,HttpServletResponse response)throws Exception{
+        RequestLoanForm loanform = (RequestLoanForm)form;
+        RequestLoanBean bean = new RequestLoanBean();
+     RequestLoanDao loandao  =new RequestLoanDao();
+     
+     loandao.deleteloanreqId(loanform.getLoanreq_id());
+     
+     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+     loanList = loandao.selectloanstatustypeAp();
+     request.getSession().setAttribute("loanList", loanList);
+      return mapping.findForward("gotoPageManagermentLoan");
+      }
+      //    =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
+      
+      //       =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
+          public ActionForward DetleNoAp(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+         RequestLoanForm loanform = (RequestLoanForm)form;
+     RequestLoanDao loandao  =new RequestLoanDao();
+       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+        
+        request.getSession().setAttribute("editBean", bean);
+        return mapping.findForward("gotoDetle_requestloan");
+    }
+          
+      public ActionForward deleteNoAp (ActionMapping mapping,ActionForm form,
+              HttpServletRequest request,HttpServletResponse response)throws Exception{
+        RequestLoanForm loanform = (RequestLoanForm)form;
+        RequestLoanBean bean = new RequestLoanBean();
+     RequestLoanDao loandao  =new RequestLoanDao();
+     
+     loandao.deleteloanreqId(loanform.getLoanreq_id());
+     
+     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+     loanList = loandao.selectloanstatustypeNoAp();
+     request.getSession().setAttribute("loanList", loanList);
+      return mapping.findForward("gotoPageManagermentLoan");
+      }
+      //    =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
+      
+            //       =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+          public ActionForward DetleNofile(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+         RequestLoanForm loanform = (RequestLoanForm)form;
+     RequestLoanDao loandao  =new RequestLoanDao();
+       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+        
+        request.getSession().setAttribute("editBean", bean);
+        return mapping.findForward("gotoDetle_requestloan");
+    }
+          
+      public ActionForward deleteNofile (ActionMapping mapping,ActionForm form,
+              HttpServletRequest request,HttpServletResponse response)throws Exception{
+        RequestLoanForm loanform = (RequestLoanForm)form;
+        RequestLoanBean bean = new RequestLoanBean();
+     RequestLoanDao loandao  =new RequestLoanDao();
+     
+     loandao.deleteloanreqId(loanform.getLoanreq_id());
+     
+     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+     loanList = loandao.selectloanstatustypeNofile();
+     request.getSession().setAttribute("loanList", loanList);
+      return mapping.findForward("gotoPageManagermentLoan");
+      }
+      //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+      
+                  //       =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+          public ActionForward DetleRAp(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+         RequestLoanForm loanform = (RequestLoanForm)form;
+     RequestLoanDao loandao  =new RequestLoanDao();
+       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+        
+        request.getSession().setAttribute("editBean", bean);
+        return mapping.findForward("gotoDetle_requestloan");
+    }
+          
+      public ActionForward deleteRAp (ActionMapping mapping,ActionForm form,
+              HttpServletRequest request,HttpServletResponse response)throws Exception{
+        RequestLoanForm loanform = (RequestLoanForm)form;
+        RequestLoanBean bean = new RequestLoanBean();
+     RequestLoanDao loandao  =new RequestLoanDao();
+     
+     loandao.deleteloanreqId(loanform.getLoanreq_id());
+     
+     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+     loanList = loandao.selectloanstatustypeRapp();
+     request.getSession().setAttribute("loanList", loanList);
+      return mapping.findForward("gotoPageManagermentLoan");
+      }
+      //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
 }

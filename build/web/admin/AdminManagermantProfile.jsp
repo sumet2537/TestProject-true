@@ -60,7 +60,7 @@
                                           
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                                        <table id="example1" class="table table-striped table-bordered">
                                                             <thead>
                                                                 <tr>
                                                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending"
