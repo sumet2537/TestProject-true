@@ -95,12 +95,6 @@
                                                         <label class="col-md-4 control-label" for="statustype">สถานะสมรส <span class="require" style="color:red;">*</span></label>
                                                         <div class="col-md-4 col-lg-4">
                                                             <input type="text" class="form-control" name="statustype" readonly="" value="<%=bean.getStatustype()%>"/>
-<!--                                                            <select  name="statustype" class="form-control">
-                                                                <option value=""></option>
-                                                                <option>โสด</option>
-                                                                <option>สมรส</option>
-                                                                <option>หย่าหร้าง</option>
-                                                            </select>-->
                                                         </div></div>
                                                     <div class="form-group col-md-12">
                                                         <label class="col-md-4 control-label" for="mobile">เบอร์โทร <span class="require" style="color:red;">*</span></label>
@@ -268,7 +262,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label class="col-md-4 control-label" for="copy_bankaccount">สำเนาบัญชีธนาคาร <span class="require" style="color:red;">*</span></label>
+                                                            <label class="col-md-4 control-label" for="copy_bankaccount">สำเนาบัญชีธนาคาร <span  style="color:red;">*</span></label>
                                                             <div class="col-md-8">
                                                                 <input  class="form-control"type="file" name="copy_bankaccount"  placeholder="สำเนาบัญชีธนาคาร">
                                                             </div>
