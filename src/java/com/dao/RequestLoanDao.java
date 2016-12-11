@@ -83,8 +83,8 @@ public class RequestLoanDao {
 ////        bean.setLoanreq_id(1);
 //        bean.setCitizen_id("2342");
 //        bean.setTitle_type("นาย");
-//        bean.setFirstname("สุเมธ");
-//        bean.setLastname("kaenkaew");
+//        bean.setFirstName("สุเมธ");
+//        bean.setLastName("kaenkaew");
 //        bean.setBirthdate("10");
 //        bean.setAge(22);
 //        bean.setNationality("thai");
@@ -316,22 +316,22 @@ bean.setCreated(rs.getString("created"));
         }
         return bean;
     }
-    public static void main(String[] args) throws Exception {
-// //       ==================== ========================
-        RequestLoanDao dao = new RequestLoanDao();
-        RequestLoanBean bean = new RequestLoanBean();
-        bean = dao.selectloanstatustype("รออนุมัติ");
-        System.out.println(bean.getLoanreq_id());
-        System.out.println(bean.getCitizen_id());
-        
-        System.out.println(bean.getFirstName());
-        System.out.println(bean.getLastName());
-        System.out.println(bean.getBanktype());
-        System.out.println(bean.getAge());
-        System.out.println(bean.getEmail());
-        System.out.println(bean.getLoanstatustype());
+//    public static void main(String[] args) throws Exception {
+//// //       ==================== ========================
+//        RequestLoanDao dao = new RequestLoanDao();
+//        RequestLoanBean bean = new RequestLoanBean();
+//        bean = dao.selectloanstatustype("รออนุมัติ");
+//        System.out.println(bean.getLoanreq_id());
+//        System.out.println(bean.getCitizen_id());
+//        
+//        System.out.println(bean.getFirstName());
+//        System.out.println(bean.getLastName());
+//        System.out.println(bean.getBanktype());
+//        System.out.println(bean.getAge());
+//        System.out.println(bean.getEmail());
+//        System.out.println(bean.getLoanstatustype());
 
-    }
+//    }
 //       =====================================================
     public RequestLoanBean selectBycitizenid(String citizen_id) throws Exception {
         DBConnect dbConnect = new DBConnect();

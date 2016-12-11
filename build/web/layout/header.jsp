@@ -1,7 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Logo -->
-<a href="#" class="logo">
+<a href="PageAction.do?todo=gotoPageHome" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>L</b>o<b>a</b>n</span>
     <!-- logo for regular state and mobile devices -->
@@ -27,28 +27,28 @@
               <!-- User Account: style can be found in dropdown.less -->
                <ul class="nav navbar-nav">
              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img  src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
+                <a href="PageAction.do?todo=gotoPageHome" class="dropdown-toggle" data-toggle="dropdown">
+                    <img  src="./img/home1.jpg" class="user-image" alt="User Image" />
                   
-                    <span class="hidden-xs">Admin Sumet </span>
+                    <span class="hidden-xs"><img src="./img/iconloan1.png" width="50px" height="23px" /></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <!-- User image -->
+                     User image 
                     <li class="user-header">
-                       <img  src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                       <img  src="./img/home1.jpg" class="img-circle" alt="User Image" />
                 
                         <p>
-                        RGE ยินดีตอนรับคุณ 
+                        ยินดีตอนรับคุณ 
                         <small></small>
                         </p>
                     </li>
-                    <!-- Menu Footer-->
+                     Menu Footer
                     <li class="user-footer">
                         <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            <a href="PageAction.do?todo=gotoPageProfile" class="btn btn-default btn-flat">โปรไฟล์</a>
                         </div>
                         <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            <a href="AuthenAuthorizeAction.do?todo=logout" class="btn btn-default btn-flat">ออกจากระบบ</a>
                         </div>
                     </li>
                 </ul>

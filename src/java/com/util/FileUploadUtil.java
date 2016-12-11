@@ -20,24 +20,24 @@ import org.apache.struts.upload.FormFile;
  * @author Trung Duc
  */
 public class FileUploadUtil {
-    
-    public static String uploadSingleFile(File file,String fileName,String fileType,String path){
-        String pathFile = "";
-        Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss");
-        String dt = dateFormat.format(date);               
-        File destFile = new File("C:/FilePackageUpload/" + dt + fileName);
-        
-        try {
-            FileUtils.copyFile(file, destFile);
-            pathFile = path + dt + fileName;
-        } catch (IOException ex) {
-            System.err.println("Could not copy file " + fileName);
-             System.err.println(ex.getMessage());
-        }                
-        
-    return pathFile;
-    }
+//    
+//    public static String uploadSingleFile(File file,String fileName,String fileType,String path){
+//        String pathFile = "";
+//        Date date = new Date();
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss");
+//        String dt = dateFormat.format(date);               
+//        File destFile = new File("C:/FilePackageUpload/" + dt + fileName);
+//        
+//        try {
+//            FileUtils.copyFile(file, destFile);
+//            pathFile = path + dt + fileName;
+//        } catch (IOException ex) {
+//            System.err.println("Could not copy file " + fileName);
+//             System.err.println(ex.getMessage());
+//        }                
+//        
+//    return pathFile;
+//    }
       public String fileinputStream(FormFile getfile) throws FileNotFoundException, IOException{
           System.out.println("file" + getfile.getFileName());
         String filename = "";
@@ -45,7 +45,7 @@ public class FileUploadUtil {
          FormFile fileN = null;
         
         fileN = getfile;
-        String part = "/Users/brass/Documents/patefile/" + fileN.getFileName();
+        String part = "Users/brass/Documents/patefile/" + fileN.getFileName();
         outputStream = new FileOutputStream(new File(part));
         outputStream.write(fileN.getFileData());
         

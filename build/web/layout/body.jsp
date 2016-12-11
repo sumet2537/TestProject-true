@@ -15,11 +15,11 @@
             <div class="col-md-12">
                 <div class="box" >
                     
-                    <center><font size="14" color="#8878CD">  ระบบบริการขอสินเชื่อบ้าน <br></font>
+                    <center><font style="font-size: 25px" color="#8878CD">  ระบบบริการขอสินเชื่อบ้าน <br></font>
                   
-    <p><font size="13" color="red">HOME Loan System </font> </p>
- 
-    <p> <font size="8">ข้อมูลเกี่ยวกับการขอสินเชื่อ</font></p>
+    <p><font style="font-size: 25px" color="red">HOME Loan System </font> </p>
+    <img src="./img/12.jpg" style="width: 100%; height: 60%;" />
+    <p> <font style="font-size: 20px">ข้อมูลเกี่ยวกับการขอสินเชื่อ</font></p>
 
 ท่านสามารถดูข้อมูลเบื้องต้นที่ท่านควรทราบเกี่ยวกับการขอสินเชื่อ ดังต่อไปนี้
 

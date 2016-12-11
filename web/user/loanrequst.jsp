@@ -238,7 +238,7 @@
                                                         </div>
 
                                                         <div class="form-group col-md-12">
-                                                            <label class="col-md-4 control-label" for="copylicenses">สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ) <span class="require" style="color:red;">*</span></label>
+                                                            <label class="col-md-4 control-label" for="copylicenses">สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ) <span class="require" style="color:red;"></span></label>
                                                             <div class="col-md-8">
                                                                 <input  class="form-control"type="file" name="copylicenses" placeholder="สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ)">
                                                             </div>
@@ -250,7 +250,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label class="col-md-4 control-label" for="copymarriage">สำเนาทะเบียนสมรส/ใบหย่า/ใบมรณะบัตรของคู่สมรส (ถ้ามี)<span class="require" style="color:red;">*</span></label>
+                                                            <label class="col-md-4 control-label" for="copymarriage">สำเนาทะเบียนสมรส/ใบหย่า/ใบมรณะบัตรของคู่สมรส (ถ้ามี)<span class="require" style="color:red;"></span></label>
                                                             <div class="col-md-8">
                                                                 <input  class="form-control"type="file" name="copymarriage" placeholder="สำเนาทะเบียนสมรส/ใบหย่า/ใบมรณะบัตรของคู่สมรส (ถ้ามี)">
                                                             </div>

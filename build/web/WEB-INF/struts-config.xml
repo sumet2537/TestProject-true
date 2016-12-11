@@ -48,6 +48,8 @@
                <forward name="gotoPageManagermentR" path="gotoPageManagermentR"/>
                <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile"/>
                
+                <forward name="gotoPageUserViewStatus" path="gotoPageUserViewStatus"/>
+               
         </action>
         <action name="AuthenAuthorizeForm" parameter="todo" path="/AuthenAuthorizeAction" scope="session" type="com.action.AuthenAuthorizeAction">
             <forward name="gotoPageLogin" path="gotoPageLogin"/>

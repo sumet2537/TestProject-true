@@ -83,6 +83,12 @@
         <put name="body"   value="/admin/detleloancheck.jsp" />
          </definition>
     <!--/////////////////////////////////////////////////-->
+          <!--////////////////////// ditel ///////////////////////////-->
+       <definition name="gotoPageUserViewStatus" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/user/viewstatusrequest.jsp" />
+         </definition>
+    <!--/////////////////////////////////////////////////-->
     
     <definition name="gotoPageLogin" extends="welcome">
         <put name="title"  value="Form Login" />

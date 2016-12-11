@@ -48,13 +48,13 @@ public class PageAction extends DispatchAction {
         return mapping.findForward("gotoPageHome");
     }
 
-      public ActionForward gotoPageDetleRequest(ActionMapping mapping, ActionForm form,
+    public ActionForward gotoPageDetleRequest(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
         return mapping.findForward("gotoPageDetleRequest");
     }
-      
+
     public ActionForward gotoPageLogin(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
@@ -185,5 +185,17 @@ public class PageAction extends DispatchAction {
         request.getSession().setAttribute("loanList", loanList);
 
         return mapping.findForward("gotoPageManagermentNofile");
+    }
+
+    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+                UserBean userBean = new UserBean();
+        userBean = (UserBean) request.getSession().getAttribute("userLogin");
+        String citizen_id = userBean.getCitizen_id();
+        UserDao dao = new UserDao();
+        userBean = dao.selectBycitizenid(citizen_id);
+        request.getSession().setAttribute("requestBean", userBean);
+        return mapping.findForward("gotoPageUserViewStatus");
     }
 }
