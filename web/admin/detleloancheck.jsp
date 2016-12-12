@@ -26,7 +26,7 @@
             <!-- Info boxes -->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal" id="loanrequstform" name="detleloanform" action="SenddatawsAction.do" method="post" >
+                    <form class="form-horizontal" id="detleloanform" name="detleloanform" action="SenddatawsAction.do" method="post" enctype="multipart/form-data">
                         <!--<div align="center">-->
                         <div class="box box-solid" >
                             <!--box box-solid-->
@@ -200,7 +200,7 @@
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
                                                                 <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount()%></span></label>
-                                                                <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount()%>">
+                                                                <input type="file" name="copy_bankaccount" disabled="true"  value="<%=bean.getCopy_bankaccount()%>">
                                                             </div>
                                                             <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
@@ -259,8 +259,8 @@
                                                     <hr class="hrsuccess">
                                                     <input type="hidden" name="todo"/>
                                                     <div class="col-md-12" align="center">
-                                                        <button type="submit" id="submit" name="submit" class="btn btn-primary" onclick="oninsert('insretbank')" ><span class="glyphicon glyphicon-save"></span>บันทึก</button>
-                                                        <button  type="reset" class="btn btn-danger"> <span class="glyphicon glyphicon-refresh"></span>ยกเลิก</button>
+                                                        <button type="submit" id="submit" name="submit" class="btn btn-primary" onclick="oninsert('insertbank')" ><span class="glyphicon glyphicon-save"></span>บันทึก</button>
+                                                        <button  type="reset" class="btn btn-warning"> <span class="glyphicon glyphicon-edit"></span>เอกสารไม่ผ่าน</button>
                                                     </div>
 
                                                     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -296,12 +296,12 @@
         </section><!-- /.content -->
         <script type="text/javascript">
             function oninsert(select) {
-                document.loanrequstform.todo.value = select;
-                document.loanrequstform.submit();
+                document.detleloanform.todo.value = select;
+                document.detleloanform.submit();
             }
             function callActionsearch(select) {
-                document.loanrequstform.todo.value = select;
-                document.loanrequstform.submit();
+                document.detleloanform.todo.value = select;
+                document.detleloanform.submit();
             }
 
             //            function onsearch(bycitizen_id){

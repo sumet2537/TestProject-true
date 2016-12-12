@@ -51,7 +51,7 @@ private int loan_id;
 //    private String salary_slip;
 //    private String copy_bankaccount;
     
-        private FormFile copyidcard;
+     private byte[] copyidcard;
     private FormFile copylicenses;
     private FormFile copydocumenthome;
     private FormFile copymarriage;

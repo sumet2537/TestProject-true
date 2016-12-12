@@ -11,7 +11,7 @@ package com.ws;
  */
 public class Sendloanrequestws {
 
-    private static int requestLoanService(com.ws.RequestLoanBean requestLoanBean) {
+    public int requestLoanService(com.ws.RequestLoanBean requestLoanBean) {
         com.ws.RequestLoanService_Service service = new com.ws.RequestLoanService_Service();
         com.ws.RequestLoanService port = service.getRequestLoanServicePort();
         return port.requestLoanService(requestLoanBean);

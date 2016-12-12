@@ -28,12 +28,13 @@ import org.apache.struts.upload.FormFile;
  */
 public class SenddatawsAction extends DispatchAction {
 
-     public ActionForward insertbank(ActionMapping mapping, ActionForm form,
+     public  ActionForward insertbank(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 //        RequestLoanForm loanform = (RequestLoanForm) form;
-        SenddatawsForm loanform = (SenddatawsForm) form;
+        SenddatawsForm loanform = (SenddatawsForm)form;
         RequestLoanBean loan = new RequestLoanBean();
+        Sendloanrequestws sendloanrequestws = new Sendloanrequestws();
         com.ws.RequestLoanBean loanbean = new com.ws.RequestLoanBean();
 //        loanbean.setLoan_id(0);
         loanbean.setLoanreqId(loanform.getLoanreq_id());
@@ -119,11 +120,13 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setUpdateby(loanform.getUpdateby());
         loanbean.setUpdated(loanform.getUpdated());
        
-        RequestLoanDao dao = new RequestLoanDao();
-         Sendloanrequestws send = new Sendloanrequestws();
-///        request.getSession().setAttribute("loanList", loanList);
-        return mapping.findForward("gotorequestloansuccess");
+//        RequestLoanDao dao = new RequestLoanDao();
+         
+//        return sendloanrequestws.requestLoanService(requestLoanService);
 
+        sendloanrequestws.requestLoanService(loanbean);
+     request.getSession().setAttribute("sendloanrequestws", sendloanrequestws);
+      return mapping.findForward("gotoPageManagermentLoan");
     }
 
 }
