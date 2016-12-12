@@ -150,61 +150,60 @@
                                                         <h4> :: เอกสารประกอบการขอกู้ ::</h4>
                                                     </div>
                                                     <div class="panel-body">
+                                                           <div class="form-group">
+                                                               <div class="col-md-8"><h3>เอกสาร</h3>
+                                                            </div>
+                                                               <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                        </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
                                                                 <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopyidcard()%></span></label>
                                                                 <input  type="hidden" name="copyidcard" value="<%=bean.getCopyidcard()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
                                                         <div class="form-group"> 
                                                             <div class="col-md-8">
                                                                 <label>สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ) : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopylicenses()%></span></label>
                                                                 <input type="hidden" name="copylicenses" value="<%=bean.getCopylicenses()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                                <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopylicenses()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
+                                                          
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
                                                                 <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopydocumenthome()%></span></label>
                                                                 <input type="hidden" name="copydocumenthome" value="<%=bean.getCopydocumenthome()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopydocumenthome()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
                                                                 <label>สำเนาทะเบียนสมรส/ใบหย่า/ใบมรณะบัตรของคู่สมรส (ถ้ามี) : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopymarriage()%></span></label>
                                                                 <input type="hidden" name="copymarriage" value="<%=bean.getCopymarriage()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopymarriage()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
                                                                 <label >ใบเปลี่ยนชื่อ-สกุล (ทุกใบ): &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_rename()%></span></label>
                                                                 <input  type="hidden"  name="copy_rename" value="<%=bean.getCopy_rename()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_rename()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
                                                                 <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getSalary_slip()%></span></label>
                                                                 <input  type="hidden" name="salary_slip"  value="<%=bean.getSalary_slip()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getSalary_slip()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
                                                                 <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount()%></span></label>
                                                                 <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount()%>">
                                                             </div>
-                                                            <div class="col-md-2">view</div>
-                                                            <div class="col-md-2">download</div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>
                                                     </div>
                                                 </div>

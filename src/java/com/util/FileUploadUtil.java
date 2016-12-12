@@ -45,7 +45,7 @@ public class FileUploadUtil {
          FormFile fileN = null;
         
         fileN = getfile;
-        String part = "/Users/brass/Documents/patefile/upload/" + fileN.getFileName();
+        String part = "/Users/brass/Documents/TestProject/web/image/uploade/" + fileN.getFileName();
         outputStream = new FileOutputStream(new File(part));
         outputStream.write(fileN.getFileData());
         

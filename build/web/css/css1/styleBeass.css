@@ -55,3 +55,7 @@ hr.hrbrue {
 .panel {
     margin-bottom: 0px !important;
 }
+.imgfile {
+        width: 60px !important;
+    height: 40px !important;
+}

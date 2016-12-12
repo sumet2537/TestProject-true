@@ -57,8 +57,7 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setLncomePerMonth(loanform.getLncome_per_month());
         loanbean.setPeriodloan(loanform.getPeriodloan());
         loanbean.setNetprofit(loanform.getNetprofit());
-//        
-//        
+//                
         FileUploadUtil upload = new FileUploadUtil();
        FileOutputStream outputStream = null;
         FormFile file = null;
