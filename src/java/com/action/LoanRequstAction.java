@@ -8,6 +8,7 @@ import java.io.File;
 import com.bean.RequestLoanBean;
 import com.dao.RequestLoanDao;
 import com.form.RequestLoanForm;
+import com.service.SendRequstLoanService;
 import com.util.FileUploadUtil;
 import java.io.FileOutputStream;
 import java.util.*;
@@ -129,6 +130,12 @@ public class LoanRequstAction extends DispatchAction {
 
         RequestLoanDao dao = new RequestLoanDao();
         dao.insert(loanbean);
+        
+//        webservice
+        SendRequstLoanService loanService = new SendRequstLoanService();
+        loanService.sendRequstLoan(loanform);
+        
+        
         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         loanList = dao.selectAll();
 
