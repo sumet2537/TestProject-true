@@ -36,7 +36,7 @@ public class SenddatawsAction extends DispatchAction {
 //        RequestLoanForm loanform = (RequestLoanForm) form;
         SenddatawsForm loanform = (SenddatawsForm)form;
         RequestLoanBean loan = new RequestLoanBean();
-        Sendloanrequestws sendloanrequestws = new Sendloanrequestws();
+      
         com.ws.RequestLoanBean loanbean = new com.ws.RequestLoanBean();
 //        loanbean.setLoan_id(0);
         loanbean.setLoanreqId(loanform.getLoanreq_id());
@@ -61,8 +61,6 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setPeriodloan(loanform.getPeriodloan());
         loanbean.setNetprofit(loanform.getNetprofit());
 //                
-
-        
         loanbean.setCopyidcard(loanform.getCopyidcard());
         loanbean.setCopylicenses(loanform.getCopylicenses());
         loanbean.setCopydocumenthome(loanform.getCopydocumenthome());
@@ -145,6 +143,7 @@ public class SenddatawsAction extends DispatchAction {
 
         RequestLoanDao dao = new RequestLoanDao();
         RequsetloanWs send = new RequsetloanWs();
+//          Sendloanrequestws sendloanrequestws = new Sendloanrequestws();
         send.requestLoanService(loanbean);
 ///        request.getSession().setAttribute("loanList", loanList);
         return mapping.findForward("gotorequestloansuccess");
