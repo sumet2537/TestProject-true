@@ -51,6 +51,7 @@
                                                         <div class="form-group col-md-12">
                                                             <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean.getCitizen_id()%></span></label>
                                                             <input  type="hidden" name="citizen_id" value="<%=bean.getCitizen_id()%>">
+                                                            <input  type="hidden" name="loanreq_id" value="<%=bean.getLoanreq_id()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
                                                             <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean.getTitle_type()%></span></label>
@@ -200,7 +201,7 @@
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
                                                                 <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount()%></span></label>
-                                                                <input type="file" name="copy_bankaccount" disabled="true"  value="<%=bean.getCopy_bankaccount()%>">
+                                                                <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount()%>">
                                                             </div>
                                                             <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount()%>"><img class="imgfile" src="./img/pdf-icon.jpg"></a></div>
                                                         </div>

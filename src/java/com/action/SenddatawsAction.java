@@ -59,60 +59,14 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setPeriodloan(loanform.getPeriodloan());
         loanbean.setNetprofit(loanform.getNetprofit());
 //                
-        FileUploadUtil upload = new FileUploadUtil();
-       FileOutputStream outputStream = null;
-        FormFile file = null;
-        String file1 = loanform.getCopyidcard().getFileName();
-        if (file1.equals("")) {
-            loanbean.setCopyidcard("nofile");
-        } else {
-       loanbean.setCopyidcard(upload.fileinputStream(loanform.getCopyidcard()));
-        }
-        String file2 = loanform.getCopylicenses().getFileName();
-       if(file2.equals("")){
-           loanbean.setCopylicenses("nofile");
-       }else{
-       loanbean.setCopylicenses(upload.fileinputStream(loanform.getCopylicenses()));
-       }
-          String file3 = loanform.getCopydocumenthome().getFileName();
-       if(file3.equals("")){
-           loanbean.setCopydocumenthome("nofile");
-       }else{
-       loanbean.setCopydocumenthome(upload.fileinputStream(loanform.getCopydocumenthome()));
-       }
-          String file4 = loanform.getCopymarriage().getFileName();
-       if(file4.equals("")){
-           loanbean.setCopymarriage("nofile");
-       }else{
-       loanbean.setCopymarriage(upload.fileinputStream(loanform.getCopymarriage()));
-       }
-            String file5 = loanform.getCopy_rename().getFileName();
-       if(file5.equals("")){
-           loanbean.setCopyRename("nofile");
-       }else{
-       loanbean.setCopyRename(upload.fileinputStream(loanform.getCopy_rename()));
-       }
-            String file6 = loanform.getSalary_slip().getFileName();
-       if(file6.equals("")){
-           loanbean.setSalarySlip("nofile");
-       }else{
-       loanbean.setSalarySlip(upload.fileinputStream(loanform.getSalary_slip()));
-       }
-            String file7 = loanform.getCopy_bankaccount().getFileName();
-       if(file7.equals("")){
-           loanbean.setCopyBankaccount("nofile");
-       }else{
-       loanbean.setCopyBankaccount(upload.fileinputStream(loanform.getCopy_bankaccount()));
-       }
-        System.out.println("++++++++++++"+loanform.getCopyidcard().getFileName());
-
-//        loanbean.setCopyidcard(loanform.getCopyidcard());
-//        loanbean.setCopylicenses(loanform.getCopylicenses());
-//        loanbean.setCopydocumenthome(loanform.getCopydocumenthome());
-//        loanbean.setCopymarriage(loanform.getCopymarriage());
-//        loanbean.setCopy_rename(loanform.getCopy_rename());
-//        loanbean.setSalary_slip(loanform.getSalary_slip());
-//        loanbean.setCopy_bankaccount(loanform.getCopy_bankaccount());
+        
+        loanbean.setCopyidcard(loanform.getCopyidcard());
+        loanbean.setCopylicenses(loanform.getCopylicenses());
+        loanbean.setCopydocumenthome(loanform.getCopydocumenthome());
+        loanbean.setCopymarriage(loanform.getCopymarriage());
+        loanbean.setCopyRename(loanform.getCopy_rename());
+        loanbean.setSalarySlip(loanform.getSalary_slip());
+        loanbean.setCopyBankaccount(loanform.getCopy_bankaccount());
         
         loanbean.setLoanstatustype(loanform.getLoanstatustype());
         loanbean.setCreateby(loanform.getCreateby());

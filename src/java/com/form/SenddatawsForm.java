@@ -43,21 +43,21 @@ private int loan_id;
     private Double periodloan;
     private Double netprofit;
     
-//    private String copyidcard;
-//    private String copylicenses;
-//    private String copydocumenthome;
-//    private String copymarriage;
-//    private String copy_rename;
-//    private String salary_slip;
-//    private String copy_bankaccount;
+    private String copyidcard;
+    private String copylicenses;
+    private String copydocumenthome;
+    private String copymarriage;
+    private String copy_rename;
+    private String salary_slip;
+    private String copy_bankaccount;
     
-     private byte[] copyidcard;
-    private FormFile copylicenses;
-    private FormFile copydocumenthome;
-    private FormFile copymarriage;
-    private FormFile copy_rename;
-    private FormFile salary_slip;
-    private FormFile copy_bankaccount;
+//     private byte[] copyidcard;
+//    private byte[] copylicenses;
+//    private byte[] copydocumenthome;
+//    private byte[] copymarriage;
+//    private byte[] copy_rename;
+//    private byte[] salary_slip;
+//    private byte[] copy_bankaccount;
     
     
     private String banktype;
@@ -306,117 +306,63 @@ private int loan_id;
     }
     
 
-    public FormFile getCopyidcard() {
+ 
+
+    public String getCopyidcard() {
         return copyidcard;
     }
 
-    public void setCopyidcard(FormFile copyidcard) {
+    public void setCopyidcard(String copyidcard) {
         this.copyidcard = copyidcard;
     }
 
-    public FormFile getCopylicenses() {
+    public String getCopylicenses() {
         return copylicenses;
     }
 
-    public void setCopylicenses(FormFile copylicenses) {
+    public void setCopylicenses(String copylicenses) {
         this.copylicenses = copylicenses;
     }
 
-    public FormFile getCopydocumenthome() {
+    public String getCopydocumenthome() {
         return copydocumenthome;
     }
 
-    public void setCopydocumenthome(FormFile copydocumenthome) {
+    public void setCopydocumenthome(String copydocumenthome) {
         this.copydocumenthome = copydocumenthome;
     }
 
-    public FormFile getCopymarriage() {
+    public String getCopymarriage() {
         return copymarriage;
     }
 
-    public void setCopymarriage(FormFile copymarriage) {
+    public void setCopymarriage(String copymarriage) {
         this.copymarriage = copymarriage;
     }
 
-    public FormFile getCopy_rename() {
+    public String getCopy_rename() {
         return copy_rename;
     }
 
-    public void setCopy_rename(FormFile copy_rename) {
+    public void setCopy_rename(String copy_rename) {
         this.copy_rename = copy_rename;
     }
 
-    public FormFile getSalary_slip() {
+    public String getSalary_slip() {
         return salary_slip;
     }
 
-    public void setSalary_slip(FormFile salary_slip) {
+    public void setSalary_slip(String salary_slip) {
         this.salary_slip = salary_slip;
     }
 
-    public FormFile getCopy_bankaccount() {
+    public String getCopy_bankaccount() {
         return copy_bankaccount;
     }
 
-    public void setCopy_bankaccount(FormFile copy_bankaccount) {
+    public void setCopy_bankaccount(String copy_bankaccount) {
         this.copy_bankaccount = copy_bankaccount;
     }
-
-//    public String getCopyidcard() {
-//        return copyidcard;
-//    }
-//
-//    public void setCopyidcard(String copyidcard) {
-//        this.copyidcard = copyidcard;
-//    }
-//
-//    public String getCopylicenses() {
-//        return copylicenses;
-//    }
-//
-//    public void setCopylicenses(String copylicenses) {
-//        this.copylicenses = copylicenses;
-//    }
-//
-//    public String getCopydocumenthome() {
-//        return copydocumenthome;
-//    }
-//
-//    public void setCopydocumenthome(String copydocumenthome) {
-//        this.copydocumenthome = copydocumenthome;
-//    }
-//
-//    public String getCopymarriage() {
-//        return copymarriage;
-//    }
-//
-//    public void setCopymarriage(String copymarriage) {
-//        this.copymarriage = copymarriage;
-//    }
-//
-//    public String getCopy_rename() {
-//        return copy_rename;
-//    }
-//
-//    public void setCopy_rename(String copy_rename) {
-//        this.copy_rename = copy_rename;
-//    }
-//
-//    public String getSalary_slip() {
-//        return salary_slip;
-//    }
-//
-//    public void setSalary_slip(String salary_slip) {
-//        this.salary_slip = salary_slip;
-//    }
-//
-//    public String getCopy_bankaccount() {
-//        return copy_bankaccount;
-//    }
-//
-//    public void setCopy_bankaccount(String copy_bankaccount) {
-//        this.copy_bankaccount = copy_bankaccount;
-//    }
 
 
 
