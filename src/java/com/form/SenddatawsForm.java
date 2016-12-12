@@ -51,15 +51,15 @@ private int loan_id;
     private String salary_slip;
     private String copy_bankaccount;
     
-<<<<<<< HEAD
-//     private byte[] copyidcard;
-//    private byte[] copylicenses;
-//    private byte[] copydocumenthome;
-//    private byte[] copymarriage;
-//    private byte[] copy_rename;
-//    private byte[] salary_slip;
-//    private byte[] copy_bankaccount;
-=======
+
+     private byte[] copyidcardbyte;
+    private byte[] copylicensesbyte;
+    private byte[] copydocumenthomebyte;
+    private byte[] copymarriagebyte;
+    private byte[] copyRenamebyte;
+    private byte[] salarySlipbyte;
+    private byte[] copyBankaccountbyte;
+
 //        private FormFile copyidcard;
 //    private FormFile copylicenses;
 //    private FormFile copydocumenthome;
@@ -67,7 +67,7 @@ private int loan_id;
 //    private FormFile copy_rename;
 //    private FormFile salary_slip;
 //    private FormFile copy_bankaccount;
->>>>>>> origin/master
+
     
     
     private String banktype;
@@ -87,6 +87,65 @@ private int loan_id;
     private String status;   
     private String todo;
 
+    public byte[] getCopyidcardbyte() {
+        return copyidcardbyte;
+    }
+
+    public void setCopyidcardbyte(byte[] copyidcardbyte) {
+        this.copyidcardbyte = copyidcardbyte;
+    }
+
+    public byte[] getCopylicensesbyte() {
+        return copylicensesbyte;
+    }
+
+    public void setCopylicensesbyte(byte[] copylicensesbyte) {
+        this.copylicensesbyte = copylicensesbyte;
+    }
+
+    public byte[] getCopydocumenthomebyte() {
+        return copydocumenthomebyte;
+    }
+
+    public void setCopydocumenthomebyte(byte[] copydocumenthomebyte) {
+        this.copydocumenthomebyte = copydocumenthomebyte;
+    }
+
+    public byte[] getCopymarriagebyte() {
+        return copymarriagebyte;
+    }
+
+    public void setCopymarriagebyte(byte[] copymarriagebyte) {
+        this.copymarriagebyte = copymarriagebyte;
+    }
+
+    public byte[] getCopyRenamebyte() {
+        return copyRenamebyte;
+    }
+
+    public void setCopyRenamebyte(byte[] copyRenamebyte) {
+        this.copyRenamebyte = copyRenamebyte;
+    }
+
+    public byte[] getSalarySlipbyte() {
+        return salarySlipbyte;
+    }
+
+    public void setSalarySlipbyte(byte[] salarySlipbyte) {
+        this.salarySlipbyte = salarySlipbyte;
+    }
+
+    public byte[] getCopyBankaccountbyte() {
+        return copyBankaccountbyte;
+    }
+
+    public void setCopyBankaccountbyte(byte[] copyBankaccountbyte) {
+        this.copyBankaccountbyte = copyBankaccountbyte;
+    }
+
+    
+    
+    
      private String fileNameDownload;
 
     public String getFileNameDownload() {
@@ -372,11 +431,6 @@ private int loan_id;
 //        this.copy_bankaccount = copy_bankaccount;
 //    }
 
-<<<<<<< HEAD
- 
-
-=======
->>>>>>> origin/master
     public String getCopyidcard() {
         return copyidcard;
     }
