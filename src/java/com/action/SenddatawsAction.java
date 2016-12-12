@@ -10,6 +10,7 @@ import com.dao.RequestLoanDao;
 import com.form.RequestLoanForm;
 import com.form.SenddatawsForm;
 import com.util.FileUploadUtil;
+import com.ws.RequsetloanWs;
 import com.ws.Sendloanrequestws;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ import org.apache.struts.upload.FormFile;
  */
 public class SenddatawsAction extends DispatchAction {
 
-     public  ActionForward insertbank(ActionMapping mapping, ActionForm form,
+    public ActionForward insertbank(ActionMapping mapping, ActionForm form,
+
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 //        RequestLoanForm loanform = (RequestLoanForm) form;
@@ -60,51 +62,60 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setNetprofit(loanform.getNetprofit());
 //                
         FileUploadUtil upload = new FileUploadUtil();
-       FileOutputStream outputStream = null;
+        FileOutputStream outputStream = null;
         FormFile file = null;
-        String file1 = loanform.getCopyidcard().getFileName();
+        String file1 = loanform.getCopyidcard();
         if (file1.equals("")) {
             loanbean.setCopyidcard("nofile");
+
         } else {
-       loanbean.setCopyidcard(upload.fileinputStream(loanform.getCopyidcard()));
+            loanbean.setCopyidcard(file1);
+            loanbean.setCopyidcardbyte(upload.fileToByteArray(file1));
         }
-        String file2 = loanform.getCopylicenses().getFileName();
-       if(file2.equals("")){
-           loanbean.setCopylicenses("nofile");
-       }else{
-       loanbean.setCopylicenses(upload.fileinputStream(loanform.getCopylicenses()));
-       }
-          String file3 = loanform.getCopydocumenthome().getFileName();
-       if(file3.equals("")){
-           loanbean.setCopydocumenthome("nofile");
-       }else{
-       loanbean.setCopydocumenthome(upload.fileinputStream(loanform.getCopydocumenthome()));
-       }
-          String file4 = loanform.getCopymarriage().getFileName();
-       if(file4.equals("")){
-           loanbean.setCopymarriage("nofile");
-       }else{
-       loanbean.setCopymarriage(upload.fileinputStream(loanform.getCopymarriage()));
-       }
-            String file5 = loanform.getCopy_rename().getFileName();
-       if(file5.equals("")){
-           loanbean.setCopyRename("nofile");
-       }else{
-       loanbean.setCopyRename(upload.fileinputStream(loanform.getCopy_rename()));
-       }
-            String file6 = loanform.getSalary_slip().getFileName();
-       if(file6.equals("")){
-           loanbean.setSalarySlip("nofile");
-       }else{
-       loanbean.setSalarySlip(upload.fileinputStream(loanform.getSalary_slip()));
-       }
-            String file7 = loanform.getCopy_bankaccount().getFileName();
-       if(file7.equals("")){
-           loanbean.setCopyBankaccount("nofile");
-       }else{
-       loanbean.setCopyBankaccount(upload.fileinputStream(loanform.getCopy_bankaccount()));
-       }
-        System.out.println("++++++++++++"+loanform.getCopyidcard().getFileName());
+        String file2 = loanform.getCopylicenses();
+        if (file2.equals("")) {
+            loanbean.setCopylicenses("nofile");
+        } else {
+            loanbean.setCopylicenses(file2);
+            loanbean.setCopylicensesbyte(upload.fileToByteArray(file2));
+
+        }
+        String file3 = loanform.getCopydocumenthome();
+        if (file3.equals("")) {
+            loanbean.setCopydocumenthome("nofile");
+        } else {
+            loanbean.setCopydocumenthome(file3);
+            loanbean.setCopydocumenthomebyte(upload.fileToByteArray(file3));
+        }
+        String file4 = loanform.getCopymarriage();
+        if (file4.equals("")) {
+            loanbean.setCopymarriage("nofile");
+        } else {
+            loanbean.setCopymarriage(file4);
+            loanbean.setCopymarriagebyte(upload.fileToByteArray(file4));
+        }
+        String file5 = loanform.getCopy_rename();
+        if (file5.equals("")) {
+            loanbean.setCopyRename("nofile");
+        } else {
+            loanbean.setCopyRename(file5);
+            loanbean.setCopyRenamebyte(upload.fileToByteArray(file5));
+        }
+        String file6 = loanform.getSalary_slip();
+        if (file6.equals("")) {
+            loanbean.setSalarySlip("nofile");
+        } else {
+            loanbean.setSalarySlip(file6);
+            loanbean.setSalarySlipbyte(upload.fileToByteArray(file6));
+        }
+        String file7 = loanform.getCopy_bankaccount();
+        if (file7.equals("")) {
+            loanbean.setCopyBankaccount("nofile");
+        } else {
+            loanbean.setCopyBankaccount(file7);
+             loanbean.setCopyBankaccountbyte(upload.fileToByteArray(file7));
+        }
+        System.out.println("++++++++++++" + loanform.getCopyidcard());
 
 //        loanbean.setCopyidcard(loanform.getCopyidcard());
 //        loanbean.setCopylicenses(loanform.getCopylicenses());
@@ -113,20 +124,19 @@ public class SenddatawsAction extends DispatchAction {
 //        loanbean.setCopy_rename(loanform.getCopy_rename());
 //        loanbean.setSalary_slip(loanform.getSalary_slip());
 //        loanbean.setCopy_bankaccount(loanform.getCopy_bankaccount());
-        
         loanbean.setLoanstatustype(loanform.getLoanstatustype());
         loanbean.setCreateby(loanform.getCreateby());
         loanbean.setCreated(loanform.getCreated());
         loanbean.setUpdateby(loanform.getUpdateby());
         loanbean.setUpdated(loanform.getUpdated());
-       
-//        RequestLoanDao dao = new RequestLoanDao();
-         
-//        return sendloanrequestws.requestLoanService(requestLoanService);
 
-        sendloanrequestws.requestLoanService(loanbean);
-     request.getSession().setAttribute("sendloanrequestws", sendloanrequestws);
-      return mapping.findForward("gotoPageManagermentLoan");
+
+        RequestLoanDao dao = new RequestLoanDao();
+        RequsetloanWs send = new RequsetloanWs();
+        send.requestLoanService(loanbean);
+///        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotorequestloansuccess");
+
     }
 
 }
