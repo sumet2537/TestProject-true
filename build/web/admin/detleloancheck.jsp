@@ -214,9 +214,6 @@
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-12">
                                                             <label>ธนาคารที่ต้องการขอกู้ :&nbsp;&nbsp;</label><span style="color:#0033FF; font-size: 17px;"><%=bean.getBanktype()%></span>
-                                                            <div class="col-md-8">
-                                                                <input  type="hidden" name="banktype1" value="<%=bean.getBanktype()%>">
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

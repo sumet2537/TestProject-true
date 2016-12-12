@@ -221,10 +221,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="center">
-                                                   รายละเอียดการอนุมัติ
-                                                </div>
-                                                 
                                             </div>
                                         </fieldset>
                                     </div>

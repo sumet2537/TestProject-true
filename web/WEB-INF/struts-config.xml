@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="ApproveLoanForm" type="com.form.ApproveLoanForm"/>
         <form-bean name="SenddatawsForm" type="com.form.SenddatawsForm"/>
         <form-bean name="RequestLoanForm" type="com.form.RequestLoanForm"/>
         <form-bean name="registerForm" type="com.form.registerForm"/>
@@ -109,6 +110,7 @@
         <action name="SenddatawsForm" parameter="todo" path="/SenddatawsAction" scope="session" type="com.action.SenddatawsAction">
              <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
         </action>
+        <action name="ApproveLoanForm" parameter="todo" path="/ApproveLoanAction" scope="session" type="com.action.ApproveLoanAction"/>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
