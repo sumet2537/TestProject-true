@@ -61,7 +61,7 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setPeriodloan(loanform.getPeriodloan());
         loanbean.setNetprofit(loanform.getNetprofit());
 //                
-<<<<<<< HEAD
+
         
         loanbean.setCopyidcard(loanform.getCopyidcard());
         loanbean.setCopylicenses(loanform.getCopylicenses());
@@ -71,7 +71,7 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setSalarySlip(loanform.getSalary_slip());
         loanbean.setCopyBankaccount(loanform.getCopy_bankaccount());
         
-=======
+
         FileUploadUtil upload = new FileUploadUtil();
         FileOutputStream outputStream = null;
         FormFile file = null;
@@ -135,7 +135,7 @@ public class SenddatawsAction extends DispatchAction {
 //        loanbean.setCopy_rename(loanform.getCopy_rename());
 //        loanbean.setSalary_slip(loanform.getSalary_slip());
 //        loanbean.setCopy_bankaccount(loanform.getCopy_bankaccount());
->>>>>>> origin/master
+
         loanbean.setLoanstatustype(loanform.getLoanstatustype());
         loanbean.setCreateby(loanform.getCreateby());
         loanbean.setCreated(loanform.getCreated());
