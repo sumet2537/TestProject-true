@@ -16,5 +16,7 @@ public class Sendloanrequestws {
         com.ws.RequestLoanService port = service.getRequestLoanServicePort();
         return port.requestLoanService(requestLoanBean);
     }
+
+
     
 }
