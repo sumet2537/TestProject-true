@@ -83,11 +83,6 @@
                                             <label >ที่อยู่จัดส่งเอกสาร : &nbsp;&nbsp;<%=bean.getAddresssenddoc()%></label>
                                                
                                             </div>
-                                            <br>
-                                            <div class="col-lg-10">
-                                            <h4>ข้อมูลเข้าสู่ระบบ</h4>
-                                            <hr/>
-                                              </div>
                                         <input type="hidden" name="todo"/>
                                         <input type="hidden" name="roleId" value="2"/>
                                         <input type="hidden" name="status" value="1"/>

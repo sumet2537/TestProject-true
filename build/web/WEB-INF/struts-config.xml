@@ -77,12 +77,38 @@
         </action>
         <action  name="RequestLoanForm" parameter="todo" path="/LoanRequstAction" scope="session" type="com.action.LoanRequstAction">
         <forward name="gotorequestloansuccess" path="gotorequestloansuccess"/>
-          <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
+        <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
+           <!--approve-->
+            <forward name="gotoDetle_ap" path="gotoDetle_ap"/> 
+             <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp"/>
+            <!--approve-->
+            <!--NOapprove-->
+            <forward name="gotoDetle_Nofile" path="gotoDetle_Nofile"/>
+            <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile"/> 
+            <!--Noapprove-->
+            <!--Rchreck-->
+            <forward name="gotoDetle_ap" path="gotoDetle_ap"/> 
+                      <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
            <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
+            <!--Rchreck-->
+            <!--Nofile-->
+            <forward name="gotoDetle_RAp" path="gotoDetle_RAp"/>
+             <forward name="gotoPageManagermentR" path="gotoPageManagermentR"/> 
+            <!--Nofile-->
+            <!--Rapprove-->
+            <forward name="gotoDetle_NoAp" path="gotoDetle_NoAp"/> 
+            <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo"/>
+            <!--Rapprove-->
+           
+               
+              
+              
+               
           
         </action>
-        <action name="SenddatawsForm" parameter="todo" path="/SenddatawsAction" scope="session" type="com.action.SenddatawsAction"/>
-        
+        <action name="SenddatawsForm" parameter="todo" path="/SenddatawsAction" scope="session" type="com.action.SenddatawsAction">
+             <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

@@ -200,7 +200,7 @@ public class LoanRequstAction extends DispatchAction {
        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
         
         request.getSession().setAttribute("editBean", bean);
-        return mapping.findForward("gotoDetle_requestloan");
+        return mapping.findForward("gotoDetle_ap");
     }
           
       public ActionForward deleteAp (ActionMapping mapping,ActionForm form,
@@ -214,7 +214,7 @@ public class LoanRequstAction extends DispatchAction {
      List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
      loanList = loandao.selectloanstatustypeAp();
      request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentLoan");
+      return mapping.findForward("gotoPageManagermentLoanAp");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
       
@@ -227,7 +227,7 @@ public class LoanRequstAction extends DispatchAction {
        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
         
         request.getSession().setAttribute("editBean", bean);
-        return mapping.findForward("gotoDetle_requestloan");
+        return mapping.findForward("gotoDetle_NoAp");
     }
           
       public ActionForward deleteNoAp (ActionMapping mapping,ActionForm form,
@@ -241,7 +241,7 @@ public class LoanRequstAction extends DispatchAction {
      List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
      loanList = loandao.selectloanstatustypeNoAp();
      request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentLoan");
+      return mapping.findForward("gotoPageManagermentNo");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
       
@@ -254,7 +254,7 @@ public class LoanRequstAction extends DispatchAction {
        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
         
         request.getSession().setAttribute("editBean", bean);
-        return mapping.findForward("gotoDetle_requestloan");
+        return mapping.findForward("gotoDetle_Nofile");
     }
           
       public ActionForward deleteNofile (ActionMapping mapping,ActionForm form,
@@ -268,7 +268,7 @@ public class LoanRequstAction extends DispatchAction {
      List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
      loanList = loandao.selectloanstatustypeNofile();
      request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentLoan");
+      return mapping.findForward("gotoPageManagermentNofile");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
       
@@ -281,7 +281,7 @@ public class LoanRequstAction extends DispatchAction {
        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
         
         request.getSession().setAttribute("editBean", bean);
-        return mapping.findForward("gotoDetle_requestloan");
+        return mapping.findForward("gotoDetle_RAp");
     }
           
       public ActionForward deleteRAp (ActionMapping mapping,ActionForm form,
@@ -295,7 +295,7 @@ public class LoanRequstAction extends DispatchAction {
      List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
      loanList = loandao.selectloanstatustypeRapp();
      request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentLoan");
+      return mapping.findForward("gotoPageManagermentR");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
 }

@@ -81,8 +81,26 @@
        <definition name="gotoDetle_requestloan" extends="welcome">
         <put name="title"  value="" />
         <put name="body"   value="/admin/detleloancheck.jsp" />
+         </definition> 
+         
+       <definition name="gotoDetle_ap" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/detleloanAp.jsp" />
          </definition>
-    <!--/////////////////////////////////////////////////-->
+         <definition name="gotoDetle_Nofile" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/detleloanNofile.jsp" />
+         </definition>
+         <definition name="gotoDetle_RAp" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/detleloanRAp.jsp" />
+         </definition>
+         <definition name="gotoDetle_NoAp" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/admin/detleloanNoAp.jsp" />
+         </definition>
+    
+    
           <!--////////////////////// ditel ///////////////////////////-->
        <definition name="gotoPageUserViewStatus" extends="welcome">
         <put name="title"  value="" />

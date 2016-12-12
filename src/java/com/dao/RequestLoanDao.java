@@ -890,6 +890,34 @@ bean.setUpdated(rs.getString("updated"));
         }
         return i;
     }
+    
+    public int updateBystatus(RequestLoanBean requestLoatBean) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = dbConnect.openNewConnection();
+        String sql = "update tbl_requestloan set loanstatustype=?, updateby=?, updatedate=sysdate() where loanreq_id=? ";
+        PreparedStatement p = null;
+        int i = 0;
+        try {
+            p = (PreparedStatement) con.prepareStatement(sql.toString());
+
+
+            p.setString(1, requestLoatBean.getLoanstatustype());
+            p.setString(2, requestLoatBean.getFirstName());
+            p.setInt(3, requestLoatBean.getLoanreq_id());
+            i = p.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println(i);
+        }
+        return i;
+    }
 
 //    public static void main(String[] args) throws Exception {
 //        RequestLoanDao dao = new RequestLoanDao();

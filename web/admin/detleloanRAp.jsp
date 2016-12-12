@@ -26,12 +26,12 @@
             <!-- Info boxes -->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal" id="loanrequstform" name="detleloanform" action="SenddatawsAction.do" method="post" >
+                    <form class="form-horizontal" id="loanrequstform" name="detleloanform" action="LoanRequstAction.do" method="post" >
                         <!--<div align="center">-->
                         <div class="box box-solid" >
                             <!--box box-solid-->
                             <br>
-                            <h3 class="center"><strong >ตรวจสอบการขอกู้</strong></h3>
+                            <h3 class="center"><strong >รายละเอียดสินเชื่อที่รออนุมัติ</strong></h3>
                             <div class="box-body">
                                 <!--box-body-->
                                 <div class="row">
@@ -45,7 +45,8 @@
                                             <div class="form-group">
                                                 <div class="panel panel-info">
                                                     <div class="panel-heading">
-                                                        <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%></h4>
+                                                        <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>
+                                                        &nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%></h4>
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-12">
@@ -221,71 +222,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="center">
-                                                    <br>
-                                                    <div id="chk" class="btn-group" data-toggle="buttons">
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox" name="blue" value="2011" onclick="callCheckboxActive(this)">กรุงเทพ
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox" name="red" value="2012" onclick="callCheckboxActive(this)">กรุงไทย
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox" name="green" value="2013" onclick="callCheckboxActive(this)">ธนชาติ
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox" name="yellow" value="2013" onclick="callCheckboxActive(this)">ทหารไทย
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox"  name="skyblue" value="2013" onclick="callCheckboxActive(this)">กรุงศรีอยุทยา
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox"  name="skyblue" value="2013" onclick="callCheckboxActive(this)">ออมสิน
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox"  name="skyblue" value="2013" onclick="callCheckboxActive(this)">ไทยพาณิชย์
-                                                        </label>
-                                                        <label class="btn btn-primary">
-                                                            <span class="glyphicon"></span>
-                                                            <input type="checkbox"  name="skyblue" value="2013" onclick="callCheckboxActive(this)">กสิกรไทย
-                                                        </label>
-
-                                                    </div>
+                                                   รายละเอียดการอนุมัติ
                                                 </div>
-                                                <div class="form-group col-md-12">
-                                                    <input type="hidden" name="loanstatustype" value="รออนุมัติ"/>
-                                                    <hr class="hrsuccess">
-                                                    <input type="hidden" name="todo"/>
-                                                    <div class="col-md-12" align="center">
-                                                        <button type="submit" id="submit" name="submit" class="btn btn-primary" onclick="oninsert('insretbank')" ><span class="glyphicon glyphicon-save"></span>บันทึก</button>
-                                                        <button  type="reset" class="btn btn-danger"> <span class="glyphicon glyphicon-refresh"></span>ยกเลิก</button>
-                                                    </div>
-
-                                                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                    <h4 class="modal-title" id="myModalLabel">ยกเลิก</h4>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    คุณแน่ใจแล้วใช้ไหมที่จะยกเลิก
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button name="reset" type="reset" class="btn btn-danger"  data-toggle="modal" data-target="#myModal" >ยกเลิก</button>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>  
-                                                </div>   
+                                                 
                                             </div>
                                         </fieldset>
                                     </div>

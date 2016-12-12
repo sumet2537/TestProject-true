@@ -98,20 +98,20 @@
                                                                     <td><%=bean.getLoanstatustype()%></td>
                                                                     <td><%=formatter.format(bean.getCreditloan())%></td>
                                                                     <td><%=bean.getCreated()%></td>
-                                                                    <td><a   class="btn btn-danger" data-toggle="modal" data-target="#myModal"><span class="fa fa-close"></span></a></td>
-                                                                            <%--<td class="sorting_1"><button class="btn btn-sm btn-success" type="submit" value="แก้ไข" onclick="callActionGotoEdit(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-edit"></i></button></td>--%>
+                                                                    <td> <button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)"><i class="fa fa-close"></i></button></td>
+                                                                            
                                                                     <td><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getLoanreq_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
                                                                 </tr>
                                                             <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                                 <div class="modal-dialog">
                                                                     <div class="modal-content center">
-
+<!--class="btn btn-danger" data-toggle="modal" data-target="#myModal"><span class="fa fa-close"></span></a>-->
                                                                         <div class="modal-header  center">
                                                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                                                             <h4 class="modal-title" id="myModalLabel">ยืนยันการลบ</h4>
                                                                         </div>
                                                                         <div class="modal-body center">
-                                                                            คุณต้องการลบข้อมูลใช่หรือไม่
+                                                                            คุณต้องการลบข้อมูล&nbsp; &nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;ใช่หรือไม่
                                                                             <hr class="hrsuccess">
                                                                             <br>
                                                                         </div>

@@ -26,7 +26,7 @@
             <!-- Info boxes -->
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal" id="loanrequstform" name="detleloanform" action="LoanRequstAction.do" method="post" >
+                    <form class="form-horizontal" id="loanrequstform" name="detleloanform" action="SenddatawsAction.do" method="post" >
                         <!--<div align="center">-->
                         <div class="box box-solid" >
                             <!--box box-solid-->
@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <div class="panel panel-info">
                                                     <div class="panel-heading">
-                                                        <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%></h4>
+                                                        <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%></h4>
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-12">

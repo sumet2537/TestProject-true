@@ -24,16 +24,20 @@
                         <div class="box box-solid" >
                             <br>
                            <strong class="text-center">  <h3> แก้ไขข้อมูลลูกค้า </h3> </strong>
+                           <hr class="hrbrue">
                             <div class="box-body">
                                 <div class="row">
                                     <fieldset class="col-md-8 col-md-offset-1">
-                                        <div class="col-lg-12">
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading">
                                             <h4>ลำดับที่ : <%=bean.getUser_id()%>  ข้อมูลคุณ : <%=bean.getFirstName()%> </h4>
-                                            <hr/>
                                         </div>
+                                            </div>
+                                        
                                         <!-- select -->
 
                                         <div class="form-group col-md-12">
+                                            <br>
                                             <label class="col-md-4 control-label" for="citizen_id">เลขบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                             <div class="col-md-8 ">
                                                 <input class="form-control" type="text" name="citizen_id" maxlength="13" required="" value="<%=bean.getCitizen_id()%>" readonly=""><br>
