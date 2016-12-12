@@ -51,6 +51,7 @@ private int loan_id;
     private String salary_slip;
     private String copy_bankaccount;
     
+<<<<<<< HEAD
 //     private byte[] copyidcard;
 //    private byte[] copylicenses;
 //    private byte[] copydocumenthome;
@@ -58,6 +59,15 @@ private int loan_id;
 //    private byte[] copy_rename;
 //    private byte[] salary_slip;
 //    private byte[] copy_bankaccount;
+=======
+//        private FormFile copyidcard;
+//    private FormFile copylicenses;
+//    private FormFile copydocumenthome;
+//    private FormFile copymarriage;
+//    private FormFile copy_rename;
+//    private FormFile salary_slip;
+//    private FormFile copy_bankaccount;
+>>>>>>> origin/master
     
     
     private String banktype;
@@ -305,9 +315,68 @@ private int loan_id;
         this.netprofit = netprofit;
     }
     
+//
+//    public FormFile getCopyidcard() {
+//        return copyidcard;
+//    }
+//
+//    public void setCopyidcard(FormFile copyidcard) {
+//        this.copyidcard = copyidcard;
+//    }
+//
+//    public FormFile getCopylicenses() {
+//        return copylicenses;
+//    }
+//
+//    public void setCopylicenses(FormFile copylicenses) {
+//        this.copylicenses = copylicenses;
+//    }
+//
+//    public FormFile getCopydocumenthome() {
+//        return copydocumenthome;
+//    }
+//
+//    public void setCopydocumenthome(FormFile copydocumenthome) {
+//        this.copydocumenthome = copydocumenthome;
+//    }
+//
+//    public FormFile getCopymarriage() {
+//        return copymarriage;
+//    }
+//
+//    public void setCopymarriage(FormFile copymarriage) {
+//        this.copymarriage = copymarriage;
+//    }
+//
+//    public FormFile getCopy_rename() {
+//        return copy_rename;
+//    }
+//
+//    public void setCopy_rename(FormFile copy_rename) {
+//        this.copy_rename = copy_rename;
+//    }
+//
+//    public FormFile getSalary_slip() {
+//        return salary_slip;
+//    }
+//
+//    public void setSalary_slip(FormFile salary_slip) {
+//        this.salary_slip = salary_slip;
+//    }
+//
+//    public FormFile getCopy_bankaccount() {
+//        return copy_bankaccount;
+//    }
+//
+//    public void setCopy_bankaccount(FormFile copy_bankaccount) {
+//        this.copy_bankaccount = copy_bankaccount;
+//    }
 
+<<<<<<< HEAD
  
 
+=======
+>>>>>>> origin/master
     public String getCopyidcard() {
         return copyidcard;
     }

@@ -5,7 +5,9 @@
  */
 package com.util;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -38,19 +40,44 @@ public class FileUploadUtil {
 //        
 //    return pathFile;
 //    }
-      public String fileinputStream(FormFile getfile) throws FileNotFoundException, IOException{
-          System.out.println("file" + getfile.getFileName());
+
+    public String upload(FormFile getfile) throws FileNotFoundException, IOException {
+        System.out.println("file" + getfile.getFileName());
         String filename = "";
-         FileOutputStream outputStream = null;
-         FormFile fileN = null;
-        
+        FileOutputStream outputStream = null;
+        FormFile fileN = null;
+
         fileN = getfile;
         String part = "/Users/brass/Documents/TestProject/web/image/uploade/" + fileN.getFileName();
         outputStream = new FileOutputStream(new File(part));
         outputStream.write(fileN.getFileData());
-        
+
         filename = getfile.getFileName();
         return filename;
-}
-    
+    }
+
+    public  byte[] fileToByteArray(String fileName) throws FileNotFoundException, IOException {
+        String filePath = "path" + fileName;
+        File file = new File(filePath);
+        BufferedInputStream inputStream = null;
+       byte[] imageBytes = null ;
+        // uploads a file
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            inputStream = new BufferedInputStream(fis);
+             imageBytes = new byte[(int) file.length()];
+            inputStream.read(imageBytes);
+
+          
+
+//            inputStream.close();
+            System.out.println("File uploaded: " + filePath);
+        } catch (IOException ex) {
+            System.err.println(ex);
+        } finally {
+            inputStream.close();
+        }
+        return imageBytes;
+    }
+
 }
