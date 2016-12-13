@@ -117,9 +117,6 @@ public class RequestLoanDao {
 //        }
 //        System.out.println(i);
 //    }
-    
-    
-    
     public int insertbank(RequestLoanBean requestLoatBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
@@ -176,6 +173,7 @@ public class RequestLoanDao {
     }
 //    =====================================================
 //    =====================================================
+
     public RequestLoanBean selectById(int loanreq_id) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
@@ -237,7 +235,7 @@ public class RequestLoanDao {
         }
         return bean;
     }
-    
+
 //
 //    public static void main(String[] args) throws Exception {
 //// //       ==================== ========================
@@ -254,7 +252,7 @@ public class RequestLoanDao {
 //        System.out.println(bean.getEmail());
 //
 //    }
-public RequestLoanBean selectloanstatustype(String loanstatustype) throws Exception {
+    public RequestLoanBean selectloanstatustype(String loanstatustype) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
         con = dbConnect.openNewConnection();
@@ -301,7 +299,7 @@ public RequestLoanBean selectloanstatustype(String loanstatustype) throws Except
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
             }
 
@@ -380,8 +378,8 @@ bean.setCreated(rs.getString("created"));
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
             }
 
         } finally {
@@ -395,7 +393,6 @@ bean.setUpdated(rs.getString("updated"));
         }
         return bean;
     }
-   
 
     //       =====================================================
     public ArrayList<RequestLoanBean> selectAll() throws Exception {
@@ -445,8 +442,8 @@ bean.setUpdated(rs.getString("updated"));
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -461,6 +458,7 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
+
     public ArrayList<RequestLoanBean> selectloanstatustypeAp() throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
@@ -469,7 +467,7 @@ bean.setUpdated(rs.getString("updated"));
         RequestLoanBean bean = null;
         String sql = "select * from tbl_requestloan  where loanstatustype = 'อนุมัติ'";
         PreparedStatement p = null;
-ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             rs = p.executeQuery();
@@ -507,8 +505,8 @@ ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -523,7 +521,8 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
-  public ArrayList<RequestLoanBean> selectloanstatustypeApuser() throws Exception {
+
+    public ArrayList<RequestLoanBean> selectloanstatustypeApuser() throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
         con = dbConnect.openNewConnection();
@@ -531,7 +530,7 @@ bean.setUpdated(rs.getString("updated"));
         RequestLoanBean bean = null;
         String sql = "select * from tbl_approveloan  where loanstatustype = 'อนุมัติ'";
         PreparedStatement p = null;
-ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             rs = p.executeQuery();
@@ -569,8 +568,8 @@ ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -585,7 +584,7 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
-  
+
     public ArrayList<RequestLoanBean> selectloanstatustypeNoAp() throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
@@ -594,7 +593,7 @@ bean.setUpdated(rs.getString("updated"));
         RequestLoanBean bean = null;
         String sql = "select * from tbl_requestloan  where loanstatustype = 'ไม่อนุมัติ'";
         PreparedStatement p = null;
-ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             rs = p.executeQuery();
@@ -632,8 +631,8 @@ ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -648,8 +647,8 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
-  
-      public ArrayList<RequestLoanBean> selectloanstatustypeNofile() throws Exception {
+
+    public ArrayList<RequestLoanBean> selectloanstatustypeNofile() throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
         con = dbConnect.openNewConnection();
@@ -657,7 +656,7 @@ bean.setUpdated(rs.getString("updated"));
         RequestLoanBean bean = null;
         String sql = "select * from tbl_requestloan  where loanstatustype = 'เอกสารไม่ผ่าน'";
         PreparedStatement p = null;
-ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             rs = p.executeQuery();
@@ -695,8 +694,8 @@ ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -711,7 +710,8 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
-      public ArrayList<RequestLoanBean> selectloanstatustypeRapp() throws Exception {
+
+    public ArrayList<RequestLoanBean> selectloanstatustypeRapp() throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
         con = dbConnect.openNewConnection();
@@ -719,7 +719,7 @@ bean.setUpdated(rs.getString("updated"));
         RequestLoanBean bean = null;
         String sql = "select * from tbl_requestloan  where loanstatustype = 'รออนุมัติ'";
         PreparedStatement p = null;
-ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             rs = p.executeQuery();
@@ -757,8 +757,8 @@ ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -773,7 +773,8 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
-        public ArrayList<RequestLoanBean> selectloanstatustypeRcheck() throws Exception {
+
+    public ArrayList<RequestLoanBean> selectloanstatustypeRcheck() throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
         con = dbConnect.openNewConnection();
@@ -781,7 +782,7 @@ bean.setUpdated(rs.getString("updated"));
         RequestLoanBean bean = null;
         String sql = "select * from tbl_requestloan  where loanstatustype = 'รอตรวจสอบ'";
         PreparedStatement p = null;
-ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             rs = p.executeQuery();
@@ -819,8 +820,8 @@ ArrayList<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-bean.setCreated(rs.getString("created"));
-bean.setUpdated(rs.getString("updated"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
 
@@ -835,11 +836,11 @@ bean.setUpdated(rs.getString("updated"));
         }
         return loanList;
     }
-      
+
     public int updateById(RequestLoanBean requestLoatBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "update tbl_requestloan set title_type=?, firstName=?, lastName=?, birthdate=?, age=?, nationality=?, statustype=?, mobile=?, email=?, addressregistration=?, addresscurrent=?, addresssenddoc=?, jobtype=?, hometype=?, tradingprice=?, creditloan=?, lncome_per_month=?, periodloan=?, netprofit=?, copyidcard=?, copylicenses=?, copydocumenthome=?, copymarriage=?, copy_rename=?, salary_slip=?, copy_bankaccount=?, banktype=?, loanstatustype=?, updateby=?, updatedate=sysdate() where loanreq_id=? ";
+        String sql = "update tbl_requestloan set title_type=?, firstName=?, lastName=?, birthdate=?, age=?, nationality=?, statustype=?, mobile=?, email=?, addressregistration=?, addresscurrent=?, addresssenddoc=?, jobtype=?, hometype=?, tradingprice=?, creditloan=?, lncome_per_month=?, periodloan=?, netprofit=?, copyidcard=?, copylicenses=?, copydocumenthome=?, copymarriage=?, copy_rename=?, salary_slip=?, copy_bankaccount=?, banktype=?, loanstatustype=?, updateby=?, updated=sysdate() where loanreq_id=? ";
         PreparedStatement p = null;
         int i = 0;
         try {
@@ -890,19 +891,17 @@ bean.setUpdated(rs.getString("updated"));
         }
         return i;
     }
-    
+
     public int updateBystatus(RequestLoanBean requestLoatBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "update tbl_requestloan set loanstatustype=?, updateby=?, updatedate=sysdate() where loanreq_id=? ";
+        String sql = "update tbl_requestloan set loanstatustype=?, updateby=?, updated=sysdate() where loanreq_id=?";
         PreparedStatement p = null;
         int i = 0;
         try {
-            p = (PreparedStatement) con.prepareStatement(sql.toString());
-
-
+            p = (PreparedStatement) con.prepareStatement(sql);
             p.setString(1, requestLoatBean.getLoanstatustype());
-            p.setString(2, requestLoatBean.getFirstName());
+            p.setString(2, requestLoatBean.getUpdateby());
             p.setInt(3, requestLoatBean.getLoanreq_id());
             i = p.executeUpdate();
         } catch (Exception e) {
@@ -983,7 +982,6 @@ bean.setUpdated(rs.getString("updated"));
 //            }       
 //        }    
 //    }
-
     public int deleteloanreqId(int loanreq_id) throws Exception {
         DBConnect bConnect = new DBConnect();
         RequestLoanBean bean = new RequestLoanBean();
@@ -1020,8 +1018,6 @@ bean.setUpdated(rs.getString("updated"));
 //            }
 //            System.out.println(i);
 //    }
-    
-    
     public int deleteloanstatus(String loanstatustype) throws Exception {
         DBConnect bConnect = new DBConnect();
         RequestLoanBean bean = new RequestLoanBean();

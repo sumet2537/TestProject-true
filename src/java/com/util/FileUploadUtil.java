@@ -57,7 +57,7 @@ public class FileUploadUtil {
     }
 
     public  byte[] fileToByteArray(String fileName) throws FileNotFoundException, IOException {
-        String filePath = "path" + fileName;
+        String filePath = "/Users/brass/Documents/TestProject/web/image/uploade/" + fileName;
         File file = new File(filePath);
         BufferedInputStream inputStream = null;
        byte[] imageBytes = null ;

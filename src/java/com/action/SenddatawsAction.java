@@ -30,12 +30,12 @@ import org.apache.struts.upload.FormFile;
 public class SenddatawsAction extends DispatchAction {
 
     public ActionForward insertbank(ActionMapping mapping, ActionForm form,
-
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        String msg = null;
 //        RequestLoanForm loanform = (RequestLoanForm) form;
         SenddatawsForm loanform = (SenddatawsForm)form;
-        RequestLoanBean loan = new RequestLoanBean();
+       
       
         com.ws.RequestLoanBean loanbean = new com.ws.RequestLoanBean();
 //        loanbean.setLoan_id(0);
@@ -76,11 +76,11 @@ public class SenddatawsAction extends DispatchAction {
         String file1 = loanform.getCopyidcard();
         if (file1.equals("")) {
             loanbean.setCopyidcard("nofile");
-
         } else {
             loanbean.setCopyidcard(file1);
             loanbean.setCopyidcardbyte(upload.fileToByteArray(file1));
         }
+        
         String file2 = loanform.getCopylicenses();
         if (file2.equals("")) {
             loanbean.setCopylicenses("nofile");
@@ -126,27 +126,26 @@ public class SenddatawsAction extends DispatchAction {
         }
         System.out.println("++++++++++++" + loanform.getCopyidcard());
 
-//        loanbean.setCopyidcard(loanform.getCopyidcard());
-//        loanbean.setCopylicenses(loanform.getCopylicenses());
-//        loanbean.setCopydocumenthome(loanform.getCopydocumenthome());
-//        loanbean.setCopymarriage(loanform.getCopymarriage());
-//        loanbean.setCopy_rename(loanform.getCopy_rename());
-//        loanbean.setSalary_slip(loanform.getSalary_slip());
-//        loanbean.setCopy_bankaccount(loanform.getCopy_bankaccount());
-
         loanbean.setLoanstatustype(loanform.getLoanstatustype());
         loanbean.setCreateby(loanform.getCreateby());
         loanbean.setCreated(loanform.getCreated());
         loanbean.setUpdateby(loanform.getUpdateby());
         loanbean.setUpdated(loanform.getUpdated());
 
-
+        RequestLoanBean loan = new RequestLoanBean();
         RequestLoanDao dao = new RequestLoanDao();
-        RequsetloanWs send = new RequsetloanWs();
-//          Sendloanrequestws sendloanrequestws = new Sendloanrequestws();
-        send.requestLoanService(loanbean);
-///        request.getSession().setAttribute("loanList", loanList);
-        return mapping.findForward("gotorequestloansuccess");
+        loan.setLoanstatustype(loanform.getLoanstatustype());
+        loan.setLoanreq_id(loanform.getLoanreq_id());
+        loan.setUpdateby("Admin");
+//        atill update status ยังอัพเดจสถานะไม่ได้     
+        dao.updateBystatus(loan);
+          Sendloanrequestws sendloanrequestws = new Sendloanrequestws();
+        sendloanrequestws.requestLoanService(loanbean);
+        
+         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        loanList = dao.selectloanstatustypeRcheck();
+        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotoPageManagermentLoan");
 
     }
 
