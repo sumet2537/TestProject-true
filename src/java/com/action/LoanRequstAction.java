@@ -72,43 +72,43 @@ public class LoanRequstAction extends DispatchAction {
         FormFile file = null;
         String file1 = loanform.getCopyidcard().getFileName();
         if (file1.equals("")) {
-            loanbean.setCopyidcard("nofile");
+            loanbean.setCopyidcard("ไม่มีไฟล์");
         } else {
        loanbean.setCopyidcard(upload.upload(loanform.getCopyidcard()));
         }
         String file2 = loanform.getCopylicenses().getFileName();
        if(file2.equals("")){
-           loanbean.setCopylicenses("nofile");
+           loanbean.setCopylicenses("ไม่มีไฟล์");
        }else{
        loanbean.setCopylicenses(upload.upload(loanform.getCopylicenses()));
        }
           String file3 = loanform.getCopydocumenthome().getFileName();
        if(file3.equals("")){
-           loanbean.setCopydocumenthome("nofile");
+           loanbean.setCopydocumenthome("ไม่มีไฟล์");
        }else{
        loanbean.setCopydocumenthome(upload.upload(loanform.getCopydocumenthome()));
        }
           String file4 = loanform.getCopymarriage().getFileName();
        if(file4.equals("")){
-           loanbean.setCopymarriage("nofile");
+           loanbean.setCopymarriage("ไม่มีไฟล์");
        }else{
        loanbean.setCopymarriage(upload.upload(loanform.getCopymarriage()));
        }
             String file5 = loanform.getCopy_rename().getFileName();
        if(file5.equals("")){
-           loanbean.setCopy_rename("nofile");
+           loanbean.setCopy_rename("ไม่มีไฟล์");
        }else{
        loanbean.setCopy_rename(upload.upload(loanform.getCopy_rename()));
        }
             String file6 = loanform.getSalary_slip().getFileName();
        if(file6.equals("")){
-           loanbean.setSalary_slip("nofile");
+           loanbean.setSalary_slip("ไม่มีไฟล์");
        }else{
        loanbean.setSalary_slip(upload.upload(loanform.getSalary_slip()));
        }
             String file7 = loanform.getCopy_bankaccount().getFileName();
        if(file7.equals("")){
-           loanbean.setCopy_bankaccount("nofile");
+           loanbean.setCopy_bankaccount("ไม่มีไฟล์");
        }else{
        loanbean.setCopy_bankaccount(upload.upload(loanform.getCopy_bankaccount()));
        }
