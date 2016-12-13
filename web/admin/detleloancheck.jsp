@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <div class="panel panel-info">
                                                     <div class="panel-heading">
-                                                        <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%></h4>
+                                                        <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%>&nbsp;&nbsp;วันที่ส่ง : &nbsp;&nbsp;<%=bean.getCreated()%></h4>
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-12">
@@ -91,7 +91,7 @@
                                                         </div>
                                                         <div class="form-group col-md-4">
                                                             <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
-                                                            <input type="hidden" name="joptype" value="<%=bean.getJobtype()%>">
+                                                            <input type="hidden" name="jobtype" value="<%=bean.getJobtype()%>">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
