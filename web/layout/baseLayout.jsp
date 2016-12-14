@@ -1,19 +1,33 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib  uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>
-<html>
+<html lang="eng">
     <head>
         <title>ระบบขอสินเชื่อบ้าน </title>
         <meta charset="UTF-8">
 
+        
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link rel="stylesheet" type="text/css" href="./css/css1/styleBeass.css"/>
-        <script src="css/css1/styleBeass.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/css1/styleBeass.css"/>
+        <!--<script src="<%=request.getContextPath()%>/css/css1/styleBeass.js" type="text/javascript"></script>-->
         <!--<script language="javascript" src="./plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>-->
         <!--<script language="javascript" src="./plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>-->
         <link href="plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="plugins/datatables/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
-        <script src="plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+        <!--<script src="plugins/datatables/sweetalert.min.js" type="text/javascript"></script>-->
+          <script src="<%=request.getContextPath()%>/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
         
+      
+        
+        
+        <!--validate-->
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/css/css1/bootstrapValidator.min.css">
+             
+             <script src="<%=request.getContextPath()%>/js/bootstrapvalidator.min.js"></script>
+            <script src="<%=request.getContextPath()%>/js/validate-register.js"></script>
+            <script src="<%=request.getContextPath()%>/js/modal.js"></script>
+           
+             <!--validate-->
+             
         <!-- Bootstrap 3.3.4 -->
         <!--<link href="css/style1.css" rel="stylesheet" type="text/css" />-->
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -51,10 +65,13 @@
             <footer class="main-footer">
                 <tiles:insert name="footer" />
             </footer>
-
+            <script src="<%=request.getContextPath()%>/js/alert.js"></script>
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/css1/sweetalert.css"/>
+        <script src="<%=request.getContextPath()%>/css/css1/sweetalert.min.js" type="text/javascript"></script>
 
             <!-- jQuery 2.1.4 -->
-            <script src="plugins/jQuery/jquery-3.1.1.min.js" type="text/javascript"></script>
+             <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
+            <!--<script src="<%=request.getContextPath()%>/plugins/jQuery/jquery-3.1.1.min.js" type="text/javascript"></script>-->
                     <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
                     
                     <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
