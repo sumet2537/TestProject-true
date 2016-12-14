@@ -29,6 +29,7 @@ public ActionForward save(ActionMapping mapping, ActionForm form,
             throws Exception {
     registerForm regisform = (registerForm)form;
     UserBean userbean = new UserBean();
+   String msg = "";
     
     userbean.setUsername(regisform.getUsername());
     userbean.setPassword(regisform.getPassword());
@@ -50,14 +51,20 @@ public ActionForward save(ActionMapping mapping, ActionForm form,
     userbean.setUpdated(regisform.getUpdated());
     userbean.setUpdateBy(regisform.getUpdateBy());
     userbean.setStatus(regisform.getStatus());
-    
     UserDao userdao = new UserDao();
-    userdao.insert(userbean);
-    List<UserBean> regisList = new ArrayList<UserBean>();
-    regisList = userdao.selectAll();
-    request.getSession().setAttribute("regisList", regisList);
-    
-        return mapping.findForward("gotoPageLogin");
+    try {
+        userdao.insert(userbean);
+        System.out.println("สำเร็จ");
+        msg = "ok";
+    } catch (Exception ex) {
+        System.out.println("ลงทะเบียนไม่สำเร็จ");
+        ex.printStackTrace();
+        msg = "no";
+    }
+    request.removeAttribute("registerStatus");
+    request.setAttribute("registerStatus", msg);
+//     return mapping.findForward("gotoPageLogin");
+        return mapping.findForward("gotoPageRegister");
         
     }
  //    ================================gotoupdate====================================
@@ -138,16 +145,14 @@ public ActionForward user_update(ActionMapping mapping, ActionForm form,
     userdao.updateByUserId(userbean);
     msg = "ok";
     }catch(Exception e){
+        
     msg ="no";
     }
-    
         userbean = (UserBean) request.getSession().getAttribute("userLogin");
         int userid = userbean.getUser_id();
         UserDao dao = new UserDao();
         userbean = dao.selectByUserId(userid);
-        
         request.getSession().setAttribute("detleuser", userbean);
-    
         return mapping.findForward("gotoPagedatleuserlogin");
 }
 

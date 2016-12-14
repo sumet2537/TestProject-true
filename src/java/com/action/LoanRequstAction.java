@@ -30,7 +30,7 @@ public class LoanRequstAction extends DispatchAction {
     public ActionForward save(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-    
+    String msg = "";
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean loanbean = new RequestLoanBean();
      
@@ -129,18 +129,26 @@ public class LoanRequstAction extends DispatchAction {
 //        loanbean.setUpdated(loanform.getUpdated());
 
         RequestLoanDao dao = new RequestLoanDao();
-        dao.insert(loanbean);
-        
-//        webservice
-        SendRequstLoanService loanService = new SendRequstLoanService();
-        loanService.sendRequstLoan(loanform);
-        
-        
-        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-        loanList = dao.selectAll();
-
-        request.getSession().setAttribute("loanList", loanList);
-        return mapping.findForward("gotorequestloansuccess");
+        try {
+              dao.insert(loanbean);
+              System.out.println("ok");
+              msg = "ok";
+        } catch (Exception e) {
+            System.out.println("no");
+            e.printStackTrace();
+            msg = "no";
+            
+        }
+////        webservice
+//        SendRequstLoanService loanService = new SendRequstLoanService();
+//        loanService.sendRequstLoan(loanform);
+//        
+//        
+//        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+//        loanList = dao.selectAll();
+        request.removeAttribute("requestloanStatus");
+        request.setAttribute("requestloanStatus", msg);
+        return mapping.findForward("gotoPageLoanRequest");
         
 
     }
