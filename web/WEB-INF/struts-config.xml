@@ -75,10 +75,13 @@
               <forward name="gotoadminEdit" path="gotoadminEdit"/>
               <forward name="gotoDetle" path="gotoDetle"/>
               <forward name="gotoPagedatleuserlogin" path="gotoPagedatleuserlogin"/>
+              <forward name="gotoPageRegister" path="gotoPageRegister"/>
+               <forward name="gotoPageProfile" path="gotoPageProfile"/>
         </action>
         <action  name="RequestLoanForm" parameter="todo" path="/LoanRequstAction" scope="session" type="com.action.LoanRequstAction">
         <forward name="gotorequestloansuccess" path="gotorequestloansuccess"/>
         <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
+          <forward name="gotoPageLoanRequest" path="gotoPageLoanRequest"/>
            <!--approve-->
             <forward name="gotoDetle_ap" path="gotoDetle_ap"/> 
              <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp"/>
@@ -90,7 +93,7 @@
             <!--Rchreck-->
             <forward name="gotoDetle_ap" path="gotoDetle_ap"/> 
                       <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
-           <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
+           
             <!--Rchreck-->
             <!--Nofile-->
             <forward name="gotoDetle_RAp" path="gotoDetle_RAp"/>
@@ -100,15 +103,12 @@
             <forward name="gotoDetle_NoAp" path="gotoDetle_NoAp"/> 
             <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo"/>
             <!--Rapprove-->
-           
+            <forward name="gotoeditfile" path="gotoeditfile"/>
                
-              
-              
-               
-          
         </action>
         <action name="SenddatawsForm" parameter="todo" path="/SenddatawsAction" scope="session" type="com.action.SenddatawsAction">
              <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
+             <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
         </action>
         <action name="ApproveLoanForm" parameter="todo" path="/ApproveLoanAction" scope="session" type="com.action.ApproveLoanAction"/>
     </action-mappings>

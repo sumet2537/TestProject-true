@@ -100,6 +100,10 @@
         <put name="body"   value="/admin/detleloanNoAp.jsp" />
          </definition>
     
+     <definition name="gotoeditfile" extends="welcome">
+        <put name="title"  value="" />
+        <put name="body"   value="/user/editfile.jsp" />
+         </definition>
     
           <!--////////////////////// ditel ///////////////////////////-->
        <definition name="gotoPageUserViewStatus" extends="welcome">
