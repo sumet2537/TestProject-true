@@ -196,12 +196,22 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanForm loanform = (RequestLoanForm)form;
         RequestLoanBean bean = new RequestLoanBean();
      RequestLoanDao loandao  =new RequestLoanDao();
-     
-     loandao.deleteloanreqId(loanform.getLoanreq_id());
+        String msg = "";
+          try {
+               loandao.deleteloanreqId(loanform.getLoanreq_id());
+               System.out.println("ok");
+               msg = "ok";
+          } catch (Exception e) {
+              e.printStackTrace();
+              msg = "no";
+          }
+    
      
      List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
      loanList = loandao.selectloanstatustypeRcheck();
      request.getSession().setAttribute("loanList", loanList);
+     request.removeAttribute("deletesuccess");
+     request.setAttribute("deletesuccess",msg);
       return mapping.findForward("gotoPageManagermentLoan");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
@@ -313,4 +323,95 @@ public class LoanRequstAction extends DispatchAction {
       return mapping.findForward("gotoPageManagermentR");
       }
       //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+      
+      
+               public ActionForward gotoeditfile (ActionMapping mapping,ActionForm form,
+              HttpServletRequest request,HttpServletResponse response)throws Exception{
+        RequestLoanForm loanform = (RequestLoanForm)form;
+        RequestLoanBean bean = new RequestLoanBean();
+        RequestLoanDao loandao  =new RequestLoanDao();
+        
+        bean = loandao.selectById(loanform.getLoanreq_id());
+     request.removeAttribute("bean");
+        request.getSession().setAttribute("bean", bean);
+        return mapping.findForward("gotoeditfile");
+      }
+               
+               
+    public ActionForward oneditfile(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        String msg = "";
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanBean loanbean = new RequestLoanBean();
+        RequestLoanBean bean = new RequestLoanBean();
+     
+        FileUploadUtil upload = new FileUploadUtil();
+       FileOutputStream outputStream = null;
+        FormFile file = null;
+        String file1 = loanform.getCopyidcard().getFileName();
+        if (file1.equals("")) {
+            loanbean.setCopyidcard(bean.getCopyidcard());
+        } else {
+       loanbean.setCopyidcard(upload.upload(loanform.getCopyidcard()));
+        }
+        String file2 = loanform.getCopylicenses().getFileName();
+       if(file2.equals("")){
+           loanbean.setCopylicenses(bean.getCopylicenses());
+       }else{
+       loanbean.setCopylicenses(upload.upload(loanform.getCopylicenses()));
+       }
+          String file3 = loanform.getCopydocumenthome().getFileName();
+       if(file3.equals("")){
+           loanbean.setCopydocumenthome(bean.getCopydocumenthome());
+       }else{
+       loanbean.setCopydocumenthome(upload.upload(loanform.getCopydocumenthome()));
+       }
+          String file4 = loanform.getCopymarriage().getFileName();
+       if(file4.equals("")){
+           loanbean.setCopymarriage(bean.getCopymarriage());
+       }else{
+       loanbean.setCopymarriage(upload.upload(loanform.getCopymarriage()));
+       }
+            String file5 = loanform.getCopy_rename().getFileName();
+       if(file5.equals("")){
+           loanbean.setCopy_rename(bean.getCopy_rename());
+       }else{
+       loanbean.setCopy_rename(upload.upload(loanform.getCopy_rename()));
+       }
+            String file6 = loanform.getSalary_slip().getFileName();
+       if(file6.equals("")){
+           loanbean.setSalary_slip(bean.getSalary_slip());
+       }else{
+       loanbean.setSalary_slip(upload.upload(loanform.getSalary_slip()));
+       }
+            String file7 = loanform.getCopy_bankaccount().getFileName();
+       if(file7.equals("")){
+           loanbean.setCopy_bankaccount(bean.getCopy_bankaccount());
+       }else{
+       loanbean.setCopy_bankaccount(upload.upload(loanform.getCopy_bankaccount()));
+       }
+        System.out.println("++++++++++++"+loanform.getCopyidcard().getFileName());
+
+        loanbean.setLoanstatustype(loanform.getLoanstatustype());
+        loanbean.setLoanreq_id(loanform.getLoanreq_id());
+//        loanbean.setCreateby(loanform.getCreateby());
+//        loanbean.setCreated(loanform.getCreated());
+//        loanbean.setUpdateby(loanform.getUpdateby());
+
+        RequestLoanDao dao = new RequestLoanDao();
+        try {
+              dao.updatefile(loanbean);
+              System.out.println("ok");
+              msg = "ok";
+        } catch (Exception e) {
+            System.out.println("no");
+            e.printStackTrace();
+            msg = "no";
+            
+        }
+        request.removeAttribute("requestloanStatus");
+        request.setAttribute("requestloanStatus", msg);
+        return mapping.findForward("gotoeditfile");
+}
 }
