@@ -221,7 +221,8 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-
+ bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
             }
 
         } finally {

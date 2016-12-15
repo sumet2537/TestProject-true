@@ -14,7 +14,9 @@
 <%! UserBean bean = null;%>
 
 <% bean = (UserBean) request.getSession().getAttribute("detleuser");
+
 %> 
+<body>
 
  <!-- Main content -->
         <section class="content">
@@ -33,7 +35,7 @@
                                             <h4>ลำดับที่ : <%=bean.getUser_id()%>  ข้อมูลคุณ : <%=bean.getFirstName()%> </h4>
                                               </div>
                                             <div class="col-lg-2" align="right">
-                                        <a class="btn btn-sm btn-success" href="registerAction.do?todo=gotouserEdit" ><i class="glyphicon glyphicon-edit"></i>แก้ไขข้อมูล</a>
+                                                <a  class="btn btn-sm btn-success" onclick="check()"><i class="glyphicon glyphicon-edit"></i>แก้ไขข้อมูล</a>
                                         </div>
                                             
                                       
@@ -97,9 +99,30 @@
 
             <!--</div>-->
         </section><!-- /.content -->
+        <div>
+        <script >
+            function check() {
+            swal({
+  title: "แก้ไข ?",
+  text: "คุณต้องการแก้ไช่หรือไหม !",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3c8dbc",
+  confirmButtonText: "ตกลง",
+  closeOnConfirm: false,
+  CancelButtonText: "ยกเลิก"
+},
+function(){
+  window.location.href = 'registerAction.do?todo=gotouserEdit';
+});
+            };
+        </script>
+
+    </div>
         <script type="text/javascript">//
 //           function callActionGotoEdituser(select){
 //        document.detleuserForm.todo.value = select;
 //        document.detleuserForm.submit();
 //        }
 //        </script>
+</body>

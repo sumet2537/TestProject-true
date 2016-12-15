@@ -4,9 +4,14 @@
  * and open the template in the editor.
  */
 package com.action;
+
+import com.bean.ApproveLoanBean;
 import java.io.File;
 import com.bean.RequestLoanBean;
+import com.bean.UserBean;
+import com.dao.ApproveLoanDao;
 import com.dao.RequestLoanDao;
+import com.dao.UserDao;
 import com.form.RequestLoanForm;
 import com.service.SendRequstLoanService;
 import com.util.FileUploadUtil;
@@ -30,10 +35,10 @@ public class LoanRequstAction extends DispatchAction {
     public ActionForward save(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-    String msg = "";
+        String msg = "";
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean loanbean = new RequestLoanBean();
-     
+
         String bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8;
         bank1 = loanform.getBanktype1();
         bank2 = loanform.getBanktype2();
@@ -68,51 +73,51 @@ public class LoanRequstAction extends DispatchAction {
 //        
 //        
         FileUploadUtil upload = new FileUploadUtil();
-       FileOutputStream outputStream = null;
+        FileOutputStream outputStream = null;
         FormFile file = null;
         String file1 = loanform.getCopyidcard().getFileName();
         if (file1.equals("")) {
             loanbean.setCopyidcard("ไม่มีไฟล์");
         } else {
-       loanbean.setCopyidcard(upload.upload(loanform.getCopyidcard()));
+            loanbean.setCopyidcard(upload.upload(loanform.getCopyidcard()));
         }
         String file2 = loanform.getCopylicenses().getFileName();
-       if(file2.equals("")){
-           loanbean.setCopylicenses("ไม่มีไฟล์");
-       }else{
-       loanbean.setCopylicenses(upload.upload(loanform.getCopylicenses()));
-       }
-          String file3 = loanform.getCopydocumenthome().getFileName();
-       if(file3.equals("")){
-           loanbean.setCopydocumenthome("ไม่มีไฟล์");
-       }else{
-       loanbean.setCopydocumenthome(upload.upload(loanform.getCopydocumenthome()));
-       }
-          String file4 = loanform.getCopymarriage().getFileName();
-       if(file4.equals("")){
-           loanbean.setCopymarriage("ไม่มีไฟล์");
-       }else{
-       loanbean.setCopymarriage(upload.upload(loanform.getCopymarriage()));
-       }
-            String file5 = loanform.getCopy_rename().getFileName();
-       if(file5.equals("")){
-           loanbean.setCopy_rename("ไม่มีไฟล์");
-       }else{
-       loanbean.setCopy_rename(upload.upload(loanform.getCopy_rename()));
-       }
-            String file6 = loanform.getSalary_slip().getFileName();
-       if(file6.equals("")){
-           loanbean.setSalary_slip("ไม่มีไฟล์");
-       }else{
-       loanbean.setSalary_slip(upload.upload(loanform.getSalary_slip()));
-       }
-            String file7 = loanform.getCopy_bankaccount().getFileName();
-       if(file7.equals("")){
-           loanbean.setCopy_bankaccount("ไม่มีไฟล์");
-       }else{
-       loanbean.setCopy_bankaccount(upload.upload(loanform.getCopy_bankaccount()));
-       }
-        System.out.println("++++++++++++"+loanform.getCopyidcard().getFileName());
+        if (file2.equals("")) {
+            loanbean.setCopylicenses("ไม่มีไฟล์");
+        } else {
+            loanbean.setCopylicenses(upload.upload(loanform.getCopylicenses()));
+        }
+        String file3 = loanform.getCopydocumenthome().getFileName();
+        if (file3.equals("")) {
+            loanbean.setCopydocumenthome("ไม่มีไฟล์");
+        } else {
+            loanbean.setCopydocumenthome(upload.upload(loanform.getCopydocumenthome()));
+        }
+        String file4 = loanform.getCopymarriage().getFileName();
+        if (file4.equals("")) {
+            loanbean.setCopymarriage("ไม่มีไฟล์");
+        } else {
+            loanbean.setCopymarriage(upload.upload(loanform.getCopymarriage()));
+        }
+        String file5 = loanform.getCopy_rename().getFileName();
+        if (file5.equals("")) {
+            loanbean.setCopy_rename("ไม่มีไฟล์");
+        } else {
+            loanbean.setCopy_rename(upload.upload(loanform.getCopy_rename()));
+        }
+        String file6 = loanform.getSalary_slip().getFileName();
+        if (file6.equals("")) {
+            loanbean.setSalary_slip("ไม่มีไฟล์");
+        } else {
+            loanbean.setSalary_slip(upload.upload(loanform.getSalary_slip()));
+        }
+        String file7 = loanform.getCopy_bankaccount().getFileName();
+        if (file7.equals("")) {
+            loanbean.setCopy_bankaccount("ไม่มีไฟล์");
+        } else {
+            loanbean.setCopy_bankaccount(upload.upload(loanform.getCopy_bankaccount()));
+        }
+        System.out.println("++++++++++++" + loanform.getCopyidcard().getFileName());
 
 //        loanbean.setCopyidcard(loanform.getCopyidcard());
 //        loanbean.setCopylicenses(loanform.getCopylicenses());
@@ -130,14 +135,14 @@ public class LoanRequstAction extends DispatchAction {
 
         RequestLoanDao dao = new RequestLoanDao();
         try {
-              dao.insert(loanbean);
-              System.out.println("ok");
-              msg = "ok";
+            dao.insert(loanbean);
+            System.out.println("ok");
+            msg = "ok";
         } catch (Exception e) {
             System.out.println("no");
             e.printStackTrace();
             msg = "no";
-            
+
         }
 ////        webservice
 //        SendRequstLoanService loanService = new SendRequstLoanService();
@@ -149,24 +154,22 @@ public class LoanRequstAction extends DispatchAction {
         request.removeAttribute("requestloanStatus");
         request.setAttribute("requestloanStatus", msg);
         return mapping.findForward("gotoPageLoanRequest");
-        
 
     }
-   
-    
+
     public ActionForward gotoshowdatarequest(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
-            throws Exception  {
-     RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-      RequestLoanBean loanbean = new RequestLoanBean();
-      
- loanbean = loandao.selectById(loanform.getLoanreq_id());
-     
-     request.getSession().setAttribute("loanbean", loanbean);
+            throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanDao loandao = new RequestLoanDao();
+        RequestLoanBean loanbean = new RequestLoanBean();
+
+        loanbean = loandao.selectById(loanform.getLoanreq_id());
+
+        request.getSession().setAttribute("loanbean", loanbean);
         return mapping.findForward("gotoshowdatarequest");
     }
-    
+
 //      public ActionForward gotoapprov(ActionMapping mapping, ActionForm form,
 //            HttpServletRequest request, HttpServletResponse response)
 //            throws Exception  {
@@ -180,164 +183,161 @@ public class LoanRequstAction extends DispatchAction {
 //        return mapping.findForward("gotoapprov");
 //    }
 //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
-          public ActionForward DetleRcheck(ActionMapping mapping, ActionForm form,
+    public ActionForward DetleRcheck(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-         RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
-        
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanDao loandao = new RequestLoanDao();
+        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+
         request.getSession().setAttribute("editBean", bean);
         return mapping.findForward("gotoDetle_requestloan");
     }
-          
-      public ActionForward deleteRcheck(ActionMapping mapping,ActionForm form,
-              HttpServletRequest request,HttpServletResponse response)throws Exception{
-        RequestLoanForm loanform = (RequestLoanForm)form;
+
+    public ActionForward deleteRcheck(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
-     RequestLoanDao loandao  =new RequestLoanDao();
+        RequestLoanDao loandao = new RequestLoanDao();
         String msg = "";
-          try {
-               loandao.deleteloanreqId(loanform.getLoanreq_id());
-               System.out.println("ok");
-               msg = "ok";
-          } catch (Exception e) {
-              e.printStackTrace();
-              msg = "no";
-          }
-    
-     
-     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-     loanList = loandao.selectloanstatustypeRcheck();
-     request.getSession().setAttribute("loanList", loanList);
-     request.removeAttribute("deletesuccess");
-     request.setAttribute("deletesuccess",msg);
-      return mapping.findForward("gotoPageManagermentLoan");
-      }
-      //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
-      
+        try {
+            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            System.out.println("ok");
+            msg = "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            msg = "no";
+        }
+
+        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        loanList = loandao.selectloanstatustypeRcheck();
+        request.getSession().setAttribute("loanList", loanList);
+        request.removeAttribute("deletesuccess");
+        request.setAttribute("deletesuccess", msg);
+        return mapping.findForward("gotoPageManagermentLoan");
+    }
+    //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
+
 //       =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
-          public ActionForward DetleAp(ActionMapping mapping, ActionForm form,
+    public ActionForward DetleAp(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-         RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
-        
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanDao loandao = new RequestLoanDao();
+        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+
         request.getSession().setAttribute("editBean", bean);
         return mapping.findForward("gotoDetle_ap");
     }
-          
-      public ActionForward deleteAp (ActionMapping mapping,ActionForm form,
-              HttpServletRequest request,HttpServletResponse response)throws Exception{
-        RequestLoanForm loanform = (RequestLoanForm)form;
+
+    public ActionForward deleteAp(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
-     RequestLoanDao loandao  =new RequestLoanDao();
-     
-     loandao.deleteloanreqId(loanform.getLoanreq_id());
-     
-     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-     loanList = loandao.selectloanstatustypeAp();
-     request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentLoanAp");
-      }
-      //    =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
-      
-      //       =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
-          public ActionForward DetleNoAp(ActionMapping mapping, ActionForm form,
+        RequestLoanDao loandao = new RequestLoanDao();
+
+        loandao.deleteloanreqId(loanform.getLoanreq_id());
+
+        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        loanList = loandao.selectloanstatustypeAp();
+        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotoPageManagermentLoanAp");
+    }
+    //    =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
+
+    //       =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
+    public ActionForward DetleNoAp(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-         RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
-        
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanDao loandao = new RequestLoanDao();
+        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+
         request.getSession().setAttribute("editBean", bean);
         return mapping.findForward("gotoDetle_NoAp");
     }
-          
-      public ActionForward deleteNoAp (ActionMapping mapping,ActionForm form,
-              HttpServletRequest request,HttpServletResponse response)throws Exception{
-        RequestLoanForm loanform = (RequestLoanForm)form;
+
+    public ActionForward deleteNoAp(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
-     RequestLoanDao loandao  =new RequestLoanDao();
-     
-     loandao.deleteloanreqId(loanform.getLoanreq_id());
-     
-     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-     loanList = loandao.selectloanstatustypeNoAp();
-     request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentNo");
-      }
-      //    =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
-      
-            //       =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
-          public ActionForward DetleNofile(ActionMapping mapping, ActionForm form,
+        RequestLoanDao loandao = new RequestLoanDao();
+
+        loandao.deleteloanreqId(loanform.getLoanreq_id());
+
+        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        loanList = loandao.selectloanstatustypeNoAp();
+        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotoPageManagermentNo");
+    }
+    //    =-=-=-=-=-=-=-=-=-=-=-=NoApprove============-=-=-=-=-=-=-
+
+    //       =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+    public ActionForward DetleNofile(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-         RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
-        
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanDao loandao = new RequestLoanDao();
+        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+
         request.getSession().setAttribute("editBean", bean);
         return mapping.findForward("gotoDetle_Nofile");
     }
-          
-      public ActionForward deleteNofile (ActionMapping mapping,ActionForm form,
-              HttpServletRequest request,HttpServletResponse response)throws Exception{
-        RequestLoanForm loanform = (RequestLoanForm)form;
+
+    public ActionForward deleteNofile(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
-     RequestLoanDao loandao  =new RequestLoanDao();
-     
-     loandao.deleteloanreqId(loanform.getLoanreq_id());
-     
-     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-     loanList = loandao.selectloanstatustypeNofile();
-     request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentNofile");
-      }
-      //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
-      
-                  //       =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
-          public ActionForward DetleRAp(ActionMapping mapping, ActionForm form,
+        RequestLoanDao loandao = new RequestLoanDao();
+
+        loandao.deleteloanreqId(loanform.getLoanreq_id());
+
+        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        loanList = loandao.selectloanstatustypeNofile();
+        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotoPageManagermentNofile");
+    }
+    //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+
+    //       =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+    public ActionForward DetleRAp(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-         RequestLoanForm loanform = (RequestLoanForm)form;
-     RequestLoanDao loandao  =new RequestLoanDao();
-       RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
-        
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        RequestLoanDao loandao = new RequestLoanDao();
+        RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
+
         request.getSession().setAttribute("editBean", bean);
         return mapping.findForward("gotoDetle_RAp");
     }
-          
-      public ActionForward deleteRAp (ActionMapping mapping,ActionForm form,
-              HttpServletRequest request,HttpServletResponse response)throws Exception{
-        RequestLoanForm loanform = (RequestLoanForm)form;
+
+    public ActionForward deleteRAp(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
-     RequestLoanDao loandao  =new RequestLoanDao();
-     
-     loandao.deleteloanreqId(loanform.getLoanreq_id());
-     
-     List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-     loanList = loandao.selectloanstatustypeRapp();
-     request.getSession().setAttribute("loanList", loanList);
-      return mapping.findForward("gotoPageManagermentR");
-      }
-      //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
-      
-      
-               public ActionForward gotoeditfile (ActionMapping mapping,ActionForm form,
-              HttpServletRequest request,HttpServletResponse response)throws Exception{
-        RequestLoanForm loanform = (RequestLoanForm)form;
+        RequestLoanDao loandao = new RequestLoanDao();
+
+        loandao.deleteloanreqId(loanform.getLoanreq_id());
+
+        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
+        loanList = loandao.selectloanstatustypeRapp();
+        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotoPageManagermentR");
+    }
+    //    =-=-=-=-=-=-=-=-=-=-=-=Nofile============-=-=-=-=-=-=-
+
+    public ActionForward gotoeditfile(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
-        RequestLoanDao loandao  =new RequestLoanDao();
-        
+        RequestLoanDao loandao = new RequestLoanDao();
+
         bean = loandao.selectById(loanform.getLoanreq_id());
-     request.removeAttribute("bean");
+        request.removeAttribute("bean");
         request.getSession().setAttribute("bean", bean);
         return mapping.findForward("gotoeditfile");
-      }
-               
-               
+    }
+
     public ActionForward oneditfile(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
@@ -345,53 +345,53 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean loanbean = new RequestLoanBean();
         RequestLoanBean bean = new RequestLoanBean();
-     
+
         FileUploadUtil upload = new FileUploadUtil();
-       FileOutputStream outputStream = null;
+        FileOutputStream outputStream = null;
         FormFile file = null;
         String file1 = loanform.getCopyidcard().getFileName();
         if (file1.equals("")) {
             loanbean.setCopyidcard(bean.getCopyidcard());
         } else {
-       loanbean.setCopyidcard(upload.upload(loanform.getCopyidcard()));
+            loanbean.setCopyidcard(upload.upload(loanform.getCopyidcard()));
         }
         String file2 = loanform.getCopylicenses().getFileName();
-       if(file2.equals("")){
-           loanbean.setCopylicenses(bean.getCopylicenses());
-       }else{
-       loanbean.setCopylicenses(upload.upload(loanform.getCopylicenses()));
-       }
-          String file3 = loanform.getCopydocumenthome().getFileName();
-       if(file3.equals("")){
-           loanbean.setCopydocumenthome(bean.getCopydocumenthome());
-       }else{
-       loanbean.setCopydocumenthome(upload.upload(loanform.getCopydocumenthome()));
-       }
-          String file4 = loanform.getCopymarriage().getFileName();
-       if(file4.equals("")){
-           loanbean.setCopymarriage(bean.getCopymarriage());
-       }else{
-       loanbean.setCopymarriage(upload.upload(loanform.getCopymarriage()));
-       }
-            String file5 = loanform.getCopy_rename().getFileName();
-       if(file5.equals("")){
-           loanbean.setCopy_rename(bean.getCopy_rename());
-       }else{
-       loanbean.setCopy_rename(upload.upload(loanform.getCopy_rename()));
-       }
-            String file6 = loanform.getSalary_slip().getFileName();
-       if(file6.equals("")){
-           loanbean.setSalary_slip(bean.getSalary_slip());
-       }else{
-       loanbean.setSalary_slip(upload.upload(loanform.getSalary_slip()));
-       }
-            String file7 = loanform.getCopy_bankaccount().getFileName();
-       if(file7.equals("")){
-           loanbean.setCopy_bankaccount(bean.getCopy_bankaccount());
-       }else{
-       loanbean.setCopy_bankaccount(upload.upload(loanform.getCopy_bankaccount()));
-       }
-        System.out.println("++++++++++++"+loanform.getCopyidcard().getFileName());
+        if (file2.equals("")) {
+            loanbean.setCopylicenses(bean.getCopylicenses());
+        } else {
+            loanbean.setCopylicenses(upload.upload(loanform.getCopylicenses()));
+        }
+        String file3 = loanform.getCopydocumenthome().getFileName();
+        if (file3.equals("")) {
+            loanbean.setCopydocumenthome(bean.getCopydocumenthome());
+        } else {
+            loanbean.setCopydocumenthome(upload.upload(loanform.getCopydocumenthome()));
+        }
+        String file4 = loanform.getCopymarriage().getFileName();
+        if (file4.equals("")) {
+            loanbean.setCopymarriage(bean.getCopymarriage());
+        } else {
+            loanbean.setCopymarriage(upload.upload(loanform.getCopymarriage()));
+        }
+        String file5 = loanform.getCopy_rename().getFileName();
+        if (file5.equals("")) {
+            loanbean.setCopy_rename(bean.getCopy_rename());
+        } else {
+            loanbean.setCopy_rename(upload.upload(loanform.getCopy_rename()));
+        }
+        String file6 = loanform.getSalary_slip().getFileName();
+        if (file6.equals("")) {
+            loanbean.setSalary_slip(bean.getSalary_slip());
+        } else {
+            loanbean.setSalary_slip(upload.upload(loanform.getSalary_slip()));
+        }
+        String file7 = loanform.getCopy_bankaccount().getFileName();
+        if (file7.equals("")) {
+            loanbean.setCopy_bankaccount(bean.getCopy_bankaccount());
+        } else {
+            loanbean.setCopy_bankaccount(upload.upload(loanform.getCopy_bankaccount()));
+        }
+        System.out.println("++++++++++++" + loanform.getCopyidcard().getFileName());
 
         loanbean.setLoanstatustype(loanform.getLoanstatustype());
         loanbean.setLoanreq_id(loanform.getLoanreq_id());
@@ -401,17 +401,43 @@ public class LoanRequstAction extends DispatchAction {
 
         RequestLoanDao dao = new RequestLoanDao();
         try {
-              dao.updatefile(loanbean);
-              System.out.println("ok");
-              msg = "ok";
+            dao.updatefile(loanbean);
+            System.out.println("ok");
+            msg = "ok";
         } catch (Exception e) {
             System.out.println("no");
             e.printStackTrace();
             msg = "no";
-            
+
         }
         request.removeAttribute("requestloanStatus");
         request.setAttribute("requestloanStatus", msg);
         return mapping.findForward("gotoeditfile");
-}
+    }
+
+    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        RequestLoanForm loanform = (RequestLoanForm) form;
+        ApproveLoanBean abean = new ApproveLoanBean();
+        ApproveLoanDao adao = new ApproveLoanDao();
+        RequestLoanBean loanbean = new RequestLoanBean();
+        ArrayList<RequestLoanBean> listbean = null;
+        RequestLoanDao rdao = new RequestLoanDao();
+       String msg = "";
+       loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
+       
+        try {
+            String citizen_id = loanbean.getCitizen_id();
+        loanbean = rdao.selectBycitizenid(citizen_id);
+            System.out.println("ok");
+            msg = "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("no");
+            msg = "no";
+        }
+        request.getSession().setAttribute("loanbean", loanbean);
+        return mapping.findForward("gotoPageUserViewStatus");
+    }
 }

@@ -27,8 +27,10 @@ public class ApproveLoanForm extends org.apache.struts.action.ActionForm {
     private String timerepayment;
     private String createdby;
     private String updateby;
-    private int created;
-    private int updated;
+    private String created;
+    private String updated;
+    private String position;
+    private String loanstatusbank;
     private String todo;
 
     public int getApprove_id() {
@@ -111,20 +113,36 @@ public class ApproveLoanForm extends org.apache.struts.action.ActionForm {
         this.updateby = updateby;
     }
 
-    public int getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(int created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 
-    public int getUpdated() {
+    public String getUpdated() {
         return updated;
     }
 
-    public void setUpdated(int updated) {
+    public void setUpdated(String updated) {
         this.updated = updated;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getLoanstatusbank() {
+        return loanstatusbank;
+    }
+
+    public void setLoanstatusbank(String loanstatusbank) {
+        this.loanstatusbank = loanstatusbank;
     }
 
     public String getTodo() {
@@ -134,6 +152,5 @@ public class ApproveLoanForm extends org.apache.struts.action.ActionForm {
     public void setTodo(String todo) {
         this.todo = todo;
     }
-    
     
 }

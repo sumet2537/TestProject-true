@@ -1,124 +1,124 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!DOCTYPE struts-config PUBLIC
+    <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
           "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 
 
-<struts-config>
-    <form-beans>
-        <form-bean name="ApproveLoanForm" type="com.form.ApproveLoanForm"/>
-        <form-bean name="SenddatawsForm" type="com.form.SenddatawsForm"/>
-        <form-bean name="RequestLoanForm" type="com.form.RequestLoanForm"/>
-        <form-bean name="registerForm" type="com.form.registerForm"/>
-        <form-bean name="chahgewdForm" type="com.form.chahgewdForm"/>
-        <form-bean name="DeveloperConfigForm" type="com.form.DeveloperConfigForm"/>
-        <form-bean name="BaseForm" type="com.form.BaseForm"/>
-        <form-bean name="AuthenAuthorizeForm" type="com.form.AuthenAuthorizeForm"/>
-        <form-bean name="PageForm" type="com.form.PageForm"/>
-        <form-bean name="WelcomePageForm" type="com.form.WelcomePageForm"/>
-    
-    </form-beans>
-    
-    <global-exceptions>
-    
-    </global-exceptions>
+    <struts-config>
+        <form-beans>
+            <form-bean name="ApproveLoanForm" type="com.form.ApproveLoanForm" />
+            <form-bean name="SenddatawsForm" type="com.form.SenddatawsForm" />
+            <form-bean name="RequestLoanForm" type="com.form.RequestLoanForm" />
+            <form-bean name="registerForm" type="com.form.registerForm" />
+            <form-bean name="chahgewdForm" type="com.form.chahgewdForm" />
+            <form-bean name="DeveloperConfigForm" type="com.form.DeveloperConfigForm" />
+            <form-bean name="BaseForm" type="com.form.BaseForm" />
+            <form-bean name="AuthenAuthorizeForm" type="com.form.AuthenAuthorizeForm" />
+            <form-bean name="PageForm" type="com.form.PageForm" />
+            <form-bean name="WelcomePageForm" type="com.form.WelcomePageForm" />
 
-    <global-forwards>
-        <forward name="welcome"  path="/Welcome.do"/>
-    </global-forwards>
+        </form-beans>
 
-    <action-mappings>
-        <action name="WelcomePageForm" parameter="todo" path="/WelcomePageAction" scope="session" type="com.action.WelcomePageAction">
-            <forward name="success" path="welcome"/>
-        </action>
-        <action name="PageForm" parameter="todo" path="/PageAction" scope="session" type="com.action.PageAction">            
-            <forward name="gotoPageBootstrapExample" path="gotoPageBootstrapExample"/>
-            <forward name="gotoPageHome" path="gotoPageHome"/>
-            <forward name="gotoPageLogin" path="gotoPageLogin"/>
-            <forward name="gotoPageRegister" path="gotoPageRegister"/>
-            <forward name="gotoPageProfile" path="gotoPageProfile"/>
-            <forward name="gotoPageBootstrapForm" path="gotoPageBootstrapForm"/>
-              <forward name="gotoPageLoanRequest" path="gotoPageLoanRequest"/>
-               <forward name="gotoPageDetleRequest" path="gotoPageDetleRequest"/>
-             <forward name="gotoPageAdminManagermentProfile" path="gotoPageAdminManagermentProfile"/>
-             
-               <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
-               <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo"/>
-               <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp"/>
-               <forward name="gotoPageManagermentR" path="gotoPageManagermentR"/>
-               <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile"/>
-               
-                <forward name="gotoPageUserViewStatus" path="gotoPageUserViewStatus"/>
-               
-        </action>
-        <action name="AuthenAuthorizeForm" parameter="todo" path="/AuthenAuthorizeAction" scope="session" type="com.action.AuthenAuthorizeAction">
-            <forward name="gotoPageLogin" path="gotoPageLogin"/>
-            <forward name="gotoWelcome" path="welcome"/>
-          
-        </action>
-        <action name="DeveloperConfigForm" parameter="todo" path="/DeveloperConfigAction" scope="session" type="com.action.DeveloperConfigAction">
-            <forward name="gotoHome" path="gotoHome"/>
-            <forward name="gotoRoleManagement" path="gotoRoleManagement"/>
-            <forward name="gotoMenuManagement" path="gotoMenuManagement"/>
-        </action>
-        <action  name="chahgewdForm" parameter="todo" path="/ChahgewdAction" scope="session" type="com.action.ChahgewdAction">        
-            <forward name="gotoPageChangePassword" path="gotoPageChangePassword"/>
-            <forward name="fwdSuccess" path="fwdSuccess"/>
-            
-        </action>
-       
-        <action  name="registerForm" parameter="todo" path="/registerAction" scope="session" type="com.action.registerAction">
-             <forward name="gotoPageLogin" path="gotoPageLogin"/>
-             <forward name="gotoPageAdminManagermentProfile" path="gotoPageAdminManagermentProfile"/>
-              <forward name="gotouserEdit" path="gotouserEdit"/>
-              <forward name="gotoadminEdit" path="gotoadminEdit"/>
-              <forward name="gotoDetle" path="gotoDetle"/>
-              <forward name="gotoPagedatleuserlogin" path="gotoPagedatleuserlogin"/>
-        </action>
-        <action  name="RequestLoanForm" parameter="todo" path="/LoanRequstAction" scope="session" type="com.action.LoanRequstAction">
-        <forward name="gotorequestloansuccess" path="gotorequestloansuccess"/>
-        <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
-           <!--approve-->
-            <forward name="gotoDetle_ap" path="gotoDetle_ap"/> 
-             <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp"/>
-            <!--approve-->
-            <!--NOapprove-->
-            <forward name="gotoDetle_Nofile" path="gotoDetle_Nofile"/>
-            <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile"/> 
-            <!--Noapprove-->
-            <!--Rchreck-->
-            <forward name="gotoDetle_ap" path="gotoDetle_ap"/> 
-                      <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
-           <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan"/>
-            <!--Rchreck-->
-            <!--Nofile-->
-            <forward name="gotoDetle_RAp" path="gotoDetle_RAp"/>
-             <forward name="gotoPageManagermentR" path="gotoPageManagermentR"/> 
-            <!--Nofile-->
-            <!--Rapprove-->
-            <forward name="gotoDetle_NoAp" path="gotoDetle_NoAp"/> 
-            <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo"/>
-            <!--Rapprove-->
-           
-               
-              
-              
-               
-          
-        </action>
-        <action name="SenddatawsForm" parameter="todo" path="/SenddatawsAction" scope="session" type="com.action.SenddatawsAction">
-             <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan"/>
-        </action>
-        <action name="ApproveLoanForm" parameter="todo" path="/ApproveLoanAction" scope="session" type="com.action.ApproveLoanAction"/>
-    </action-mappings>
-    
-    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+        <global-exceptions>
 
-    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
-    
-    <!-- ========================= Tiles plugin ===============================-->
-    <!--
+        </global-exceptions>
+
+        <global-forwards>
+            <forward name="welcome" path="/Welcome.do" />
+        </global-forwards>
+
+        <action-mappings>
+            <action name="WelcomePageForm" parameter="todo" path="/WelcomePageAction" scope="session" type="com.action.WelcomePageAction">
+                <forward name="success" path="welcome" />
+            </action>
+            <action name="PageForm" parameter="todo" path="/PageAction" scope="session" type="com.action.PageAction">
+                <forward name="gotoPageBootstrapExample" path="gotoPageBootstrapExample" />
+                <forward name="gotoPageHome" path="gotoPageHome" />
+                <forward name="gotoPageLogin" path="gotoPageLogin" />
+                <forward name="gotoPageRegister" path="gotoPageRegister" />
+                <forward name="gotoPageProfile" path="gotoPageProfile" />
+                <forward name="gotoPageBootstrapForm" path="gotoPageBootstrapForm" />
+                <forward name="gotoPageLoanRequest" path="gotoPageLoanRequest" />
+                <forward name="gotoPageDetleRequest" path="gotoPageDetleRequest" />
+                <forward name="gotoPageAdminManagermentProfile" path="gotoPageAdminManagermentProfile" />
+
+                <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan" />
+                <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo" />
+                <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
+                <forward name="gotoPageManagermentR" path="gotoPageManagermentR" />
+                <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile" />
+
+
+            </action>
+            <action name="AuthenAuthorizeForm" parameter="todo" path="/AuthenAuthorizeAction" scope="session" type="com.action.AuthenAuthorizeAction">
+                <forward name="gotoPageLogin" path="gotoPageLogin" />
+                <forward name="gotoWelcome" path="welcome" />
+
+            </action>
+            <action name="DeveloperConfigForm" parameter="todo" path="/DeveloperConfigAction" scope="session" type="com.action.DeveloperConfigAction">
+                <forward name="gotoHome" path="gotoHome" />
+                <forward name="gotoRoleManagement" path="gotoRoleManagement" />
+                <forward name="gotoMenuManagement" path="gotoMenuManagement" />
+            </action>
+            <action name="chahgewdForm" parameter="todo" path="/ChahgewdAction" scope="session" type="com.action.ChahgewdAction">
+                <forward name="gotoPageChangePassword" path="gotoPageChangePassword" />
+                <forward name="fwdSuccess" path="fwdSuccess" />
+
+            </action>
+
+            <action name="registerForm" parameter="todo" path="/registerAction" scope="session" type="com.action.registerAction">
+                <forward name="gotoPageLogin" path="gotoPageLogin" />
+                <forward name="gotoPageAdminManagermentProfile" path="gotoPageAdminManagermentProfile" />
+                <forward name="gotouserEdit" path="gotouserEdit" />
+                <forward name="gotoadminEdit" path="gotoadminEdit" />
+                <forward name="gotoDetle" path="gotoDetle" />
+                <forward name="gotoPagedatleuserlogin" path="gotoPagedatleuserlogin" />
+                <forward name="gotoPageRegister" path="gotoPageRegister" />
+                <forward name="gotoPageProfile" path="gotoPageProfile" />
+            </action>
+            <action name="RequestLoanForm" parameter="todo" path="/LoanRequstAction" scope="session" type="com.action.LoanRequstAction">
+                <forward name="gotorequestloansuccess" path="gotorequestloansuccess" />
+                <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan" />
+                <forward name="gotoPageLoanRequest" path="gotoPageLoanRequest" />
+                <!--approve-->
+                <forward name="gotoDetle_ap" path="gotoDetle_ap" />
+                <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
+                <!--approve-->
+                <!--NOapprove-->
+                <forward name="gotoDetle_Nofile" path="gotoDetle_Nofile" />
+                <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile" />
+                <!--Noapprove-->
+                <!--Rchreck-->
+                <forward name="gotoDetle_ap" path="gotoDetle_ap" />
+                <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan" />
+
+                <!--Rchreck-->
+                <!--Nofile-->
+                <forward name="gotoDetle_RAp" path="gotoDetle_RAp" />
+                <forward name="gotoPageManagermentR" path="gotoPageManagermentR" />
+                <!--Nofile-->
+                <!--Rapprove-->
+                <forward name="gotoDetle_NoAp" path="gotoDetle_NoAp" />
+                <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo" />
+                <!--Rapprove-->
+                <forward name="gotoeditfile" path="gotoeditfile" />
+                <forward name="gotoPageUserViewStatus" path="gotoPageUserViewStatus" />
+
+            </action>
+            <action name="SenddatawsForm" parameter="todo" path="/SenddatawsAction" scope="session" type="com.action.SenddatawsAction">
+                <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan" />
+                <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan" />
+            </action>
+            <action name="ApproveLoanForm" parameter="todo" path="/ApproveLoanAction" scope="session" type="com.action.ApproveLoanAction" />
+        </action-mappings>
+
+        <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+
+        <message-resources parameter="com/myapp/struts/ApplicationResource" />
+
+        <!-- ========================= Tiles plugin ===============================-->
+        <!--
     This plugin initialize Tiles definition factory. This later can takes some
     parameters explained here after. The plugin first read parameters from
     web.xml, thenoverload them with parameters defined here. All parameters
@@ -144,16 +144,14 @@
 
     Paths found in Tiles definitions are relative to the main context.
     -->
-    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
-        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
-        <set-property property="moduleAware" value="true" />
-    </plug-in>
-    
-    <!-- ========================= Validator plugin ================================= -->
-    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-        <set-property
-            property="pathnames"
-            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
-    </plug-in>
-  
-</struts-config>
+        <plug-in className="org.apache.struts.tiles.TilesPlugin">
+            <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+            <set-property property="moduleAware" value="true" />
+        </plug-in>
+
+        <!-- ========================= Validator plugin ================================= -->
+        <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+            <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+        </plug-in>
+
+    </struts-config>

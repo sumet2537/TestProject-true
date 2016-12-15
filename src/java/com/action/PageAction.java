@@ -5,8 +5,10 @@
  */
 package com.action;
 
+import com.bean.ApproveLoanBean;
 import com.bean.RequestLoanBean;
 import com.bean.UserBean;
+import com.dao.ApproveLoanDao;
 import com.dao.RequestLoanDao;
 import com.dao.UserDao;
 import com.form.PageForm;
@@ -187,15 +189,4 @@ public class PageAction extends DispatchAction {
         return mapping.findForward("gotoPageManagermentNofile");
     }
 
-    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-                UserBean userBean = new UserBean();
-        userBean = (UserBean) request.getSession().getAttribute("userLogin");
-        String citizen_id = userBean.getCitizen_id();
-        UserDao dao = new UserDao();
-        userBean = dao.selectBycitizenid(citizen_id);
-        request.getSession().setAttribute("requestBean", userBean);
-        return mapping.findForward("gotoPageUserViewStatus");
-    }
 }

@@ -143,9 +143,11 @@ public ActionForward user_update(ActionMapping mapping, ActionForm form,
     UserDao userdao = new UserDao();
     try{
     userdao.updateByUserId(userbean);
+        System.out.println("ok");
     msg = "ok";
     }catch(Exception e){
-        
+        e.printStackTrace();
+        System.out.println("no");
     msg ="no";
     }
         userbean = (UserBean) request.getSession().getAttribute("userLogin");
@@ -153,10 +155,27 @@ public ActionForward user_update(ActionMapping mapping, ActionForm form,
         UserDao dao = new UserDao();
         userbean = dao.selectByUserId(userid);
         request.getSession().setAttribute("detleuser", userbean);
+         request.removeAttribute("detleusermsg");
+        request.setAttribute("detleusermsg", msg);
+        return mapping.findForward("gotouserEdit");
+//       gotoPagedatleuserlogin
+}
+public ActionForward gotoPagedatleuserlogin(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+    registerForm regisform = (registerForm)form;
+    UserBean userbean = new UserBean();
+    String msg = "";
+
+        userbean = (UserBean) request.getSession().getAttribute("userLogin");
+        int userid = userbean.getUser_id();
+        UserDao dao = new UserDao();
+        userbean = dao.selectByUserId(userid);
+        request.getSession().setAttribute("detleuser", userbean);
+         request.removeAttribute("detleusermsg");
+        request.setAttribute("detleusermsg", msg);
         return mapping.findForward("gotoPagedatleuserlogin");
 }
-
-
          //    ================================gotoupdate====================================
 public ActionForward admin_update(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)

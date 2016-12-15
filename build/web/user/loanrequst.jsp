@@ -11,9 +11,12 @@
     <%! UserBean bean = null; %>
     <%--
    --%>
-   <%bean = (UserBean) request.getSession().getAttribute("requestBean"); %>
+   <%bean = (UserBean) request.getSession().getAttribute("requestBean");
+   String msg = "";
+    msg = (String) request.getAttribute("requestloanStatus");
+   %>
     
-    <body>
+   <body onload="check()">
         <!-- Main content -->
         <section class="content">
             <!-- Info boxes -->
@@ -227,44 +230,44 @@
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="copyidcard">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="copyidcard" placeholder="สำเนาบัตรประจำตัวประชาชน">
+                                                                <input  class="form-control"type="file" name="copyidcard" accept=".png, .jpg, .jpeg ,.pdf">
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="copylicenses">สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ) <span class="require" style="color:red;"></span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="copylicenses" placeholder="สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ)">
+                                                                <input  class="form-control"type="file" name="copylicenses" accept=".png, .jpg, .jpeg ,.pdf">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="copydocumenthome">สำเนาทะเบียนบ้าน <span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="copydocumenthome" placeholder="สำเนาทะเบียนบ้าน">
+                                                                <input  class="form-control"type="file" name="copydocumenthome" accept=".png, .jpg, .jpeg ,.pdf">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="copymarriage">สำเนาทะเบียนสมรส/ใบหย่า/ใบมรณะบัตรของคู่สมรส (ถ้ามี)<span class="require" style="color:red;"></span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="copymarriage" placeholder="สำเนาทะเบียนสมรส/ใบหย่า/ใบมรณะบัตรของคู่สมรส (ถ้ามี)">
+                                                                <input  class="form-control"type="file" name="copymarriage" accept=".png, .jpg, .jpeg ,.pdf">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="rename">ใบเปลี่ยนชื่อ-สกุล (ทุกใบ) <span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="copy_rename" placeholder="ใบเปลี่ยนชื่อ-สกุล (ทุกใบ) ">
+                                                                <input  class="form-control"type="file" name="copy_rename" accept=".png, .jpg, .jpeg ,.pdf">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="salary_slip">สลิปเงินเดือน <span class="require" style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="salary_slip"  placeholder="สลิปเงินเดือน">
+                                                                <input  class="form-control"type="file" name="salary_slip" accept=".png, .jpg, .jpeg ,.pdf">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="copy_bankaccount">สำเนาบัญชีธนาคาร <span  style="color:red;">*</span></label>
                                                             <div class="col-md-8">
-                                                                <input  class="form-control"type="file" name="copy_bankaccount"  placeholder="สำเนาบัญชีธนาคาร">
+                                                                <input  class="form-control"type="file" name="copy_bankaccount" accept=".png, .jpg, .jpeg ,.pdf" >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -311,9 +314,9 @@
                                                 </div>
                                                 <input type="hidden" name="loanstatustype" value="รอตรวจสอบ"/>
                                                 <hr class="hrsuccess">
-                                                <input type="hidden" name="todo"/>
+                                                <input type="hidden" name="todo" value="save"/>
                                                 <div class="col-md-12" align="center">
-                                                    <button type="submit" id="submit" name="submit" class="btn btn-primary" disabled="" onclick="oninsert('save')" ><span class="glyphicon glyphicon-save"></span>บันทึก</button>
+                                                    <button type="submit" id="submit" name="submit" class="btn btn-primary" disabled=""  ><span class="glyphicon glyphicon-save"></span>บันทึก</button>
                                                     <a name="reset" type="reset" class="btn btn-danger" ><span class="glyphicon glyphicon-refresh"></span>ยกเลิก</a>
                                                 </div>
 
@@ -346,8 +349,57 @@
 
             <!--</div>-->
         </section><!-- /.content -->
+         <div>
+        <%
+            if("ok".equals(msg)){
+        %>
+        <script >
+            function check() {
+                $(document).ready(function () {
+                    swal({
+                        title: "สำเร็จ",
+                        text: "ดีใจด้วย คุณขอสินเชื่อสำเร็จ !",
+                        type: "success"
+                    },
+                            function () {
+                                window.location.href = 'LoanRequstAction.do?todo=gotoPageUserViewStatus';
+                            });
+                });
+            }
+        </script>
+
+        <%} else if ("no".equals(msg)) {
+        %>
+         <script >
+            function check() {
+                swal({
+                        title: "ไม่สำเร็จ",
+                        text: "คุณขอสินเชื่อไม่สำเร็จ ลองใหม่อีกครั้ง!",
+                        type: "error"
+        },
+                    function () {
+                        window.location.href = 'PageAction.do?todo=gotoPageDetleRequest';
+                        });
+            };
+
+        </script>
+        <%   }
+        %>
+    </div>
         <script type="text/javascript">
             function oninsert(select) {
+//             swal({
+//  title: "Are you sure?",
+//  text: "You will not be able to recover this imaginary file!",
+//  type: "warning",
+//  showCancelButton: true,
+//  confirmButtonColor: "#DD6B55",
+//  confirmButtonText: "Yes, delete it!",
+//  closeOnConfirm: false
+//},
+//function(){
+//  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+//});
                 document.loanrequstform.todo.value = select;
                 document.loanrequstform.submit();
             }

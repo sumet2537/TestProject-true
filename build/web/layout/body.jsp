@@ -14,7 +14,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box" >
-                    
+                    <button onclick="check()">test</button>
+                      <button onclick="check2()">test</button>
+                    <button onclick="check1()">test</button>
                     <center><font style="font-size: 25px" color="#8878CD">  ระบบบริการขอสินเชื่อบ้าน <br></font>
                   
     <p><font style="font-size: 25px" color="red">HOME Loan System </font> </p>
@@ -71,3 +73,48 @@
 
         </div>
     </section><!-- /.content -->
+
+       <script type="text/javascript">
+            function check() {
+                $(document).ready(function () {
+                    swal({
+                        title: "สำเร็จ",
+                        text: "คุณสมัครสมาชิกสำเร็จ เข้าสู่ระบบ",
+                        type: "success"
+                    },
+                            function () {
+                                window.location.href = 'PageAction.do?todo=gotoPageLogin';
+                            });
+                });
+            }
+        </script>
+          <script type="text/javascript">
+            function check1() {
+                swal({
+                        title: "ไม่สำเร็จ",
+                        text: "คุณสมัครสไม่สำเร็จ !",
+                        type: "error"
+        },
+                    function () {
+                        window.location.href = 'PageAction.do?todo=gotoPageRegister';
+                        });
+            };
+
+        </script>
+           <script >
+            function check2() {
+            swal({
+  title: "แก้ไข ?",
+  text: "คุณต้องการแก้ไช่หรือไหม !",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3c8dbc",
+  confirmButtonText: "ตกลง",
+  closeOnConfirm: false,
+  CancelButtonText: "ยกเลิก"
+},
+function(){
+  window.location.href = 'registerAction.do?todo=gotouserEdit';
+});
+            };
+        </script>

@@ -362,7 +362,7 @@
                         type: "success"
                     },
                             function () {
-                                window.location.href = 'PageAction.do?todo=gotoPageUserViewStatus';
+                                window.location.href = 'LoanRequstAction.do?todo=gotoPageUserViewStatus';
                             });
                 });
             }

@@ -5,7 +5,9 @@
  */
 package com.action;
 
+import com.bean.RequestLoanBean;
 import com.bean.UserBean;
+import com.dao.RequestLoanDao;
 import com.dao.UserDao;
 import com.form.AuthenAuthorizeForm;
 import com.util.MessageUtil;
@@ -28,15 +30,19 @@ public class AuthenAuthorizeAction extends DispatchAction {
             throws Exception {
         String rt = "";
         AuthenAuthorizeForm authenAuthorizeForm = (AuthenAuthorizeForm) form;
-
+        RequestLoanBean loanbean = new RequestLoanBean();
+        RequestLoanDao dao = new RequestLoanDao();
         UserDao userDao = new UserDao();
         UserBean userBean = new UserBean();
         userBean = userDao.selectByUsernameAndPassword(authenAuthorizeForm.getUsername(), authenAuthorizeForm.getPassword());
         if (userBean != null) {
+            String citizen_id = loanbean.getCitizen_id();
+            loanbean = dao.selectBycitizenid(citizen_id);
             request.getSession().setAttribute("userLogin", userBean);
+            request.getSession().setAttribute("requestLoan", loanbean);
             rt = "gotoWelcome";
         } else {
-            request.setAttribute("msgLoginFail", MessageUtil.messageError("Fail Login", "username or password incorrect."));
+            request.setAttribute("msgLoginFail", MessageUtil.messageError("เข้าสู่ระบบไม่ได้", "ตรวจสอบ ชื่อเข้าสู่ระบบและรหัสผ่านอีกครั้ง."));
             rt = "gotoPageLogin";
         }
 

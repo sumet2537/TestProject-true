@@ -25,11 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="birthdate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="citizen_id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="copy_bankaccount" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="copy_bankaccountbyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="copy_rename" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="copy_renamebyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="copydocumenthome" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="copydocumenthomebyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="copyidcard" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="copyidcardbyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="copylicenses" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="copylicensesbyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="copymarriage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="copymarriagebyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="createby" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="created" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="creditloan" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
@@ -47,6 +53,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="netprofit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="periodloan" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="salary_slip" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="salary_slipbyte" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/&gt;
  *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="statustype" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="title_type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -72,11 +79,17 @@ import javax.xml.bind.annotation.XmlType;
     "birthdate",
     "citizenId",
     "copyBankaccount",
+    "copyBankaccountbyte",
     "copyRename",
+    "copyRenamebyte",
     "copydocumenthome",
+    "copydocumenthomebyte",
     "copyidcard",
+    "copyidcardbyte",
     "copylicenses",
+    "copylicensesbyte",
     "copymarriage",
+    "copymarriagebyte",
     "createby",
     "created",
     "creditloan",
@@ -94,6 +107,7 @@ import javax.xml.bind.annotation.XmlType;
     "netprofit",
     "periodloan",
     "salarySlip",
+    "salarySlipbyte",
     "status",
     "statustype",
     "titleType",
@@ -114,12 +128,20 @@ public class RequestLoanBean {
     protected String citizenId;
     @XmlElement(name = "copy_bankaccount")
     protected String copyBankaccount;
+    @XmlElement(name = "copy_bankaccountbyte")
+    protected byte[] copyBankaccountbyte;
     @XmlElement(name = "copy_rename")
     protected String copyRename;
+    @XmlElement(name = "copy_renamebyte")
+    protected byte[] copyRenamebyte;
     protected String copydocumenthome;
+    protected byte[] copydocumenthomebyte;
     protected String copyidcard;
+    protected byte[] copyidcardbyte;
     protected String copylicenses;
+    protected byte[] copylicensesbyte;
     protected String copymarriage;
+    protected byte[] copymarriagebyte;
     protected String createby;
     protected String created;
     protected Double creditloan;
@@ -141,6 +163,8 @@ public class RequestLoanBean {
     protected Double periodloan;
     @XmlElement(name = "salary_slip")
     protected String salarySlip;
+    @XmlElement(name = "salary_slipbyte")
+    protected byte[] salarySlipbyte;
     protected String status;
     protected String statustype;
     @XmlElement(name = "title_type")
@@ -335,6 +359,28 @@ public class RequestLoanBean {
     }
 
     /**
+     * Gets the value of the copyBankaccountbyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getCopyBankaccountbyte() {
+        return copyBankaccountbyte;
+    }
+
+    /**
+     * Sets the value of the copyBankaccountbyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setCopyBankaccountbyte(byte[] value) {
+        this.copyBankaccountbyte = value;
+    }
+
+    /**
      * Gets the value of the copyRename property.
      * 
      * @return
@@ -356,6 +402,28 @@ public class RequestLoanBean {
      */
     public void setCopyRename(String value) {
         this.copyRename = value;
+    }
+
+    /**
+     * Gets the value of the copyRenamebyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getCopyRenamebyte() {
+        return copyRenamebyte;
+    }
+
+    /**
+     * Sets the value of the copyRenamebyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setCopyRenamebyte(byte[] value) {
+        this.copyRenamebyte = value;
     }
 
     /**
@@ -383,6 +451,28 @@ public class RequestLoanBean {
     }
 
     /**
+     * Gets the value of the copydocumenthomebyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getCopydocumenthomebyte() {
+        return copydocumenthomebyte;
+    }
+
+    /**
+     * Sets the value of the copydocumenthomebyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setCopydocumenthomebyte(byte[] value) {
+        this.copydocumenthomebyte = value;
+    }
+
+    /**
      * Gets the value of the copyidcard property.
      * 
      * @return
@@ -404,6 +494,28 @@ public class RequestLoanBean {
      */
     public void setCopyidcard(String value) {
         this.copyidcard = value;
+    }
+
+    /**
+     * Gets the value of the copyidcardbyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getCopyidcardbyte() {
+        return copyidcardbyte;
+    }
+
+    /**
+     * Sets the value of the copyidcardbyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setCopyidcardbyte(byte[] value) {
+        this.copyidcardbyte = value;
     }
 
     /**
@@ -431,6 +543,28 @@ public class RequestLoanBean {
     }
 
     /**
+     * Gets the value of the copylicensesbyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getCopylicensesbyte() {
+        return copylicensesbyte;
+    }
+
+    /**
+     * Sets the value of the copylicensesbyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setCopylicensesbyte(byte[] value) {
+        this.copylicensesbyte = value;
+    }
+
+    /**
      * Gets the value of the copymarriage property.
      * 
      * @return
@@ -452,6 +586,28 @@ public class RequestLoanBean {
      */
     public void setCopymarriage(String value) {
         this.copymarriage = value;
+    }
+
+    /**
+     * Gets the value of the copymarriagebyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getCopymarriagebyte() {
+        return copymarriagebyte;
+    }
+
+    /**
+     * Sets the value of the copymarriagebyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setCopymarriagebyte(byte[] value) {
+        this.copymarriagebyte = value;
     }
 
     /**
@@ -836,6 +992,28 @@ public class RequestLoanBean {
      */
     public void setSalarySlip(String value) {
         this.salarySlip = value;
+    }
+
+    /**
+     * Gets the value of the salarySlipbyte property.
+     * 
+     * @return
+     *     possible object is
+     *     byte[]
+     */
+    public byte[] getSalarySlipbyte() {
+        return salarySlipbyte;
+    }
+
+    /**
+     * Sets the value of the salarySlipbyte property.
+     * 
+     * @param value
+     *     allowed object is
+     *     byte[]
+     */
+    public void setSalarySlipbyte(byte[] value) {
+        this.salarySlipbyte = value;
     }
 
     /**
