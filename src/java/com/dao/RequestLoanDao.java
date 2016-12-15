@@ -918,50 +918,64 @@ public class RequestLoanDao {
         return i;
     }
 
-//    public static void main(String[] args) throws Exception {
-//        RequestLoanDao dao = new RequestLoanDao();
-//        RequestLoanBean bean = new RequestLoanBean();
-//        int i = 0;
-//        bean.setLoanreq_id(2);
-////        bean.setCitizen_id("ดกก3453");
-//        bean.setTitle_type("นาย");
-//        bean.setFirstName("สุเมธ");
-//        bean.setLastName("แก่นแก้ว");
-//        bean.setBirthdate("10");
-//        bean.setAge(50);
-//        bean.setNationality("ไทย");
-//        bean.setStatustype("cod");
-//        bean.setMobile("0833412924");
-//        bean.setEmail("sumet");
-//        bean.setAddressregistration("rmu");
-//        bean.setAddresscurrent("aaa");
-//        bean.setAddresssenddoc("aaa");
-//        bean.setJobtype("ss");
-//        bean.setHometype("aaa");
-//        bean.setTradingprice(23.23);
-//        bean.setCreditloan(324.32);
-//        bean.setLncome_per_month(1);
-//        bean.setPeriodloan(53.65);
-//        bean.setNetprofit(32.32);
-//        bean.setCopyidcard("34.jpg");
-//        bean.setCopylicenses("34.jpg");
-//        bean.setCopydocumenthome("ก");
-//        bean.setCopymarriage("fd");
-//        bean.setCopy_rename("df");
-//        bean.setSalary_slip("3sd");
-//        bean.setCopy_bankaccount("sd");
-//        bean.setBanktype("sdfs sdfsdf sdfsdf");
-//        bean.setLoanstatustype("รออนุมัติ");
-////        bean.setFirstName("aa");
-//
-//        try {
-//            i = dao.updateById(bean);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println(i);
-//
-//    }
+    public int updatefile(RequestLoanBean requestLoatBean) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = dbConnect.openNewConnection();
+        String sql = "update tbl_requestloan set copyidcard=?, copylicenses=?, copydocumenthome=?, copymarriage=?, copy_rename=?, salary_slip=?, copy_bankaccount=?, loanstatustype=?  where loanreq_id=?";
+        PreparedStatement p = null;
+        int i = 0;
+        try {
+            p = (PreparedStatement) con.prepareStatement(sql);
+            
+            p.setString(1, requestLoatBean.getCopyidcard());
+            p.setString(2, requestLoatBean.getCopylicenses());
+            p.setString(3, requestLoatBean.getCopydocumenthome());
+            p.setString(4, requestLoatBean.getCopymarriage());
+            p.setString(5, requestLoatBean.getCopy_rename());
+            p.setString(6, requestLoatBean.getSalary_slip());
+            p.setString(7, requestLoatBean.getCopy_bankaccount());
+            p.setString(8, requestLoatBean.getLoanstatustype());
+            p.setInt(9, requestLoatBean.getLoanreq_id());
+            i = p.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println(i);
+        }
+        return i;
+    }
+    public static void main(String[] args) throws Exception {
+        RequestLoanDao dao = new RequestLoanDao();
+        RequestLoanBean bean = new RequestLoanBean();
+        int i = 0;
+        bean.setLoanreq_id(39);
+//        bean.setCitizen_id("ดกก3453");
+
+        bean.setCopyidcard("34.jpg");
+        bean.setCopylicenses("34.jpg");
+        bean.setCopydocumenthome("ก");
+        bean.setCopymarriage("fd");
+        bean.setCopy_rename("df");
+        bean.setSalary_slip("3sd");
+        bean.setCopy_bankaccount("sd");
+        bean.setBanktype("sdfs sdfsdf sdfsdf");
+        bean.setLoanstatustype("รออนุมัติ");
+//        bean.setFirstName("aa");
+
+        try {
+            i = dao.updatefile(bean);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(i);
+
+    }
 //    public void deleteByloanreqId(int loanreq_id)throws Exception{
 //       DBConnect dbConnect = new DBConnect();
 //        Connection con = null;
