@@ -60,7 +60,7 @@ public class DBConnect {
     public Connection openNewConnection() throws Exception {
         Connection conn = null;
         Class.forName("com.mysql.jdbc.Driver");
-        String jdbc = "jdbc:mysql://127.0.0.1:8889/LoanRequest1?user=root&password=root";
+        String jdbc = "jdbc:mysql://127.0.0.1:3306/LoanRequest1?user=root&password=root";
         String jdbcutf8 = "&useUnicode=true&characterEncoding=UTF-8";
         conn = DriverManager.getConnection(jdbc+jdbcutf8);
         
