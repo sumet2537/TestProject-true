@@ -28,6 +28,16 @@ public class ApproveLoanBean {
     private String loanstatusbank;
     private String todo;
     private String loanstatustype;
+    
+     private String bankName;
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
 
     public int getApprove_id() {
         return approve_id;

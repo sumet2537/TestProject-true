@@ -75,7 +75,7 @@ public class ApproveLoanDao {
         con = dbConnect.openNewConnection();
         ResultSet rs = null;
         ApproveLoanBean bean = null;
-        String sql = "select * from tbl_approveloan where loanreq_id =?"; //
+        String sql = "select *,bankname from tbl_approveloan INNER JOIN tbl_bank ON tbl_approveloan.bank_id = tbl_bank.bank_id where loanreq_id  =?"; //
         com.mysql.jdbc.PreparedStatement p = null;
         ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
         
@@ -98,6 +98,7 @@ public class ApproveLoanDao {
                 bean.setCreatedby(rs.getString("createdby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
+                bean.setBankName("bankname");
                 list.add(bean);
             }
 
