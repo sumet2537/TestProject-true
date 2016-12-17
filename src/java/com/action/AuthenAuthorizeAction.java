@@ -36,7 +36,7 @@ public class AuthenAuthorizeAction extends DispatchAction {
         UserBean userBean = new UserBean();
         userBean = userDao.selectByUsernameAndPassword(authenAuthorizeForm.getUsername(), authenAuthorizeForm.getPassword());
         if (userBean != null) {
-            String citizen_id = loanbean.getCitizen_id();
+            String citizen_id = userBean.getCitizen_id();
             loanbean = dao.selectBycitizenid(citizen_id);
             request.getSession().setAttribute("userLogin", userBean);
             request.getSession().setAttribute("requestLoan", loanbean);

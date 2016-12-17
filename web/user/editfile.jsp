@@ -153,7 +153,7 @@
                                        
                                    <div style="text-align: center" >
                                     <button class="btn btn-twitter" onclick="oneditfile('<%=bean.getLoanreq_id()%>')">บันทึก</button>
-                                    <button class="btn btn-error"  href="#">ยกเลิก</button>
+                                    <a class="btn btn-warning"  href="PageAction.do?todo=gotoPageHome">ยกเลิก</a>
                                 </div>
                                     </form>
                                 </fieldset>

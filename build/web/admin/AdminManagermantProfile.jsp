@@ -20,6 +20,7 @@
 
         %>
         <%  regislist = (List<UserBean>) request.getSession().getAttribute("regisList"); %>
+        
         <section class="content">
             <!-- Info boxes -->
             <div class="row">

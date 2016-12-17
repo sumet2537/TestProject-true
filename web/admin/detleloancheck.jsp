@@ -420,6 +420,17 @@
     //                document.loanrequstform.bycitizen_id.value = 'bycitizen_id';
     //                document.loanrequstform.submit();
     //            }
+       function callCheckboxActive() {
+
+        $('#chk').find('.active').removeClass('active');
+        $('#chk').find('.btn').find('.fa-check').removeClass('fa-check');
+
+        $('#chk').find("input[type='checkbox']:checked").parent('.btn').addClass('active');
+        $('#chk').find("input[type='checkbox']:checked").parent('.btn').find('span').addClass('fa-check');
+
+
+
+    }
 </script>
 
 <div>
@@ -453,7 +464,7 @@
                         confirmButtonText: "ตกลง!"
         },
                     function () {
-                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan<%=bean.getLoanreq_id()%>';
+//                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=';
                         });
             };
 
@@ -492,7 +503,7 @@
                         confirmButtonText: "ตกลง!"
         },
                     function () {
-                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id<%=bean.getLoanreq_id()%>';
+//                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id';
                         });
             };
 
@@ -533,11 +544,12 @@
                         confirmButtonText: "ตกลง!"
         },
                     function () {
-                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=<%=bean.getLoanreq_id()%>';
+//                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=';
                         });
             };
 
         </script>
+        
         <%   }
         %>
     </div>

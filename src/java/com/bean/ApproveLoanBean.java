@@ -10,9 +10,11 @@ package com.bean;
  * @author brass
  */
 public class ApproveLoanBean {
-     private int approve_id;
+
+    private int approve_id;
     private int loanreq_id;
-    private int loanbankreq_id;
+    private String bank_id;
+    private String citizen_id;
     private String firstName;
     private String judgment;
     private Double approvedamount;
@@ -25,22 +27,7 @@ public class ApproveLoanBean {
     private String position;
     private String loanstatusbank;
     private String todo;
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getLoanstatusbank() {
-        return loanstatusbank;
-    }
-
-    public void setLoanstatusbank(String loanstatusbank) {
-        this.loanstatusbank = loanstatusbank;
-    }
+    private String loanstatustype;
 
     public int getApprove_id() {
         return approve_id;
@@ -58,12 +45,20 @@ public class ApproveLoanBean {
         this.loanreq_id = loanreq_id;
     }
 
-    public int getLoanbankreq_id() {
-        return loanbankreq_id;
+    public String getBank_id() {
+        return bank_id;
     }
 
-    public void setLoanbankreq_id(int loanbankreq_id) {
-        this.loanbankreq_id = loanbankreq_id;
+    public void setBank_id(String bank_id) {
+        this.bank_id = bank_id;
+    }
+
+    public String getCitizen_id() {
+        return citizen_id;
+    }
+
+    public void setCitizen_id(String citizen_id) {
+        this.citizen_id = citizen_id;
     }
 
     public String getFirstName() {
@@ -138,7 +133,21 @@ public class ApproveLoanBean {
         this.updated = updated;
     }
 
-    
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getLoanstatusbank() {
+        return loanstatusbank;
+    }
+
+    public void setLoanstatusbank(String loanstatusbank) {
+        this.loanstatusbank = loanstatusbank;
+    }
 
     public String getTodo() {
         return todo;
@@ -147,5 +156,15 @@ public class ApproveLoanBean {
     public void setTodo(String todo) {
         this.todo = todo;
     }
+
+    public String getLoanstatustype() {
+        return loanstatustype;
+    }
+
+    public void setLoanstatustype(String loanstatustype) {
+        this.loanstatustype = loanstatustype;
+    }
+
+    
     
 }

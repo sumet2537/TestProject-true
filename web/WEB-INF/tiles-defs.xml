@@ -77,6 +77,8 @@
         <put name="title"  value="" />
         <put name="body"   value="/admin/AdminManagermentLoanAp.jsp" />
     </definition>
+   
+   
     <!--////////////////////// ditel ///////////////////////////-->
     <definition name="gotoDetle_requestloan" extends="welcome">
         <put name="title"  value="" />
@@ -105,11 +107,18 @@
         <put name="body"   value="/user/editfile.jsp" />
     </definition>
     
-    <!--////////////////////// ditel ///////////////////////////-->
+    <!--////////////////////// ditel user///////////////////////////-->
     <definition name="gotoPageUserViewStatus" extends="welcome">
         <put name="title"  value="" />
-        <put name="body"   value="/user/viewstatusrequest.jsp" />
+        <put name="body"   value="/user/UserManagermentLoanapprove.jsp" />
+          <!--<put name="body"   value="/user/viewstatusrequest.jsp" />-->
     </definition>
+    
+      <definition name="gotoDetleApprove1" extends="welcome">
+        <put name="title"  value="detel" />
+        <put name="body"   value="/suer/detleloanapprove.jsp" />
+    </definition> 
+    
     <!--/////////////////////////////////////////////////-->
     
     <definition name="gotoPageLogin" extends="welcome">

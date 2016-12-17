@@ -27,6 +27,7 @@
     --%>
     
     <body onload="Success1()">
+       
         <div class="container">
             <h2 align="center">รายการอนุมัติ</h2>
             <div class="col-sm-2"></div>
@@ -45,67 +46,85 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">ชื่อเข้าใช้ระบบ <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">รหัสสินเชื่อ <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input  name="u_username" placeholder="กรุณาใส่ชื่อเข้าใช้ระบบ" class="form-control"  type="text" maxlength="10">
+                                                <input  name="loanreq_id"  class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">รหัสผ่าน <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">ชื่อธนาคาร <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input  name="u_password" placeholder="กรุณาใส่รหัสผ่าน" class="form-control"  type="password" maxlength="10">
+                                                <input  name="loanbankreq_id" placeholder="กรุณาใส่ชื่อธนาคาร" class="form-control"  type="text" >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">รหัสบัตรประจำตัวประชาชน <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">ชื่อผู้กู้ <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
-                                                <input  name="u_citizen" placeholder="รหัสบัตรประจำตัวประชาชน" class="form-control"  type="text" pattern= "[0-9]" maxlength="13">
+                                                <input  name="firstname" placeholder="รหัสบัตรประจำตัวประชาชน" class="form-control"  type="text"  >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">ชื่อ <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">ผลการพิจารณา <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input  name="u_fname" placeholder="กรุณาใส่ชื่อของคุณ" class="form-control"  type="text">
+                                                <input  name="judgment" placeholder="กรุณาใส่ชื่อของคุณ" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">นามสกุล <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">สถานะ <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input  name="u_lname" placeholder="กรุณาใสนามสกุล" class="form-control"  type="text">
+                                                <input  name="loanstatusbank" placeholder="สถานะ" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
                                    
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">เบอร์โทร <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">กรอกวงเงินอนุมัติ <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                                <input name="u_tel" placeholder="0833261877" class="form-control" type="text" pattern= "[0-9]" maxlength="10">
+                                                <input name="approvedamount" placeholder="กรอกวงเงินอนุมัติ" class="form-control" type="text" >
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">อีเมล์ <span class="star">*</span></label>  
+                                        <label class="col-md-4 control-label">ยอดผ่อนชำระต่อเดือน <span class="star">*</span></label>  
                                         <div class="col-md-6 inputGroupContainer">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                                <input name="u_email" placeholder="กรุณาใส่อีเมล์ของคุณ" class="form-control"  type="text">
+                                                <input name="installlments" placeholder="กรุณาใส่ยอดผ่อนชำระต่อเดือน" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label class="col-md-4 control-label">ระยะเวลาการผ่อน <span class="star">*</span></label>  
+                                        <div class="col-md-6 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                <input name="timerepayment" placeholder="กรุณาใส่ระยะเวลาการผ่อน" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">ตำแหน่งผู้อนุมัติ <span class="star">*</span></label>  
+                                        <div class="col-md-6 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                <input name="position" placeholder="กรุณาใส่ตำแหน่งผู้อนุมัติ" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +137,7 @@
                                     <!--button-->
                                     <div align="center">
                                         <!--<button type="submit" class="btn btn-success" onclick="callinsert('register')">ตกลง</button>&nbsp;&nbsp;&nbsp;&nbsp;-->
-                                        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-download-alt"></span>  ลงทะเบียน</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-download-alt"></span>  อนุมัติ</button>&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<button type="reset" class="btn btn-danger">ยกเลิก</button>-->
                                     </div>
                                 </div>

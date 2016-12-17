@@ -153,6 +153,7 @@ public class LoanRequstAction extends DispatchAction {
 //        loanList = dao.selectAll();
         request.removeAttribute("requestloanStatus");
         request.setAttribute("requestloanStatus", msg);
+        request.getSession().setAttribute("laonreq_id", loanbean);
         return mapping.findForward("gotoPageLoanRequest");
 
     }
@@ -415,29 +416,29 @@ public class LoanRequstAction extends DispatchAction {
         return mapping.findForward("gotoeditfile");
     }
 
-    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        RequestLoanForm loanform = (RequestLoanForm) form;
-        ApproveLoanBean abean = new ApproveLoanBean();
-        ApproveLoanDao adao = new ApproveLoanDao();
-        RequestLoanBean loanbean = new RequestLoanBean();
-        ArrayList<RequestLoanBean> listbean = null;
-        RequestLoanDao rdao = new RequestLoanDao();
-       String msg = "";
-       loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
-       
-        try {
-            String citizen_id = loanbean.getCitizen_id();
-        loanbean = rdao.selectBycitizenid(citizen_id);
-            System.out.println("ok");
-            msg = "ok";
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("no");
-            msg = "no";
-        }
-        request.getSession().setAttribute("loanbean", loanbean);
-        return mapping.findForward("gotoPageUserViewStatus");
-    }
+//    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,
+//            HttpServletRequest request, HttpServletResponse response)
+//            throws Exception {
+//        RequestLoanForm loanform = (RequestLoanForm) form;
+//        ApproveLoanBean abean = new ApproveLoanBean();
+//        ApproveLoanDao adao = new ApproveLoanDao();
+//        RequestLoanBean loanbean = new RequestLoanBean();
+//        ArrayList<RequestLoanBean> listbean = null;
+//        RequestLoanDao rdao = new RequestLoanDao();
+//       String msg = "";
+//       loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
+//       
+//        try {
+//            String citizen_id = loanbean.getCitizen_id();
+//        loanbean = rdao.selectBycitizenid(citizen_id);
+//            System.out.println("ok");
+//            msg = "ok";
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("no");
+//            msg = "no";
+//        }
+//        request.getSession().setAttribute("loanbean", loanbean);
+//        return mapping.findForward("gotoPageUserViewStatus");
+//    }
 }

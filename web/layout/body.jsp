@@ -18,7 +18,26 @@
                       <button onclick="check2()">test</button>
                     <button onclick="check1()">test</button>
                     <center><font style="font-size: 25px" color="#8878CD">  ระบบบริการขอสินเชื่อบ้าน <br></font>
-                  
+                  <div class="container">
+  <h2>Simple Collapsible</h2>
+  <p>Click on the button to toggle between showing and hiding content.</p>
+  <button type="button" class="btn btn-info" data-target="#demo" data-widget="collapse" data-toggle="collapse">Simple collapsible</button>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+</div>
+                        <div class="container">
+  <h2>Simple Collapsible</h2>
+  <p>Click on the button to toggle between showing and hiding content.</p>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+  <div id="demo" class="collapse in">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+</div>
     <p><font style="font-size: 25px" color="red">HOME Loan System </font> </p>
     <img src="./img/12.jpg" style="width: 100%; height: 60%;" />
     <p> <font style="font-size: 20px">ข้อมูลเกี่ยวกับการขอสินเชื่อ</font></p>

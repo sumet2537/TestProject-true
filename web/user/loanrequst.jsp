@@ -49,14 +49,15 @@
                                                 <div class="box box-header with-border">
                                                     <h4> :: ข้อมูลส่วนตัว ::</h4>
                                                     <div class="box-tools pull-left">
-                                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="collapse" data-target="#collapse">
                                                             <i class="fa fa-minus"></i>
                                                         </button>
                                                     </div>
                                                 </div>
 
                                                 <!-- select -->
-                                                <div class="box-body">
+                                                <div id="collapse" class="collapse in">
+                                                <div class="box-body" >
                                                     <div class="form-group col-md-12">
                                                         <label class="col-md-4 control-label" for="citizen_id">เลขบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                         <div class="col-md-5 ">
@@ -140,15 +141,17 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            </div>
                                             <div class="box box-primary box-solid">
                                                 <div class="box box-header with-border">
                                                     <h4> :: ข้อมูลที่อยู่อาศัยที่จะซื้อ ::</h4>
                                                     <div class="box-tools pull-left">
-                                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="collapse" data-target="#collapse1">
                                                             <i class="fa fa-minus"></i>
                                                         </button>
                                                     </div>
                                                 </div>
+                                                <div id="collapse1" class="collapse in">
                                                 <div class="box-body">
                                                     <div class="form-group col-md-12">
                                                         <label class="col-md-4 control-label" for="hometype">ประเภทที่อยู่อาศัย <span class="require" style="color:red;">*</span></label>
@@ -191,16 +194,18 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
                                             </div>
                                             <div class="box box-primary box-solid">
                                                 <div class="box box-header with-border">
                                                     <h4> :: ข้อมูลด้านรายได้ ::</h4>
                                                     <div class="box-tools pull-left">
-                                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="collapse" data-target="#collapse2">
                                                             <i class="fa fa-minus"></i>
                                                         </button>
                                                     </div>
                                                 </div>
+                                                <div class="collapse in" id="collapse2">
                                                 <div class="box-body">
                                                     <div class="form-group col-md-12">
                                                         <label class="col-md-4 control-label" for="periodloan">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
@@ -217,15 +222,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
                                                 <div class="box box-primary box-solid">
                                                     <div class="box box-header with-border">
                                                         <h4> :: เอกสารประกอบการขอกู้ ::</h4>
                                                         <div class="box-tools pull-left">
-                                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="collapse" data-target="#collapse3">
                                                                 <i class="fa fa-minus"></i>
                                                             </button>
                                                         </div>
                                                     </div>
+                                                    <div class="collapse in" id="collapse3">
                                                     <div class="box-body">
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="copyidcard">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
@@ -271,16 +278,18 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    </div>
                                                 </div>
                                                 <div class="box box-primary box-solid">
                                                     <div class="box box-header with-border">
                                                         <h4> :: ข้อมูลธนาคารที่ต้องการขอกู้ ::</h4>
                                                         <div class="box-tools pull-left">
-                                                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="collapse" data-target="#collapse4">
                                                                 <i class="fa fa-minus"></i>
                                                             </button>
                                                         </div>
                                                     </div>
+                                                    <div class="collapse in" id="collapse4">
                                                     <div class="box-body">
                                                         <div class="form-group col-md-12">
                                                             <label class="col-md-4 control-label" for="banktype">ธนาคารที่ต้องการขอกู้ <span class="require" style="color:red;">*</span></label>
@@ -295,6 +304,7 @@
                                                                 <input  type="checkbox" name="banktype8" value="กสิกรไทย">กสิกรไทย &nbsp;&nbsp;&nbsp;
                                                             </div>
                                                         </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                               
@@ -362,7 +372,7 @@
                         type: "success"
                     },
                             function () {
-                                window.location.href = 'LoanRequstAction.do?todo=gotoPageUserViewStatus';
+                                window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus';
                             });
                 });
             }

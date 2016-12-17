@@ -237,10 +237,13 @@ public class SenddatawsAction extends DispatchAction {
             }
             String url = "<strong><a href=\"http://localhost:8080/TestProject/LoanRequstAction.do?todo=gotoeditfile&loanreq_id=" + beanT.getLoanreq_id() + " \"  target=\"_blank\">กดที่นี้เพื่อทำการแก้ไข</a></strong>";
             String uuu = "<strong><a href=\"www.google.com\"  target=\"_blank\">กดที่นี้เพื่อทำการแก้ไข</a></strong>";
-            userBean = (UserBean) request.getSession().getAttribute("useraccount");
+//            userBean = (UserBean) request.getSession().getAttribute("loanreq");
+            RequestLoanBean  loanbean = new RequestLoanBean();
+             loanbean = (RequestLoanBean) request.getSession().getAttribute("editBean");
+             String email = loanbean.getEmail();
 //            String bass = "sumat678@gmail.com";
 
-            emailUtility.sendEmail("chakknrt123@gmail.com","chakknrt111", "chakknrt789@hotmail.com", af.getE_her(), "หมายเหตุ" + af.getE_dtel() + "<br>" + "ไฟล์ที่ต้องแก้ไข" + "<br>" + msgfile1 + "<br>"
+            emailUtility.sendEmail("homeloansystem@gmail.com", "0833412924brass", email, af.getE_her(), "หมายเหตุ" + af.getE_dtel() + "<br>" + "ไฟล์ที่ต้องแก้ไข" + "<br>" + msgfile1 + "<br>"
                     + msgfile2 + "<br>" + msgfile3 + "<br>" + msgfile4 + "<br>" + msgfile5 + "<br> " + msgfile6 + "<br> " + msgfile7 + "<br> " + url, null);
 
             dao.updatefile(bean);

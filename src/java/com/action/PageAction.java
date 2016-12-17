@@ -29,12 +29,7 @@ import org.apache.struts.action.ActionForward;
  */
 public class PageAction extends DispatchAction {
 
-    public ActionForward gotoPageBootstrapExample(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        return mapping.findForward("gotoPageBootstrapExample");
 
-    }
 
     public ActionForward gotoPageRegister(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)

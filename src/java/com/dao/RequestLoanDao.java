@@ -338,7 +338,7 @@ public class RequestLoanDao {
         con = dbConnect.openNewConnection();
         ResultSet rs = null;
         RequestLoanBean bean = null;
-        String sql = "select * from tbl_user  where citizen_id = ?";
+        String sql = "select * from tbl_requestloan  where citizen_id = ?";
         PreparedStatement p = null;
 
         try {

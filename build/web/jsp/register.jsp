@@ -39,7 +39,7 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="citizen_id">เลขบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
-                                                        <input class="form-control" type="text" name="citizen_id" maxlength="13" required="" placeholder="เลขบัตรประจำตัวประชาชน"><br>
+                                                        <input class="form-control" type="text" name="citizen_id" maxlength="13" required="true" placeholder="เลขบัตรประจำตัวประชาชน" pattern= "[0-9]"><br>
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="title_type">คำนำหน้า <span class="require" style="color:red;">*</span></label>
@@ -54,17 +54,17 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="firstName">ชื่อ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
-                                                        <input class="form-control" type="text" name="firstName" placeholder="ชื่อ">
+                                                        <input class="form-control" type="text" name="firstName" placeholder="ชื่อ" required="true">
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="lastName">นามสกุล <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
-                                                        <input class="form-control" type="text" name="lastName" placeholder="นามสกุล" >
+                                                        <input class="form-control" type="text" name="lastName" placeholder="นามสกุล" required="true">
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="birthdate">วันเดือนปีเกิด <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 col-lg-4">
-                                                        <input class="form-control" type="date" name="birthdate" placeholder="วันเดือนปีเกิด">
+                                                        <input class="form-control" type="date" name="birthdate" placeholder="วันเดือนปีเกิด" required="true">
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="age">อายุ <span class="require" style="color:red;">*</span></label>
@@ -94,19 +94,19 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="mobile">เบอร์โทร <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="text" name="mobile" maxlength="10" placeholder="เบอร์โทร">
+                                                        <input class="form-control" type="text" name="mobile" maxlength="10" placeholder="เบอร์โทร" required="true">
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="email">อีเมล์ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
-                                                        <input class="form-control" type="text" name="email" placeholder="อีเมล์">
+                                                        <input class="form-control" type="text" name="email" placeholder="อีเมล์" required="true">
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="addressregistration">ที่อยู่ตามทะเบียนบ้าน </label>
                                                     <div class="col-md-8">
                                                         <textarea class="form-control" name="addressregistration" placeholder="285/33 ซอยจรัญสนิทวงศ์31 ถนนจรัญสนิทวงศ์
                                                                   แขวงบางขุนศรี เขตบางกอกน้อย
-                                                                  กรุงเทพ 10700"></textarea>
+                                                                  กรุงเทพ 10700" required="true"></textarea>
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="addresscurrent">ที่อยู่ปัจจุบัน </label>
@@ -135,19 +135,19 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="username">ชื่อใช้เข้าสู่ระบบ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="text" name="username" placeholder="ชื่อเข้าสู่ระบบ">
+                                                        <input class="form-control" type="text" name="username" placeholder="ชื่อเข้าสู่ระบบ" required="true">
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="password">รหัสผ่าน <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8">
-                                                        <input  class="form-control"type="password" name="password" id="pass1" placeholder="รหัสผ่าน">
+                                                        <input  class="form-control"type="password" name="password" id="pass1" placeholder="รหัสผ่าน" required="true">
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="cpassword">ยืนยันรหัสผ่าน <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8">
-                                                        <input  class="form-control"type="password" name="cpassword" id="pass2" placeholder="ยืนยันรหัสผ่าน"><br>
+                                                        <input  class="form-control"type="password" name="cpassword" id="pass2" placeholder="ยืนยันรหัสผ่าน" required="true"><br>
                                                     </div>
                                                 </div>
                                             </div>

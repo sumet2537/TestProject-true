@@ -88,7 +88,8 @@ public class EmailUtility {
          
           
             try{         
-              sendEmail("loanssystem2559@gmail.com", "123456789qq", "chakknrt789@hotmail.com", "Rge8","รหัสผ่านของคุณคือ = ", null);
+              sendEmail("homeloansystem@gmail.com", "0833412924brass", "sumat68@hotmail.com", "Rge8","รหัสผ่านของคุณคือ = ", null);
+//              sendEmail("loanssystem2559@gmail.com", "123456789qq", "sumat68@hotmail.com", "Rge8","รหัสผ่านของคุณคือ = ", null);
               System.out.println("send Mail");
             }catch(Exception e){
                 e.printStackTrace();

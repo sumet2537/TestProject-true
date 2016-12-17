@@ -28,9 +28,9 @@ public class ApproveLoanDao {
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
             p.setInt(1, approveLoanBean.getApprove_id());
-            p.setInt(2, approveLoanBean.getLoanbankreq_id());
+            p.setString(2, approveLoanBean.getBank_id());
             p.setInt(3, approveLoanBean.getLoanreq_id());
-            p.setString(4, approveLoanBean.getFirstName());
+            p.setString(4, approveLoanBean.getCitizen_id());
             p.setString(5, approveLoanBean.getJudgment());
             p.setString(6, approveLoanBean.getLoanstatusbank());
             p.setDouble(7, approveLoanBean.getApprovedamount());
@@ -69,34 +69,36 @@ public class ApproveLoanDao {
 //        }
 //        System.out.println(i);
 //    }
-    public ApproveLoanBean selectById(int loanreq_id) throws Exception {
+    public ArrayList<ApproveLoanBean> selectById(int loanreq_id) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
         con = dbConnect.openNewConnection();
         ResultSet rs = null;
         ApproveLoanBean bean = null;
-        String sql = "select * from tbl_approveloan  where loanreq_id = ?";
+        String sql = "select * from tbl_approveloan where loanreq_id =?"; //
         com.mysql.jdbc.PreparedStatement p = null;
-
+        ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
+        
         try {
             p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
             p.setInt(1, loanreq_id);
             rs = p.executeQuery();
             while (rs.next()) {
                 bean = new ApproveLoanBean();
-                bean.setApprove_id(rs.getInt("loanreq_id"));
+                bean.setApprove_id(rs.getInt("approve_id"));
                 bean.setLoanreq_id(rs.getInt("loanreq_id"));
-                bean.setLoanbankreq_id(rs.getInt("title_type"));
-                bean.setFirstName(rs.getString("firstName"));
-                bean.setJudgment(rs.getString("jubgment"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
                 bean.setLoanstatusbank(rs.getString("loanstatusbank"));
-                bean.setApprovedamount(rs.getDouble("birthdate"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
                 bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
                 bean.setCreatedby(rs.getString("createdby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
-                bean.setUpdated(rs.getString("updated"));
+                list.add(bean);
             }
 
         } finally {
@@ -108,8 +110,25 @@ public class ApproveLoanDao {
 
             }
         }
-        return bean;
+        return list;
     }
+      public static void main(String[] args) throws Exception {
+////// //       ==================== ========================
+        ApproveLoanDao dao = new ApproveLoanDao();
+        ArrayList<ApproveLoanBean> bean = new ArrayList<ApproveLoanBean>();
+        bean = dao.selectById(136);
+        //        select like---------------------------------------------------------
+
+        System.out.println("--------------ข้อมูล user--------------");
+        for (ApproveLoanBean tranferBean1 : bean) {
+            System.out.println("รหัสบัตรประชาชน Cashier : " + tranferBean1.getLoanreq_id());
+            System.out.println("รหัสบัตรประชาชน User : " + tranferBean1.getCitizen_id());
+            System.out.println("---------------------------------");
+        }
+
+    }
+    
+    
       public ApproveLoanBean selectByidbank(int laonbankreq_id) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = null;
@@ -127,9 +146,9 @@ public class ApproveLoanDao {
                 bean = new ApproveLoanBean();
                 bean.setApprove_id(rs.getInt("loanreq_id"));
                 bean.setLoanreq_id(rs.getInt("loanreq_id"));
-                bean.setLoanbankreq_id(rs.getInt("title_type"));
-                bean.setFirstName(rs.getString("firstName"));
-                bean.setJudgment(rs.getString("jubgment"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
                 bean.setLoanstatusbank(rs.getString("loanstatusbank"));
                 bean.setApprovedamount(rs.getDouble("birthdate"));
                 bean.setInstalllments(rs.getDouble("installlments"));
@@ -157,7 +176,7 @@ public class ApproveLoanDao {
         con = dbConnect.openNewConnection();
         ResultSet rs = null;
         ApproveLoanBean bean = null;
-        String sql = "select * from tbl_approveloan";
+        String sql = "select * from tbl_approveloan where loanreq_id=? ";
         com.mysql.jdbc.PreparedStatement p = null;
         ArrayList<ApproveLoanBean> approvelist = new ArrayList<ApproveLoanBean>();
         try {
@@ -165,11 +184,11 @@ public class ApproveLoanDao {
             rs = p.executeQuery();
             while (rs.next()) {
                 bean = new ApproveLoanBean();
-                bean.setApprove_id(rs.getInt("loanreq_id"));
+                bean.setApprove_id(rs.getInt("approve_id"));
                 bean.setLoanreq_id(rs.getInt("loanreq_id"));
-                bean.setLoanbankreq_id(rs.getInt("title_type"));
-                bean.setFirstName(rs.getString("firstName"));
-                bean.setJudgment(rs.getString("jubgment"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
                 bean.setLoanstatusbank(rs.getString("loanstatusbank"));
                 bean.setApprovedamount(rs.getDouble("birthdate"));
                 bean.setInstalllments(rs.getDouble("installlments"));
@@ -192,4 +211,198 @@ public class ApproveLoanDao {
         }
         return approvelist;
     }
+       public ArrayList<ApproveLoanBean> selectByIdcitizen(String  citizen_id) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = null;
+        con = dbConnect.openNewConnection();
+        ResultSet rs = null;
+        ApproveLoanBean bean = null;
+        String sql = "select * from tbl_approveloan where citizen_id =?"; //
+        com.mysql.jdbc.PreparedStatement p = null;
+        ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
+        
+        try {
+            p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+            p.setString(1, citizen_id);
+            rs = p.executeQuery();
+            while (rs.next()) {
+                bean = new ApproveLoanBean();
+                bean.setApprove_id(rs.getInt("approve_id"));
+                bean.setLoanreq_id(rs.getInt("loanreq_id"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
+                bean.setLoanstatusbank(rs.getString("loanstatusbank"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
+                bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setTimerepayment(rs.getString("timerepayment"));
+                bean.setPosition(rs.getString("position"));
+                bean.setCreatedby(rs.getString("createdby"));
+                bean.setUpdateby(rs.getString("updateby"));
+                bean.setCreated(rs.getString("created"));
+                list.add(bean);
+            }
+
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+        return list;
+}
+        public int deleteloanreqId(int approve_id) throws Exception {
+        DBConnect bConnect = new DBConnect();
+        ApproveLoanBean bean = new ApproveLoanBean();
+        Connection con = (Connection) bConnect.openNewConnection();
+        String sql = "delete from tbl_approveloan where approve_id=?";
+        PreparedStatement p = null;
+        int i = 0;
+        try {
+            p = (PreparedStatement) con.prepareCall(sql.toString());
+            p.setInt(1, approve_id);
+            i = p.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                p.close();
+                bConnect.closeConnection(con);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return i;
+    }
+         public ApproveLoanBean selectBy_Id(int loanreq_id) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = null;
+        con = dbConnect.openNewConnection();
+        ResultSet rs = null;
+        ApproveLoanBean bean = null;
+        String sql = "select * from tbl_approveloan where loanreq_id =?"; //
+        com.mysql.jdbc.PreparedStatement p = null;
+//        ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
+        
+        try {
+            p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+            p.setInt(1, loanreq_id);
+            rs = p.executeQuery();
+            while (rs.next()) {
+                bean = new ApproveLoanBean();
+                bean.setApprove_id(rs.getInt("approve_id"));
+                bean.setLoanreq_id(rs.getInt("loanreq_id"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
+                bean.setLoanstatusbank(rs.getString("loanstatusbank"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
+                bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setTimerepayment(rs.getString("timerepayment"));
+                bean.setPosition(rs.getString("position"));
+                bean.setCreatedby(rs.getString("createdby"));
+                bean.setUpdateby(rs.getString("updateby"));
+                bean.setCreated(rs.getString("created"));
+//                list.add(bean);
+            }
+
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+        return bean;
+    }
+         public ApproveLoanBean selectByIdcitizen_id(String  citizen_id) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = null;
+        con = dbConnect.openNewConnection();
+        ResultSet rs = null;
+        ApproveLoanBean bean = null;
+        String sql = "select * from tbl_approveloan where citizen_id =?"; //
+        com.mysql.jdbc.PreparedStatement p = null;
+//        ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
+        
+        try {
+            p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+            p.setString(1, citizen_id);
+            rs = p.executeQuery();
+            while (rs.next()) {
+                bean = new ApproveLoanBean();
+                bean.setApprove_id(rs.getInt("approve_id"));
+                bean.setLoanreq_id(rs.getInt("loanreq_id"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
+                bean.setLoanstatusbank(rs.getString("loanstatusbank"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
+                bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setTimerepayment(rs.getString("timerepayment"));
+                bean.setPosition(rs.getString("position"));
+                bean.setCreatedby(rs.getString("createdby"));
+                bean.setUpdateby(rs.getString("updateby"));
+                bean.setCreated(rs.getString("created"));
+//                list.add(bean);
+            }
+
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+        return bean;
+}
+          public ApproveLoanBean selectApprove_id(int approve_id) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = null;
+        con = dbConnect.openNewConnection();
+        ResultSet rs = null;
+        ApproveLoanBean bean = null;
+        String sql = "select * from tbl_approveloan where approve_id =?"; //
+        com.mysql.jdbc.PreparedStatement p = null;
+//        ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
+        
+        try {
+            p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+            p.setInt(1, approve_id);
+            rs = p.executeQuery();
+            while (rs.next()) {
+                bean = new ApproveLoanBean();
+                bean.setApprove_id(rs.getInt("approve_id"));
+                bean.setLoanreq_id(rs.getInt("loanreq_id"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
+                bean.setLoanstatusbank(rs.getString("loanstatusbank"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
+                bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setTimerepayment(rs.getString("timerepayment"));
+                bean.setPosition(rs.getString("position"));
+                bean.setCreatedby(rs.getString("createdby"));
+                bean.setUpdateby(rs.getString("updateby"));
+                bean.setCreated(rs.getString("created"));
+            }
+
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+        return bean;
+}
 }
