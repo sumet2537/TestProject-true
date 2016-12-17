@@ -21,6 +21,15 @@ public class bankBean {
     private String bank6;
     private String bank7;
     private String todo;
+    private String emailbank;
+
+    public String getEmailbank() {
+        return emailbank;
+    }
+
+    public void setEmailbank(String emailbank) {
+        this.emailbank = emailbank;
+    }
     
     
     private int id;
