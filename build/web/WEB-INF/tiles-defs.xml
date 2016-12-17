@@ -116,7 +116,7 @@
     
       <definition name="gotoDetleApprove1" extends="welcome">
         <put name="title"  value="detel" />
-        <put name="body"   value="/suer/detleloanapprove.jsp" />
+        <put name="body"   value="/user/detleloanapprove.jsp" />
     </definition> 
     
     <!--/////////////////////////////////////////////////-->

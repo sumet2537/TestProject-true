@@ -1,5 +1,6 @@
 
 
+<%@page import="com.bean.bankBean"%>
 <%@page import="com.bean.ApproveLoanBean"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.bean.RequestLoanBean"%>
@@ -11,11 +12,16 @@
         <title>JSP Page</title>
     </head>
         <%! ApproveLoanBean bean = null;
-           
+           bankBean bank = null;
+           RequestLoanBean loan = null;
+//           ApproveLoanBean bean1 = null;
         %>
         <%--
         --%>
         <% bean = (ApproveLoanBean) request.getSession().getAttribute("abean");
+           bank = (bankBean) request.getSession().getAttribute("bank");
+//           bean1 = (ApproveLoanBean)  request.getSession().getAttribute("abean");
+           loan= (RequestLoanBean) request.getSession().getAttribute("loanbean");
             DecimalFormat formatter = new DecimalFormat("###,###.00");
             DecimalFormat phone = new DecimalFormat("###-###-####");
             String msg = "";
@@ -50,7 +56,9 @@
                                                         <h4> :: ข้อมูลส่วนตัว :: <%=bean.getCitizen_id()%><%=bean.getBank_id()%></h4>
                                                     </div>
                                                     <div class="panel-body">
-                                            
+                                                        <%=bank.getBankname()%><%=bank.getEmailbank()%>
+                                                        <%=loan.getPeriodloan()%>
+                                                        <%--<%=bean1.getPosition()%>--%>
                                                     <hr class="hrsuccess">
                                                     <!--test-->
                                                     <div>

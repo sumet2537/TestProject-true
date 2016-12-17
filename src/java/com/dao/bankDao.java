@@ -36,6 +36,7 @@ public class bankDao {
                 bean.setId(rs.getInt("id"));
                 bean.setBank_id(rs.getString("bank_id"));
                 bean.setBankname(rs.getString("bankname"));
+                bean.setEmailbank(rs.getString("emailbank"));
 //                list.add(bean);
             }
 
