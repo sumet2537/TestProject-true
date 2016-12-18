@@ -21,7 +21,7 @@ public class ApproveLoanForm extends org.apache.struts.action.ActionForm {
     private int loanreq_id;
     private String bank_id;
     private String citizen_id;
-    private String firstName;
+    private String firstname;
     private String judgment;
     private Double approvedamount;
     private Double installlments;
@@ -34,7 +34,36 @@ public class ApproveLoanForm extends org.apache.struts.action.ActionForm {
     private String loanstatusbank;
     private String todo;
     private String loanstatustype;
+private String emailbank;
+    private String email;
+    private String passemail;
 
+    public String getEmailbank() {
+        return emailbank;
+    }
+
+    public void setEmailbank(String emailbank) {
+        this.emailbank = emailbank;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
+    public String getPassemail() {
+        return passemail;
+    }
+
+    public void setPassemail(String passemail) {
+        this.passemail = passemail;
+    }
+    
+    
     public String getBank_id() {
         return bank_id;
     }
@@ -78,16 +107,17 @@ public class ApproveLoanForm extends org.apache.struts.action.ActionForm {
         this.loanreq_id = loanreq_id;
     }
 
-
-
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
+
+
+   
     public String getJudgment() {
         return judgment;
     }
