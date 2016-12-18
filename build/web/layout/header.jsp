@@ -1,5 +1,17 @@
 
+<%@page import="com.bean.UserBean"%>
+<%@page import="com.bean.MainMenuBean"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%!
+    List<MainMenuBean> mainMenuList = null;
+    UserBean userLogin = null;
+%>
+<%
+   userLogin = (UserBean) request.getSession().getAttribute("userLogin");
+   mainMenuList = (List<MainMenuBean>) request.getSession().getAttribute("mainMenuList");
+%>
 <!-- Logo -->
 <a href="PageAction.do?todo=gotoPageHome" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -33,23 +45,33 @@
                     <span class="hidden-xs"><img src="./img/iconloan1.png" width="50px" height="23px" /></span>
                 </a>
                 <ul class="dropdown-menu">
-                     User image 
+                     <!--User image--> 
+                      <%
+                        if(userLogin !=null){
+                        %>
                     <li class="user-header">
                        <img  src="./img/home1.jpg" class="img-circle" alt="User Image" />
                 
                         <p>
-                        ยินดีตอนรับคุณ 
+                            ยินดีตอนรับคุณ <%=userLogin.getFirstName()%>
                         <small></small>
                         </p>
                     </li>
-                     Menu Footer
+                     <!--Menu Footer-->
                     <li class="user-footer">
-                        <div class="pull-left">
+                       
+                         <div class="pull-left">
                             <a href="PageAction.do?todo=gotoPageProfile" class="btn btn-default btn-flat">โปรไฟล์</a>
                         </div>
+                         
                         <div class="pull-right">
                             <a href="AuthenAuthorizeAction.do?todo=logout" class="btn btn-default btn-flat">ออกจากระบบ</a>
                         </div>
+                        <%
+                        }else{
+}
+                        %>
+                       
                     </li>
                 </ul>
             </li>

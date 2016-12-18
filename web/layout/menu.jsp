@@ -28,11 +28,11 @@
 
     <ul class="sidebar-menu">
         <!--<li class="header">MAIN NAVIGATION</li>-->
-        <li class="active treeview">
-            <!--<a href="#">-->
-                <!--<i class="fa fa-plus-square"></i><span>เมนู</span> HEAD MENU -->
-            <!--</a>-->
-            <ul class="treeview-menu">
+<!--        <li class="active treeview">
+            <a href="#">
+                <i class="fa fa-plus-square"></i><span>เมนู</span>
+            </a>-->
+            <!--<ul class="treeview-menu">-->
 
                 <!--manu admin-->
 
@@ -49,13 +49,14 @@
     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=mainMenuBean.getMenuName()%> <span class="caret"></span></a>
                                         <ul class="treeview-menu menu-open-menu" role="menu">
-                                        <%--<li class="dropdown-header">Sub Menu <%=mainMenuBean.getMenuName()%></li>--%>    
+                                        <%--<li class="dropdown-header">Sub Menu <%=mainMenuBean.getMenuName()%></li>--%>  
+                                        
                                 <%
                                 
                                 if(subMenuList != null && subMenuList.size()>0){
                                     for(SubMenuBean subMenuBean : subMenuList){
                                         %>
-                                        <li ><a href="<%=subMenuBean.getAction()%>?todo=<%=subMenuBean.getTodoMethod()%>"><%=subMenuBean.getMenuName()%></a></li>
+                                        <li><a href="<%=subMenuBean.getAction()%>?todo=<%=subMenuBean.getTodoMethod()%>"><i class="fa fa-plus-square"></i><%=subMenuBean.getMenuName()%></a></li>
                                         <%
                                     }
                                 }       
@@ -67,7 +68,7 @@
                                 
                             }else{
                                 %>
-                                <li> <a href="<%=mainMenuBean.getAction()%>?todo=<%=mainMenuBean.getTodoMethod()%>"><%=mainMenuBean.getMenuName()%></a></li>
+                                <li  class="active treeview"> <a href="<%=mainMenuBean.getAction()%>?todo=<%=mainMenuBean.getTodoMethod()%>"><i class="fa fa-plus-square"></i><%=mainMenuBean.getMenuName()%></a></li>
                                 <%
                             
                             }
@@ -76,8 +77,8 @@
                 }
             }
         %>      
-         </ul>
-        </li>
+         <!--</ul>-->
+        <!--</li>-->
     </ul>
 <%   
     } else {
@@ -107,7 +108,7 @@
                                 if(subMenuList != null && subMenuList.size()>0){
                                     for(SubMenuBean subMenuBean : subMenuList){
                                         %>
-                                            <li><a href="<%=subMenuBean.getAction()%>?todo=<%=subMenuBean.getTodoMethod()%>"><%=subMenuBean.getMenuName()%></a></li>
+                                            <li  class="active treeview"><a href="<%=subMenuBean.getAction()%>?todo=<%=subMenuBean.getTodoMethod()%>"><i class="fa fa-plus-square"></i><%=subMenuBean.getMenuName()%></a></li>
                                         <%
                                     }
                                 }       
@@ -119,7 +120,7 @@
                                 
                             }else{
                                 %>
-                                <li><a href="<%=mainMenuBean.getAction()%>?todo=<%=mainMenuBean.getTodoMethod()%>"><%=mainMenuBean.getMenuName()%></a></li>
+                                <li  class="active treeview"><a href="<%=mainMenuBean.getAction()%>?todo=<%=mainMenuBean.getTodoMethod()%>"><i class="fa fa-plus-square"></i><%=mainMenuBean.getMenuName()%></a></li>
                                 <%
                             
                             }

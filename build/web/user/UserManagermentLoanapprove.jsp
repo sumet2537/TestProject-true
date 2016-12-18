@@ -226,7 +226,7 @@
                                                                     <td><%=i + 1%></td>
                                                                     <%-- <td><%=Approvebean.getApprove_id()%></td>--%>
                                                                     <td><%=Approvebean.getLoanreq_id()%></td>
-                                                                    <td><%=Approvebean.getBank_id()%></td>
+                                                                    <td><%=Approvebean.getBankName()%></td>
                                                                     <%--  <td><%=Approvebean.getJudgment()%></td>--%>
                                                                     <td><%=Approvebean.getLoanstatusbank()%></td>
                                                                     <td><%=formatter.format(Approvebean.getApprovedamount())%></td>

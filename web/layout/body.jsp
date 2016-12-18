@@ -1,43 +1,38 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-          
-            <small></small>
-        </h1>
-    </section>
-
+<style type="text/css">
+	html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+</style>
+<img src="img/H1.jpg" width="auto">
     <!-- Main content -->
     <section class="content">
         <!-- Info boxes -->
         <div class="row">
-            <div class="col-md-12">
-                <div class="box" >
-                    <button onclick="check()">test</button>
-                      <button onclick="check2()">test</button>
-                    <button onclick="check1()">test</button>
+            <div class="">
+                <div class="" >
                     <center><font style="font-size: 25px" color="#8878CD">  ระบบบริการขอสินเชื่อบ้าน <br></font>
-                  <div class="container">
-  <h2>Simple Collapsible</h2>
-  <p>Click on the button to toggle between showing and hiding content.</p>
-  <button type="button" class="btn btn-info" data-target="#demo" data-widget="collapse" data-toggle="collapse">Simple collapsible</button>
-  <div id="demo" class="collapse">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
-</div>
-                        <div class="container">
-  <h2>Simple Collapsible</h2>
-  <p>Click on the button to toggle between showing and hiding content.</p>
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-  <div id="demo" class="collapse in">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
-</div>
+                  <div class="">
+ 
     <p><font style="font-size: 25px" color="red">HOME Loan System </font> </p>
     <img src="./img/12.jpg" style="width: 100%; height: 60%;" />
     <p> <font style="font-size: 20px">ข้อมูลเกี่ยวกับการขอสินเชื่อ</font></p>
@@ -93,47 +88,4 @@
         </div>
     </section><!-- /.content -->
 
-       <script type="text/javascript">
-            function check() {
-                $(document).ready(function () {
-                    swal({
-                        title: "สำเร็จ",
-                        text: "คุณสมัครสมาชิกสำเร็จ เข้าสู่ระบบ",
-                        type: "success"
-                    },
-                            function () {
-                                window.location.href = 'PageAction.do?todo=gotoPageLogin';
-                            });
-                });
-            }
-        </script>
-          <script type="text/javascript">
-            function check1() {
-                swal({
-                        title: "ไม่สำเร็จ",
-                        text: "คุณสมัครสไม่สำเร็จ !",
-                        type: "error"
-        },
-                    function () {
-                        window.location.href = 'PageAction.do?todo=gotoPageRegister';
-                        });
-            };
-
-        </script>
-           <script >
-            function check2() {
-            swal({
-  title: "แก้ไข ?",
-  text: "คุณต้องการแก้ไช่หรือไหม !",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3c8dbc",
-  confirmButtonText: "ตกลง",
-  closeOnConfirm: false,
-  CancelButtonText: "ยกเลิก"
-},
-function(){
-  window.location.href = 'registerAction.do?todo=gotouserEdit';
-});
-            };
-        </script>
+      
