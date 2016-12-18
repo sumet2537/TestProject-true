@@ -44,7 +44,6 @@ public class ApproveLoanAction extends DispatchAction {
         loanbean.setLoanreq_id(loanform.getLoanreq_id());
         loanbean.setBank_id(loanform.getBank_id());
         loanbean.setCitizen_id(loanform.getCitizen_id());
-        loanbean.setFirstName(loanform.getFirstname());
         loanbean.setJudgment(loanform.getJudgment());
         loanbean.setLoanstatusbank(loanform.getLoanstatusbank());
         loanbean.setApprovedamount(loanform.getApprovedamount());
@@ -53,7 +52,7 @@ public class ApproveLoanAction extends DispatchAction {
         loanbean.setPosition(loanform.getPosition());
         loanbean.setCreatedby(loanform.getCreatedby());
         loanbean.setUpdateby(loanform.getUpdateby());
-
+        
         bean.setLoanstatustype(loanform.getLoanstatustype());
 
         RequestLoanDao dao = new RequestLoanDao();

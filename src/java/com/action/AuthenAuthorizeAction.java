@@ -54,6 +54,8 @@ public class AuthenAuthorizeAction extends DispatchAction {
             throws Exception {
         
          request.getSession().removeAttribute("userLogin");
+         request.getSession().removeAttribute("requestLoan");
+         
 
         return mapping.findForward("gotoWelcome");
     }
