@@ -34,7 +34,7 @@ time, mark, audio, video {
                   <div class="">
  
     <p><font style="font-size: 25px" color="red">HOME Loan System </font> </p>
-    <img src="./img/12.jpg" style="width: 100%; height: 60%;" />
+    <img src="./img/12.jpg"  />
     <p> <font style="font-size: 20px">ข้อมูลเกี่ยวกับการขอสินเชื่อ</font></p>
 
 ท่านสามารถดูข้อมูลเบื้องต้นที่ท่านควรทราบเกี่ยวกับการขอสินเชื่อ ดังต่อไปนี้
