@@ -13,6 +13,7 @@ import com.dao.RequestLoanDao;
 import com.dao.bankDao;
 import com.form.ApproveLoanForm;
 import com.form.RequestLoanForm;
+import com.util.EmailUtility;
 import com.util.FileUploadUtil;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class ApproveLoanAction extends DispatchAction {
         loanbean.setLoanreq_id(loanform.getLoanreq_id());
         loanbean.setBank_id(loanform.getBank_id());
         loanbean.setCitizen_id(loanform.getCitizen_id());
-        loanbean.setFirstName(loanform.getFirstName());
+        loanbean.setFirstName(loanform.getFirstname());
         loanbean.setJudgment(loanform.getJudgment());
         loanbean.setLoanstatusbank(loanform.getLoanstatusbank());
         loanbean.setApprovedamount(loanform.getApprovedamount());
@@ -108,7 +109,6 @@ public class ApproveLoanAction extends DispatchAction {
             msg = "no";
         }
         request.getSession().removeAttribute("loanList");
-//        request.getSession().removeAttribute("loan");
         request.getSession().setAttribute("loan", loanbean);
         request.getSession().setAttribute("loanList", list);
         return mapping.findForward("gotoPageUserViewStatus");
@@ -193,33 +193,42 @@ public class ApproveLoanAction extends DispatchAction {
         request.setAttribute("deletesuccess", msg);
         return mapping.findForward("gotoPageUserViewStatus");
     }
-//    ApproveLoanForm loanform = (ApproveLoanForm) form;
-//         ApproveLoanBean abean = new ApproveLoanBean();
-//        ApproveLoanDao adao = new ApproveLoanDao();
-//        RequestLoanBean loanbean = new RequestLoanBean();
-//        bankBean bank = new bankBean();
-//         bankDao bankdao = new bankDao();
-//        RequestLoanDao rdao = new RequestLoanDao();
-//       String msg = "";
-//        loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
-//         try {
-//         abean = adao.selectApprove_id(loanform.getApprove_id());
-//             String bank_id = abean.getBank_id();
-//         int loanreq_id = loanbean.getLoanreq_id();
-//             String citizen_id = loanbean.getCitizen_id();
-//             abean = adao.selectByIdcitizen_id(citizen_id);
-//             
-//              abean = adao.selectBy_Id(loanreq_id); 
-//             bank = bankdao.selectById(bank_id);
-//             System.out.println("ok");
-//             msg = "ok";
-//         } catch (Exception e) {
-//             e.printStackTrace();
-//             System.out.println("no");
-//             msg = "no";
-//         }
-//          request.getSession().setAttribute("bank", bank);
-//          request.getSession().setAttribute("abean", abean);
-////          request.getSession().setAttribute("loanbean", abean);
+     public ActionForward email(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        String msg= "";
+        ApproveLoanForm af = (ApproveLoanForm) form;
+        ApproveLoanBean approve = new ApproveLoanBean();
+        RequestLoanBean bean = new RequestLoanBean();
+        EmailUtility emailUtility = new EmailUtility();
+       
+        String emailbank = (af.getEmailbank());
+        String passmail = (af.getPassemail());
+        String email = (af.getEmail());
+        String citizenid =(af.getCitizen_id());
+         int loanreq =(af.getLoanreq_id());
+        String fratname = (af.getFirstname());
+        String em = (af.getEmail());
+       
+            String url = "<strong><a href=\"http://localhost:8080/TestProject/LoanRequstAction.do?todo=gotoeditfile&loanreq_id=" + " \"  target=\"_blank\">กดที่นี้เพื่อทำการแก้ไข</a></strong>";
+            String uuu = "<strong><a href=\"www.google.com\"  target=\"_blank\">ลูกค้ายืนยันเรียบร้อย</a></strong>";
+//            String bass = "sumat678@gmail.com";
+//
+//"homeloansystem@gmail.com", "0833412924brass", email
+           try{
+                emailUtility.sendEmail(email, passmail, emailbank,"emailผู้ยืนยัน :"+ email+"<br>","ยืนยันการกู้รหัสสินเชื่อคือ :" + loanreq + "<br>" + "เลขบัตรประชาชน :" + citizenid +"<br>" +"ชื่อผู้ยืนยัน :"  + fratname+ "<br>"+ uuu, null);
+
+            System.out.println("ok");
+            msg = "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("no");
+            msg = "no";
+        }
+
+        request.removeAttribute("resultemail");
+        request.setAttribute("resultemail", msg);
+        return mapping.findForward("gotoDetleApprove1");
+    }
 
 }
