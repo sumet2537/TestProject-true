@@ -98,7 +98,7 @@ public class ApproveLoanDao {
                 bean.setCreatedby(rs.getString("createdby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
-                bean.setBankName("bankname");
+                bean.setBankName(rs.getString("bankname"));
                 list.add(bean);
             }
 
