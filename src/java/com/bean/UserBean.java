@@ -25,9 +25,16 @@ public class UserBean {
     private String statustype;
     private String mobile;
     private String email;
-    private String addressregistration;
-    private String addresscurrent;
-    private String addresssenddoc;
+    
+    private String nationality;
+    private String jobtype;
+    private String province;
+    private String amphur;
+    private String district;
+    private String address;
+//    private String addressregistration;
+//    private String addresscurrent;
+//    private String addresssenddoc;
     private Integer roleId;
     private Date created;
     private String createBy;
@@ -145,30 +152,55 @@ public class UserBean {
         this.email = email;
     }
 
-    public String getAddressregistration() {
-        return addressregistration;
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setAddressregistration(String addressregistration) {
-        this.addressregistration = addressregistration;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
-    public String getAddresscurrent() {
-        return addresscurrent;
+    public String getJobtype() {
+        return jobtype;
     }
 
-    public void setAddresscurrent(String addresscurrent) {
-        this.addresscurrent = addresscurrent;
+    public void setJobtype(String jobtype) {
+        this.jobtype = jobtype;
     }
 
-    public String getAddresssenddoc() {
-        return addresssenddoc;
+    public String getProvince() {
+        return province;
     }
 
-    public void setAddresssenddoc(String addresssenddoc) {
-        this.addresssenddoc = addresssenddoc;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
+    public String getAmphur() {
+        return amphur;
+    }
+
+    public void setAmphur(String amphur) {
+        this.amphur = amphur;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+  
 
 
     public Integer getRoleId() {
