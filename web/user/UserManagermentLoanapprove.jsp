@@ -56,7 +56,7 @@
                                             <div class="form-group ">
                                                 <div class="panel panel-info">
                                                     <div class="panel-heading">
-                                                        <a href="#collap" data-toggle="collapse" > <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%>&nbsp;&nbsp;วันที่ส่ง : &nbsp;&nbsp;<%=bean.getCreated()%></h4></a>
+                                                        <a href="#collap" data-toggle="collapse" > <h4> :: ข้อมูลส่วนตัว :: </h4></a>
                                                     </div>
                                                     <div class="collapse" id="collap">
                                                         <div class="panel-body">
