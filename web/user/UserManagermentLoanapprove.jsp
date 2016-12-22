@@ -30,17 +30,6 @@
         msg = (String) request.getAttribute("deletesuccess");
     %>
 
-<%--
-if("null".equals(loanlist)){
-    %>
-    ท่านยังไม่ได้ขอสินเชื่อ 
-    <%
-}else{ 
-%>
-
-<%
-}
---%>
     <body onload="check()">
         <section class="content">
             <!-- Info boxes -->
@@ -284,6 +273,7 @@ if("null".equals(loanlist)){
             </div>
         </section>
     </body>
+
     <script type="text/javascript">
 
         function callActionGotoDelete(approve_id) {
