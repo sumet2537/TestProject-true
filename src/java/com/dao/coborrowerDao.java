@@ -71,6 +71,7 @@ public class coborrowerDao {
             p.setString(42, requestLoatBean.getCopydocumenthome_k());
             p.setString(43, requestLoatBean.getSalary_slip_p());
             p.setString(44, requestLoatBean.getCopy_bankaccount_k());
+//            p.setString(45, requestLoatBean.getLoanstatustype());
             i = p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -253,6 +254,7 @@ public class coborrowerDao {
                 bean.setCopydocumenthome_k(rs.getString("copydocumenthome_k"));
                 bean.setSalary_slip_k(rs.getString("salary_slip_p"));
                 bean.setCopy_bankaccount_k(rs.getString("copy_bankaccount_k"));
+//                bean.setLoanstatustype(rs.getString("loanstatustype"));
             }
 
         } finally {
