@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%! RequestLoanBean bean = null;
-           
+
         %>
         <%--
         --%>
@@ -26,7 +26,7 @@
             e_msg = (String) request.getAttribute("resultemail");
             String mascess = "";
             String msgsascess = "";
-            msgsascess=(String) request.getAttribute("confrimbank");
+            msgsascess = (String) request.getAttribute("confrimbank");
             mascess = (String) request.getAttribute("detleloan");
         %>
 
@@ -104,16 +104,20 @@
                                                             <input type="hidden" name="jobtype" value="<%=bean.getJobtype()%>">
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
-                                                            <textarea hidden name="addressregistration" ><%=bean.getAddressregistration()%></textarea>
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince()%></span></label>
+                                                            <textarea hidden name="addressregistration" ><%=bean.getProvince()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label>ที่อยู่ปัจจุบัน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresscurrent()%></span></label>
-                                                            <textarea hidden name="addresscurrent" > <%=bean.getAddresscurrent()%></textarea>
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur()%></span></label>
+                                                            <textarea hidden name="addresscurrent" > <%=bean.getAmphur()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddresssenddoc()%></textarea>
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict()%></span></label>
+                                                            <textarea hidden name="addresssenddoc"> <%=bean.getDistrict()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress()%></span></label>
+                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddress()%></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -170,7 +174,7 @@
                                                                 <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean.getCopyidcard()%></span></label>
                                                                 <input  type="hidden" name="copyidcard" value="<%=bean.getCopyidcard()%>">
                                                             </div>
-                                                                <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group"> 
                                                             <div class="col-md-8">
@@ -217,6 +221,242 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <!--=====================  =====================  =====================  =====================  =====================  =====================-->                                                       
+                                                <%
+                                                    if ("สมรส".equals(bean.getStatustype())) {
+                                                %>
+                                                <div class="panel panel-success">
+                                                    <div class="panel-heading">
+                                                        <h4> :: ข้อมูลคู่สมรส :: </h4>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="form-group col-md-12">
+                                                            <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean.getCitizen_p()%></span></label>
+                                                            <input  type="hidden" name="citizen_id" value="<%=bean.getCitizen_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean.getTitle_p()%></span></label>
+                                                            <input type="hidden"  name="title_type" value="<%=bean.getTitle_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="firstname">ชื่อ : &nbsp;&nbsp;<span  style="color:#0033FF; font-size: 17px;"><%=bean.getFirstname_p()%></span></label>
+                                                            <input  type="hidden" name="firstName" value="<%=bean.getFirstname_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>นามสกุล: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getLastname_p()%></span></label>
+                                                            <input type="hidden" name="lastName" value="<%=bean.getLastname_p()%>" >
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>วันเดือนปีเกิด: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getBirthdate_p()%></span></label>
+                                                            <input type="hidden" name="birthdate" value="<%=bean.getBirthdate_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >อายุ: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getAge_p()%></span> &nbsp;&nbsp;ปี</label>
+                                                            <input  type="hidden" name="age" value="<%=bean.getAge_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >สัญชาติ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getNationality_p()%></span></label>
+                                                            <input name="nationality" type="hidden" value="<%=bean.getNationality_p()%>" >
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >สถานะสมรส : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getStatustype_p()%></span></label>
+                                                            <input type="hidden" name="statustype" value="<%=bean.getStatustype_p()%>"/>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>เบอร์โทร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getMobile_p()%></span></label>
+                                                            <input type="hidden" name="mobile" value="<%=bean.getMobile_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail_p()%></span></label>
+                                                            <input type="hidden" name="email"  value="<%=bean.getEmail_p()%>"/>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype_p()%></span></label>
+                                                            <input type="hidden" name="jobtype" value="<%=bean.getJobtype_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince_p()%></span></label>
+                                                            <textarea hidden name="addressregistration" ><%=bean.getProvince_p()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur_p()%></span></label>
+                                                            <textarea hidden name="addresscurrent" > <%=bean.getAmphur_p()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict_p()%></span></label>
+                                                            <textarea hidden name="addresssenddoc"> <%=bean.getDistrict_p()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress_p()%></span></label>
+                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddress_p()%></textarea>
+                                                        </div>
+                                                        <h4> :: ข้อมูลด้านรายได้ ::</h4>
+                                                        <div class="form-group col-md-6">
+                                                            <label>รายได้ประจำต่อเดือน: &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getPeriodloan_p())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input  class="form-control" type="hidden" name="periodloan" value="<%=bean.getPeriodloan_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label>รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getNetprofit_p())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input type="hidden" name="netprofit" value="<%=bean.getNetprofit_p()%>">
+                                                        </div>
+                                                        <h4> :: เอกสารประกอบการขอกู้ ::</h4>
+                                                        <div class="form-group">
+                                                            <div class="col-md-8"><h3>เอกสาร</h3>
+                                                            </div>
+                                                            <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-8">
+                                                                <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean.getCopyidcard_p()%></span></label>
+                                                                <input  type="hidden" name="copyidcard" value="<%=bean.getCopyidcard_p()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard_p()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-8">
+                                                                <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopydocumenthome_p()%></span></label>
+                                                                <input type="hidden" name="copydocumenthome" value="<%=bean.getCopydocumenthome_p()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopydocumenthome_p()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class=" col-md-8">
+                                                                <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getSalary_slip_p()%></span></label>
+                                                                <input  type="hidden" name="salary_slip"  value="<%=bean.getSalary_slip_p()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getSalary_slip_p()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class=" col-md-8">
+                                                                <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount_p()%></span></label>
+                                                                <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount_p()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount_p()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%
+                                                } else {
+                                                    }
+                                                %>                              
+
+
+                                                <!--=====================  =====================  =====================  =====================  =====================  =====================-->                                                      
+                                                <!--ข้อมูลผู้กู้ผู้ค้ำ-->
+                                                <div class="panel panel-info">
+                                                    <div class="panel-heading">
+                                                        <h4> :: ข้อมูลผู้ค้ำประกัน :: </h4>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="form-group col-md-12">
+                                                            <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean.getCitizen_k()%></span></label>
+                                                            <input  type="hidden" name="citizen_id" value="<%=bean.getCitizen_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean.getTitle_k()%></span></label>
+                                                            <input type="hidden"  name="title_type" value="<%=bean.getTitle_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="firstname">ชื่อ : &nbsp;&nbsp;<span  style="color:#0033FF; font-size: 17px;"><%=bean.getFirstname_k()%></span></label>
+                                                            <input  type="hidden" name="firstName" value="<%=bean.getFirstname_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>นามสกุล: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getLastname_k()%></span></label>
+                                                            <input type="hidden" name="lastName" value="<%=bean.getLastname_k()%>" >
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>วันเดือนปีเกิด: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getBirthdate_k()%></span></label>
+                                                            <input type="hidden" name="birthdate" value="<%=bean.getBirthdate_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >อายุ: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getAge_k()%></span> &nbsp;&nbsp;ปี</label>
+                                                            <input  type="hidden" name="age" value="<%=bean.getAge_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >สัญชาติ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getNationality_k()%></span></label>
+                                                            <input name="nationality" type="hidden" value="<%=bean.getNationality_k()%>" >
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >สถานะสมรส : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getStatustype_k()%></span></label>
+                                                            <input type="hidden" name="statustype" value="<%=bean.getStatustype_k()%>"/>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>เบอร์โทร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getMobile_k()%></span></label>
+                                                            <input type="hidden" name="mobile" value="<%=bean.getMobile_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail_k()%></span></label>
+                                                            <input type="hidden" name="email"  value="<%=bean.getEmail_k()%>"/>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype_k()%></span></label>
+                                                            <input type="hidden" name="jobtype" value="<%=bean.getJobtype_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince_k()%></span></label>
+                                                            <textarea hidden name="addressregistration" ><%=bean.getProvince_k()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur_k()%></span></label>
+                                                            <textarea hidden name="addresscurrent" > <%=bean.getAmphur_k()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict_k()%></span></label>
+                                                            <textarea hidden name="addresssenddoc"> <%=bean.getDistrict_k()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress_k()%></span></label>
+                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddress_k()%></textarea>
+                                                        </div>
+                                                        <h4> :: ข้อมูลด้านรายได้ ::</h4>
+                                                        <div class="form-group col-md-6">
+                                                            <label>รายได้ประจำต่อเดือน: &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getPeriodloan_k())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input  class="form-control" type="hidden" name="periodloan" value="<%=bean.getPeriodloan_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label>รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getNetprofit_k())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input type="hidden" name="netprofit" value="<%=bean.getNetprofit_k()%>">
+                                                        </div>
+                                                        <h4> :: เอกสารประกอบการขอกู้ ::</h4>
+                                                        <div class="form-group">
+                                                            <div class="col-md-8"><h3>เอกสาร</h3>
+                                                            </div>
+                                                            <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-8">
+                                                                <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean.getCopyidcard_k()%></span></label>
+                                                                <input  type="hidden" name="copyidcard" value="<%=bean.getCopyidcard_k()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard_k()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-8">
+                                                                <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopydocumenthome_k()%></span></label>
+                                                                <input type="hidden" name="copydocumenthome" value="<%=bean.getCopydocumenthome_k()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopydocumenthome_k()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class=" col-md-8">
+                                                                <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getSalary_slip_k()%></span></label>
+                                                                <input  type="hidden" name="salary_slip"  value="<%=bean.getSalary_slip_k()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getSalary_slip_k()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class=" col-md-8">
+                                                                <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount_k()%></span></label>
+                                                                <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount_k()%>">
+                                                            </div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount_k()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--=====================  =====================  =====================  =====================  =====================  =====================-->
+
                                                 <div class="panel panel-info">
                                                     <div class="panel-heading">
                                                         <h4> :: ข้อมูลธนาคารที่ต้องการขอกู้ ::</h4>
@@ -311,15 +551,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                                    
-                                                                     <div>
+
+                                                    <div>
                                                         <div id="popup3" class="overlay1" style="margin-top: 55px;">
                                                             <div class="popupr center" style="width: 40%;">
                                                                 <h2 style="color: red;">ยืนยัน</h2>
                                                                 <div class="panel panel-info">
                                                                     <div class="panel-body popup-email">
                                                                         <br>
-                                                                     ยืนยันเอกสารไม่ผ่าน คุณแน่ใจว่าตรวจดีแล้ว !
+                                                                        ยืนยันเอกสารไม่ผ่าน คุณแน่ใจว่าตรวจดีแล้ว !
                                                                         <input type="hidden" name="loanstatustype" value="ไม่อนุมัติ"/>
                                                                     </div>
 
@@ -334,10 +574,10 @@
                                                             </div>
                                                         </div>
                                                     </div> 
-                                                                    <%--!--                                                    <div>
-                                                <%
-                                                    if ("e_ok".equals(e_msg)) {
-                                                %>
+                                                    <%--!--                                                    <div>
+                                <%
+                                    if ("e_ok".equals(e_msg)) {
+                                %>
 
                                                 <div id="popup1" class="overlaymsg">
                                                     <div class="popupr">
@@ -377,182 +617,185 @@
                                                 </div>    
                                                 <%}%>
                                             </div>--%>
-                                            <!--test-->
+                                                    <!--test-->
 
-                                        </div>   
+                                                </div>   
+                                            </div>
+                                        </fieldset>
+                                    </div>
                                 </div>
-                                </fieldset>
                             </div>
                         </div>
-                    </div>
+                    </form>
+                </div>
             </div>
-            </form>
-        </div>
-    </div>
 
-    <!--</div>-->
-</section><!-- /.content -->
-<script type="text/javascript">
-    function oninsert(select) {
-        document.detleloanform.todo.value = select;
-        document.detleloanform.submit();
-    }
-    function callActionsearch(select) {
-        document.detleloanform.todo.value = select;
-        document.detleloanform.submit();
-    }
-    function editapproves(loanreq_id) {
-        document.detleloanform.loanreq_id.value = loanreq_id;
-        document.detleloanform.todo.value = 'editapproves';
-        document.detleloanform.submit();
-    }
-    function reformcadit(loanreq_id) {
-        document.detleloanform.loanreq_id.value = loanreq_id;
-        document.detleloanform.todo.value = 'reformcadit';
-        document.detleloanform.submit();
-    }
-    function noapproves(loanreq_id) {
-        document.detleloanform.loanreq_id.value = loanreq_id;
-        document.detleloanform.todo.value = 'noapproves';
-        document.detleloanform.submit();
-    }
-    //            function onsearch(bycitizen_id){
-    //                document.loanrequstform.bycitizen_id.value = 'bycitizen_id';
-    //                document.loanrequstform.submit();
-    //            }
-       function callCheckboxActive() {
+            <!--</div>-->
+        </section><!-- /.content -->
+        <script type="text/javascript">
+            function oninsert(select) {
+                document.detleloanform.todo.value = select;
+                document.detleloanform.submit();
+            }
+            function callActionsearch(select) {
+                document.detleloanform.todo.value = select;
+                document.detleloanform.submit();
+            }
+            function editapproves(loanreq_id) {
+                document.detleloanform.loanreq_id.value = loanreq_id;
+                document.detleloanform.todo.value = 'editapproves';
+                document.detleloanform.submit();
+            }
+            function reformcadit(loanreq_id) {
+                document.detleloanform.loanreq_id.value = loanreq_id;
+                document.detleloanform.todo.value = 'reformcadit';
+                document.detleloanform.submit();
+            }
+            function noapproves(loanreq_id) {
+                document.detleloanform.loanreq_id.value = loanreq_id;
+                document.detleloanform.todo.value = 'noapproves';
+                document.detleloanform.submit();
+            }
+            //            function onsearch(bycitizen_id){
+            //                document.loanrequstform.bycitizen_id.value = 'bycitizen_id';
+            //                document.loanrequstform.submit();
+            //            }
+            function callCheckboxActive() {
 
-        $('#chk').find('.active').removeClass('active');
-        $('#chk').find('.btn').find('.fa-check').removeClass('fa-check');
+                $('#chk').find('.active').removeClass('active');
+                $('#chk').find('.btn').find('.fa-check').removeClass('fa-check');
 
-        $('#chk').find("input[type='checkbox']:checked").parent('.btn').addClass('active');
-        $('#chk').find("input[type='checkbox']:checked").parent('.btn').find('span').addClass('fa-check');
+                $('#chk').find("input[type='checkbox']:checked").parent('.btn').addClass('active');
+                $('#chk').find("input[type='checkbox']:checked").parent('.btn').find('span').addClass('fa-check');
 
 
 
-    }
-</script>
-
-<div>
-        <%
-            if("ok".equals(mascess)){
-        %>
-        <script >
-            function check() {
-                $(document).ready(function () {
-                    swal({
-                        title: "สำเร็จ",
-                        text: "คุณยืนยันเอกสารไม่ผ่านเสร็จเรียบร้อย",
-                        type: "success",
-                        confirmButtonText: "ตกลง!"
-                    },
-                            function () {
-                                window.location.href = 'PageAction.do?todo=gotoPageManagermentLoan';
-                            });
-                });
             }
         </script>
 
-        <%} else if ("no".equals(mascess)) {
-        %>
-         <script >
-            function check() {
-                swal({
+        <div>
+            <%
+                if ("ok".equals(mascess)) {
+            %>
+            <script >
+                function check() {
+                    $(document).ready(function () {
+                        swal({
+                            title: "สำเร็จ",
+                            text: "คุณยืนยันเอกสารไม่ผ่านเสร็จเรียบร้อย",
+                            type: "success",
+                            confirmButtonText: "ตกลง!"
+                        },
+                                function () {
+                                    window.location.href = 'PageAction.do?todo=gotoPageManagermentLoan';
+                                });
+                    });
+                }
+            </script>
+
+            <%} else if ("no".equals(mascess)) {
+            %>
+            <script >
+                function check() {
+                    swal({
                         title: "ไม่สำเร็จ",
                         text: "คุณสมัครสไม่สำเร็จ !",
                         type: "error",
                         confirmButtonText: "ตกลง!"
-        },
-                    function () {
-//                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=';
-                        });
-            };
-
-        </script>
-        <%   }
-        %>
-    </div>
-    <div>
-        <%
-            if("ok".equals(msgsascess)){
-        %>
-        <script >
-            function check() {
-                $(document).ready(function () {
-                    swal({
-                        title: "สำเร็จ",
-                        text: "คุณส่งข้อมูลแก้ไขไปยังลูกค้าสำเร็จ !",
-                        type: "success",
-                        confirmButtonText: "ตกลง!"
                     },
                             function () {
-                                window.location.href = 'PageAction.do?todo=gotoPageManagermentLoan';
+                                //                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=';
                             });
-                });
-            }
-        </script>
+                }
+                ;
 
-        <%} else if ("no".equals(msgsascess)) {
-        %>
-         <script >
-            function check() {
-                swal({
+            </script>
+            <%   }
+            %>
+        </div>
+        <div>
+            <%
+                if ("ok".equals(msgsascess)) {
+            %>
+            <script >
+                function check() {
+                    $(document).ready(function () {
+                        swal({
+                            title: "สำเร็จ",
+                            text: "คุณส่งข้อมูลแก้ไขไปยังลูกค้าสำเร็จ !",
+                            type: "success",
+                            confirmButtonText: "ตกลง!"
+                        },
+                                function () {
+                                    window.location.href = 'PageAction.do?todo=gotoPageManagermentLoan';
+                                });
+                    });
+                }
+            </script>
+
+            <%} else if ("no".equals(msgsascess)) {
+            %>
+            <script >
+                function check() {
+                    swal({
                         title: "ไม่สำเร็จ",
                         text: "คุณส่งไม่สำเร็จ !",
                         type: "error",
                         confirmButtonText: "ตกลง!"
-        },
-                    function () {
-//                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id';
-                        });
-            };
-
-        </script>
-        <%   }
-        %>
-    </div>
-    
-    
-    <div>
-        <%
-            if("ok".equals(e_msg)){
-        %>
-        <script >
-            function check() {
-                $(document).ready(function () {
-                    swal({
-                        title: "สำเร็จ",
-                        text: "คุณยืนยันเอกสารไม่ผ่านเสร็จเรียบร้อย",
-                        type: "success",
-                        confirmButtonText: "ตกลง!"
                     },
                             function () {
-                                window.location.href = 'PageAction.do?todo=gotoPageManagermentLoan';
+                                //                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id';
                             });
-                });
-            }
-        </script>
+                }
+                ;
 
-        <%} else if ("no".equals(e_msg)) {
-        %>
-         <script >
-            function check() {
-                swal({
+            </script>
+            <%   }
+            %>
+        </div>
+
+
+        <div>
+            <%
+                if ("ok".equals(e_msg)) {
+            %>
+            <script >
+                function check() {
+                    $(document).ready(function () {
+                        swal({
+                            title: "สำเร็จ",
+                            text: "คุณยืนยันเอกสารไม่ผ่านเสร็จเรียบร้อย",
+                            type: "success",
+                            confirmButtonText: "ตกลง!"
+                        },
+                                function () {
+                                    window.location.href = 'PageAction.do?todo=gotoPageManagermentLoan';
+                                });
+                    });
+                }
+            </script>
+
+            <%} else if ("no".equals(e_msg)) {
+            %>
+            <script >
+                function check() {
+                    swal({
                         title: "ล้มเหลว",
                         text: " ไม่สามารถทำรายการได้ อาจเกิดปัญหาทางกับอินเทอร์เน็ต กรุณาลองใหม่อีกครั้ง !",
                         type: "error",
                         confirmButtonText: "ตกลง!"
-        },
-                    function () {
-//                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=';
-                        });
-            };
+                    },
+                            function () {
+                                //                        window.location.href = 'LoanRequstAction.do?todo=gotoDetle_requestloan&loanreq_id=';
+                            });
+                }
+                ;
 
-        </script>
-        
-        <%   }
-        %>
-    </div>
-</body>
+            </script>
+
+            <%   }
+            %>
+        </div>
+    </body>
 
 </html>

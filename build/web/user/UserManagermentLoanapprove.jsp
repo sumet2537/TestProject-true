@@ -30,7 +30,17 @@
         msg = (String) request.getAttribute("deletesuccess");
     %>
 
+<%--
+if("null".equals(loanlist)){
+    %>
+    ท่านยังไม่ได้ขอสินเชื่อ 
+    <%
+}else{ 
+%>
 
+<%
+}
+--%>
     <body onload="check()">
         <section class="content">
             <!-- Info boxes -->
@@ -56,7 +66,7 @@
                                             <div class="form-group ">
                                                 <div class="panel panel-info">
                                                     <div class="panel-heading">
-                                                        <a href="#collap" data-toggle="collapse" > <h4> :: ข้อมูลส่วนตัว :: &nbsp;&nbsp;&nbsp;&nbsp;รหัสสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanreq_id()%>&nbsp;&nbsp;สถานะสินเชื่อ : &nbsp;&nbsp;<%=bean.getLoanstatustype()%>&nbsp;&nbsp;วันที่ส่ง : &nbsp;&nbsp;<%=bean.getCreated()%></h4></a>
+                                                        <a href="#collap" data-toggle="collapse" > <h4> :: ข้อมูลส่วนตัว :: </h4></a>
                                                     </div>
                                                     <div class="collapse" id="collap">
                                                         <div class="panel-body">
@@ -94,7 +104,7 @@
                                                             <div class="form-group col-md-4">
                                                                 <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             </div>
-                                                            <div class="form-group col-md-4">
+<%--                                                            <div class="form-group col-md-4">
                                                                 <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
                                                             </div>
                                                             <div class="form-group col-md-4">
@@ -102,7 +112,7 @@
                                                             </div>
                                                             <div class="form-group col-md-4">
                                                                 <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
-                                                            </div>
+                                                            </div>--%>
                                                         </div>
 
                                                         <div class="panel panel-success">

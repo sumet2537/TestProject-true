@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
-  <services/>
+  <services>
+    <service name="ApproveClientWebService">
+      <implementation-class>com.ws.ApproveClientWebService</implementation-class>
+    </service>
+  </services>
   <clients>
     <client name="RequestLoanService">
       <wsdl-url>http://localhost:8080/Loanbank1/RequestLoanService?WSDL</wsdl-url>

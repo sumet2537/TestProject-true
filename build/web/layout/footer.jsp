@@ -4,5 +4,5 @@
         <!--<b>Version</b> 2.0-->
     </div>
 <center>
-    <strong>Copyright &copy; 2016-2020  HOME LOAN SYSTEM </strong> All rights reserved.
+    <strong>Copyright &copy; 2016-2020  ระบบบริการขอสินเชื่อบ้าน  </strong> สงวนลิขสิทธิ์.
 </center>

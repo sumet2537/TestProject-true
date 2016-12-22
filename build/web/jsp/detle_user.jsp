@@ -78,16 +78,28 @@
                                     <label >อีเมล์  : &nbsp;&nbsp; <%=bean.getEmail()%></label>
 
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <%=bean.getAddressregistration()%></label>
+                                    <div class="form-group col-md-12">
+                                    <label >สัญชาติ : &nbsp;&nbsp; <%=bean.getNationality()%></label>
+
+                                </div>
+                                    <div class="form-group col-md-12">
+                                    <label >อาชีพ : &nbsp;&nbsp; <%=bean.getJobtype()%></label>
+
+                                </div>
+                                    <div class="form-group col-md-12">
+                                    <label >จังหวัด : &nbsp;&nbsp; <%=bean.getAmphur()%></label>
 
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label >ที่อยู่ปัจจุบัน   <%=bean.getAddresscurrent()%></label>
+                                    <label >อำเภอ : &nbsp;&nbsp; <%=bean.getAmphur()%></label>
 
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label >ที่อยู่จัดส่งเอกสาร : &nbsp;&nbsp;<%=bean.getAddresssenddoc()%></label>
+                                    <label >ตำบล   <%=bean.getDistrict()%></label>
+
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label >ที่อยู่ : &nbsp;&nbsp;<%=bean.getAddress()%></label>
 
                                 </div>
                                     </div>

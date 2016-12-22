@@ -82,10 +82,7 @@
                 <forward name="gotorequestloansuccess" path="gotorequestloansuccess" />
                 <forward name="gotoDetle_requestloan" path="gotoDetle_requestloan" />
                 <forward name="gotoPageLoanRequest" path="gotoPageLoanRequest" />
-                <!--approve-->
-                <forward name="gotoDetle_ap" path="gotoDetle_ap" />
-                <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
-                <!--approve-->
+               
                 <!--NOapprove-->
                 <forward name="gotoDetle_Nofile" path="gotoDetle_Nofile" />
                 <forward name="gotoPageManagermentNofile" path="gotoPageManagermentNofile" />
@@ -112,6 +109,11 @@
             <action name="ApproveLoanForm" parameter="todo" path="/ApproveLoanAction" scope="session" type="com.action.ApproveLoanAction" >
                 <forward name="gotoPageUserViewStatus" path="gotoPageUserViewStatus" />
                 <forward name="gotoDetleApprove1" path="gotoDetleApprove1" />
+                 <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
+                  <!--approve-->
+                <forward name="gotoDetle_ap" path="gotoDetle_ap" />
+                <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
+                <!--approve-->
             </action>
         </action-mappings>
 

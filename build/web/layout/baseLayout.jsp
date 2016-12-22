@@ -21,7 +21,7 @@
         
         <!--validate-->
         <link rel="stylesheet" href="<%=request.getContextPath()%>/css/css1/bootstrapValidator.min.css">
-             
+             <script src="<%=request.getContextPath()%>/js/jQuery1.5.2.js"></script>
              <script src="<%=request.getContextPath()%>/js/bootstrapvalidator.min.js"></script>
             <script src="<%=request.getContextPath()%>/js/validate-register.js"></script>
             <script src="<%=request.getContextPath()%>/js/modal.js"></script>

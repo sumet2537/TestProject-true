@@ -4,6 +4,8 @@
     Author     : brass
 --%>
 
+<%@page import="com.bean.bankBean"%>
+<%@page import="com.bean.ApproveLoanBean"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.bean.RequestLoanBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,10 +14,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%! RequestLoanBean bean = null;%>
+        <%! 
+        ApproveLoanBean bean1 = null;
+        bankBean bank = null;
+        RequestLoanBean bean = null;%>
         <%--
         --%>
-        <%bean = (RequestLoanBean) request.getSession().getAttribute("editBean");
+        <%
+        bean1 = (ApproveLoanBean) request.getSession().getAttribute("abean");
+        bank = (bankBean) request.getSession().getAttribute("bank");
+        bean = (RequestLoanBean) request.getSession().getAttribute("loanbean");
             DecimalFormat formatter = new DecimalFormat("###,###.00");
             DecimalFormat phone = new DecimalFormat("###-###-####");
         %>
@@ -220,11 +228,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="center">
-                                                   รายละเอียดการอนุมัติ
-                                                </div>
-                                                 
-                                            </div>
+                                                                 </div>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -236,6 +240,137 @@
 
             <!--</div>-->
         </section><!-- /.content -->
+                                                <div class="center">
+                                                   รายละเอียดการอนุมัติ
+                                                </div>
+                                                 <section class="content">
+            <!-- Info boxes -->
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-horizontal" id="detleloanform" name="detleform" action="ApproveLoanAction.do" method="post" enctype="multipart/form-data">
+                        <!--<div align="center">-->
+                        <div class="box box-solid" >
+                            <a href="#" onclick="javascript:window.print();" class="pull-right"><i class="glyphicon glyphicon-print"></i></a>
+                            <!--box box-solid-->
+
+                            <br>
+                            <h3 class="center"><strong >รายละเอียดการอนุมัติของ&nbsp;<font color="red">ธนาคาร<%=bank.getBankname()%></font></strong></h3>
+                            <div class="box-body">
+                                <!--box-body-->
+                                <div class="row">
+                                    <fieldset class="col-md-2">
+                                    </fieldset>
+                                    <fieldset class="col-md-8 center">
+                                        <hr class="hrbrue">
+                                    </fieldset>
+                                    <div >
+                                        <fieldset class="col-md-10 col-md-offset-1">
+                                            <div class="form-group">
+                                                <div class="box box-primary">
+                                                    <div class="box-header">
+                                                        <h4> :: รายละเอียด ::</h4>
+                                                    </div>
+                                                    <div class="box-body">
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-3 ">
+                                                                <label >ชื่อผู้กู้ :</label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean.getFirstName()%>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label>นามสกลุ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean.getLastName()%>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <label>ยอดเงินที่ที่ขอกู้ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=formatter.format(bean.getCreditloan())%>&nbsp;&nbsp;บาท
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label>ระยะเวลาที่ขอผ่อนชำระ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean.getLncome_per_month()%>&nbsp;&nbsp;ปี
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <label>ผลการพิจารณา : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean1.getJudgment()%>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label>สถานะ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean1.getLoanstatusbank()%>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <label>วงเงินที่อนุมัติ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=formatter.format(bean1.getApprovedamount())%>&nbsp;&nbsp;บาท
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label>ระยะเาลาการผ่อนจ่าย : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean1.getTimerepayment()%>&nbsp;&nbsp;ปี
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <label>ยอดชำระต่อเดือน : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=formatter.format(bean1.getInstalllments())%> &nbsp;&nbsp;บาท/เดือน
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label>ชื่อผู้อนุมัติ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean1.getCreatedby()%>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <label>ตำแหน่งผู้อนุมัติ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean1.getPosition()%>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <label>วันที่อนุมัติ : </label>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <%=bean.getCreated()%>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                    <hr class="hrsuccess">
+                                        </fieldset>
+                                   
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--</div>-->
+        </section><!-- /.content -->
+                                      
         <script type="text/javascript">
             function oninsert(select) {
                 document.loanrequstform.todo.value = select;

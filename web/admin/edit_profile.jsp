@@ -92,22 +92,57 @@
                                             <div class="col-md-8 ">
                                                 <input class="form-control" type="text" name="email" value="<%=bean.getEmail()%>" >
                                             </div></div>
-                                        <div class="form-group col-md-12">
-                                            <label class="col-md-4 control-label" for="addressregistration">ที่อยู่ตามทะเบียนบ้าน </label>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" name="addressregistration" ><%=bean.getAddressregistration()%></textarea>
-                                            </div></div>
-                                        <div class="form-group col-md-12">
-                                            <label class="col-md-4 control-label" for="addresscurrent">ที่อยู่ปัจจุบัน </label>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" name="addresscurrent" ><%=bean.getAddresscurrent()%></textarea>
-                                            </div></div>
-                                        <div class="form-group col-md-12">
-                                            <label class="col-md-4 control-label" for="addresssenddoc">ที่อยู่จัดส่งเอกสาร </label>
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" name="addresssenddoc" ><%=bean.getAddresssenddoc()%></textarea>
-                                            </div>
+                                          <div class="form-group col-md-12">
+                                        <label class="col-md-4 control-label" for="nationality">สัญชาติ <span class="require" style="color:red;">*</span></label>
+                                        <div class="col-md-8 ">
+                                            <input class="form-control" type="text" name="nationality" value="<%=bean.getNationality()%>" >
+                                        </div></div>
+                                                  <div class="form-group col-md-12">
+                                        <label class="col-md-4 control-label" for="jobtype">อาชีพ <span class="require" style="color:red;">*</span></label>
+                                        <div class="col-md-8 col-lg-4">
+                                            <select  name="jobtype" class="form-control">
+                                                <option ><%=bean.getJobtype()%></option>
+                                                <option>โสด</option>
+                                                <option>สมรส</option>
+                                                <option>หย่าหร้าง</option>
+                                            </select>
+                                        </div></div>
+                                      <div class="form-group col-md-12">
+                                        <label class="col-md-4 control-label" for="province">จังหวัด <span class="require" style="color:red;">*</span></label>
+                                        <div class="col-md-8 col-lg-4">
+                                            <select  name="province" class="form-control">
+                                                <option ><%=bean.getProvince()%></option>
+                                                <option>โสด</option>
+                                                <option>สมรส</option>
+                                                <option>หย่าหร้าง</option>
+                                            </select>
+                                        </div></div>
+                                                  <div class="form-group col-md-12">
+                                        <label class="col-md-4 control-label" for="amphur">อำเภอ <span class="require" style="color:red;">*</span></label>
+                                        <div class="col-md-8 col-lg-4">
+                                            <select  name="amphur" class="form-control">
+                                                <option ><%=bean.getAmphur()%></option>
+                                                <option>โสด</option>
+                                                <option>สมรส</option>
+                                                <option>หย่าหร้าง</option>
+                                            </select>
+                                        </div></div>
+                                                  <div class="form-group col-md-12">
+                                        <label class="col-md-4 control-label" for="district">ตำบล <span class="require" style="color:red;">*</span></label>
+                                        <div class="col-md-8 col-lg-4">
+                                            <select  name="district" class="form-control">
+                                                <option ><%=bean.getDistrict()%></option>
+                                                <option>โสด</option>
+                                                <option>สมรส</option>
+                                                <option>หย่าหร้าง</option>
+                                            </select>
+                                        </div></div>
+                                    <div class="form-group col-md-12">
+                                        <label class="col-md-4 control-label" for="addresssenddoc">ที่อยู่ <span class="require" style="color:red;">*</span></label>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" name="address" ><%=bean.getAddress()%></textarea>
                                         </div>
+                                    </div>
                                         
                                             <input type="hidden" name="todo" value="<%=bean.getUser_id()%>"/>
                                         <input type="hidden" name="roleId" value="2"/>

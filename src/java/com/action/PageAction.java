@@ -141,18 +141,16 @@ public class PageAction extends DispatchAction {
 
         loanList = dao.selectloanstatustypeRapp();
         request.getSession().setAttribute("loanList", loanList);
-
         return mapping.findForward("gotoPageManagermentR");
     }
 
     public ActionForward gotoPageManagermentAp(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-//         
-        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
-        RequestLoanDao dao = new RequestLoanDao();
+        List<ApproveLoanBean> loanList = new ArrayList<ApproveLoanBean>();
+        ApproveLoanDao dao = new ApproveLoanDao();
 
-        loanList = dao.selectloanstatustypeAp();
+        loanList = dao.selectAll_aii();
         request.getSession().setAttribute("loanList", loanList);
 
         return mapping.findForward("gotoPageManagermentAp");

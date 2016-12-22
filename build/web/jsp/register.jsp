@@ -39,7 +39,7 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="citizen_id">เลขบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
-                                                        <input class="form-control" type="text" name="citizen_id" maxlength="13" required="true" placeholder="เลขบัตรประจำตัวประชาชน" pattern= "[0-9]"><br>
+                                                        <input class="form-control" type="text" name="citizen_id" maxlength="13"  placeholder="เลขบัตรประจำตัวประชาชน" required="true"><br>
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="title_type">คำนำหน้า <span class="require" style="color:red;">*</span></label>
@@ -50,7 +50,8 @@
                                                             <option value="นางสาว">นางสาว</option>
                                                             <option value="นาง">นาง</option>
                                                         </select>
-                                                    </div></div>
+                                                    </div>
+                                                </div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="firstName">ชื่อ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
@@ -69,7 +70,7 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="age">อายุ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 col-lg-4">
-                                                        <!--<input class="form-control" type="number" name="age" placeholder="อายุ"> ปี-->
+                                                       
                                                         <select class="form-control" name="age">ปี
                                                             <option>::เลือก::</option>
                                                             <%
@@ -101,13 +102,65 @@
                                                     <div class="col-md-8 ">
                                                         <input class="form-control" type="text" name="email" placeholder="อีเมล์" required="true">
                                                     </div></div>
-                                                <div class="form-group col-md-12">
+                                                         <div class="form-group col-md-12">
+                                                    <label class="col-md-4 control-label" for="nationality">สัญชาติ <span class="require" style="color:red;">*</span></label>
+                                                    <div class="col-md-8 ">
+                                                        <input class="form-control" type="text" name="nationality" placeholder="อีเมล์" required="true">
+                                                    </div></div>
+                                                          <div class="form-group col-md-12">
+                                                    <label class="col-md-4 control-label" for="jobtype">อาชีพ <span class="require" style="color:red;">*</span></label>
+                                                    <div class="col-md-8 col-lg-4">
+                                                        <select  name="jobtype" class="form-control">
+                                                            <option>:: เลือก ::</option>
+                                                            <option value="พนักงานเงินเดือนประจำ">พนักงานเงินเดือนประจำ</option>
+                                                            <option value="ประกอบอาชีพอิสระ">ประกอบอาชีพอิสระ</option>
+                                                             <option value="ไม่ได้ประกอบอาชีพ">ไม่ได้ประกอบอาชีพ</option>
+                                                            <option value="ประกอบธุรกิจส่วนตัว">ประกอบธุรกิจส่วนตัว</option>
+                                                        </select>
+                                                    </div></div>
+                                                        
+                                                        <div class="form-group col-md-12">
+                                                    <label class="col-md-4 control-label" for="province">จังหวัด <span class="require" style="color:red;">*</span></label>
+                                                    <div class="col-md-8 col-lg-4">
+                                                        <select  name="province" class="form-control">
+                                                            <option>:: เลือก ::</option>
+                                                            <option value="ขอนแก่น">ขอนแก่น</option>
+                                                            <option value="มหาสารคาม">มหาสารคาม</option>
+                                                        </select>
+                                                    </div></div>
+                                                        <div class="form-group col-md-12">
+                                                    <label class="col-md-4 control-label" for="amphur">อำเภอ <span class="require" style="color:red;">*</span></label>
+                                                    <div class="col-md-8 col-lg-4">
+                                                        <select  name="amphur" class="form-control">
+                                                            <option>:: เลือก ::</option>
+                                                            <option value="หนองสองห้อง">หนองสองห้อง</option>
+                                                            <option value="มหาสารคาม">มหาสารคาม</option>
+                                                        </select>
+                                                    </div></div>
+                                                        <div class="form-group col-md-12">
+                                                    <label class="col-md-4 control-label" for="district">ตำลบ <span class="require" style="color:red;">*</span></label>
+                                                    <div class="col-md-8 col-lg-4">
+                                                        <select  name="district" class="form-control">
+                                                            <option>:: เลือก ::</option>
+                                                            <option value="วังหิน">วังหิน</option>
+                                                            <option value="ท่าขอนยาง">ท่าขอนยาง</option>
+                                                        </select>
+                                                    </div></div>
+                                                        
+                                                         <div class="form-group col-md-12">
+                                                    <label class="col-md-4 control-label" for="address">ที่อยู่ </label>
+                                                    <div class="col-md-8">
+                                                        <textarea class="form-control" name="address" placeholder="285/33 ซอยจรัญสนิทวงศ์31 ถนนจรัญสนิทวงศ์" required="true"></textarea>
+                                                    </div></div>
+                                                         
+<!--                                                <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="addressregistration">ที่อยู่ตามทะเบียนบ้าน </label>
                                                     <div class="col-md-8">
                                                         <textarea class="form-control" name="addressregistration" placeholder="285/33 ซอยจรัญสนิทวงศ์31 ถนนจรัญสนิทวงศ์
                                                                   แขวงบางขุนศรี เขตบางกอกน้อย
                                                                   กรุงเทพ 10700" required="true"></textarea>
                                                     </div></div>
+
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="addresscurrent">ที่อยู่ปัจจุบัน </label>
                                                     <div class="col-md-8">
@@ -123,7 +176,7 @@
                                                                   แขวงบางขุนศรี เขตบางกอกน้อย
                                                                   กรุงเทพ 10700"></textarea>
                                                     </div>
-                                                </div>
+                                                </div>-->
 
                                             </div>
                                         </div>
@@ -160,43 +213,6 @@
                                         <button name="submit" id="submit" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-save"></span>สมัครสมาชิก</button>
                                         <button name="reset" type="reset" class="btn btn-danger" ><span class="glyphicon glyphicon-refresh"></span>ยกเลิก</button>
                                     </div>
-                                    <!--                                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">    data-toggle="modal" data-target="#myModal"
-                                                                                <div class="modal-dialog">
-                                                                                    <div class="modal-content center">
-                                    
-                                                                                        <div class="modal-header  center">
-                                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                                            <h4 class="modal-title" id="myModalLabel">สำเร็จแล้ว</h4>
-                                                                                        </div>
-                                                                                        <div class="modal-body center">
-                                                                                            คุณสมัครสมาชิกสำเร็จแล้ว สามารถขอสินเชื่อบ้านผ่านระบบได้
-                                                                                            <hr class="hrsuccess">
-                                                                                            <br>
-                                                                                        </div>
-                                                                                        <div class="center">
-                                                                                            <br>
-                                                                                        <div class=" ">
-                                                                                            <button type="submit" name="submit" class="btn btn-primary" onclick="insert('save')"><span class="glyphicon glyphicon-save"></span>บันทึก</button>
-                                                                                            <button class="btn btn-danger " data-dismiss="modal" >ยกเลิก</button>
-                                                                                            <br>
-                                                                                            <br>
-                                                                                        </div>
-                                                                                        </div>
-                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>-->
-                                </fieldset>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </form>
-            </div>
-        </div>
-
-        <!--</div>-->
     </section><!-- /.content -->
     <div>
         <%

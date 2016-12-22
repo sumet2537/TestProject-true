@@ -145,9 +145,6 @@ public ActionForward user_update(ActionMapping mapping, ActionForm form,
     userbean.setAmphur(regisform.getAmphur());
      userbean.setDistrict(regisform.getDistrict());
     userbean.setAddress(regisform.getAddress());
-//    userbean.setAddressregistration(regisform.getAddressregistration());
-//    userbean.setAddresscurrent(regisform.getAddresscurrent());
-//    userbean.setAddresssenddoc(regisform.getAddresssenddoc());
     userbean.setRoleId(regisform.getRoleId());
     userbean.setUpdated(regisform.getUpdated());
     userbean.setUpdateBy(regisform.getUpdateBy());
@@ -212,9 +209,6 @@ public ActionForward admin_update(ActionMapping mapping, ActionForm form,
     userbean.setAmphur(regisform.getAmphur());
      userbean.setDistrict(regisform.getDistrict());
     userbean.setAddress(regisform.getAddress());
-//    userbean.setAddressregistration(regisform.getAddressregistration());
-//    userbean.setAddresscurrent(regisform.getAddresscurrent());
-//    userbean.setAddresssenddoc(regisform.getAddresssenddoc());
     userbean.setRoleId(regisform.getRoleId());
     userbean.setUpdated(regisform.getUpdated());
     userbean.setUpdateBy(regisform.getUpdateBy());

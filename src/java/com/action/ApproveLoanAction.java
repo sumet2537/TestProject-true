@@ -52,8 +52,8 @@ public class ApproveLoanAction extends DispatchAction {
         loanbean.setPosition(loanform.getPosition());
         loanbean.setCreatedby(loanform.getCreatedby());
         loanbean.setUpdateby(loanform.getUpdateby());
-        
-        bean.setLoanstatustype(loanform.getLoanstatustype());
+
+        bean.setLoanstatustype(loanform.getLoanstatusbank());
 
         RequestLoanDao dao = new RequestLoanDao();
         ApproveLoanDao Adao = new ApproveLoanDao();
@@ -93,13 +93,15 @@ public class ApproveLoanAction extends DispatchAction {
         String msg = "";
         loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
         ArrayList<ApproveLoanBean> list = null;
-        int loanreq_id = loanbean.getLoanreq_id();
+//        int loanreq_id = loanbean.getLoanreq_id();
+        String citizen = loanbean.getCitizen_id();
         try {
             String citizen_id = loanbean.getCitizen_id();
             loanbean = rdao.selectBycitizenid(citizen_id);
-                 list = adao.selectById(loanreq_id);
-              String bank_id = abean.getBank_id();
-        
+//                 list = adao.selectById(loanreq_id);
+            list = adao.selectByIdcitizenid(citizen);
+            String bank_id = abean.getBank_id();
+
             System.out.println("ok");
             msg = "ok";
         } catch (Exception e) {
@@ -112,6 +114,7 @@ public class ApproveLoanAction extends DispatchAction {
         request.getSession().setAttribute("loanList", list);
         return mapping.findForward("gotoPageUserViewStatus");
     }
+//    user
 
     public ActionForward Detle(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
@@ -129,14 +132,14 @@ public class ApproveLoanAction extends DispatchAction {
         loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
 
         try {
-           
+
             int loanreq_id = loanbean.getLoanreq_id();
             String citizen_id = loanbean.getCitizen_id();
-            
+
             abean = adao.selectApprove_id(loanform.getApprove_id());
             loanbean = rdao.selectBycitizenid(citizen_id);
             abean1 = adao.selectBy_Id(loanreq_id);
-          String bank_id = abean.getBank_id();
+            String bank_id = abean.getBank_id();
             bank = bankdao.selectById(bank_id);
             System.out.println("ok");
             msg = "ok";
@@ -192,30 +195,93 @@ public class ApproveLoanAction extends DispatchAction {
         request.setAttribute("deletesuccess", msg);
         return mapping.findForward("gotoPageUserViewStatus");
     }
-     public ActionForward email(ActionMapping mapping, ActionForm form,
+//    ========
+//    admin=======
+
+    public ActionForward Detleadmin(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        String msg= "";
+        ApproveLoanForm loanform = (ApproveLoanForm) form;
+        ApproveLoanDao adao = new ApproveLoanDao();
+        ApproveLoanBean abean = new ApproveLoanBean();
+        String msg = "";
+        ApproveLoanBean abean1 = new ApproveLoanBean();
+        ApproveLoanDao adao1 = new ApproveLoanDao();
+        RequestLoanBean loanbean = new RequestLoanBean();
+        bankBean bank = new bankBean();
+        bankDao bankdao = new bankDao();
+        RequestLoanDao rdao = new RequestLoanDao();
+        try {
+            abean = adao.selectApprove_id(loanform.getApprove_id());
+             loanbean = rdao.selectById(loanform.getLoanreq_id());
+//            loanbean = rdao.selectBycitizenid(citizen_id);
+//            abean1 = adao.selectBy_Id(loanreq_id);
+            String bank_id = abean.getBank_id();
+            bank = bankdao.selectById(bank_id);
+            System.out.println("ok");
+            msg = "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("no");
+            msg = "no";
+        }
+        request.getSession().setAttribute("abean", abean);
+        request.getSession().setAttribute("loanbean", loanbean);
+        request.getSession().setAttribute("abean", abean1);
+        request.getSession().setAttribute("bank", bank);
+        return mapping.findForward("gotoDetle_ap");
+
+    }
+
+    public ActionForward deleteadmin(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ApproveLoanForm loanform = (ApproveLoanForm) form;
+        ApproveLoanDao adao = new ApproveLoanDao();
+        String msg = "";
+        List<ApproveLoanBean> loanList = new ArrayList<ApproveLoanBean>();
+        ApproveLoanDao dao = new ApproveLoanDao();
+
+        try {
+            adao.deleteloanreqId(loanform.getApprove_id());
+            loanList = dao.selectAll_aii();
+            System.out.println("ok");
+            msg = "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("no");
+            msg = "no";
+        }
+        request.removeAttribute("deletesuccess");
+        request.setAttribute("deletesuccess", msg);
+        request.getSession().removeAttribute("loanList");
+        request.getSession().setAttribute("loanList", loanList);
+        return mapping.findForward("gotoPageManagermentAp");
+    }
+
+    public ActionForward email(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        String msg = "";
         ApproveLoanForm af = (ApproveLoanForm) form;
         ApproveLoanBean approve = new ApproveLoanBean();
         RequestLoanBean bean = new RequestLoanBean();
         EmailUtility emailUtility = new EmailUtility();
-       
+
         String emailbank = (af.getEmailbank());
         String passmail = (af.getPassemail());
         String email = (af.getEmail());
-        String citizenid =(af.getCitizen_id());
-         int loanreq =(af.getLoanreq_id());
+        String citizenid = (af.getCitizen_id());
+        int loanreq = (af.getLoanreq_id());
         String fratname = (af.getFirstname());
         String em = (af.getEmail());
-       
-            String url = "<strong><a href=\"http://localhost:8080/TestProject/LoanRequstAction.do?todo=gotoeditfile&loanreq_id=" + " \"  target=\"_blank\">กดที่นี้เพื่อทำการแก้ไข</a></strong>";
-            String uuu = "<strong><a href=\"www.google.com\"  target=\"_blank\">ลูกค้ายืนยันเรียบร้อย</a></strong>";
+
+        String url = "<strong><a href=\"http://localhost:8080/TestProject/LoanRequstAction.do?todo=gotoeditfile&loanreq_id=" + " \"  target=\"_blank\">กดที่นี้เพื่อทำการแก้ไข</a></strong>";
+        String uuu = "<strong><a href=\"www.google.com\"  target=\"_blank\">ลูกค้ายืนยันเรียบร้อย</a></strong>";
 //            String bass = "sumat678@gmail.com";
 //
 //"homeloansystem@gmail.com", "0833412924brass", email
-           try{
-                emailUtility.sendEmail(email, passmail, emailbank,"emailผู้ยืนยัน :"+ email+"<br>","ยืนยันการกู้รหัสสินเชื่อคือ :" + loanreq + "<br>" + "เลขบัตรประชาชน :" + citizenid +"<br>" +"ชื่อผู้ยืนยัน :"  + fratname+ "<br>"+ uuu, null);
+        try {
+            emailUtility.sendEmail(email, passmail, emailbank, "emailผู้ยืนยัน :" + email + "<br>", "ยืนยันการกู้รหัสสินเชื่อคือ :" + loanreq + "<br>" + "เลขบัตรประชาชน :" + citizenid + "<br>" + "ชื่อผู้ยืนยัน :" + fratname + "<br>" + uuu, null);
 
             System.out.println("ok");
             msg = "ok";

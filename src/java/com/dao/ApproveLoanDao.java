@@ -151,7 +151,7 @@ public class ApproveLoanDao {
                 bean.setCitizen_id(rs.getString("citizen_id"));
                 bean.setJudgment(rs.getString("judgment"));
                 bean.setLoanstatusbank(rs.getString("loanstatusbank"));
-                bean.setApprovedamount(rs.getDouble("birthdate"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setPosition(rs.getString("position"));
                 bean.setCreatedby(rs.getString("createdby"));
@@ -191,13 +191,55 @@ public class ApproveLoanDao {
                 bean.setCitizen_id(rs.getString("citizen_id"));
                 bean.setJudgment(rs.getString("judgment"));
                 bean.setLoanstatusbank(rs.getString("loanstatusbank"));
-                bean.setApprovedamount(rs.getDouble("birthdate"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setPosition(rs.getString("position"));
                 bean.setCreatedby(rs.getString("createdby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
+                approvelist.add(bean);
+            }
+
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+        return approvelist;
+    }
+       public ArrayList<ApproveLoanBean> selectAll_aii() throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = null;
+        con = dbConnect.openNewConnection();
+        ResultSet rs = null;
+        ApproveLoanBean bean = null;
+        String sql = "select *,bankname from tbl_approveloan INNER JOIN tbl_bank ON tbl_approveloan.bank_id = tbl_bank.bank_id ";
+        com.mysql.jdbc.PreparedStatement p = null;
+        ArrayList<ApproveLoanBean> approvelist = new ArrayList<ApproveLoanBean>();
+        try {
+            p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+            rs = p.executeQuery();
+            while (rs.next()) {
+                bean = new ApproveLoanBean();
+                bean.setApprove_id(rs.getInt("approve_id"));
+                bean.setLoanreq_id(rs.getInt("loanreq_id"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
+                bean.setLoanstatusbank(rs.getString("loanstatusbank"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
+                bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setPosition(rs.getString("position"));
+                bean.setCreatedby(rs.getString("createdby"));
+                bean.setUpdateby(rs.getString("updateby"));
+                bean.setCreated(rs.getString("created"));
+                bean.setUpdated(rs.getString("updated"));
+                 bean.setBankName(rs.getString("bankname"));
                 approvelist.add(bean);
             }
 
@@ -241,6 +283,50 @@ public class ApproveLoanDao {
                 bean.setCreatedby(rs.getString("createdby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
+                list.add(bean);
+            }
+
+        } finally {
+            try {
+                p.close();
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+        return list;
+}
+         public ArrayList<ApproveLoanBean> selectByIdcitizenid(String  citizen_id) throws Exception {
+        DBConnect dbConnect = new DBConnect();
+        Connection con = null;
+        con = dbConnect.openNewConnection();
+        ResultSet rs = null;
+        ApproveLoanBean bean = null;
+        String sql = "select *,bankname from tbl_approveloan INNER JOIN tbl_bank ON tbl_approveloan.bank_id = tbl_bank.bank_id where citizen_id =?"; //
+        com.mysql.jdbc.PreparedStatement p = null;
+        ArrayList<ApproveLoanBean> list = new ArrayList<ApproveLoanBean>();
+        
+        try {
+            p = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(sql);
+            p.setString(1, citizen_id);
+            rs = p.executeQuery();
+            while (rs.next()) {
+                bean = new ApproveLoanBean();
+                bean.setApprove_id(rs.getInt("approve_id"));
+                bean.setLoanreq_id(rs.getInt("loanreq_id"));
+                bean.setBank_id(rs.getString("bank_id"));
+                bean.setCitizen_id(rs.getString("citizen_id"));
+                bean.setJudgment(rs.getString("judgment"));
+                bean.setLoanstatusbank(rs.getString("loanstatusbank"));
+                bean.setApprovedamount(rs.getDouble("approvedamount"));
+                bean.setInstalllments(rs.getDouble("installlments"));
+                bean.setTimerepayment(rs.getString("timerepayment"));
+                bean.setPosition(rs.getString("position"));
+                bean.setCreatedby(rs.getString("createdby"));
+                bean.setUpdateby(rs.getString("updateby"));
+                bean.setCreated(rs.getString("created"));
+                   bean.setBankName(rs.getString("bankname"));
                 list.add(bean);
             }
 

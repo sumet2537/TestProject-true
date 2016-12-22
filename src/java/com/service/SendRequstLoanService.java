@@ -27,22 +27,26 @@ public class SendRequstLoanService {
         loanbean.setLastName(loanform.getLastName());
         loanbean.setBirthdate(loanform.getBirthdate());
         loanbean.setAge(loanform.getAge());
-        loanbean.setNationality(loanform.getNationality());
         loanbean.setStatustype(loanform.getStatustype());
         loanbean.setMobile(loanform.getMobile());
         loanbean.setEmail(loanform.getEmail());
-        loanbean.setAddressregistration(loanform.getAddressregistration());
-        loanbean.setAddresscurrent(loanform.getAddresscurrent());
-        loanbean.setAddresssenddoc(loanform.getAddresssenddoc());
+        
+         loanbean.setNationality(loanform.getNationality());
         loanbean.setJobtype(loanform.getJobtype());
+   loanbean.setProvince(loanform.getProvince());
+        loanbean.setAmphur(loanform.getAmphur());
+        loanbean.setDistrict(loanform.getDistrict());
+        loanbean.setAddress(loanform.getAddress());
+//        loanbean.setAddressregistration(loanform.getAddressregistration());
+//        loanbean.setAddresscurrent(loanform.getAddresscurrent());
+//        loanbean.setAddresssenddoc(loanform.getAddresssenddoc());
         loanbean.setHometype(loanform.getHometype());
         loanbean.setTradingprice(loanform.getTradingprice());
         loanbean.setCreditloan(loanform.getCreditloan());
         loanbean.setLncomePerMonth(loanform.getLncome_per_month());
         loanbean.setPeriodloan(loanform.getPeriodloan());
         loanbean.setNetprofit(loanform.getNetprofit());
-//        
-//        
+        
 //        FileUploadUtil upload = new FileUploadUtil();
 //       FileOutputStream outputStream = null;
 //        FormFile file = null;

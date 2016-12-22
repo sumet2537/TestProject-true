@@ -12,20 +12,40 @@
 
 <xs:complexType name="requestLoanBean">
 <xs:sequence>
-<xs:element name="addresscurrent" type="xs:string" minOccurs="0"/>
-<xs:element name="addressregistration" type="xs:string" minOccurs="0"/>
-<xs:element name="addresssenddoc" type="xs:string" minOccurs="0"/>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="address_k" type="xs:string" minOccurs="0"/>
+<xs:element name="address_p" type="xs:string" minOccurs="0"/>
 <xs:element name="age" type="xs:int"/>
-<xs:element name="banktype" type="xs:string" minOccurs="0"/>
+<xs:element name="age_k" type="xs:int"/>
+<xs:element name="age_p" type="xs:int"/>
+<xs:element name="amphur" type="xs:string" minOccurs="0"/>
+<xs:element name="amphur_k" type="xs:string" minOccurs="0"/>
+<xs:element name="amphur_p" type="xs:string" minOccurs="0"/>
 <xs:element name="birthdate" type="xs:string" minOccurs="0"/>
+<xs:element name="birthdate_k" type="xs:string" minOccurs="0"/>
+<xs:element name="birthdate_p" type="xs:string" minOccurs="0"/>
 <xs:element name="citizen_id" type="xs:string" minOccurs="0"/>
+<xs:element name="citizen_k" type="xs:string" minOccurs="0"/>
+<xs:element name="citizen_p" type="xs:string" minOccurs="0"/>
 <xs:element name="copy_bankaccount" type="xs:string" minOccurs="0"/>
+<xs:element name="copy_bankaccount_k" type="xs:string" minOccurs="0"/>
+<xs:element name="copy_bankaccount_kbyte" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="copy_bankaccount_p" type="xs:string" minOccurs="0"/>
+<xs:element name="copy_bankaccount_pbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copy_bankaccountbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copy_rename" type="xs:string" minOccurs="0"/>
 <xs:element name="copy_renamebyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copydocumenthome" type="xs:string" minOccurs="0"/>
+<xs:element name="copydocumenthome_k" type="xs:string" minOccurs="0"/>
+<xs:element name="copydocumenthome_kv" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="copydocumenthome_p" type="xs:string" minOccurs="0"/>
+<xs:element name="copydocumenthome_pbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copydocumenthomebyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copyidcard" type="xs:string" minOccurs="0"/>
+<xs:element name="copyidcard_k" type="xs:string" minOccurs="0"/>
+<xs:element name="copyidcard_kv" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="copyidcard_p" type="xs:string" minOccurs="0"/>
+<xs:element name="copyidcard_pbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copyidcardbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="copylicenses" type="xs:string" minOccurs="0"/>
 <xs:element name="copylicensesbyte" type="xs:base64Binary" minOccurs="0"/>
@@ -34,23 +54,54 @@
 <xs:element name="createby" type="xs:string" minOccurs="0"/>
 <xs:element name="created" type="xs:string" minOccurs="0"/>
 <xs:element name="creditloan" type="xs:double" minOccurs="0"/>
+<xs:element name="district" type="xs:string" minOccurs="0"/>
+<xs:element name="district_k" type="xs:string" minOccurs="0"/>
+<xs:element name="district_p" type="xs:string" minOccurs="0"/>
 <xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="email_k" type="xs:string" minOccurs="0"/>
+<xs:element name="email_p" type="xs:string" minOccurs="0"/>
 <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+<xs:element name="firstname_k" type="xs:string" minOccurs="0"/>
+<xs:element name="firstname_p" type="xs:string" minOccurs="0"/>
 <xs:element name="hometype" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
 <xs:element name="jobtype" type="xs:string" minOccurs="0"/>
+<xs:element name="jobtype_k" type="xs:string" minOccurs="0"/>
+<xs:element name="jobtype_p" type="xs:string" minOccurs="0"/>
 <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+<xs:element name="lastname_k" type="xs:string" minOccurs="0"/>
+<xs:element name="lastname_p" type="xs:string" minOccurs="0"/>
 <xs:element name="lncome_per_month" type="xs:int"/>
 <xs:element name="loan_id" type="xs:int"/>
 <xs:element name="loanreq_id" type="xs:int"/>
 <xs:element name="loanstatustype" type="xs:string" minOccurs="0"/>
 <xs:element name="mobile" type="xs:string" minOccurs="0"/>
+<xs:element name="mobile_k" type="xs:string" minOccurs="0"/>
+<xs:element name="mobile_p" type="xs:string" minOccurs="0"/>
 <xs:element name="nationality" type="xs:string" minOccurs="0"/>
+<xs:element name="nationality_k" type="xs:string" minOccurs="0"/>
+<xs:element name="nationality_p" type="xs:string" minOccurs="0"/>
 <xs:element name="netprofit" type="xs:double" minOccurs="0"/>
+<xs:element name="netprofit_k" type="xs:double" minOccurs="0"/>
+<xs:element name="netprofit_p" type="xs:double" minOccurs="0"/>
 <xs:element name="periodloan" type="xs:double" minOccurs="0"/>
+<xs:element name="periodloan_k" type="xs:double" minOccurs="0"/>
+<xs:element name="periodloan_p" type="xs:double" minOccurs="0"/>
+<xs:element name="province" type="xs:string" minOccurs="0"/>
+<xs:element name="province_k" type="xs:string" minOccurs="0"/>
+<xs:element name="province_p" type="xs:string" minOccurs="0"/>
 <xs:element name="salary_slip" type="xs:string" minOccurs="0"/>
+<xs:element name="salary_slip_k" type="xs:string" minOccurs="0"/>
+<xs:element name="salary_slip_kbyte" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="salary_slip_p" type="xs:string" minOccurs="0"/>
+<xs:element name="salary_slip_pbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="salary_slipbyte" type="xs:base64Binary" minOccurs="0"/>
 <xs:element name="status" type="xs:string" minOccurs="0"/>
 <xs:element name="statustype" type="xs:string" minOccurs="0"/>
+<xs:element name="statustype_k" type="xs:string" minOccurs="0"/>
+<xs:element name="statustype_p" type="xs:string" minOccurs="0"/>
+<xs:element name="title_k" type="xs:string" minOccurs="0"/>
+<xs:element name="title_p" type="xs:string" minOccurs="0"/>
 <xs:element name="title_type" type="xs:string" minOccurs="0"/>
 <xs:element name="todo" type="xs:string" minOccurs="0"/>
 <xs:element name="tradingprice" type="xs:double" minOccurs="0"/>

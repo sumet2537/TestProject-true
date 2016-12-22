@@ -74,15 +74,27 @@
                                              
                                             </div>
                                         <div class="form-group col-md-12">
-                                            <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <%=bean.getAddressregistration()%></label>
+                                            <label >สัญชาติ : &nbsp;&nbsp; <%=bean.getNationality()%></label>
                                              
                                             </div>
                                         <div class="form-group col-md-12">
-                                            <label >ที่อยู่ปัจจุบัน   <%=bean.getAddresscurrent()%></label>
+                                            <label >อาชีพ :  <%=bean.getJobtype()%></label>
                                              
                                             </div>
                                         <div class="form-group col-md-12">
-                                            <label >ที่อยู่จัดส่งเอกสาร : &nbsp;&nbsp;<%=bean.getAddresssenddoc()%></label>
+                                            <label >จังหวัด : &nbsp;&nbsp;<%=bean.getProvince()%></label>
+                                               
+                                            </div>
+                                             <div class="form-group col-md-12">
+                                            <label >อำเภอ : &nbsp;&nbsp;<%=bean.getAmphur()%></label>
+                                               
+                                            </div>
+                                             <div class="form-group col-md-12">
+                                            <label >ตำบล : &nbsp;&nbsp;<%=bean.getDistrict()%></label>
+                                               
+                                            </div>
+                                             <div class="form-group col-md-12">
+                                            <label >ที่อยู่ : &nbsp;&nbsp;<%=bean.getAddress()%></label>
                                                
                                             </div>
                                         <input type="hidden" name="todo"/>

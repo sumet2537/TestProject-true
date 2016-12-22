@@ -109,7 +109,7 @@
                                                                     <%----<td class="sorting_1"><%=bean.getStatustype()%></td>--%>
                                                                     <td class="sorting_1"><%=bean.getMobile()%></td>
                                                                     <td class="sorting_1"><%=bean.getEmail()%></td>
-                                                                    <td class="sorting_1"><%=bean.getAddressregistration()%></td>
+                                                                    <td class="sorting_1"><%=bean.getProvince()%></td>
                                                                     <td class="sorting_1"><button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getUser_id()%>)"><i class="fa fa-close"></i></button></td>
                                                                             <%--<td class="sorting_1"><button class="btn btn-sm btn-success" type="submit" value="แก้ไข" onclick="callActionGotoEdit(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-edit"></i></button></td>--%>
                                                                     <td class="sorting_1"><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>

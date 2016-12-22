@@ -4,6 +4,7 @@
     Author     : brass
 --%>
 
+<%@page import="com.bean.ApproveLoanBean"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.bean.RequestLoanBean"%>
 <%@page import="java.util.*"%>
@@ -15,26 +16,27 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-
         <%!
-            List<RequestLoanBean> loanlist = new ArrayList<RequestLoanBean>();
+            List<ApproveLoanBean> loanlist = new ArrayList<ApproveLoanBean>();
 
         %>
-        <%  loanlist = (List<RequestLoanBean>) request.getSession().getAttribute("loanList");
+        <%  loanlist = (List<ApproveLoanBean>) request.getSession().getAttribute("loanList");
             DecimalFormat formatter = new DecimalFormat("###,###.00");
             DecimalFormat phone = new DecimalFormat("###-###-####");
+                String msg = "";
+        msg = (String) request.getAttribute("deletesuccess");
         %>
+    
+    <body onload="check()">
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
                 <div class="col-md-12">
-
-                    <form name="formshowdaterequestloan" method="post" action="LoanRequstAction.do">
+                    <form name="formshowapproveadmin" method="post" action="ApproveLoanAction.do" enctype="multipart/form-data">
                         <section class="content-header">
                             <h1>
-                                ข้อมูลสินเชื่อที่อนุมัติ
-                                <small>ของระบบ</small>
+                                ข้อมูลการอนุมัติ
+                                <small>ของคุณ</small>
                             </h1>
                             <ol class="breadcrumb">
                                 <li>
@@ -48,7 +50,7 @@
                                     <a href="#">
                                         <i class="fa fa-plus-square">
                                         </i>
-                                       อนุมัติสินเชื่อ
+                                        ข้อมูลการอนุมัติ
                                     </a>
                                 </li>
                             </ol>
@@ -58,7 +60,7 @@
                                 <div class="col-xs-12">
                                     <div class="box">
                                         <div class="box-header">
-                                            <h3 class="box-title"> อนุมัติ</h3>
+                                            <h3 class="box-title"> ข้อมูลการอนุมัติ</h3>
                                         </div>
                                         <!--.box-header-->
                                         <div class="box-body">
@@ -70,68 +72,39 @@
                                                                 <tr>
                                                                     <th>ลำดับ  </th>
                                                                     <th>รหัสสินเชื่อ  </th>
-                                                                    <th>ชื่อ-นามสกุล </th>
-                                                                    <th>เบอร์โทร
-                                                                    </th>
-                                                                    <th>สถานะ
-                                                                    </th>
-                                                                    <th>วงเงินที่ขอ
-                                                                    </th>
-                                                                    <th>ส่งขอมูลวันที่
-                                                                    </th>
-                                                                    <th>ลบ
-                                                                    </th>
-                                                                    <th>รายละเอียด
-                                                                    </th>
+                                                                    <th>ชื่อธนาคาร </th>
+                                                                    <th>สถานะ </th>
+                                                                    <th>วงเงินที่อนุมัติ </th>
+                                                                    <th>ยอดผ่อนชำระต่อเดือน</th>
+                                                                    <th>วันที่อนุมัติ </th>
+                                                                    <th>ลบ</th>
+                                                                    <th>รายละเอียด </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <% if (loanlist != null && loanlist.size() != 0) {
                                                                         for (int i = 0; i < loanlist.size(); i++) {
-                                                                            RequestLoanBean bean = (RequestLoanBean) loanlist.get(i);
+                                                                            ApproveLoanBean Approvebean = (ApproveLoanBean) loanlist.get(i);
+
                                                                 %>
                                                                 <tr>
                                                                     <td><%=i + 1%></td>
-                                                                    <td><%=bean.getLoanreq_id()%></td>
-                                                                    <td><%=bean.getTitle_type()%> &nbsp;<%=bean.getFirstName()%>&nbsp;<%=bean.getLastName()%></td>
-                                                                    <td><%=bean.getMobile()%></td>
-                                                                    <td><%=bean.getLoanstatustype()%></td>
-                                                                    <td><%=formatter.format(bean.getCreditloan())%></td>
-                                                                    <td><%=bean.getCreated()%></td>
-                                                                    <td> <button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)"><i class="fa fa-close"></i></button></td>
-                                                                            <%--<td class="sorting_1"><button class="btn btn-sm btn-success" type="submit" value="แก้ไข" onclick="callActionGotoEdit(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-edit"></i></button></td>--%>
-                                                                    <td><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getLoanreq_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
+                                                                    <td><%=Approvebean.getLoanreq_id()%></td>
+                                                                    <td><%=Approvebean.getBankName()%></td>
+                                                                    <td><%=Approvebean.getLoanstatusbank()%></td>
+                                                                    <td><%=formatter.format(Approvebean.getApprovedamount())%></td>
+                                                                    <td><%=formatter.format(Approvebean.getInstalllments())%></td>
+                                                                    <td><%=Approvebean.getCreated()%></td>
+                                                                    <td> <button  onclick="callActionGotoDelete('<%=Approvebean.getApprove_id()%>')" class="btn btn-sm btn-danger" ><i class="fa fa-close"></i></button></td>
+
+                                                                    <td><button class="btn btn-sm btn-primary"  onclick="callActionGotoDetle('<%=Approvebean.getApprove_id()%>')"><i class="glyphicon glyphicon-folder-open"></i></button></td>
                                                                 </tr>
-                                                            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                                <div class="modal-dialog">
-                                                                    <div class="modal-content center">
 
-                                                                        <div class="modal-header  center">
-                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                                            <h4 class="modal-title" id="myModalLabel">ยืนยันการลบ</h4>
-                                                                        </div>
-                                                                        <div class="modal-body center">
-                                                                            คุณต้องการลบข้อมูลใช่หรือไม่
-                                                                            <hr class="hrsuccess">
-                                                                            <br>
-                                                                        </div>
-                                                                        <div class="center">
-                                                                            <br>
-                                                                            <div class=" ">
-                                                                                <button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)"><i class="fa fa-close">ลบ</i></button>
-                                                                                <button class="btn btn-danger " data-dismiss="modal" >ยกเลิก</button>
-                                                                                <br>
-                                                                                <br>
-                                                                            </div>
-                                                                        </div>
+                                                                <%}%>
 
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <%}%>
-                                                            <%} else {%>
-<!--                                                            <br><br>
-                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        -->
+                                                                <%} else {%>
+                                                            <br><br>
+                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
                                                             <%}%>
 
                                                             </tbody>
@@ -139,20 +112,13 @@
                                                                 <tr>
                                                                     <th>ลำดับ  </th>
                                                                     <th>รหัสสินเชื่อ  </th>
-                                                                    <th>ชื่อ-นามสกุล </th>
-                                                                    <th>เบอร์โทร
-                                                                    </th>
-                                                                    <th>อีเมล์
-                                                                    </th>
-                                                                    <th>วงเงินที่ขอ
-                                                                    </th>
-                                                                    <th>ส่งขอมูลวันที่
-                                                                    </th>
-                                                                    <th>ลบ
-                                                                    </th>
-                                                                    <th>รายละเอียด
-                                                                    </th>
-
+                                                                    <th>ชื่อธนาคาร </th>
+                                                                    <th>สถานะ </th>
+                                                                    <th>วงเงินที่อนุมัติ </th>
+                                                                    <th>ยอดผ่อนชำระต่อเดือน</th>
+                                                                    <th>วันที่อนุมัติ </th>
+                                                                    <th>ลบ</th>
+                                                                    <th>รายละเอียด </th>
                                                                 </tr>
                                                             </tfoot>
                                                         </table>
@@ -165,38 +131,83 @@
                             </div>
                         </section>
                         <input type="hidden" name="todo"/>
-                        <input type="hidden" name="loanreq_id"/>
+                        <input type="hidden" name="approve_id"/>
                     </form>
                 </div>
             </div>
         </section>
     </body>
     <script type="text/javascript">
-  
-        function callActionGotoDelete(loanreq_id) {
-//        alert(คุณต้องการลบขอ้มูลใช่หรือไม่);
-            document.formshowdaterequestloan.loanreq_id.value = loanreq_id;
-            document.formshowdaterequestloan.todo.value = 'deleteAp';
-            document.formshowdaterequestloan.submit();
+
+        function callActionGotoDelete(approve_id) {
+            document.formshowapproveadmin.approve_id.value = approve_id;
+            document.formshowapproveadmin.todo.value = 'deleteadmin';
+            document.formshowapproveadmin.submit();
         }
-        function callActionGotoDetle(loanreq_id) {
-            document.formshowdaterequestloan.loanreq_id.value = loanreq_id;
-            document.formshowdaterequestloan.todo.value = 'DetleAp';
-            document.formshowdaterequestloan.submit();
+        function callActionGotoDetle(approve_id) {
+            document.formshowapproveadmin.approve_id.value = approve_id;
+            document.formshowapproveadmin.todo.value = 'Detleadmin';
+            document.formshowapproveadmin.submit();
 
         }
-        function callActionGotoEdit(loanreq_id) {
-            document.formshowdaterequestloan.loanreq_id.value = loanreq_id;
-            document.formshowdaterequestloan.todo.value = 'gotoEdit';
-            document.formshowdaterequestloan.submit();
-        }
-        function callActionGotosearch(select) {
-            document.formshowdaterequestloan.todo.value = select;
-            document.formshowdaterequestloan.submit();
-        }
+    </script> 
 
+    <script>
+        function GotoDelete() {
+            swal({
+                title: "คุณ แน่ใจแล้วใช่ไหม ?",
+                text: "ลบรายการขอสินเชื่อ !",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ใช่,ลบเลย !",
+                closeOnConfirm: false
+            },
+                    function () {
+                        swal("ลบ!", "ตกลง", "success");
 
-       
-    </script>       
+                    });
+        }
+    </script>
+    <div>
+        <%
+            if ("ok".equals(msg)) {
+        %>
+        <script >
+            function check() {
+                $(document).ready(function () {
+                    swal({
+                        title: "สำเร็จ",
+                        text: "คุณลบข้อมูลสำเร็จ !",
+                        type: "success",
+                        confirmButtonText: "ตกลง!"
+                    },
+                            function () {
+//                                window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus';
+                            });
+                });
+            }
+        </script>
+
+        <%} else if ("no".equals(msg)) {
+        %>
+        <script >
+            function check() {
+                swal({
+                    title: "ไม่สำเร็จ",
+                    text: "คุณลบข้อมูลไม่สำเร็จ !",
+                    type: "error",
+                    confirmButtonText: "ตกลง!"
+                },
+                        function () {
+//                            window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus';
+                        });
+            }
+            ;
+
+        </script>
+        <%   }
+        %>
+    </div>    
     
 </html>
