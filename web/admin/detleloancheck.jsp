@@ -13,11 +13,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%! RequestLoanBean bean = null;
-
+            RequestLoanBean bean1 = null;
         %>
         <%--
         --%>
-        <%bean = (RequestLoanBean) request.getSession().getAttribute("editBean");
+        <%
+            bean = (RequestLoanBean) request.getSession().getAttribute("editBean");
+            bean1 = (RequestLoanBean) request.getSession().getAttribute("editBean1");
             DecimalFormat formatter = new DecimalFormat("###,###.00");
             DecimalFormat phone = new DecimalFormat("###-###-####");
             String e_msg = "";
@@ -99,25 +101,25 @@
                                                             <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail()%></span></label>
                                                             <input type="hidden" name="email"  value="<%=bean.getEmail()%>"/>
                                                         </div>
-                                                        <div class="form-group col-md-4">
+                                                        <div class="form-group col-md-12">
                                                             <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             <input type="hidden" name="jobtype" value="<%=bean.getJobtype()%>">
                                                         </div>
-                                                        <div class="form-group col-md-6">
+                                                        <div class="form-group col-md-4">
                                                             <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince()%></span></label>
-                                                            <textarea hidden name="addressregistration" ><%=bean.getProvince()%></textarea>
+                                                            <textarea hidden name="province" ><%=bean.getProvince()%></textarea>
                                                         </div>
-                                                        <div class="form-group col-md-6">
+                                                        <div class="form-group col-md-4">
                                                             <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur()%></span></label>
-                                                            <textarea hidden name="addresscurrent" > <%=bean.getAmphur()%></textarea>
+                                                            <textarea hidden name="amphur" > <%=bean.getAmphur()%></textarea>
                                                         </div>
-                                                        <div class="form-group col-md-12">
+                                                        <div class="form-group col-md-4">
                                                             <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getDistrict()%></textarea>
+                                                            <textarea hidden name="district"> <%=bean.getDistrict()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddress()%></textarea>
+                                                            <textarea hidden name="address"> <%=bean.getAddress()%></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -232,75 +234,81 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-12">
-                                                            <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean.getCitizen_p()%></span></label>
-                                                            <input  type="hidden" name="citizen_id" value="<%=bean.getCitizen_p()%>">
+                                                            <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean1.getCitizen_p()%></span></label>
+                                                            <input  type="hidden" name="citizen_p" value="<%=bean1.getCitizen_p()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean.getTitle_p()%></span></label>
-                                                            <input type="hidden"  name="title_type" value="<%=bean.getTitle_p()%>">
+                                                            <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean1.getTitle_p()%></span></label>
+                                                            <input type="hidden"  name="title_p" value="<%=bean1.getTitle_p()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label for="firstname">ชื่อ : &nbsp;&nbsp;<span  style="color:#0033FF; font-size: 17px;"><%=bean.getFirstname_p()%></span></label>
-                                                            <input  type="hidden" name="firstName" value="<%=bean.getFirstname_p()%>">
+                                                            <label for="firstname">ชื่อ : &nbsp;&nbsp;<span  style="color:#0033FF; font-size: 17px;"><%=bean1.getFirstname_p()%></span></label>
+                                                            <input  type="hidden" name="firstname_p" value="<%=bean1.getFirstname_p()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>นามสกุล: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getLastname_p()%></span></label>
-                                                            <input type="hidden" name="lastName" value="<%=bean.getLastname_p()%>" >
+                                                            <label>นามสกุล: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getLastname_p()%></span></label>
+                                                            <input type="hidden" name="lastname_p" value="<%=bean1.getLastname_p()%>" >
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>วันเดือนปีเกิด: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getBirthdate_p()%></span></label>
-                                                            <input type="hidden" name="birthdate" value="<%=bean.getBirthdate_p()%>">
+                                                            <label>วันเดือนปีเกิด: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getBirthdate_p()%></span></label>
+                                                            <input type="hidden" name="birthdate_p" value="<%=bean1.getBirthdate_p()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >อายุ: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getAge_p()%></span> &nbsp;&nbsp;ปี</label>
-                                                            <input  type="hidden" name="age" value="<%=bean.getAge_p()%>">
+                                                            <label >อายุ: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getAge_p()%></span> &nbsp;&nbsp;ปี</label>
+                                                            <input  type="hidden" name="age_p" value="<%=bean1.getAge_p()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >สัญชาติ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getNationality_p()%></span></label>
-                                                            <input name="nationality" type="hidden" value="<%=bean.getNationality_p()%>" >
+                                                            <label >สัญชาติ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getNationality_p()%></span></label>
+                                                            <input name="nationality_p" type="hidden" value="<%=bean1.getNationality_p()%>" >
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >สถานะสมรส : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getStatustype_p()%></span></label>
-                                                            <input type="hidden" name="statustype" value="<%=bean.getStatustype_p()%>"/>
+                                                            <label >สถานะสมรส : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getStatustype_p()%></span></label>
+                                                            <input type="hidden" name="statustype_p" value="<%=bean1.getStatustype_p()%>"/>
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>เบอร์โทร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getMobile_p()%></span></label>
-                                                            <input type="hidden" name="mobile" value="<%=bean.getMobile_p()%>">
+                                                            <label>เบอร์โทร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getMobile_p()%></span></label>
+                                                            <input type="hidden" name="mobile_p" value="<%=bean1.getMobile_p()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail_p()%></span></label>
-                                                            <input type="hidden" name="email"  value="<%=bean.getEmail_p()%>"/>
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype_p()%></span></label>
-                                                            <input type="hidden" name="jobtype" value="<%=bean.getJobtype_p()%>">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince_p()%></span></label>
-                                                            <textarea hidden name="addressregistration" ><%=bean.getProvince_p()%></textarea>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur_p()%></span></label>
-                                                            <textarea hidden name="addresscurrent" > <%=bean.getAmphur_p()%></textarea>
+                                                            <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getEmail_p()%></span></label>
+                                                            <input type="hidden" name="email_p"  value="<%=bean1.getEmail_p()%>"/>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict_p()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getDistrict_p()%></textarea>
+                                                            <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getJobtype_p()%></span></label>
+                                                            <input type="hidden" name="jobtype_p" value="<%=bean1.getJobtype_p()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean1.getProvince_p()%></span></label>
+                                                            <textarea hidden name="province_p" ><%=bean1.getProvince_p()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean1.getAmphur_p()%></span></label>
+                                                            <textarea hidden name="amphur_p" > <%=bean1.getAmphur_p()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean1.getDistrict_p()%></span></label>
+                                                            <textarea hidden name="district_p"> <%=bean1.getDistrict_p()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress_p()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddress_p()%></textarea>
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean1.getAddress_p()%></span></label>
+                                                            <textarea hidden name="address_p"> <%=bean1.getAddress_p()%></textarea>
                                                         </div>
-                                                        <h4> :: ข้อมูลด้านรายได้ ::</h4>
-                                                        <div class="form-group col-md-6">
-                                                            <label>รายได้ประจำต่อเดือน: &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getPeriodloan_p())%>&nbsp;&nbsp;</span>บาท</label>
-                                                            <input  class="form-control" type="hidden" name="periodloan" value="<%=bean.getPeriodloan_p()%>">
+                                                        <div class="col-md-12 panel-heading">
+                                                            <h4> :: ข้อมูลด้านรายได้ ::</h4>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getNetprofit_p())%>&nbsp;&nbsp;</span>บาท</label>
-                                                            <input type="hidden" name="netprofit" value="<%=bean.getNetprofit_p()%>">
+
+                                                        <div class="form-group col-md-4">
+                                                            <label>รายได้ประจำต่อเดือน: &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean1.getPeriodloan_p())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input  class="form-control" type="hidden" name="periodloan_p" value="<%=bean1.getPeriodloan_p()%>">
                                                         </div>
-                                                        <h4> :: เอกสารประกอบการขอกู้ ::</h4>
+                                                        <div class="form-group col-md-">
+                                                            <label>รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean1.getNetprofit_p())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input type="hidden" name="netprofit_p" value="<%=bean1.getNetprofit_p()%>">
+                                                        </div>
+                                                        <div class="col-md-12 panel-heading">
+                                                            <h4> :: เอกสารประกอบการขอกู้ ::</h4>
+                                                        </div>
+
                                                         <div class="form-group">
                                                             <div class="col-md-8"><h3>เอกสาร</h3>
                                                             </div>
@@ -308,39 +316,40 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
-                                                                <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean.getCopyidcard_p()%></span></label>
-                                                                <input  type="hidden" name="copyidcard" value="<%=bean.getCopyidcard_p()%>">
+                                                                <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean1.getCopyidcard_p()%></span></label>
+                                                                <input  type="hidden" name="copyidcard_p" value="<%=bean1.getCopyidcard_p()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard_p()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getCopyidcard_p()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
-                                                                <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopydocumenthome_p()%></span></label>
-                                                                <input type="hidden" name="copydocumenthome" value="<%=bean.getCopydocumenthome_p()%>">
+                                                                <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean1.getCopydocumenthome_p()%></span></label>
+                                                                <input type="hidden" name="copydocumenthome_p" value="<%=bean1.getCopydocumenthome_p()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopydocumenthome_p()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getCopydocumenthome_p()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
-                                                                <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getSalary_slip_p()%></span></label>
-                                                                <input  type="hidden" name="salary_slip"  value="<%=bean.getSalary_slip_p()%>">
+                                                                <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getSalary_slip_p()%></span></label>
+                                                                <input  type="hidden" name="salary_slip_p"  value="<%=bean1.getSalary_slip_p()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getSalary_slip_p()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getSalary_slip_p()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
-                                                                <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount_p()%></span></label>
-                                                                <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount_p()%>">
+                                                                <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getCopy_bankaccount_p()%></span></label>
+                                                                <input type="hidden" name="copy_bankaccount_p"  value="<%=bean1.getCopy_bankaccount_p()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount_p()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getCopy_bankaccount_p()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <%
-                                                } else {
+                                                    } else {
                                                     }
                                                 %>                              
-
+                                                <input type="hidden" name="netprofit_p" value="<%=bean1.getNetprofit_p()%>">
+                                                <input  class="form-control" type="hidden" name="periodloan_p" value="<%=bean1.getPeriodloan_p()%>">
 
                                                 <!--=====================  =====================  =====================  =====================  =====================  =====================-->                                                      
                                                 <!--ข้อมูลผู้กู้ผู้ค้ำ-->
@@ -350,75 +359,80 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group col-md-12">
-                                                            <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean.getCitizen_k()%></span></label>
-                                                            <input  type="hidden" name="citizen_id" value="<%=bean.getCitizen_k()%>">
+                                                            <label>เลขบัตรประจำตัวประชาชน : &nbsp;&nbsp;<span class="fontblue1" style="color:#0033FF; font-size: 17px;"><%=bean1.getCitizen_k()%></span></label>
+                                                            <input  type="hidden" name="citizen_k" value="<%=bean1.getCitizen_k()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean.getTitle_k()%></span></label>
-                                                            <input type="hidden"  name="title_type" value="<%=bean.getTitle_k()%>">
+                                                            <label>คำนำหน้า :<span style="color:#0033FF; font-size: 17px;"><%=bean1.getTitle_k()%></span></label>
+                                                            <input type="hidden"  name="title_k" value="<%=bean1.getTitle_k()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label for="firstname">ชื่อ : &nbsp;&nbsp;<span  style="color:#0033FF; font-size: 17px;"><%=bean.getFirstname_k()%></span></label>
-                                                            <input  type="hidden" name="firstName" value="<%=bean.getFirstname_k()%>">
+                                                            <label for="firstname">ชื่อ : &nbsp;&nbsp;<span  style="color:#0033FF; font-size: 17px;"><%=bean1.getFirstname_k()%></span></label>
+                                                            <input  type="hidden" name="firstname_k" value="<%=bean1.getFirstname_k()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>นามสกุล: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getLastname_k()%></span></label>
-                                                            <input type="hidden" name="lastName" value="<%=bean.getLastname_k()%>" >
+                                                            <label>นามสกุล: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getLastname_k()%></span></label>
+                                                            <input type="hidden" name="lastname_k" value="<%=bean1.getLastname_k()%>" >
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>วันเดือนปีเกิด: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getBirthdate_k()%></span></label>
-                                                            <input type="hidden" name="birthdate" value="<%=bean.getBirthdate_k()%>">
+                                                            <label>วันเดือนปีเกิด: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getBirthdate_k()%></span></label>
+                                                            <input type="hidden" name="birthdate_k" value="<%=bean1.getBirthdate_k()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >อายุ: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getAge_k()%></span> &nbsp;&nbsp;ปี</label>
-                                                            <input  type="hidden" name="age" value="<%=bean.getAge_k()%>">
+                                                            <label >อายุ: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getAge_k()%></span> &nbsp;&nbsp;ปี</label>
+                                                            <input  type="hidden" name="age_k" value="<%=bean1.getAge_k()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >สัญชาติ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getNationality_k()%></span></label>
-                                                            <input name="nationality" type="hidden" value="<%=bean.getNationality_k()%>" >
+                                                            <label >สัญชาติ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getNationality_k()%></span></label>
+                                                            <input type="hidden" name="nationality_k" value="<%=bean1.getNationality_k()%>" >
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >สถานะสมรส : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getStatustype_k()%></span></label>
-                                                            <input type="hidden" name="statustype" value="<%=bean.getStatustype_k()%>"/>
+                                                            <label >สถานะสมรส : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getStatustype_k()%></span></label>
+                                                            <input type="hidden" name="statustype_k" value="<%=bean1.getStatustype_k()%>"/>
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label>เบอร์โทร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getMobile_k()%></span></label>
-                                                            <input type="hidden" name="mobile" value="<%=bean.getMobile_k()%>">
+                                                            <label>เบอร์โทร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getMobile_k()%></span></label>
+                                                            <input type="hidden" name="mobile_k" value="<%=bean1.getMobile_k()%>">
                                                         </div>
                                                         <div class="form-group col-md-4">
-                                                            <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getEmail_k()%></span></label>
-                                                            <input type="hidden" name="email"  value="<%=bean.getEmail_k()%>"/>
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype_k()%></span></label>
-                                                            <input type="hidden" name="jobtype" value="<%=bean.getJobtype_k()%>">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince_k()%></span></label>
-                                                            <textarea hidden name="addressregistration" ><%=bean.getProvince_k()%></textarea>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur_k()%></span></label>
-                                                            <textarea hidden name="addresscurrent" > <%=bean.getAmphur_k()%></textarea>
+                                                            <label >อีเมล์ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getEmail_k()%></span></label>
+                                                            <input type="hidden" name="email_k"  value="<%=bean1.getEmail_k()%>"/>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict_k()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getDistrict_k()%></textarea>
+                                                            <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getJobtype_k()%></span></label>
+                                                            <input type="hidden" name="jobtype_k" value="<%=bean1.getJobtype_k()%>">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean1.getProvince_k()%></span></label>
+                                                            <textarea hidden name="province_k" ><%=bean1.getProvince_k()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean1.getAmphur_k()%></span></label>
+                                                            <textarea hidden name="amphur_k" > <%=bean1.getAmphur_k()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean1.getDistrict_k()%></span></label>
+                                                            <textarea hidden name="district_k"> <%=bean1.getDistrict_k()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress_k()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddress_k()%></textarea>
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean1.getAddress_k()%></span></label>
+                                                            <textarea hidden name="address_k"> <%=bean1.getAddress_k()%></textarea>
                                                         </div>
-                                                        <h4> :: ข้อมูลด้านรายได้ ::</h4>
-                                                        <div class="form-group col-md-6">
-                                                            <label>รายได้ประจำต่อเดือน: &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getPeriodloan_k())%>&nbsp;&nbsp;</span>บาท</label>
-                                                            <input  class="form-control" type="hidden" name="periodloan" value="<%=bean.getPeriodloan_k()%>">
+                                                        <div class="col-md-12 panel-heading">
+                                                            <h4> :: ข้อมูลด้านรายได้ ::</h4>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean.getNetprofit_k())%>&nbsp;&nbsp;</span>บาท</label>
-                                                            <input type="hidden" name="netprofit" value="<%=bean.getNetprofit_k()%>">
+                                                        <div class="form-group col-md-4">
+                                                            <label>รายได้ประจำต่อเดือน: &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean1.getPeriodloan_k())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input  class="form-control" type="hidden" name="periodloan_k" value="<%=bean1.getPeriodloan_k()%>">
                                                         </div>
-                                                        <h4> :: เอกสารประกอบการขอกู้ ::</h4>
+                                                        <div class="form-group col-md-4">
+                                                            <label>รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=formatter.format(bean1.getNetprofit_k())%>&nbsp;&nbsp;</span>บาท</label>
+                                                            <input type="hidden" name="netprofit_k" value="<%=bean1.getNetprofit_k()%>">
+                                                        </div>
+
+                                                        <div class="col-md-12 panel-heading">
+                                                            <h4> :: เอกสารประกอบการขอกู้ ::</h4>
+                                                        </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8"><h3>เอกสาร</h3>
                                                             </div>
@@ -426,31 +440,31 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
-                                                                <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean.getCopyidcard_k()%></span></label>
-                                                                <input  type="hidden" name="copyidcard" value="<%=bean.getCopyidcard_k()%>">
+                                                                <label >สำเนาบัตรประจำตัวประชาชน: &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"> <%=bean1.getCopyidcard_k()%></span></label>
+                                                                <input  type="hidden" name="copyidcard_k" value="<%=bean1.getCopyidcard_k()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopyidcard_k()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getCopyidcard_k()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
-                                                                <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopydocumenthome_k()%></span></label>
-                                                                <input type="hidden" name="copydocumenthome" value="<%=bean.getCopydocumenthome_k()%>">
+                                                                <label>สำเนาทะเบียนบ้าน :<span style="color:#0033FF; font-size: 17px;"><%=bean1.getCopydocumenthome_k()%></span></label>
+                                                                <input type="hidden" name="copydocumenthome_k" value="<%=bean1.getCopydocumenthome_k()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopydocumenthome_k()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getCopydocumenthome_k()%>" target="_blank"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
-                                                                <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getSalary_slip_k()%></span></label>
-                                                                <input  type="hidden" name="salary_slip"  value="<%=bean.getSalary_slip_k()%>">
+                                                                <label>สลิปเงินเดือน : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getSalary_slip_k()%></span></label>
+                                                                <input  type="hidden" name="salary_slip_k"  value="<%=bean1.getSalary_slip_k()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getSalary_slip_k()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getSalary_slip_k()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class=" col-md-8">
-                                                                <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getCopy_bankaccount_k()%></span></label>
-                                                                <input type="hidden" name="copy_bankaccount"  value="<%=bean.getCopy_bankaccount_k()%>">
+                                                                <label>สำเนาบัญชีธนาคาร : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean1.getCopy_bankaccount_k()%></span></label>
+                                                                <input type="hidden" name="copy_bankaccount_k"  value="<%=bean1.getCopy_bankaccount_k()%>">
                                                             </div>
-                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean.getCopy_bankaccount_k()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
+                                                            <div class="col-md-4"><a  href="http://localhost:8080/TestProject/image/uploade/<%=bean1.getCopy_bankaccount_k()%>"><img class="imgfile" src="./img/icon-pdf1.png"></a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -753,8 +767,6 @@
             <%   }
             %>
         </div>
-
-
         <div>
             <%
                 if ("ok".equals(e_msg)) {

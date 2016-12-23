@@ -44,8 +44,8 @@ public class coborrowerDao {
             p.setString(15, requestLoatBean.getAmphur_p());
             p.setString(16, requestLoatBean.getDistrict_p());
             p.setString(17, requestLoatBean.getAddress_p());
-            p.setDouble(18, requestLoatBean.getPeriodloan_p());
-            p.setDouble(19, requestLoatBean.getNetprofit_p());
+            p.setDouble(18, requestLoatBean.getPeriodloan_p());  ////
+            p.setDouble(19, requestLoatBean.getNetprofit_p());   //////////////
             p.setString(20, requestLoatBean.getCopyidcard_p());
             p.setString(21, requestLoatBean.getCopydocumenthome_p());
             p.setString(22, requestLoatBean.getSalary_slip_p());
@@ -207,7 +207,7 @@ public class coborrowerDao {
             rs = p.executeQuery();
             while (rs.next()) {
                 bean = new RequestLoanBean();
-                bean.setId(rs.getInt("id"));
+//                bean.setId(rs.getInt("id"));
                 bean.setCitizen_id(rs.getString("citizen_id"));
                 bean.setCitizen_p(rs.getString("citizen_p"));
                 bean.setTitle_p(rs.getString("title_p"));
@@ -221,7 +221,6 @@ public class coborrowerDao {
                 bean.setNationality_p(rs.getString("nationality_p"));
                 bean.setJobtype_p(rs.getString("jobtype_p"));
                 bean.setProvince_p(rs.getString("province_p"));
-                bean.setAmphur_p(rs.getString("amphur_p"));
                 bean.setAmphur_p(rs.getString("amphur_p"));
                 bean.setDistrict_p(rs.getString("district_p"));
                 bean.setAddress_p(rs.getString("address_p"));
@@ -245,14 +244,13 @@ public class coborrowerDao {
                 bean.setJobtype_k(rs.getString("jobtype_k"));
                 bean.setProvince_k(rs.getString("province_k"));
                 bean.setAmphur_k(rs.getString("amphur_k"));
-                bean.setAmphur_k(rs.getString("amphur_k"));
                 bean.setDistrict_k(rs.getString("district_k"));
                 bean.setAddress_k(rs.getString("address_k"));
                 bean.setPeriodloan_k(rs.getDouble("periodloan_k"));
                 bean.setNetprofit_k(rs.getDouble("netprofit_k"));
                 bean.setCopyidcard_k(rs.getString("copyidcard_k"));
                 bean.setCopydocumenthome_k(rs.getString("copydocumenthome_k"));
-                bean.setSalary_slip_k(rs.getString("salary_slip_p"));
+                bean.setSalary_slip_k(rs.getString("salary_slip_k"));
                 bean.setCopy_bankaccount_k(rs.getString("copy_bankaccount_k"));
 //                bean.setLoanstatustype(rs.getString("loanstatustype"));
             }
@@ -316,7 +314,6 @@ public class coborrowerDao {
                 bean.setJobtype_p(rs.getString("jobtype_p"));
                 bean.setProvince_p(rs.getString("province_p"));
                 bean.setAmphur_p(rs.getString("amphur_p"));
-                bean.setAmphur_p(rs.getString("amphur_p"));
                 bean.setDistrict_p(rs.getString("district_p"));
                 bean.setAddress_p(rs.getString("address_p"));
                 bean.setPeriodloan_p(rs.getDouble("periodloan_p"));
@@ -338,7 +335,6 @@ public class coborrowerDao {
                 bean.setNationality_k(rs.getString("nationality_k"));
                 bean.setJobtype_k(rs.getString("jobtype_k"));
                 bean.setProvince_k(rs.getString("province_k"));
-                bean.setAmphur_k(rs.getString("amphur_k"));
                 bean.setAmphur_k(rs.getString("amphur_k"));
                 bean.setDistrict_k(rs.getString("district_k"));
                 bean.setAddress_k(rs.getString("address_k"));

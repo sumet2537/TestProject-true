@@ -98,9 +98,9 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     private String province_p;
     private String amphur_p;
     private String district_p;
-     private String address_p;
+    private String address_p;
     private String jobtype_p;
-     private Double periodloan_p;
+    private Double periodloan_p;
     private Double netprofit_p;
     private FormFile copyidcard_p;
     private FormFile copydocumenthome_p;

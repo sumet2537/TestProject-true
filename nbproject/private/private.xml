@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/brass/Documents/TestProject/src/java/com/dao/coborrowerDao.java</file>
+            <file>file:/Users/brass/Documents/TestProject/src/java/com/action/SenddatawsAction.java</file>
+            <file>file:/Users/brass/Documents/TestProject/web/admin/AdminManagermentLoanRcheck.jsp</file>
             <file>file:/Users/brass/Documents/TestProject/src/java/com/dao/RequestLoanDao.java</file>
-            <file>file:/Users/brass/Documents/TestProject/src/java/com/bean/RequestLoanBean.java</file>
-            <file>file:/Users/brass/Documents/TestProject/src/java/com/form/RequestLoanForm.java</file>
+            <file>file:/Users/brass/Documents/TestProject/src/java/com/dao/coborrowerDao.java</file>
+            <file>file:/Users/brass/Documents/TestProject/web/admin/detleloancheck.jsp</file>
             <file>file:/Users/brass/Documents/TestProject/web/user/loanrequst.jsp</file>
+            <file>file:/Users/brass/Documents/TestProject/src/java/com/action/LoanRequstAction.java</file>
         </group>
     </open-files>
 </project-private>

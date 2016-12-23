@@ -225,9 +225,12 @@ public ActionForward admin_update(ActionMapping mapping, ActionForm form,
     List<UserBean> regisList = new ArrayList<UserBean>();
     
     regisList = userdao.selectAll();
+    request.getSession().removeAttribute("regisList");
     request.getSession().setAttribute("regisList", regisList);
-    
-        return mapping.findForward("gotoPageAdminManagermentProfile");
+//request.setAttribute("userdao", userdao);
+    request.removeAttribute("msg");
+    request.setAttribute("msg", msg);
+        return mapping.findForward("gotoadminEdit");
 }
  //    ================================gotoaelectAll ====================================
   public ActionForward selectAll(ActionMapping mapping, ActionForm form,

@@ -131,7 +131,7 @@
                                                                             <input class="form-control" type="text" name="district" value="<%=bean.getDistrict()%>" readonly="">
                                                                         </div></div>
                                                                     <div class="form-group col-md-12">
-                                                                        <label class="col-md-3 control-label" for="addresssenddoc">ที่อยู่ <span class="require" style="color:red;">*</span></label>
+                                                                        <label class="col-md-3 control-label" for="address">ที่อยู่ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-4">
                                                                             <textarea class="form-control" name="address" readonly="" ><%=bean.getAddress()%></textarea>
                                                                         </div>
@@ -194,16 +194,16 @@
                                                             <div class="tab-pane" id="tab3">
 
                                                                 <div class="box-body">
-                                                                    <div class="form-group col-md-12">
-                                                                        <label class="col-md-4 control-label" for="periodloan">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
-                                                                        <div class="col-md-4">
+                                                                    <div class="form-group col-md-6">
+                                                                        <label class="col-md-6 control-label" for="periodloan">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                                        <div class="col-md-6">
                                                                             <input  class="form-control"type="text" name="periodloan" maxlength="11" placeholder="50,000">
                                                                         </div>
                                                                     </div>
                                                                     <div class="box-body">
-                                                                        <div class="form-group col-md-12">
-                                                                            <label class="col-md-4 control-label" for="netprofit">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
-                                                                            <div class="col-md-4">
+                                                                        <div class="form-group col-md-6">
+                                                                            <label class="col-md-6 control-label" for="netprofit">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                                            <div class="col-md-6">
                                                                                 <input  class="form-control"type="text" name="netprofit" maxlength="11" placeholder="100,000">
                                                                             </div>
                                                                         </div>
@@ -391,6 +391,18 @@
                                                                             <textarea class="form-control" name="address_p" placeholder="ที่อยู่" ></textarea>
                                                                         </div>
                                                                     </div>
+                                                                            <div class="form-group col-md-6">
+                                                                        <label class="col-md-6 control-label" for="periodloan_p">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                                        <div class="col-md-6">
+                                                                            <input  class="form-control"type="text" name="periodloan_p" maxlength="11" placeholder="50,000">
+                                                                        </div>
+                                                                    </div>
+                                                                        <div class="form-group col-md-6">
+                                                                            <label class="col-md-6 control-label" for="netprofit_p">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                                            <div class="col-md-6">
+                                                                                <input  class="form-control"type="text" name="netprofit_p" maxlength="11" placeholder="100,000">
+                                                                            </div>
+                                                                    </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copyidcard_p">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
@@ -548,8 +560,20 @@
                                                                             <textarea class="form-control" name="address_k" placeholder="ที่อยู่" ></textarea>
                                                                         </div>
                                                                     </div>
+                                                                             <div class="form-group col-md-6">
+                                                                        <label class="col-md-6 control-label" for="periodloan_k">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                                        <div class="col-md-6">
+                                                                            <input  class="form-control"type="text" name="periodloan_k" maxlength="11" placeholder="50,000">
+                                                                        </div>
+                                                                    </div>
+                                                                        <div class="form-group col-md-6">
+                                                                            <label class="col-md-6 control-label" for="netprofit_k">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
+                                                                            <div class="col-md-6">
+                                                                                <input  class="form-control"type="text" name="netprofit_k" maxlength="11" placeholder="100,000">
+                                                                            </div>
+                                                                    </div>
                                                                     <div class="form-group col-md-6">
-                                                                        <label class="col-md-6 control-label" for="copyidcardk">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
+                                                                        <label class="col-md-6 control-label" for="copyidcard_k">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
                                                                             <input  class="form-control"type="file" name="copyidcard_k" accept=".png, .jpg, .jpeg ,.pdf">
                                                                         </div>
@@ -557,7 +581,7 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copydocumenthome_k">สำเนาทะเบียนบ้าน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copydocumenthome_p" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="copydocumenthome_k" accept=".png, .jpg, .jpeg ,.pdf">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">

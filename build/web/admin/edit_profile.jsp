@@ -12,9 +12,13 @@
 <%--<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>--%>
 
 <%! UserBean bean = new UserBean();%>
-<% bean = (UserBean) request.getSession().getAttribute("editBean");%> 
+<% bean = (UserBean) request.getSession().getAttribute("editBean");
+String msg = "";
+    msg = (String) request.getAttribute("msg");
+%> 
 
  <!-- Main content -->
+ <body onload="check()">
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
@@ -162,9 +166,49 @@
 
             <!--</div>-->
         </section><!-- /.content -->
+ </body>
         <script type="text/javascript">
             function insert(select) {
                 document.profileForm.todo.value = select;
                 document.profileForm.submit();
             }
         </script>
+        <div>
+        <%
+            if ("ok".equals(msg)) {
+        %>
+        <script >
+            function check() {
+                $(document).ready(function () {
+                    swal({
+                        title: "สำเร็จ",
+                        text: "ดีใจด้วย คุณแก้ไขข้อมูลสำเร็จ !",
+                        type: "success"
+                    },
+                            function () {
+                                window.location.href = 'registerAction.do?todo=gotoPageAdminManagermentProfile';// 
+                            });
+
+                });
+            }
+        </script>
+
+        <%} else if ("no".equals(msg)) {
+        %>
+        <script >
+            function check() {
+                swal({
+                    title: "ไม่สำเร็จ",
+                    text: "คุณแก้ไขข้อมูลไม่สำเร็จ ลองใหม่อีกครั้ง!",
+                    type: "error"
+                },
+                        function () {
+                            window.location.href = 'registerAction.do?todo=gotoadminEdit';
+                        });
+            }
+            ;
+
+        </script>
+        <%   }
+        %>
+    </div>

@@ -93,18 +93,6 @@
                                                             <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             <input type="hidden" name="joptype" value="<%=bean.getJobtype()%>">
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
-                                                            <textarea hidden name="addressregistration" ><%=bean.getAddressregistration()%></textarea>
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>ที่อยู่ปัจจุบัน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresscurrent()%></span></label>
-                                                            <textarea hidden name="addresscurrent" > <%=bean.getAddresscurrent()%></textarea>
-                                                        </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddresssenddoc()%></textarea>
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="panel panel-success">

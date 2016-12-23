@@ -39,7 +39,7 @@ public class LoanRequstAction extends DispatchAction {
         String msg = "";
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean loanbean = new RequestLoanBean();
-
+        RequestLoanBean loanbean1 = new RequestLoanBean();
         String bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8;
         bank1 = loanform.getBanktype1();
         bank2 = loanform.getBanktype2();
@@ -124,100 +124,103 @@ public class LoanRequstAction extends DispatchAction {
 
 //=============================================คุ๋สมรส==========================================================================================
       String statustype =loanform.getStatustype();
-        if(statustype.equals("สมรส")){
-        loanbean.setCitizen_p(loanform.getCitizen_p());
-        loanbean.setTitle_p(loanform.getTitle_p());
-        loanbean.setFirstname_p(loanform.getFirstname_p());
-        loanbean.setLastname_p(loanform.getLastname_p());
-        loanbean.setBirthdate_p(loanform.getBirthdate_p());
-        loanbean.setAge_p(loanform.getAge_p());
-        loanbean.setNationality_p(loanform.getNationality_p());
-        loanbean.setStatustype_p(loanform.getStatustype_p());
-        loanbean.setMobile_p(loanform.getMobile_p());
-        loanbean.setEmail_p(loanform.getEmail_p());
-        loanbean.setProvince_p(loanform.getProvince_p());
-        loanbean.setAmphur_p(loanform.getAmphur_p());
-        loanbean.setDistrict_p(loanform.getDistrict_p());
-        loanbean.setAddress_p(loanform.getAddress_p());
-        loanbean.setJobtype_p(loanform.getJobtype_p());
-        loanbean.setPeriodloan_p(loanform.getPeriodloan_p());
-        loanbean.setNetprofit_p(loanform.getNetprofit_p());
+        
+      if(statustype.equals("สมรส")){
+        loanbean1.setCitizen_p(loanform.getCitizen_p());
+        loanbean1.setTitle_p(loanform.getTitle_p());
+        loanbean1.setFirstname_p(loanform.getFirstname_p());
+        loanbean1.setLastname_p(loanform.getLastname_p());
+        loanbean1.setBirthdate_p(loanform.getBirthdate_p());
+        loanbean1.setAge_p(loanform.getAge_p());
+        loanbean1.setNationality_p(loanform.getNationality_p());
+        loanbean1.setStatustype_p(loanform.getStatustype_p());
+        loanbean1.setMobile_p(loanform.getMobile_p());
+        loanbean1.setEmail_p(loanform.getEmail_p());
+        loanbean1.setProvince_p(loanform.getProvince_p());
+        loanbean1.setAmphur_p(loanform.getAmphur_p());
+        loanbean1.setDistrict_p(loanform.getDistrict_p());
+        loanbean1.setAddress_p(loanform.getAddress_p());
+        loanbean1.setJobtype_p(loanform.getJobtype_p());
+        loanbean1.setPeriodloan_p(loanform.getPeriodloan_p());
+        loanbean1.setNetprofit_p(loanform.getNetprofit_p());
 //        
 
         String file8 = loanform.getCopyidcard_p().getFileName();
         if (file8.equals("")) {
-            loanbean.setCopyidcard_p("ไม่มีไฟล์");
+            loanbean1.setCopyidcard_p("ไม่มีไฟล์");
         } else {
-            loanbean.setCopyidcard_p(upload.upload(loanform.getCopyidcard_p()));
+            loanbean1.setCopyidcard_p(upload.upload(loanform.getCopyidcard_p()));
         }
        
         String file9 = loanform.getCopydocumenthome_p().getFileName();
         if (file9.equals("")) {
-            loanbean.setCopydocumenthome_p("ไม่มีไฟล์");
+            loanbean1.setCopydocumenthome_p("ไม่มีไฟล์");
         } else {
-            loanbean.setCopydocumenthome_p(upload.upload(loanform.getCopydocumenthome_p()));
+            loanbean1.setCopydocumenthome_p(upload.upload(loanform.getCopydocumenthome_p()));
         }
         String file10 = loanform.getSalary_slip_p().getFileName();
         if (file10.equals("")) {
-            loanbean.setSalary_slip_p("ไม่มีไฟล์");
+            loanbean1.setSalary_slip_p("ไม่มีไฟล์");
         } else {
-            loanbean.setSalary_slip_p(upload.upload(loanform.getSalary_slip_p()));
+            loanbean1.setSalary_slip_p(upload.upload(loanform.getSalary_slip_p()));
         }
         String file11 = loanform.getCopy_bankaccount_p().getFileName();
         if (file11.equals("")) {
-            loanbean.setCopy_bankaccount_p("ไม่มีไฟล์");
+            loanbean1.setCopy_bankaccount_p("ไม่มีไฟล์");
         } else {
-            loanbean.setCopy_bankaccount_p(upload.upload(loanform.getCopy_bankaccount_p()));
+            loanbean1.setCopy_bankaccount_p(upload.upload(loanform.getCopy_bankaccount_p()));
         }
         System.out.println("++++++++++++" + loanform.getCopyidcard_p().getFileName());
   
         }else{
         }
+        loanbean1.setPeriodloan_p(loanform.getPeriodloan_p());
+        loanbean1.setNetprofit_p(loanform.getNetprofit_p());
 //==================================================ผู้ค้ำประกัน=====================================================================================
-
-        loanbean.setCitizen_k(loanform.getCitizen_k());
-        loanbean.setTitle_k(loanform.getTitle_k());
-        loanbean.setFirstname_k(loanform.getFirstname_k());
-        loanbean.setLastname_k(loanform.getLastname_k());
-        loanbean.setBirthdate_k(loanform.getBirthdate_k());
-        loanbean.setAge_k(loanform.getAge_k());
-        loanbean.setNationality_k(loanform.getNationality_k());
-        loanbean.setStatustype_k(loanform.getStatustype_k());
-        loanbean.setMobile_k(loanform.getMobile_k());
-        loanbean.setEmail_k(loanform.getEmail_k());
-        loanbean.setProvince_k(loanform.getProvince_k());
-        loanbean.setAmphur_k(loanform.getAmphur_k());
-        loanbean.setDistrict_k(loanform.getDistrict_k());
-        loanbean.setAddress_k(loanform.getAddress_k());
-        loanbean.setJobtype_k(loanform.getJobtype_k());
-        loanbean.setPeriodloan_k(loanform.getPeriodloan_k());
-        loanbean.setNetprofit_k(loanform.getNetprofit_k());
+        loanbean1.setCitizen_id(loanform.getCitizen_id());
+        loanbean1.setCitizen_k(loanform.getCitizen_k());
+        loanbean1.setTitle_k(loanform.getTitle_k());
+        loanbean1.setFirstname_k(loanform.getFirstname_k());
+        loanbean1.setLastname_k(loanform.getLastname_k());
+        loanbean1.setBirthdate_k(loanform.getBirthdate_k());
+        loanbean1.setAge_k(loanform.getAge_k());
+        loanbean1.setNationality_k(loanform.getNationality_k());
+        loanbean1.setStatustype_k(loanform.getStatustype_k());
+        loanbean1.setMobile_k(loanform.getMobile_k());
+        loanbean1.setEmail_k(loanform.getEmail_k());
+        loanbean1.setProvince_k(loanform.getProvince_k());
+        loanbean1.setAmphur_k(loanform.getAmphur_k());
+        loanbean1.setDistrict_k(loanform.getDistrict_k());
+        loanbean1.setAddress_k(loanform.getAddress_k());
+        loanbean1.setJobtype_k(loanform.getJobtype_k());
+        loanbean1.setPeriodloan_k(loanform.getPeriodloan_k());
+        loanbean1.setNetprofit_k(loanform.getNetprofit_k());
 //        
 
         String file8 = loanform.getCopyidcard_k().getFileName();
         if (file8.equals("")) {
-            loanbean.setCopyidcard_k("ไม่มีไฟล์");
+            loanbean1.setCopyidcard_k("ไม่มีไฟล์");
         } else {
-            loanbean.setCopyidcard_k(upload.upload(loanform.getCopyidcard_k()));
+            loanbean1.setCopyidcard_k(upload.upload(loanform.getCopyidcard_k()));
         }
        
         String file9 = loanform.getCopydocumenthome_k().getFileName();
         if (file9.equals("")) {
-            loanbean.setCopydocumenthome_k("ไม่มีไฟล์");
+            loanbean1.setCopydocumenthome_k("ไม่มีไฟล์");
         } else {
-            loanbean.setCopydocumenthome_k(upload.upload(loanform.getCopydocumenthome_k()));
+            loanbean1.setCopydocumenthome_k(upload.upload(loanform.getCopydocumenthome_k()));
         }
         String file10 = loanform.getSalary_slip_k().getFileName();
         if (file10.equals("")) {
-            loanbean.setSalary_slip_k("ไม่มีไฟล์");
+            loanbean1.setSalary_slip_k("ไม่มีไฟล์");
         } else {
-            loanbean.setSalary_slip_k(upload.upload(loanform.getSalary_slip_k()));
+            loanbean1.setSalary_slip_k(upload.upload(loanform.getSalary_slip_k()));
         }
         String file11 = loanform.getCopy_bankaccount_k().getFileName();
         if (file11.equals("")) {
-            loanbean.setCopy_bankaccount_k("ไม่มีไฟล์");
+            loanbean1.setCopy_bankaccount_k("ไม่มีไฟล์");
         } else {
-            loanbean.setCopy_bankaccount_k(upload.upload(loanform.getCopy_bankaccount_k()));
+            loanbean1.setCopy_bankaccount_k(upload.upload(loanform.getCopy_bankaccount_k()));
         }
         System.out.println("++++++++++++" + loanform.getCopyidcard_k().getFileName());
   
@@ -234,7 +237,7 @@ public class LoanRequstAction extends DispatchAction {
         coborrowerDao codao = new coborrowerDao();
         try {
             dao.insert(loanbean);
-            codao.insert(loanbean);
+            codao.insert(loanbean1);
             System.out.println("ok");
             msg = "ok";
         } catch (Exception e) {
@@ -288,8 +291,13 @@ public class LoanRequstAction extends DispatchAction {
             throws Exception {
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanDao loandao = new RequestLoanDao();
+        coborrowerDao cdao = new coborrowerDao();
         RequestLoanBean bean = loandao.selectById(loanform.getLoanreq_id());
-
+        RequestLoanBean bean1 = cdao.selectById(loanform.getCitizen_id());
+        
+        request.getSession().removeAttribute("editBean1");
+        request.getSession().setAttribute("editBean1", bean1);
+        request.getSession().removeAttribute("editBean");
         request.getSession().setAttribute("editBean", bean);
         return mapping.findForward("gotoDetle_requestloan");
     }

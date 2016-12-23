@@ -125,10 +125,14 @@
         <put name="title"  value="Form Login" />
         <put name="body"   value="/jsp/login.jsp" />
     </definition>
-    <definition name="gotoPageProfile" extends="welcome">
+     <definition name="gotoPageProfile" extends="welcome">
         <put name="title"  value="formprofile" />
         <put name="body"   value="/jsp/profile.jsp" />
     </definition>
+<!--    <definition name="gotoPageProfile" extends="welcome">
+        <put name="title"  value="formprofile" />
+        <put name="body"   value="/jsp/edit_profile.jsp" />
+    </definition>-->
     <definition name="gotouserEdit" extends="welcome">
         <put name="title"  value="formprofile" />
         <put name="body"   value="/jsp/profile.jsp" />

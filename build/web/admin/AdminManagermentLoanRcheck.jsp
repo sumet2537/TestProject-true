@@ -101,6 +101,7 @@
                                                                     <td><%=bean.getLoanstatustype()%></td>
                                                                     <td><%=formatter.format(bean.getCreditloan())%></td>
                                                                     <td><%=bean.getCreated()%></td>
+                                                            <input type="hidden" name="citizen_id" value="<%=bean.getCitizen_id()%>"/>
                                                                     <td> <button  onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)" class="btn btn-sm btn-danger" ><i class="fa fa-close"></i></button></td>
 
                                                                     <td><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getLoanreq_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
@@ -137,8 +138,10 @@
                                 </div>
                             </div>
                         </section>
+                                                            
                         <input type="hidden" name="todo"/>
                         <input type="hidden" name="loanreq_id"/>
+                        <input type="hidden" name="citizen_id"/>
                     </form>
                 </div>
             </div>

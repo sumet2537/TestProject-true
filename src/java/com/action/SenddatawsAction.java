@@ -196,7 +196,7 @@ public class SenddatawsAction extends DispatchAction {
         loanbean.setLastnameK(loanform.getLastname_k());
         loanbean.setBirthdateK(loanform.getBirthdate_k());
         loanbean.setAgeK(loanform.getAge_k());
-        loanbean.setNationalityP(loanform.getNationality_k());
+        loanbean.setNationalityK(loanform.getNationality_k());
         loanbean.setStatustypeK(loanform.getStatustype_k());
         loanbean.setMobileK(loanform.getMobile_k());
         loanbean.setEmailK(loanform.getEmail_k());
@@ -223,19 +223,19 @@ public class SenddatawsAction extends DispatchAction {
 
             String file13 = loanform.getCopydocumenthome_k();
             if (file13.equals("")) {
-                loanbean.setCopydocumenthomeK(loan.getCopydocumenthome_p());
+                loanbean.setCopydocumenthomeK(loan.getCopydocumenthome_k());
             } else {
                 loanbean.setCopydocumenthomeK(file13);
                 loanbean.setCopydocumenthomeKv(upload.fileToByteArray(file13));
             }
             String file14 = loanform.getSalary_slip_k();
             if (file14.equals("")) {
-                loanbean.setSalarySlipK(loan.getSalary_slip_p());
+                loanbean.setSalarySlipK(loan.getSalary_slip_k());
             } else {
-                loanbean.setSalarySlipP(file14);
+                loanbean.setSalarySlipK(file14);
                 loanbean.setSalarySlipKbyte(upload.fileToByteArray(file14));
             }
-            String file15 = loanform.getCopy_bankaccount_p();
+            String file15 = loanform.getCopy_bankaccount_k();
             if (file15.equals("")) {
                 loanbean.setCopyBankaccountK(loan.getCopy_bankaccount_k());
             } else {
