@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+           <section class="content">
+               <div class="center"><h3>คุณยังไม่ได้ทำการสมัครสมาชิก<br> ต้องทำการสมัครสมาชิกเพื่อเข้าสู่ระบบก่อนนะครับ </h3></div>
+               <div  class="center" style="font-size: 30px;"><a style="color: red;" href="PageAction.do?todo=gotoPageRegister">! สมัครเดียวนี้เลยคลิก !</a></div>
+        </section>
     </body>
 </html>

@@ -43,7 +43,8 @@
                 <forward name="gotoPageLoanRequest" path="gotoPageLoanRequest" />
                 <forward name="gotoPageDetleRequest" path="gotoPageDetleRequest" />
                 <forward name="gotoPageAdminManagermentProfile" path="gotoPageAdminManagermentProfile" />
-
+                <forward name="gotoPageifrequest" path="gotoPageifrequest" />
+                
                 <forward name="gotoPageManagermentLoan" path="gotoPageManagermentLoan" />
                 <forward name="gotoPageManagermentNo" path="gotoPageManagermentNo" />
                 <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />

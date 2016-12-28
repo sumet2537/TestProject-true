@@ -20,7 +20,7 @@
 
         %>
         <%  regislist = (List<UserBean>) request.getSession().getAttribute("regisList"); %>
-        
+
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
@@ -58,90 +58,76 @@
                                         </div>
                                         <!--.box-header-->
                                         <div class="box-body">
-                                          
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <table id="example1" class="table table-striped table-bordered">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending"
-                                                                        aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">ลำดับ
-                                                                    </th>
-                                                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending"
-                                                                        aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">เลขบัตร
-                                                                    </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" 
-                                                                        colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 100px;">ชื่อ-นามสกุล
-                                                                    </th>
-                                                                    <!--                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
-                                                                                                                                aria-label="Platform(s): activate to sort column ascending" style="width: 93px;">สถานะสมรส
-                                                                                                                            </th>-->
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
-                                                                        aria-label="Platform(s): activate to sort column ascending" style="width: 90px;">เบอร์โทร
-                                                                    </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                                                        aria-label="Engine version: activate to sort column ascending" style="width: 60px;">อีเมล์
-                                                                    </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
-                                                                        aria-label="CSS grade: activate to sort column ascending" style="width: 100px;">ที่อยู่
-                                                                    </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
-                                                                        aria-label="CSS grade: activate to sort column ascending" style="width: 40px;">ลบ
-                                                                    </th>
-                                                                    <!--                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
-                                                                                                                                            aria-label="CSS grade: activate to sort column ascending" style="width: 40px;">แก้ไข
-                                                                                                                                        </th>-->
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
-                                                                        aria-label="CSS grade: activate to sort column ascending" style="width: 40px;">รายละเอียด
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <%
-                                                                    if (regislist != null && regislist.size() != 0) {
-                                                                        for (int i = 0; i < regislist.size(); i++) {
-                                                                            UserBean bean = (UserBean) regislist.get(i);
-                                                                %>
-                                                                <tr role="row" class="odd">
-                                                                    <td class="sorting_1"><%=i + 1%></td>
-                                                                    <td class="sorting_1"><%=bean.getCitizen_id()%></td>
-                                                                    <td class="sorting_1"><%=bean.getTitle_type()%> &nbsp;<%=bean.getFirstName()%>&nbsp;<%=bean.getLastName()%></td>
-                                                                    <%----<td class="sorting_1"><%=bean.getStatustype()%></td>--%>
-                                                                    <td class="sorting_1"><%=bean.getMobile()%></td>
-                                                                    <td class="sorting_1"><%=bean.getEmail()%></td>
-                                                                    <td class="sorting_1"><%=bean.getProvince()%></td>
-                                                                    <td class="sorting_1"><button class="btn btn-sm btn-danger" type="submit" value="ลบ" onclick="callActionGotoDelete(<%=bean.getUser_id()%>)"><i class="fa fa-close"></i></button></td>
-                                                                            <%--<td class="sorting_1"><button class="btn btn-sm btn-success" type="submit" value="แก้ไข" onclick="callActionGotoEdit(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-edit"></i></button></td>--%>
-                                                                    <td class="sorting_1"><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
-                                                                </tr>
-                                                                <%}%>
-                                                                <%} else {%>
-                                                            <br><br>
-                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
-                                                            <%}%>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>ลำดับ</th>
-                                                                    <th>เลขบัตร </th>
-                                                                    <th>ชื่อ-นามสกุล</th>
-                                                                    <th>เบอร์โทร</th>
-                                                                    <th>อีเมล์</th>
-                                                                    <th>ที่อยู่</th>
-                                                                    <th>ลบ</th>
-                                                                    <!--<th>แก้ไข</th>-->
-                                                                    <th>รายละเอียด</th>
 
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
-                                                        
-                                                    </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="example1" class="table table-striped table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending"
+                                                                    aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">ลำดับ
+                                                                </th>
+                                                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending"
+                                                                    aria-label="Rendering engine: activate to sort column descending" style="width: 50px;">เลขบัตร
+                                                                </th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" 
+                                                                    colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 100px;">ชื่อ-นามสกุล
+                                                                </th>
+                                                                <!--                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
+                                                                                                                            aria-label="Platform(s): activate to sort column ascending" style="width: 93px;">สถานะสมรส
+                                                                                                                        </th>-->
+                                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
+                                                                    aria-label="Platform(s): activate to sort column ascending" style="width: 90px;">เบอร์โทร
+                                                                </th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                                                    aria-label="Engine version: activate to sort column ascending" style="width: 60px;">อีเมล์
+                                                                </th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
+                                                                    aria-label="CSS grade: activate to sort column ascending" style="width: 100px;">ที่อยู่
+                                                                </th>
+                                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
+                                                                    aria-label="CSS grade: activate to sort column ascending" style="width: 40px;">ลบ
+                                                                </th>
+                                                                <!--                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
+                                                                                                                                        aria-label="CSS grade: activate to sort column ascending" style="width: 40px;">แก้ไข
+                                                                                                                                    </th>-->
+                                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" 
+                                                                    aria-label="CSS grade: activate to sort column ascending" style="width: 40px;">รายละเอียด
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <%
+                                                                if (regislist != null && regislist.size() != 0) {
+                                                                    for (int i = 0; i < regislist.size(); i++) {
+                                                                        UserBean bean = (UserBean) regislist.get(i);
+                                                            %>
+                                                            <tr role="row" class="odd">
+                                                                <td class="sorting_1"><%=i + 1%></td>
+                                                                <td class="sorting_1"><%=bean.getCitizen_id()%></td>
+                                                                <td class="sorting_1"><%=bean.getTitle_type()%> &nbsp;<%=bean.getFirstName()%>&nbsp;<%=bean.getLastName()%></td>
+                                                                <%----<td class="sorting_1"><%=bean.getStatustype()%></td>--%>
+                                                                <td class="sorting_1"><%=bean.getMobile()%></td>
+                                                                <td class="sorting_1"><%=bean.getEmail()%></td>
+                                                                <td class="sorting_1"><%=bean.getProvince()%></td>
+                                                                <td class="sorting_1"><button class="btn btn-sm btn-danger" type="button" value="ลบ" onclick="callActionGotoDelete(<%=bean.getUser_id()%>)"><i class="fa fa-close"></i></button></td>
+                                                                        <%--<td class="sorting_1"><button class="btn btn-sm btn-success" type="submit" value="แก้ไข" onclick="callActionGotoEdit(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-edit"></i></button></td>--%>
+                                                                <td class="sorting_1"><button class="btn btn-sm btn-primary" type="button" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getUser_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
+                                                            </tr>
+                                                            <%}%>
+                                                            <%} else {%>
+                                                        <br><br>
+                                                        <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
+                                                        <%}%>
+                                                        </tbody>
+                                                    </table>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </section>
                         <input type="hidden" name="todo"/>
@@ -149,16 +135,36 @@
                     </form>
                 </div>
             </div>
-        </section>
+ 
     </body>
     <script type="text/javascript">
-        function callActionGotoDelete(user_id) {
-//        alert(คุณต้องการลบขอ้มูลใช่หรือไม่);
-            document.formshowdateuser.user_id.value = user_id;
-            document.formshowdateuser.todo.value = 'delete';
-            document.formshowdateuser.submit();
+            function callActionGotoDelete(user_id) {
+            swal({
+                title: "คุณ แน่ใจแล้วใช่หรือไม่ ?",
+                text: "คุณแน่ใจแล้วใช่หรือไม่ที่จะลบข้อมูล ลูกค้า!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ใช่, ลบเลย!",
+                cancelButtonText: "ไม่, ออกเลย!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                    function (isConfirm) {
+                           document.formshowdateuser.user_id.value = user_id;
+                            document.formshowdateuser.todo.value = 'delete';
+                           
+                        if (isConfirm) {
+                          document.formshowdateuser.submit();
+                            swal("ลบ !", "คุณ ลบ สำเร็จแล้ว.", "success");
+                        } else {
+                            swal("ออก", "คุณไม่ลบแล้วใช่หรือไม่ :)", "error");
+                        }
+                    });
         }
+      
         function callActionGotoDetle(user_id) {
+
             document.formshowdateuser.user_id.value = user_id;
             document.formshowdateuser.todo.value = 'Detle';
             document.formshowdateuser.submit();
@@ -174,5 +180,31 @@
             document.formshowdateuser.submit();
         }
 
+
     </script>
+   
+<!--      function callActionGotoDelete(user_id) {
+            swal({
+                title: "ที่รัก คุณแน่ใจแล้วใช่หรือไม่ ?",
+                text: "ที่รัก คุณแน่ใจแล้วใช่หรือไม่ ที่จะลบฉันออกจากใจของเธอ !",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ใช่, ลบเลยฉันไม่ได้รักเธอแล้ว!",
+                cancelButtonText: "ไม่, ฉันยังรักเธออยู่!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                    function (isConfirm) {
+                           document.formshowdateuser.user_id.value = user_id;
+                            document.formshowdateuser.todo.value = 'delete';
+                           
+                        if (isConfirm) {
+                          document.formshowdateuser.submit();
+                            swal("ลบ !", "ฉันเสียใจจังเลยที่คุณลบฉันออกไปจากใจ สำเร็จแล้ว.", "success");
+                        } else {
+                            swal("ออก", "ดีใจจังเลยที่เธอยังไม่ลบฉันออกจากใจ :)", "error");
+                        }
+                    });
+        }-->
 </html>

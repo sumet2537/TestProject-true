@@ -156,22 +156,22 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-12">
-                                                                        <label class="col-md-4 control-label" for="tradingprice">ราคาซื้อขาย <span class="require" style="color:red;">*</span></label>
+                                                                        <label class="col-md-4 control-label" for="tradingprice">ราคาซื้อขาย <span class="require"  style="color:red;">*</span></label>
                                                                         <div class="col-md-4">
-                                                                            <input  class="form-control"type="text" name="tradingprice" maxlength="11" placeholder="ประเภทที่อยู่อาศัย">
+                                                                            <input  class="form-control"type="text" name="tradingprice" maxlength="11" placeholder="ประเภทที่อยู่อาศัย" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-12">
                                                                         <label class="col-md-4 control-label" for="creditloan">วงเงินสินเชื่อที่ขอกู้ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-4">
-                                                                            <input  class="form-control"type="text" name="creditloan" maxlength="11" placeholder="วงเงินสินเชื่อที่ขอกู้">
+                                                                            <input  class="form-control"type="text" name="creditloan" maxlength="11" placeholder="วงเงินสินเชื่อที่ขอกู้" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-12">
                                                                         <label class="col-md-4 control-label" for="lncome_per_month">ระยะเวลาที่ขอกู้ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-4">
                                                                             <!--<input  class="form-control"type="number" name="lncome_per_month" maxlength="2" placeholder="1-2">-->
-                                                                            <select  name="lncome_per_month" class="form-control">
+                                                                            <select  name="lncome_per_month" class="form-control" required="true">
                                                                                 <option value="">:: เลือก ::</option>
                                                                                 <%
                                                                                     for (int i = 1; i <= 30; i++) {
@@ -197,14 +197,14 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="periodloan">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="text" name="periodloan" maxlength="11" placeholder="50,000">
+                                                                            <input  class="form-control"type="text" name="periodloan" maxlength="11" placeholder="50,000" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="box-body">
                                                                         <div class="form-group col-md-6">
                                                                             <label class="col-md-6 control-label" for="netprofit">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
                                                                             <div class="col-md-6">
-                                                                                <input  class="form-control"type="text" name="netprofit" maxlength="11" placeholder="100,000">
+                                                                                <input  class="form-control"type="text" name="netprofit" maxlength="11" placeholder="100,000" required="true">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -221,20 +221,20 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copyidcard">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copyidcard" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="copyidcard" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copylicenses">สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ) <span class="require" style="color:red;"></span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copylicenses" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="copylicenses" accept=".png, .jpg, .jpeg ,.pdf" >
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copydocumenthome">สำเนาทะเบียนบ้าน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copydocumenthome" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="copydocumenthome" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
@@ -252,13 +252,13 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="salary_slip">สลิปเงินเดือน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="salary_slip" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="salary_slip" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copy_bankaccount">สำเนาการเดินบัญชีธนาคาร <span  style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copy_bankaccount" accept=".png, .jpg, .jpeg ,.pdf" >
+                                                                            <input  class="form-control"type="file" name="copy_bankaccount" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                      <div class="form-group col-md-12">
@@ -442,14 +442,14 @@
                                                                     <div class="form-group col-md-12">
                                                                         <label class="col-md-3 control-label" for="citizen_k">เลขบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-4 ">
-                                                                            <input class=" form-control" type="text" name="citizen_k" maxlength="13"  placeholder="เลขบัตรประจำตัวประชาชน" >
+                                                                            <input class=" form-control" type="text" name="citizen_k" maxlength="13"  placeholder="เลขบัตรประจำตัวประชาชน" required="true">
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-5 control-label" for="title_k">คำนำหน้า <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-7">
-                                                                            <select class="form-control" name="title_k" >
+                                                                            <select class="form-control" name="title_k" required="true">
                                                                                 <option>:: เลือก ::</option>
                                                                                 <option value="นาย">นาย</option>
                                                                                 <option value="นางสาว">นางสาว</option>
@@ -459,22 +459,22 @@
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="firstname_k">ชื่อ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-8 ">
-                                                                            <input class="form-control" type="text" name="firstname_k" placeholder="ชื่อ" >
+                                                                            <input class="form-control" type="text" name="firstname_k" placeholder="ชื่อ" required="true">
                                                                         </div></div>
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="lastname_k">นามสกุล <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-8 ">
-                                                                            <input class="form-control" type="text" name="lastname_k" placeholder="นามสกุล" >
+                                                                            <input class="form-control" type="text" name="lastname_k" placeholder="นามสกุล" required="true">
                                                                         </div></div>
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="birthdate_k">วันเดือนปีเกิด <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-8">
-                                                                            <input class="form-control" type="date" name="birthdate_k" placeholder="วันเดือนปีเกิด" >
+                                                                            <input class="form-control" type="date" name="birthdate_k" placeholder="วันเดือนปีเกิด" required="true">
                                                                         </div></div>
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="age_k">อายุ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-8">
-                                                                            <select class="form-control" name="age_k">ปี
+                                                                            <select class="form-control" name="age_k" required="true">ปี
                                                                                 <option>::เลือก::</option>
                                                                                 <%
                                                                                     for (int i = 20; i <= 60; i++) {
@@ -488,7 +488,7 @@
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="statustype_k">สถานะ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-7">
-                                                                            <select  name="statustype_k" class="form-control">
+                                                                            <select  name="statustype_k" class="form-control" required="true">
                                                                                 <option>:: เลือก ::</option>
                                                                                 <option value="โสด">โสด</option>
                                                                                 <option value="สมรส">สมรส</option>
@@ -499,7 +499,7 @@
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="mobile_k">เบอร์โทร <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-7">
-                                                                            <input class="form-control" type="text" name="mobile_k" maxlength="10" placeholder="เบอร์โทร" >
+                                                                            <input class="form-control" type="text" name="mobile_k" maxlength="10" placeholder="เบอร์โทร" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-4">
@@ -511,13 +511,13 @@
                                                                     <div class="form-group col-md-4">
                                                                         <label class="col-md-4 control-label" for="nationality_k">สัญชาติ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-5">
-                                                                            <input class="form-control" type="text" name="nationality_k"  placeholder="สัญชาติ">
+                                                                            <input class="form-control" type="text" name="nationality_k"  placeholder="สัญชาติ" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-12">
                                                                         <label class="col-md-3 control-label" for="jobtype_k">อาชีพ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-3">
-                                                                            <select  name="jobtype_k" class="form-control">
+                                                                            <select  name="jobtype_k" class="form-control" required="true">
                                                                                 <option>:: เลือก ::</option>
                                                                                 <option value="พนักงานเงินเดือนประจำ">พนักงานเงินเดือนประจำ</option>
                                                                                 <option value="ประกอบอาชีพอิสระ">ประกอบอาชีพอิสระ</option>
@@ -529,7 +529,7 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="province_k">จังหวัด <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <select  name="province_k" class="form-control">
+                                                                            <select  name="province_k" class="form-control" required="true">
                                                                                 <option>:: เลือก ::</option>
                                                                                 <option value="ขอนแก่น">ขอนแก่น</option>
                                                                                 <option value="มหาสารคาม">มหาสารคาม</option>
@@ -538,7 +538,7 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="amphur_k">อำเภอ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <select  name="amphur_k" class="form-control">
+                                                                            <select  name="amphur_k" class="form-control" required="true">
                                                                                 <option>:: เลือก ::</option>
                                                                                 <option value="หนองสองห้อง">หนองสองห้อง</option>
                                                                                 <option value="มหาสารคาม">มหาสารคาม</option>
@@ -548,7 +548,7 @@
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="district_k">ตำลบ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <select  name="district_k" class="form-control">
+                                                                            <select  name="district_k" class="form-control" required="true">
                                                                                 <option>:: เลือก ::</option>
                                                                                 <option value="วังหิน">วังหิน</option>
                                                                                 <option value="ท่าขอนยาง">ท่าขอนยาง</option>
@@ -557,43 +557,43 @@
                                                                     <div class="form-group col-md-12">
                                                                         <label class="col-md-3 control-label" for="address_k">ที่อยู่ <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-4">
-                                                                            <textarea class="form-control" name="address_k" placeholder="ที่อยู่" ></textarea>
+                                                                            <textarea class="form-control" name="address_k" placeholder="ที่อยู่" required="true"></textarea>
                                                                         </div>
                                                                     </div>
                                                                              <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="periodloan_k">รายได้ประจำต่อเดือน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="text" name="periodloan_k" maxlength="11" placeholder="50,000">
+                                                                            <input  class="form-control"type="text" name="periodloan_k" maxlength="11" placeholder="50,000" required="true">
                                                                         </div>
                                                                     </div>
                                                                         <div class="form-group col-md-6">
                                                                             <label class="col-md-6 control-label" for="netprofit_k">รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน <span class="require" style="color:red;">*</span></label>
                                                                             <div class="col-md-6">
-                                                                                <input  class="form-control"type="text" name="netprofit_k" maxlength="11" placeholder="100,000">
+                                                                                <input  class="form-control"type="text" name="netprofit_k" maxlength="11" placeholder="100,000" required="true">
                                                                             </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copyidcard_k">สำเนาบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copyidcard_k" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="copyidcard_k" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copydocumenthome_k">สำเนาทะเบียนบ้าน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copydocumenthome_k" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="copydocumenthome_k" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="salary_slip_k">สลิปเงินเดือน <span class="require" style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="salary_slip_k" accept=".png, .jpg, .jpeg ,.pdf">
+                                                                            <input  class="form-control"type="file" name="salary_slip_k" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-md-6">
                                                                         <label class="col-md-6 control-label" for="copy_bankaccount_k">สำเนาการเดินบัญชีธนาคาร <span  style="color:red;">*</span></label>
                                                                         <div class="col-md-6">
-                                                                            <input  class="form-control"type="file" name="copy_bankaccount_k" accept=".png, .jpg, .jpeg ,.pdf" >
+                                                                            <input  class="form-control"type="file" name="copy_bankaccount_k" accept=".png, .jpg, .jpeg ,.pdf" required="true">
                                                                         </div>
                                                                     </div>
                                                                             <div class="form-group col-md-12">
@@ -736,18 +736,6 @@
         </div>
         <script type="text/javascript">
             function oninsert(select) {
-//             swal({
-//  title: "Are you sure?",
-//  text: "You will not be able to recover this imaginary file!",
-//  type: "warning",
-//  showCancelButton: true,
-//  confirmButtonColor: "#DD6B55",
-//  confirmButtonText: "Yes, delete it!",
-//  closeOnConfirm: false
-//},
-//function(){
-//  swal("Deleted!", "Your imaginary file has been deleted.", "success");
-//});
                 document.loanrequstform.todo.value = select;
                 document.loanrequstform.submit();
             }
@@ -770,6 +758,25 @@
         $('.btnPrevious').click(function () {
             $('.nav-tabs > .active').prev('li').find('a').trigger('click');
         });
-
+//        
+//var validator = $("#myForm").validate();
+//
+//$(".nexttab").click(function() {
+//    //var selected = $("#tabs").tabs("option", "selected");
+//    //$("#tabs").tabs("option", "selected", selected + 1);
+//    var valid = true;
+//    var i = 0;
+//    var $inputs = $(this).closest("div").find("input");
+//    
+//    $inputs.each(function() {
+//        if (!validator.element(this) && valid) {
+//            valid = false;
+//        }
+//    });
+//
+//    if (valid) {
+//        $("#tabs").tabs("select", this.hash);
+//    }
+//});
     </script>
 </html>

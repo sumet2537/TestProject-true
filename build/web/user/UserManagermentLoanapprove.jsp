@@ -10,13 +10,8 @@
 <%@page import="java.util.*"%>
 <%@page import="com.bean.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
 
+   
     <%!
         ArrayList<ApproveLoanBean> loanlist = null;
         RequestLoanBean bean = null;
@@ -29,8 +24,22 @@
         String msg = "";
         msg = (String) request.getAttribute("deletesuccess");
     %>
+ <% if (bean.getLoanstatustype() != null){
+
+    %>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+ 
+
+   
 
     <body onload="check()">
+
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
@@ -93,15 +102,15 @@
                                                             <div class="form-group col-md-4">
                                                                 <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             </div>
-<%--                                                            <div class="form-group col-md-4">
-                                                                <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
-                                                            </div>
-                                                            <div class="form-group col-md-4">
-                                                                <label>ที่อยู่ปัจจุบัน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresscurrent()%></span></label>
-                                                            </div>
-                                                            <div class="form-group col-md-4">
-                                                                <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
-                                                            </div>--%>
+                                                            <%--                                                            <div class="form-group col-md-4">
+                                                                                                                            <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
+                                                                                                                        </div>
+                                                                                                                        <div class="form-group col-md-4">
+                                                                                                                            <label>ที่อยู่ปัจจุบัน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresscurrent()%></span></label>
+                                                                                                                        </div>
+                                                                                                                        <div class="form-group col-md-4">
+                                                                                                                            <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
+                                                                                                                        </div>--%>
                                                         </div>
 
                                                         <div class="panel panel-success">
@@ -161,7 +170,12 @@
 
             <!--</div>-->
         </section><!-- /.content -->
-
+        <%}else{%>
+        <section class="content">
+            <div class="center"><h1>คุณยังไม่ได้ทำการขอสินเชื่อ </h1></div>
+        </section>
+        <%}%>
+        <%if(loanlist != null) {%>
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
@@ -211,7 +225,6 @@
                                                                     <th>วงเงินที่อนุมัติ </th>
                                                                     <th>ยอดผ่อนชำระต่อเดือน</th>
                                                                     <th>วันที่อนุมัติ </th>
-                                                                    <th>ลบ</th>
                                                                     <th>รายละเอียด </th>
                                                                 </tr>
                                                             </thead>
@@ -231,8 +244,6 @@
                                                                     <td><%=formatter.format(Approvebean.getApprovedamount())%></td>
                                                                     <td><%=formatter.format(Approvebean.getInstalllments())%></td>
                                                                     <td><%=Approvebean.getCreated()%></td>
-                                                                    <td> <button  onclick="callActionGotoDelete('<%=Approvebean.getApprove_id()%>')" class="btn btn-sm btn-danger" ><i class="fa fa-close"></i></button></td>
-
                                                                     <td><button class="btn btn-sm btn-primary"  onclick="callActionGotoDetle('<%=Approvebean.getApprove_id()%>')"><i class="glyphicon glyphicon-folder-open"></i></button></td>
                                                                 </tr>
 
@@ -245,17 +256,6 @@
 
                                                             </tbody>
                                                             <tfoot>
-                                                                <tr>
-                                                                    <th>ลำดับ  </th>
-                                                                    <th>รหัสสินเชื่อ  </th>
-                                                                    <th>ชื่อธนาคาร </th>
-                                                                    <th>สถานะ </th>
-                                                                    <th>วงเงินที่อนุมัติ </th>
-                                                                    <th>ยอดผ่อนชำระต่อเดือน</th>
-                                                                    <th>วันที่อนุมัติ </th>
-                                                                    <th>ลบ</th>
-                                                                    <th>รายละเอียด </th>
-                                                                </tr>
                                                             </tfoot>
                                                         </table>
                                                     </div>
@@ -272,7 +272,13 @@
                 </div>
             </div>
         </section>
+        <%} else {%>
+        <section class="content">
+            <div class="center"><h1>รอธนาคารอนุมัติ </h1></div>
+        </section>
+        <%}%>
     </body>
+
 
     <script type="text/javascript">
 
@@ -346,4 +352,5 @@
         <%   }
         %>
     </div>
+
 </html>

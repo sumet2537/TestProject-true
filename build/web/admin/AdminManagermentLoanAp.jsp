@@ -10,23 +10,22 @@
 <%@page import="java.util.*"%>
 <%@page import="com.bean.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%!
+    List<ApproveLoanBean> loanlist = new ArrayList<ApproveLoanBean>();
+
+%>
+<%  loanlist = (List<ApproveLoanBean>) request.getSession().getAttribute("loanList");
+    DecimalFormat formatter = new DecimalFormat("###,###.00");
+    DecimalFormat phone = new DecimalFormat("###-###-####");
+    String msg = "";
+    msg = (String) request.getAttribute("deletesuccess");
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-        <%!
-            List<ApproveLoanBean> loanlist = new ArrayList<ApproveLoanBean>();
-
-        %>
-        <%  loanlist = (List<ApproveLoanBean>) request.getSession().getAttribute("loanList");
-            DecimalFormat formatter = new DecimalFormat("###,###.00");
-            DecimalFormat phone = new DecimalFormat("###-###-####");
-                String msg = "";
-        msg = (String) request.getAttribute("deletesuccess");
-        %>
-    
     <body onload="check()">
         <section class="content">
             <!-- Info boxes -->
@@ -95,8 +94,7 @@
                                                                     <td><%=formatter.format(Approvebean.getApprovedamount())%></td>
                                                                     <td><%=formatter.format(Approvebean.getInstalllments())%></td>
                                                                     <td><%=Approvebean.getCreated()%></td>
-                                                                    <td> <button  onclick="callActionGotoDelete('<%=Approvebean.getApprove_id()%>')" class="btn btn-sm btn-danger" ><i class="fa fa-close"></i></button></td>
-
+                                                                    <td> <button  type="button" onclick="callActionGotoDelete('<%=Approvebean.getApprove_id()%>')" class="btn btn-sm btn-danger" ><i class="fa fa-close"></i></button></td>
                                                                     <td><button class="btn btn-sm btn-primary"  onclick="callActionGotoDetle('<%=Approvebean.getApprove_id()%>')"><i class="glyphicon glyphicon-folder-open"></i></button></td>
                                                                 </tr>
 
@@ -108,19 +106,6 @@
                                                             <%}%>
 
                                                             </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>ลำดับ  </th>
-                                                                    <th>รหัสสินเชื่อ  </th>
-                                                                    <th>ชื่อธนาคาร </th>
-                                                                    <th>สถานะ </th>
-                                                                    <th>วงเงินที่อนุมัติ </th>
-                                                                    <th>ยอดผ่อนชำระต่อเดือน</th>
-                                                                    <th>วันที่อนุมัติ </th>
-                                                                    <th>ลบ</th>
-                                                                    <th>รายละเอียด </th>
-                                                                </tr>
-                                                            </tfoot>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -140,9 +125,28 @@
     <script type="text/javascript">
 
         function callActionGotoDelete(approve_id) {
-            document.formshowapproveadmin.approve_id.value = approve_id;
-            document.formshowapproveadmin.todo.value = 'deleteadmin';
-            document.formshowapproveadmin.submit();
+            swal({
+                title: "คุณ แน่ใจแล้วใช่หรือไม่ ?",
+                text: "คุณแน่ใจแล้วใช่หรือไม่ที่จะลบข้อมูล ลูกค้า!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ใช่, ลบเลย!",
+                cancelButtonText: "ไม่, ออกเลย!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                    function (isConfirm) {
+                        document.formshowapproveadmin.approve_id.value = approve_id;
+                        document.formshowapproveadmin.todo.value = 'deleteadmin';
+
+                        if (isConfirm) {
+                            document.formshowapproveadmin.submit();
+                            swal("ลบ !", "คุณ ลบ สำเร็จแล้ว.", "success");
+                        } else {
+                            swal("ออก", "คุณไม่ลบแล้วใช่หรือไม่ :)", "error");
+                        }
+                    });
         }
         function callActionGotoDetle(approve_id) {
             document.formshowapproveadmin.approve_id.value = approve_id;
@@ -152,23 +156,6 @@
         }
     </script> 
 
-    <script>
-        function GotoDelete() {
-            swal({
-                title: "คุณ แน่ใจแล้วใช่ไหม ?",
-                text: "ลบรายการขอสินเชื่อ !",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "ใช่,ลบเลย !",
-                closeOnConfirm: false
-            },
-                    function () {
-                        swal("ลบ!", "ตกลง", "success");
-
-                    });
-        }
-    </script>
     <div>
         <%
             if ("ok".equals(msg)) {
@@ -209,5 +196,5 @@
         <%   }
         %>
     </div>    
-    
+
 </html>

@@ -116,7 +116,7 @@ public class ApproveLoanAction extends DispatchAction {
     }
 //    user
 
-    public ActionForward Detle(ActionMapping mapping, ActionForm form,
+    public ActionForward Detle(ActionMapping mapping, ActionForm form,  //ok
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         ApproveLoanForm loanform = (ApproveLoanForm) form;
@@ -157,7 +157,7 @@ public class ApproveLoanAction extends DispatchAction {
     }
 
     public ActionForward delete(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {
+            HttpServletRequest request, HttpServletResponse response) throws Exception {   //ok
         ApproveLoanForm loanform = (ApproveLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
@@ -198,7 +198,7 @@ public class ApproveLoanAction extends DispatchAction {
 //    ========
 //    admin=======
 
-    public ActionForward Detleadmin(ActionMapping mapping, ActionForm form,
+    public ActionForward Detleadmin(ActionMapping mapping, ActionForm form,   //ok
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         ApproveLoanForm loanform = (ApproveLoanForm) form;
@@ -213,9 +213,10 @@ public class ApproveLoanAction extends DispatchAction {
         RequestLoanDao rdao = new RequestLoanDao();
         try {
             abean = adao.selectApprove_id(loanform.getApprove_id());
-             loanbean = rdao.selectById(loanform.getLoanreq_id());
-//            loanbean = rdao.selectBycitizenid(citizen_id);
-//            abean1 = adao.selectBy_Id(loanreq_id);
+//          loanbean = rdao.selectById(loanform.getLoanreq_id());
+            String citizen = abean.getCitizen_id();
+            loanbean = rdao.selectBycitizenid(citizen);
+//          abean1 = adao.selectBy_Id(loanreq_id);
             String bank_id = abean.getBank_id();
             bank = bankdao.selectById(bank_id);
             System.out.println("ok");
@@ -227,14 +228,14 @@ public class ApproveLoanAction extends DispatchAction {
         }
         request.getSession().setAttribute("abean", abean);
         request.getSession().setAttribute("loanbean", loanbean);
-        request.getSession().setAttribute("abean", abean1);
+//        request.getSession().setAttribute("abean", abean1);
         request.getSession().setAttribute("bank", bank);
         return mapping.findForward("gotoDetle_ap");
 
     }
 
     public ActionForward deleteadmin(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {
+            HttpServletRequest request, HttpServletResponse response) throws Exception {   //ok
         ApproveLoanForm loanform = (ApproveLoanForm) form;
         ApproveLoanDao adao = new ApproveLoanDao();
         String msg = "";
@@ -258,7 +259,7 @@ public class ApproveLoanAction extends DispatchAction {
         return mapping.findForward("gotoPageManagermentAp");
     }
 
-    public ActionForward email(ActionMapping mapping, ActionForm form,
+    public ActionForward email(ActionMapping mapping, ActionForm form,    //ok
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         String msg = "";

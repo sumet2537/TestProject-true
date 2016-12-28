@@ -34,21 +34,21 @@ public class RequestLoanDao {
             p.setString(5, requestLoatBean.getLastName());
             p.setString(6, requestLoatBean.getBirthdate());
             p.setInt(7, requestLoatBean.getAge());
-           
+
             p.setString(8, requestLoatBean.getStatustype());
             p.setString(9, requestLoatBean.getMobile());
             p.setString(10, requestLoatBean.getEmail());
-            
+
             p.setString(11, requestLoatBean.getNationality());
             p.setString(12, requestLoatBean.getJobtype());
-            p.setString(13,requestLoatBean.getProvince());
-                 p.setString(14,requestLoatBean.getAmphur());
-                 p.setString(15,requestLoatBean.getDistrict());
-                 p.setString(16,requestLoatBean.getAddress());
+            p.setString(13, requestLoatBean.getProvince());
+            p.setString(14, requestLoatBean.getAmphur());
+            p.setString(15, requestLoatBean.getDistrict());
+            p.setString(16, requestLoatBean.getAddress());
 //            p.setString(12, requestLoatBean.getAddressregistration());
 //            p.setString(13, requestLoatBean.getAddresscurrent());
 //            p.setString(14, requestLoatBean.getAddresssenddoc());
-            
+
             p.setString(17, requestLoatBean.getHometype());
             p.setDouble(18, requestLoatBean.getTradingprice());
             p.setDouble(19, requestLoatBean.getCreditloan());
@@ -64,7 +64,7 @@ public class RequestLoanDao {
             p.setString(29, requestLoatBean.getCopy_bankaccount());
             p.setString(30, requestLoatBean.getBanktype());
             p.setString(31, requestLoatBean.getLoanstatustype());
-            
+
             p.setString(32, requestLoatBean.getFirstName());
             p.setString(33, requestLoatBean.getFirstName());
             i = p.executeUpdate();
@@ -145,13 +145,13 @@ public class RequestLoanDao {
             p.setString(9, requestLoatBean.getStatustype());
             p.setString(10, requestLoatBean.getMobile());
             p.setString(11, requestLoatBean.getEmail());
-            
-             p.setString(12, requestLoatBean.getNationality());
+
+            p.setString(12, requestLoatBean.getNationality());
             p.setString(13, requestLoatBean.getJobtype());
-            p.setString(14,requestLoatBean.getProvince());
-                 p.setString(15,requestLoatBean.getAmphur());
-                 p.setString(16,requestLoatBean.getDistrict());
-                 p.setString(17,requestLoatBean.getAddress());
+            p.setString(14, requestLoatBean.getProvince());
+            p.setString(15, requestLoatBean.getAmphur());
+            p.setString(16, requestLoatBean.getDistrict());
+            p.setString(17, requestLoatBean.getAddress());
 //            p.setString(13, requestLoatBean.getAddressregistration());
 //            p.setString(14, requestLoatBean.getAddresscurrent());
 //            p.setString(15, requestLoatBean.getAddresssenddoc());
@@ -212,16 +212,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                 bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
-//                bean.setAddressregistration(rs.getString("addressregistration"));
-//                bean.setAddresscurrent(rs.getString("addresscurrent"));
-//                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
                 bean.setHometype(rs.getString("hometype"));
                 bean.setTradingprice(rs.getDouble("tradingprice"));
                 bean.setCreditloan(rs.getDouble("creditloan"));
@@ -239,7 +236,7 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
- bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
             }
 
@@ -296,13 +293,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -380,15 +377,12 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
-//                bean.setAddressregistration(rs.getString("addressregistration"));
-//                bean.setAddresscurrent(rs.getString("addresscurrent"));
-//                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
                 bean.setHometype(rs.getString("hometype"));
                 bean.setTradingprice(rs.getDouble("tradingprice"));
                 bean.setCreditloan(rs.getDouble("creditloan"));
@@ -449,11 +443,11 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -515,13 +509,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -542,7 +536,7 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-                  bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
@@ -584,11 +578,11 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -609,7 +603,7 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-                   bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
@@ -650,13 +644,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -677,7 +671,7 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-                  bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
@@ -718,13 +712,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -745,7 +739,7 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-                  bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
@@ -786,13 +780,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -854,13 +848,13 @@ public class RequestLoanDao {
                 bean.setStatustype(rs.getString("statustype"));
                 bean.setMobile(rs.getString("mobile"));
                 bean.setEmail(rs.getString("email"));
-                
-                  bean.setNationality(rs.getString("nationality"));
-                 bean.setJobtype(rs.getString("jobtype"));
-                 bean.setProvince(rs.getString("province"));
-                 bean.setAmphur(rs.getString("amphur"));
-                 bean.setDistrict(rs.getString("district"));
-                 bean.setAddress(rs.getString("address"));
+
+                bean.setNationality(rs.getString("nationality"));
+                bean.setJobtype(rs.getString("jobtype"));
+                bean.setProvince(rs.getString("province"));
+                bean.setAmphur(rs.getString("amphur"));
+                bean.setDistrict(rs.getString("district"));
+                bean.setAddress(rs.getString("address"));
 //                bean.setAddressregistration(rs.getString("addressregistration"));
 //                bean.setAddresscurrent(rs.getString("addresscurrent"));
 //                bean.setAddresssenddoc(rs.getString("addresssenddoc"));
@@ -881,7 +875,7 @@ public class RequestLoanDao {
                 bean.setLoanstatustype(rs.getString("loanstatustype"));
                 bean.setCreateby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
-                  bean.setCreated(rs.getString("created"));
+                bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
                 loanList.add(bean);
             }
@@ -916,13 +910,13 @@ public class RequestLoanDao {
             p.setString(6, requestLoatBean.getStatustype());
             p.setString(7, requestLoatBean.getMobile());
             p.setString(8, requestLoatBean.getEmail());
-            
-             p.setString(19, requestLoatBean.getNationality());
+
+            p.setString(19, requestLoatBean.getNationality());
             p.setString(10, requestLoatBean.getJobtype());
-            p.setString(11,requestLoatBean.getProvince());
-                 p.setString(12,requestLoatBean.getAmphur());
-                 p.setString(13,requestLoatBean.getDistrict());
-                 p.setString(14,requestLoatBean.getAddress());
+            p.setString(11, requestLoatBean.getProvince());
+            p.setString(12, requestLoatBean.getAmphur());
+            p.setString(13, requestLoatBean.getDistrict());
+            p.setString(14, requestLoatBean.getAddress());
 //            p.setString(10, requestLoatBean.getAddressregistration());
 //            p.setString(11, requestLoatBean.getAddresscurrent());
 //            p.setString(12, requestLoatBean.getAddresssenddoc());
@@ -993,7 +987,7 @@ public class RequestLoanDao {
         int i = 0;
         try {
             p = (PreparedStatement) con.prepareStatement(sql);
-            
+
             p.setString(1, requestLoatBean.getCopyidcard());
             p.setString(2, requestLoatBean.getCopylicenses());
             p.setString(3, requestLoatBean.getCopydocumenthome());
@@ -1017,6 +1011,7 @@ public class RequestLoanDao {
         }
         return i;
     }
+
     public static void main(String[] args) throws Exception {
         RequestLoanDao dao = new RequestLoanDao();
         RequestLoanBean bean = new RequestLoanBean();
@@ -1063,6 +1058,7 @@ public class RequestLoanDao {
 //            }       
 //        }    
 //    }
+
     public int deleteloanreqId(int loanreq_id) throws Exception {
         DBConnect bConnect = new DBConnect();
         RequestLoanBean bean = new RequestLoanBean();

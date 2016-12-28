@@ -343,12 +343,22 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
-
-        loandao.deleteloanreqId(loanform.getLoanreq_id());
+String msg;
+        try {
+             loandao.deleteloanreqId(loanform.getLoanreq_id());
+            System.out.println("ok");
+            msg = "ok";
+        } catch (Exception e) {
+            e.printStackTrace();
+            msg ="no";
+        }
+       
 
         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         loanList = loandao.selectloanstatustypeAp();
         request.getSession().setAttribute("loanList", loanList);
+        request.removeAttribute("msg");
+        request.setAttribute("msg", msg);
         return mapping.findForward("gotoPageManagermentAp");
     }
     //    =-=-=-=-=-=-=-=-=-=-=-=approve============-=-=-=-=-=-=-
@@ -370,11 +380,21 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
-
-        loandao.deleteloanreqId(loanform.getLoanreq_id());
+String msg;
+        try {
+            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            System.out.println("ok");
+             msg = "ok";
+        } catch (Exception e) {
+             e.printStackTrace();
+            msg ="no";
+        }
+        
 
         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         loanList = loandao.selectloanstatustypeNoAp();
+         request.removeAttribute("msg");
+        request.setAttribute("msg", msg);
         request.getSession().setAttribute("loanList", loanList);
         return mapping.findForward("gotoPageManagermentNo");
     }
@@ -398,10 +418,19 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
 
-        loandao.deleteloanreqId(loanform.getLoanreq_id());
-
+       String msg;
+        try {
+            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            System.out.println("ok");
+             msg = "ok";
+        } catch (Exception e) {
+             e.printStackTrace();
+            msg ="no";
+        }
         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         loanList = loandao.selectloanstatustypeNofile();
+          request.removeAttribute("msg");
+        request.setAttribute("msg", msg);
         request.getSession().setAttribute("loanList", loanList);
         return mapping.findForward("gotoPageManagermentNofile");
     }
@@ -424,11 +453,19 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
-
-        loandao.deleteloanreqId(loanform.getLoanreq_id());
-
+  String msg;
+        try {
+            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            System.out.println("ok");
+             msg = "ok";
+        } catch (Exception e) {
+             e.printStackTrace();
+            msg ="no";
+        }
         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         loanList = loandao.selectloanstatustypeRapp();
+          request.removeAttribute("msg");
+        request.setAttribute("msg", msg);
         request.getSession().setAttribute("loanList", loanList);
         return mapping.findForward("gotoPageManagermentR");
     }

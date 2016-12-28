@@ -9,14 +9,7 @@
 <%@page import="java.util.*"%>
 <%@page import="com.bean.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-
-    <%!
+   <%!
         List<RequestLoanBean> loanlist = new ArrayList<RequestLoanBean>();
 
     %>
@@ -26,6 +19,14 @@
         String msg = "";
         msg = (String) request.getAttribute("deletesuccess");
     %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+
+ 
     <body onload="check()">
 
         <section class="content">
@@ -103,7 +104,6 @@
                                                                     <td><%=bean.getCreated()%></td>
                                                             <input type="hidden" name="citizen_id" value="<%=bean.getCitizen_id()%>"/>
                                                                     <td> <button  onclick="callActionGotoDelete(<%=bean.getLoanreq_id()%>)" class="btn btn-sm btn-danger" ><i class="fa fa-close"></i></button></td>
-
                                                                     <td><button class="btn btn-sm btn-primary" type="submit" value="รายละเอียด" onclick="callActionGotoDetle(<%=bean.getLoanreq_id()%>)"><i class="glyphicon glyphicon-folder-open"></i></button></td>
                                                                 </tr>
 
@@ -115,20 +115,6 @@
                                                             <%}%>
 
                                                             </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>ลำดับ  </th>
-                                                                    <th>รหัสสินเชื่อ  </th>
-                                                                    <th>ชื่อ-นามสกุล </th>
-                                                                    <th>เบอร์โทร</th>
-                                                                    <th>อีเมล์</th>
-                                                                    <th>วงเงินที่ขอ</th>
-                                                                    <th>ส่งขอมูลวันที่</th>
-                                                                    <th>ลบ</th>
-                                                                    <th>รายละเอียด</th>
-
-                                                                </tr>
-                                                            </tfoot>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -149,10 +135,29 @@
     </body>
     <script type="text/javascript">
 
-        function callActionGotoDelete(loanreq_id) {
-            document.formloan.loanreq_id.value = loanreq_id;
+        function callActionGotoDelete(loanreq_id)  {
+            swal({
+                title: "คุณ แน่ใจแล้วใช่หรือไม่ ?",
+                text: "คุณแน่ใจแล้วใช่หรือไม่ที่จะลบข้อมูล ลูกค้า!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ใช่, ลบเลย!",
+                cancelButtonText: "ไม่, ออกเลย!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                    function (isConfirm) {
+                              document.formloan.loanreq_id.value = loanreq_id;
             document.formloan.todo.value = 'deleteRcheck';
-            document.formloan.submit();
+                           
+                        if (isConfirm) {
+                          document.formloan.submit();
+                            swal("ลบ !", "คุณ ลบ สำเร็จแล้ว.", "success");
+                        } else {
+                            swal("ออก", "คุณไม่ลบแล้วใช่หรือไม่ :)", "error");
+                        }
+                    });
         }
         function callActionGotoDetle(loanreq_id) {
             document.formloan.loanreq_id.value = loanreq_id;
@@ -162,23 +167,6 @@
         }
     </script> 
 
-    <script>
-        function GotoDelete() {
-            swal({
-                title: "คุณ แน่ใจแล้วใช่ไหม ?",
-                text: "ลบรายการขอสินเชื่อ !",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "ใช่,ลบเลย !",
-                closeOnConfirm: false
-            },
-                    function () {
-                        swal("ลบ!", "ตกลง", "success");
-
-                    });
-        }
-    </script>
     <div>
         <%
             if ("ok".equals(msg)) {

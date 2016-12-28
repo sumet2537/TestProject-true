@@ -6,9 +6,11 @@
 package com.action;
 
 import com.bean.ApproveLoanBean;
+import com.bean.ProvinceBean;
 import com.bean.RequestLoanBean;
 import com.bean.UserBean;
 import com.dao.ApproveLoanDao;
+import com.dao.ProvinceDao;
 import com.dao.RequestLoanDao;
 import com.dao.UserDao;
 import com.form.PageForm;
@@ -34,6 +36,25 @@ public class PageAction extends DispatchAction {
     public ActionForward gotoPageRegister(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+         PageForm pageForm = (PageForm) form;
+        ProvinceBean bean = new ProvinceBean();
+        ProvinceDao dao = new ProvinceDao();
+        List<ProvinceBean> list = new ArrayList<ProvinceBean>();
+        list = dao.selectAllprovince();
+        
+         List<ProvinceBean> list1 = new ArrayList<ProvinceBean>();
+        list1 = dao.selectAllamphur();
+        
+        List<ProvinceBean> list2 = new ArrayList<ProvinceBean>();
+        list2 = dao.selectAlldistrict();
+        
+        
+        request.getSession().removeAttribute("list");
+        request.getSession().setAttribute("list", list);
+        request.removeAttribute("regisList1");
+        request.setAttribute("regisList1", list1);
+        request.removeAttribute("regisList2");
+        request.setAttribute("regisList2", list2);
         return mapping.findForward("gotoPageRegister");
 
     }
@@ -181,5 +202,9 @@ public class PageAction extends DispatchAction {
 
         return mapping.findForward("gotoPageManagermentNofile");
     }
-
+public ActionForward gotoPageifrequest(ActionMapping mapping,ActionForm form, HttpServletRequest request,
+        HttpServletResponse response)throws Exception{
+    
+    return mapping.findForward("gotoPageifrequest");
+}
 }

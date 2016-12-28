@@ -33,14 +33,11 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     private String statustype;
     private String mobile;
     private String email;
-    
+
     private String province;
     private String amphur;
     private String district;
-     private String address;
-//    private String addressregistration;
-//    private String addresscurrent;
-//    private String addresssenddoc;
+    private String address;
     private String jobtype;
     private String hometype;
     private Double tradingprice;
@@ -48,14 +45,6 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     private int lncome_per_month;
     private Double periodloan;
     private Double netprofit;
-
-//    private String copyidcard;
-//    private String copylicenses;
-//    private String copydocumenthome;
-//    private String copymarriage;
-//    private String copy_rename;
-//    private String salary_slip;
-//    private String copy_bankaccount;
     private FormFile copyidcard;
     private FormFile copylicenses;
     private FormFile copydocumenthome;
@@ -81,8 +70,6 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     private String status;
     private String todo;
 
-    
-    
 //      ผู้กู้ร่วม ขขขขขชชชๅ------
     private int id;
     private String citizen_p;
@@ -106,9 +93,9 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     private FormFile copydocumenthome_p;
     private FormFile salary_slip_p;
     private FormFile copy_bankaccount_p;
-    
+
 //    ผู้ค้ำ--------
-       private String citizen_k;
+    private String citizen_k;
     private String title_k;
     private String firstname_k;
     private String lastname_k;
@@ -121,14 +108,121 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     private String province_k;
     private String amphur_k;
     private String district_k;
-     private String address_k;
+    private String address_k;
     private String jobtype_k;
-     private Double periodloan_k;
+    private Double periodloan_k;
     private Double netprofit_k;
     private FormFile copyidcard_k;
     private FormFile copydocumenthome_k;
     private FormFile salary_slip_k;
     private FormFile copy_bankaccount_k;
+
+    //    province
+    private int PROVINCE_ID;
+    private String PROVINCE_CODE;
+    private String PROVINCE_NAME;
+    private int GEO_ID;
+
+//    amphur
+    private int AMPHUR_ID;
+    private String AMPHUR_CODE;
+    private String AMPHUR_NAME;
+
+//    distrinct
+    private int DISTRICT_ID;
+    private String DISTRICT_CODE;
+    private String DISTRICT_NAME;
+
+//    geography
+    private String GEO_NAME;
+
+    public int getPROVINCE_ID() {
+        return PROVINCE_ID;
+    }
+
+    public void setPROVINCE_ID(int PROVINCE_ID) {
+        this.PROVINCE_ID = PROVINCE_ID;
+    }
+
+    public String getPROVINCE_CODE() {
+        return PROVINCE_CODE;
+    }
+
+    public void setPROVINCE_CODE(String PROVINCE_CODE) {
+        this.PROVINCE_CODE = PROVINCE_CODE;
+    }
+
+    public String getPROVINCE_NAME() {
+        return PROVINCE_NAME;
+    }
+
+    public void setPROVINCE_NAME(String PROVINCE_NAME) {
+        this.PROVINCE_NAME = PROVINCE_NAME;
+    }
+
+    public int getGEO_ID() {
+        return GEO_ID;
+    }
+
+    public void setGEO_ID(int GEO_ID) {
+        this.GEO_ID = GEO_ID;
+    }
+
+    public int getAMPHUR_ID() {
+        return AMPHUR_ID;
+    }
+
+    public void setAMPHUR_ID(int AMPHUR_ID) {
+        this.AMPHUR_ID = AMPHUR_ID;
+    }
+
+    public String getAMPHUR_CODE() {
+        return AMPHUR_CODE;
+    }
+
+    public void setAMPHUR_CODE(String AMPHUR_CODE) {
+        this.AMPHUR_CODE = AMPHUR_CODE;
+    }
+
+    public String getAMPHUR_NAME() {
+        return AMPHUR_NAME;
+    }
+
+    public void setAMPHUR_NAME(String AMPHUR_NAME) {
+        this.AMPHUR_NAME = AMPHUR_NAME;
+    }
+
+    public int getDISTRICT_ID() {
+        return DISTRICT_ID;
+    }
+
+    public void setDISTRICT_ID(int DISTRICT_ID) {
+        this.DISTRICT_ID = DISTRICT_ID;
+    }
+
+    public String getDISTRICT_CODE() {
+        return DISTRICT_CODE;
+    }
+
+    public void setDISTRICT_CODE(String DISTRICT_CODE) {
+        this.DISTRICT_CODE = DISTRICT_CODE;
+    }
+
+    public String getDISTRICT_NAME() {
+        return DISTRICT_NAME;
+    }
+
+    public void setDISTRICT_NAME(String DISTRICT_NAME) {
+        this.DISTRICT_NAME = DISTRICT_NAME;
+    }
+
+    public String getGEO_NAME() {
+        return GEO_NAME;
+    }
+
+    public void setGEO_NAME(String GEO_NAME) {
+        this.GEO_NAME = GEO_NAME;
+    }
 
     public int getId() {
         return id;
@@ -273,8 +367,6 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     public void setNetprofit_p(Double netprofit_p) {
         this.netprofit_p = netprofit_p;
     }
-
-    
 
     public String getCitizen_k() {
         return citizen_k;
@@ -476,8 +568,6 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
         this.copy_bankaccount_k = copy_bankaccount_k;
     }
 
-    
-    
     public String getAddress() {
         return address;
     }
@@ -486,8 +576,6 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
         this.address = address;
     }
 
-    
-    
     private String fileNameDownload;
 
     public String getFileNameDownload() {
@@ -650,7 +738,6 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
         this.district = district;
     }
 
-
     public String getJobtype() {
         return jobtype;
     }
@@ -762,63 +849,7 @@ public class RequestLoanForm extends org.apache.struts.action.ActionForm {
     public void setCopy_bankaccount(FormFile copy_bankaccount) {
         this.copy_bankaccount = copy_bankaccount;
     }
-//
-//    public String getCopyidcard() {
-//        return copyidcard;
-//    }
-//
-//    public void setCopyidcard(String copyidcard) {
-//        this.copyidcard = copyidcard;
-//    }
-//
-//    public String getCopylicenses() {
-//        return copylicenses;
-//    }
-//
-//    public void setCopylicenses(String copylicenses) {
-//        this.copylicenses = copylicenses;
-//    }
-//
-//    public String getCopydocumenthome() {
-//        return copydocumenthome;
-//    }
-//
-//    public void setCopydocumenthome(String copydocumenthome) {
-//        this.copydocumenthome = copydocumenthome;
-//    }
-//
-//    public String getCopymarriage() {
-//        return copymarriage;
-//    }
-//
-//    public void setCopymarriage(String copymarriage) {
-//        this.copymarriage = copymarriage;
-//    }
-//
-//    public String getCopy_rename() {
-//        return copy_rename;
-//    }
-//
-//    public void setCopy_rename(String copy_rename) {
-//        this.copy_rename = copy_rename;
-//    }
-//
-//    public String getSalary_slip() {
-//        return salary_slip;
-//    }
-//
-//    public void setSalary_slip(String salary_slip) {
-//        this.salary_slip = salary_slip;
-//    }
-//
-//    public String getCopy_bankaccount() {
-//        return copy_bankaccount;
-//    }
-//
-//    public void setCopy_bankaccount(String copy_bankaccount) {
-//        this.copy_bankaccount = copy_bankaccount;
-//    }
-////
+
 
     public String getBanktype() {
         return banktype;

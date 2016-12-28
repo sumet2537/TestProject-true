@@ -133,6 +133,11 @@
         <put name="title"  value="formprofile" />
         <put name="body"   value="/jsp/edit_profile.jsp" />
     </definition>-->
+    <definition name="gotoPageifrequest" extends="welcome">
+        <put name="title"  value="form" />
+        <put name="body"   value="/jsp/viewif_else.jsp" />
+    </definition>
+    
     <definition name="gotouserEdit" extends="welcome">
         <put name="title"  value="formprofile" />
         <put name="body"   value="/jsp/profile.jsp" />
