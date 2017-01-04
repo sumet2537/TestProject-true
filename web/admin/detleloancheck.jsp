@@ -167,9 +167,9 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <div class="form-group">
-                                                            <div class="col-md-8"><h3>เอกสาร</h3>
+                                                            <div class="col-md-8"><h5>เอกสาร</h5>
                                                             </div>
-                                                            <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                            <div class="col-md-4"><h5>ดูรายละเอียด</h5></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
@@ -310,9 +310,9 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <div class="col-md-8"><h3>เอกสาร</h3>
+                                                            <div class="col-md-8"><h5>เอกสาร</h5>
                                                             </div>
-                                                            <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                            <div class="col-md-4"><h5>ดูรายละเอียด</h5></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">
@@ -434,9 +434,9 @@
                                                             <h4> :: เอกสารประกอบการขอกู้ ::</h4>
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="col-md-8"><h3>เอกสาร</h3>
+                                                            <div class="col-md-8"><h5>เอกสาร</h5>
                                                             </div>
-                                                            <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                            <div class="col-md-4"><h5>ดูรายละเอียด</h5></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">

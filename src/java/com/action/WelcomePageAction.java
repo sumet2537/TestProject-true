@@ -28,11 +28,11 @@ public class WelcomePageAction extends DispatchAction {
     public ActionForward welcome(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
+//        
         MainMenuDao mainMenuDao = new MainMenuDao();
         List<MainMenuBean> mainMenuList = mainMenuDao.selectListByLevelMenu(StringUtil.LEVEL_MENU_FIRST_PAGE);
         request.getSession().setAttribute("mainMenuList", mainMenuList);
-        
+//        
         return mapping.findForward(SUCCESS);
     }
    

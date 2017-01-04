@@ -16,12 +16,12 @@
         RequestLoanBean loan = null;
 //           ApproveLoanBean bean1 = null;
 %>
-    <%--
-    --%>
+ 
     <% bean = (ApproveLoanBean) request.getSession().getAttribute("abean");
         bank = (bankBean) request.getSession().getAttribute("bank");
 //           bean1 = (ApproveLoanBean)  request.getSession().getAttribute("abean");
         loan = (RequestLoanBean) request.getSession().getAttribute("loanbean");
+        
         DecimalFormat formatter = new DecimalFormat("###,###.00");
         DecimalFormat phone = new DecimalFormat("###-###-####");
         String msg = "";

@@ -8,7 +8,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ระบบขอสินเชื่อบ้าน</title>
     </head>
-    <%! UserBean bean = null;%>
+    <%! UserBean bean = null;
+    %>
     <%--
     --%>
     <%bean = (UserBean) request.getSession().getAttribute("requestBean");
@@ -709,7 +710,7 @@
                             type: "success"
                         },
                                 function () {
-                                    window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus';
+                                    window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus&loanreq_id=';
                                 });
                     });
                 }

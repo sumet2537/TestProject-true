@@ -16,6 +16,7 @@
         ArrayList<ApproveLoanBean> loanlist = null;
         RequestLoanBean bean = null;
     %>
+    
     <%
         loanlist = (ArrayList<ApproveLoanBean>) request.getSession().getAttribute("loanList");
 
@@ -24,9 +25,8 @@
         String msg = "";
         msg = (String) request.getAttribute("deletesuccess");
     %>
- <% if (bean.getLoanstatustype() != null){
-
-    %>
+    
+ 
 <!DOCTYPE html>
 
 <html>
@@ -35,9 +35,6 @@
         <title>JSP Page</title>
     </head>
  
-
-   
-
     <body onload="check()">
 
         <section class="content">
@@ -102,15 +99,7 @@
                                                             <div class="form-group col-md-4">
                                                                 <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             </div>
-                                                            <%--                                                            <div class="form-group col-md-4">
-                                                                                                                            <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
-                                                                                                                        </div>
-                                                                                                                        <div class="form-group col-md-4">
-                                                                                                                            <label>ที่อยู่ปัจจุบัน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresscurrent()%></span></label>
-                                                                                                                        </div>
-                                                                                                                        <div class="form-group col-md-4">
-                                                                                                                            <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
-                                                                                                                        </div>--%>
+                                        
                                                         </div>
 
                                                         <div class="panel panel-success">
@@ -170,12 +159,7 @@
 
             <!--</div>-->
         </section><!-- /.content -->
-        <%}else{%>
-        <section class="content">
-            <div class="center"><h1>คุณยังไม่ได้ทำการขอสินเชื่อ </h1></div>
-        </section>
-        <%}%>
-        <%if(loanlist != null) {%>
+    
         <section class="content">
             <!-- Info boxes -->
             <div class="row">
@@ -250,8 +234,8 @@
                                                                 <%}%>
 
                                                                 <%} else {%>
-                                                            <br><br>
-                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
+                                                            <br><br> 
+                                                             <div class="center"> <strong style="color: red; font-size: 20px;">สถานะ : รออนุมัติ</strong> </div>
                                                             <%}%>
 
                                                             </tbody>
@@ -272,11 +256,7 @@
                 </div>
             </div>
         </section>
-        <%} else {%>
-        <section class="content">
-            <div class="center"><h1>รอธนาคารอนุมัติ </h1></div>
-        </section>
-        <%}%>
+
     </body>
 
 

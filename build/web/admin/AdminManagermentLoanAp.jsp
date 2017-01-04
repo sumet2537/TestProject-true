@@ -102,7 +102,8 @@
 
                                                                 <%} else {%>
                                                             <br><br>
-                                                            <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
+                                                            <div class="center"> <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong> </div>
+                                                                  
                                                             <%}%>
 
                                                             </tbody>

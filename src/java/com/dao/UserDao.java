@@ -306,9 +306,6 @@ public class UserDao {
             p.setString(16, userBean.getAmphur());
             p.setString(17, userBean.getDistrict());
             p.setString(18, userBean.getAddress());
-//            p.setString(13, userBean.getAddressregistration());
-//            p.setString(14, userBean.getAddresscurrent());
-//            p.setString(15, userBean.getAddresssenddoc());
             p.setInt(19, userBean.getRoleId());
             p.setString(20, userBean.getFirstName());
             p.setString(21, userBean.getFirstName());
@@ -384,7 +381,7 @@ public class UserDao {
         Connection c = (Connection) dbConnect.openNewConnection();
         StringBuilder sql = new StringBuilder(50);
         sql.append("update tbl_user set ");
-        sql.append("title_type=?, firstName=?, lastName=?, birthdate=?, age=?, statustype=?, mobile=?, email=?,nationality=?,jobtype=?, province=?,amphur=?, district=?, address=?,roleId=?,updated=sysdate(),updateBy=?,status=?");
+        sql.append("title_type=?, firstName=?, lastName=?, birthdate=?, age=?, statustype=?, mobile=?, email=?,nationality=?,jobtype=?, province=?,amphur=?, district=?, address=?,updated=sysdate(),updateBy=?,status=?");
         sql.append("where user_id=?");
         PreparedStatement p = null;
         int chk = 0;
@@ -406,13 +403,10 @@ public class UserDao {
             p.setString(12, userBean.getAmphur());
             p.setString(13, userBean.getDistrict());
             p.setString(14, userBean.getAddress());
-//            p.setString(9, userBean.getAddressregistration());
-//            p.setString(10, userBean.getAddresscurrent());
-//            p.setString(11, userBean.getAddresssenddoc());
-            p.setInt(15, userBean.getRoleId());
-            p.setString(16, userBean.getUpdateBy());
-            p.setString(17, userBean.getStatus());
-            p.setInt(18, userBean.getUser_id());
+//            p.setInt(15, userBean.getRoleId());
+            p.setString(15, userBean.getUpdateBy());
+            p.setString(16, userBean.getStatus());
+            p.setInt(17, userBean.getUser_id());
             chk = p.executeUpdate();
 
         } catch (Exception e) {
@@ -458,7 +452,7 @@ public class UserDao {
     public int updateByUserId(UserBean userbean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "update tbl_user  set citizen_id=?, title_type=?, firstName=?, lastName=?, birthdate=?, age=?, statustype=?, mobile=?, email=?, nationality=?,jobtype=?, province=?, amphur=?, district=?, address=?, roleId=?, updated=sysdate(), updateBy=?,status=?  where user_id=? ";
+        String sql = "update tbl_user  set citizen_id=?, title_type=?, firstName=?, lastName=?, birthdate=?, age=?, statustype=?, mobile=?, email=?, nationality=?,jobtype=?, province=?, amphur=?, district=?, address=?,updated=sysdate(), updateBy=?,status=?  where user_id=? ";
 
         PreparedStatement p = null;
         int i = 0;
@@ -480,13 +474,10 @@ public class UserDao {
             p.setString(13, userbean.getAmphur());
             p.setString(14, userbean.getDistrict());
             p.setString(15, userbean.getAddress());
-//            p.setString(10, userbean.getAddressregistration());
-//            p.setString(11, userbean.getAddresscurrent());
-//            p.setString(12, userbean.getAddresssenddoc());
-            p.setInt(16, userbean.getRoleId());
-            p.setString(17, userbean.getFirstName());
-            p.setString(18, userbean.getStatus());
-            p.setInt(19, userbean.getUser_id());
+//            p.setInt(16, userbean.getRoleId());
+            p.setString(16, userbean.getFirstName());
+            p.setString(17, userbean.getStatus());
+            p.setInt(18, userbean.getUser_id());
             i = p.executeUpdate();
 
         } finally {
@@ -503,7 +494,7 @@ public class UserDao {
     public int updateBycitizenid(UserBean userbean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "update tbl_user  set title_type=?, firstName=?, lastName=?, birthdate=?,age=?, statustype=?, mobile=?, email=?, nationality=?,jobtype=?, province=?,amphur=?, district=?, address=?, roleId=?, updated=sysdate(), updateBy=?,status=?  where citizen_id=? ";
+        String sql = "update tbl_user  set title_type=?, firstName=?, lastName=?, birthdate=?,age=?, statustype=?, mobile=?, email=?, nationality=?,jobtype=?, province=?,amphur=?, district=?, address=?, updated=sysdate(), updateBy=?,status=?  where citizen_id=? ";
 
         PreparedStatement p = null;
         int i = 0;
@@ -525,10 +516,10 @@ public class UserDao {
             p.setString(12, userbean.getAmphur());
             p.setString(13, userbean.getDistrict());
             p.setString(14, userbean.getAddress());
-            p.setInt(15, userbean.getRoleId());
-            p.setString(16, userbean.getFirstName());
-            p.setString(17, userbean.getStatus());
-            p.setString(18, userbean.getCitizen_id());
+//            p.setInt(15, userbean.getRoleId());
+            p.setString(15, userbean.getFirstName());
+            p.setString(16, userbean.getStatus());
+            p.setString(17, userbean.getCitizen_id());
             i = p.executeUpdate();
 
         } finally {
@@ -572,7 +563,7 @@ public class UserDao {
     public void updateByUsername(UserBean userBean) throws Exception {
         DBConnect dbConnect = new DBConnect();
         Connection con = dbConnect.openNewConnection();
-        String sql = "update tbl_user  set citizen_id=?, password=?, title_type=?, firstName=?,lastName=?, birthdate=?, age=?,statustype=?, mobile=?, email=?,nationality=?,jobtype=?, province=?,amphur=?, district=?, address=?, roleId=?,updated=sysdate(),updateBy=?,status=? where username=?";
+        String sql = "update tbl_user  set citizen_id=?, password=?, title_type=?, firstName=?,lastName=?, birthdate=?, age=?,statustype=?, mobile=?, email=?,nationality=?,jobtype=?, province=?,amphur=?, district=?, address=?,updated=sysdate(),updateBy=?,status=? where username=?";
 
         PreparedStatement p = null;
         int i = 0;
@@ -593,10 +584,7 @@ public class UserDao {
             p.setString(i++, userBean.getAmphur());
             p.setString(i++, userBean.getDistrict());
             p.setString(i++, userBean.getAddress());
-//            p.setString(i++, userBean.getAddressregistration());
-//            p.setString(i++, userBean.getAddresscurrent());
-//            p.setString(i++, userBean.getAddresssenddoc());
-            p.setInt(i++, userBean.getRoleId());
+//            p.setInt(i++, userBean.getRoleId());
             p.setString(i++, userBean.getUpdateBy());
             p.setString(i++, userBean.getStatus());
             p.setString(i++, userBean.getUsername());

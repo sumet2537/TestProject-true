@@ -111,10 +111,12 @@
                 <forward name="gotoPageUserViewStatus" path="gotoPageUserViewStatus" />
                 <forward name="gotoDetleApprove1" path="gotoDetleApprove1" />
                  <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
+                 <forward name="gotoNullrepuest" path="gotoNullrepuest" />
                   <!--approve-->
                 <forward name="gotoDetle_ap" path="gotoDetle_ap" />
                 <forward name="gotoPageManagermentAp" path="gotoPageManagermentAp" />
                 <!--approve-->
+                
             </action>
         </action-mappings>
 

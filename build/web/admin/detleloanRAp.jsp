@@ -93,6 +93,22 @@
                                                             <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             <input type="hidden" name="joptype" value="<%=bean.getJobtype()%>">
                                                         </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince()%></span></label>
+                                                            <textarea hidden name="province" ><%=bean.getProvince()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur()%></span></label>
+                                                            <textarea hidden name="amphur" > <%=bean.getAmphur()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict()%></span></label>
+                                                            <textarea hidden name="district"> <%=bean.getDistrict()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress()%></span></label>
+                                                            <textarea hidden name="address"> <%=bean.getAddress()%></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="panel panel-success">

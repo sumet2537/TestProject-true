@@ -37,8 +37,8 @@ public class ApproveLoanDao {
             p.setDouble(8, approveLoanBean.getInstalllments());
             p.setString(9, approveLoanBean.getTimerepayment());
             p.setString(10, approveLoanBean.getPosition());
-            p.setString(11, approveLoanBean.getFirstName());
-            p.setString(12, approveLoanBean.getFirstName());
+            p.setString(11, approveLoanBean.getCreatedby());
+            p.setString(12, approveLoanBean.getUpdateby());
             i = p.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,7 +95,7 @@ public class ApproveLoanDao {
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                 bean.setBankName(rs.getString("bankname"));
@@ -154,7 +154,7 @@ public class ApproveLoanDao {
                 bean.setApprovedamount(rs.getDouble("approvedamount"));
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
@@ -194,7 +194,7 @@ public class ApproveLoanDao {
                 bean.setApprovedamount(rs.getDouble("approvedamount"));
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
@@ -235,7 +235,7 @@ public class ApproveLoanDao {
                 bean.setApprovedamount(rs.getDouble("approvedamount"));
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                 bean.setUpdated(rs.getString("updated"));
@@ -280,7 +280,7 @@ public class ApproveLoanDao {
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                 list.add(bean);
@@ -323,7 +323,7 @@ public class ApproveLoanDao {
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
                    bean.setBankName(rs.getString("bankname"));
@@ -363,6 +363,28 @@ public class ApproveLoanDao {
             }
         }
         return i;
+    } public int deletecitizen(String citizen_id) throws Exception {
+        DBConnect bConnect = new DBConnect();
+        ApproveLoanBean bean = new ApproveLoanBean();
+        Connection con = (Connection) bConnect.openNewConnection();
+        String sql = "delete from tbl_approveloan where citizen_id=?";
+        PreparedStatement p = null;
+        int i = 0;
+        try {
+            p = (PreparedStatement) con.prepareCall(sql.toString());
+            p.setString(1, citizen_id);
+            i = p.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                p.close();
+                bConnect.closeConnection(con);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return i;
     }
          public ApproveLoanBean selectBy_Id(int loanreq_id) throws Exception {
         DBConnect dbConnect = new DBConnect();
@@ -390,7 +412,7 @@ public class ApproveLoanDao {
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
 //                list.add(bean);
@@ -433,7 +455,7 @@ public class ApproveLoanDao {
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
 //                list.add(bean);
@@ -476,7 +498,7 @@ public class ApproveLoanDao {
                 bean.setInstalllments(rs.getDouble("installlments"));
                 bean.setTimerepayment(rs.getString("timerepayment"));
                 bean.setPosition(rs.getString("position"));
-                bean.setCreatedby(rs.getString("createdby"));
+                bean.setCreatedby(rs.getString("createby"));
                 bean.setUpdateby(rs.getString("updateby"));
                 bean.setCreated(rs.getString("created"));
             }

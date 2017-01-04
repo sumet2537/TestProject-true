@@ -1118,4 +1118,50 @@ public class RequestLoanDao {
         }
         return i;
     }
+     public int deletebycitizen(int citizen_id) throws Exception {
+        DBConnect bConnect = new DBConnect();
+        RequestLoanBean bean = new RequestLoanBean();
+        Connection con = (Connection) bConnect.openNewConnection();
+        String sql = "delete from tbl_requestloan where citizen_id=?";
+        PreparedStatement p = null;
+        int i = 0;
+        try {
+            p = (PreparedStatement) con.prepareCall(sql.toString());
+            p.setInt(1, citizen_id);
+            i = p.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                p.close();
+                bConnect.closeConnection(con);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return i;
+    }
+     public int deletebycitizenid(String citizen_id) throws Exception {
+        DBConnect bConnect = new DBConnect();
+        RequestLoanBean bean = new RequestLoanBean();
+        Connection con = (Connection) bConnect.openNewConnection();
+        String sql = "delete from tbl_requestloan where citizen_id=?";
+        PreparedStatement p = null;
+        int i = 0;
+        try {
+            p = (PreparedStatement) con.prepareCall(sql.toString());
+            p.setString(1, citizen_id);
+            i = p.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                p.close();
+                bConnect.closeConnection(con);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return i;
+    }
 }

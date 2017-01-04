@@ -282,11 +282,6 @@
                                 document.loanrequstform.todo.value = select;
                                 document.loanrequstform.submit();
                             }
-
-                            //            function onsearch(bycitizen_id){
-                            //                document.loanrequstform.bycitizen_id.value = 'bycitizen_id';
-                            //                document.loanrequstform.submit();
-                            //            }
                         </script>
                         </body>
 

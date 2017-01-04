@@ -17,7 +17,7 @@
             DecimalFormat formatter = new DecimalFormat("###,###.00");
             DecimalFormat phone = new DecimalFormat("###-###-####");
             String msg ="";
-            msg = (String) request.getAttribute(msg);
+            msg = (String) request.getAttribute("msg");
         %>
 <!DOCTYPE html>
 <html>
@@ -192,8 +192,7 @@
                         function () {
 //                            window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus';
                         });
-            }
-            ;
+            };
 
         </script>
         <%   }

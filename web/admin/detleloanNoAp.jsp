@@ -93,17 +93,21 @@
                                                             <label>อาชีพ : &nbsp;&nbsp;<span style="color:#0033FF; font-size: 17px;"><%=bean.getJobtype()%></span></label>
                                                             <input type="hidden" name="joptype" value="<%=bean.getJobtype()%>">
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label >ที่อยู่ตามทะเบียนบ้าน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddressregistration()%></span></label>
-                                                            <textarea hidden name="addressregistration" ><%=bean.getAddressregistration()%></textarea>
+                                                       <div class="form-group col-md-4">
+                                                            <label >จังหวัด : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getProvince()%></span></label>
+                                                            <textarea hidden name="province" ><%=bean.getProvince()%></textarea>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>ที่อยู่ปัจจุบัน : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresscurrent()%></span></label>
-                                                            <textarea hidden name="addresscurrent" > <%=bean.getAddresscurrent()%></textarea>
+                                                        <div class="form-group col-md-4">
+                                                            <label>อำเภอ : &nbsp;&nbsp; <span style="color:#0033FF; font-size: 17px;"><%=bean.getAmphur()%></span></label>
+                                                            <textarea hidden name="amphur" > <%=bean.getAmphur()%></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label>ตำบล  <span style="color:#0033FF; font-size: 17px;"><%=bean.getDistrict()%></span></label>
+                                                            <textarea hidden name="district"> <%=bean.getDistrict()%></textarea>
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>ที่อยู่จัดส่งเอกสาร  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddresssenddoc()%></span></label>
-                                                            <textarea hidden name="addresssenddoc"> <%=bean.getAddresssenddoc()%></textarea>
+                                                            <label>ที่อยู่  <span style="color:#0033FF; font-size: 17px;"><%=bean.getAddress()%></span></label>
+                                                            <textarea hidden name="address"> <%=bean.getAddress()%></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -151,9 +155,9 @@
                                                     </div>
                                                     <div class="panel-body">
                                                            <div class="form-group">
-                                                               <div class="col-md-8"><h3>เอกสาร</h3>
+                                                               <div class="col-md-8"><h5>เอกสาร</h5>
                                                             </div>
-                                                               <div class="col-md-4"><h3>ดูรายละเอียด</h3></div>
+                                                               <div class="col-md-4"><h5>ดูรายละเอียด</h5></div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="col-md-8">

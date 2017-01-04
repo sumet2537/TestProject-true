@@ -14,18 +14,26 @@
     <definition name="welcome" path="/layout/baseLayout.jsp">
         <put name="title"  value="RGE Framework" />
         <put name="header" value="/layout/header.jsp" />
-        <put name="menu"   value="/layout/menu.jsp" />
+        <put name="menu"   value="/layout_1/menu.jsp" />
         <put name="body"   value="/layout/body.jsp" />
         <put name="footer"   value="/layout/footer.jsp" />
+    </definition>
+    
+    <definition name="welcomeManagerment" path="/layout_1/baseLayout.jsp">
+        <put name="title"  value="RGE Framework" />
+        <put name="header" value="/layout_1/header.jsp" />
+        <put name="menu"   value="/layout_1/menu.jsp" />
+        <put name="body"   value="/layout_1/body.jsp" />
+        <put name="footer"   value="/layout_1/footer.jsp" />
     </definition>
     <!-- ส่วนที่เป้นตัวอย่างที่พี่บี๋ทำ   -->
     <definition name="gotoPageBootstrapExample" extends="welcome">
         <put name="title"  value="Bootstrap Example" />
         <put name="body"   value="/jsp/bootstrap-example.jsp" />
     </definition>
-    <definition name="gotoPageBootstrapForm" extends="welcome">
+    <definition name="gotoNullrepuest" extends="welcome">
         <put name="title"  value="Form Login" />
-        <put name="body"   value="/jsp/bootstrap-form.jsp" />
+        <put name="body"   value="/user/detlerequest_null.jsp" />
     </definition>
     
     <definition name="gotoPageHome" extends="welcome">

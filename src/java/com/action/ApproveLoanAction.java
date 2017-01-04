@@ -11,6 +11,7 @@ import com.bean.bankBean;
 import com.dao.ApproveLoanDao;
 import com.dao.RequestLoanDao;
 import com.dao.bankDao;
+import com.dao.coborrowerDao;
 import com.form.ApproveLoanForm;
 import com.form.RequestLoanForm;
 import com.util.EmailUtility;
@@ -80,7 +81,7 @@ public class ApproveLoanAction extends DispatchAction {
 
     }
 
-    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,
+    public ActionForward gotoPageUserViewStatus(ActionMapping mapping, ActionForm form,  //ok
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         ApproveLoanForm loanform = (ApproveLoanForm) form;
@@ -92,6 +93,9 @@ public class ApproveLoanAction extends DispatchAction {
         RequestLoanDao rdao = new RequestLoanDao();
         String msg = "";
         loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
+           if (loanbean == null){
+            return mapping.findForward("gotoNullrepuest");
+        }
         ArrayList<ApproveLoanBean> list = null;
 //        int loanreq_id = loanbean.getLoanreq_id();
         String citizen = loanbean.getCitizen_id();
@@ -101,7 +105,7 @@ public class ApproveLoanAction extends DispatchAction {
 //                 list = adao.selectById(loanreq_id);
             list = adao.selectByIdcitizenid(citizen);
             String bank_id = abean.getBank_id();
-
+//            bank = bakdao.selectById(bank_id);
             System.out.println("ok");
             msg = "ok";
         } catch (Exception e) {
@@ -109,10 +113,11 @@ public class ApproveLoanAction extends DispatchAction {
             System.out.println("no");
             msg = "no";
         }
+       
         request.getSession().removeAttribute("loanList");
         request.getSession().setAttribute("loan", loanbean);
         request.getSession().setAttribute("loanList", list);
-        return mapping.findForward("gotoPageUserViewStatus");
+       return mapping.findForward("gotoPageUserViewStatus");
     }
 //    user
 
@@ -150,51 +155,54 @@ public class ApproveLoanAction extends DispatchAction {
         }
         request.getSession().setAttribute("abean", abean);
         request.getSession().setAttribute("loanbean", loanbean);
-        request.getSession().setAttribute("abean", abean1);
+//        request.getSession().setAttribute("abean", abean1);
         request.getSession().setAttribute("bank", bank);
         return mapping.findForward("gotoDetleApprove1");
 
     }
 
-    public ActionForward delete(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {   //ok
-        ApproveLoanForm loanform = (ApproveLoanForm) form;
-        RequestLoanBean bean = new RequestLoanBean();
-        RequestLoanDao loandao = new RequestLoanDao();
-        ApproveLoanBean abean = new ApproveLoanBean();
-        RequestLoanDao rdao = new RequestLoanDao();
-        RequestLoanBean loanbean = new RequestLoanBean();
-        ApproveLoanDao adao = new ApproveLoanDao();
-        bankDao bankdao = new bankDao();
-        bankBean bankbean = new bankBean();
-        String msg = "";
-        loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
-        ArrayList<ApproveLoanBean> list1 = null;
-        ArrayList<ApproveLoanBean> list = null;
-        String bank_id = abean.getBank_id();
-        int loanreq_id = loanbean.getLoanreq_id();
-        try {
-            String citizen_id = loanbean.getCitizen_id();
-            adao.deleteloanreqId(loanform.getApprove_id());    //delete approve by id approve
-
-            loanbean = rdao.selectBycitizenid(citizen_id);      //select by citizen id table requestloan
-            list1 = adao.selectByIdcitizen(citizen_id);        ///select by citizen id bable approve 
-            list = adao.selectById(loanreq_id);     //select by loanreq id table approve ที่อนุมัติแล้วของคนนี้
-            bankbean = bankdao.selectById(bank_id);
-            System.out.println("ok");
-            msg = "ok";
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("no");
-            msg = "no";
-        }
-        request.getSession().setAttribute("loanList1", list1);
-        request.getSession().setAttribute("loanList", list);
-
-        request.removeAttribute("deletesuccess");
-        request.setAttribute("deletesuccess", msg);
-        return mapping.findForward("gotoPageUserViewStatus");
-    }
+//    public ActionForward delete(ActionMapping mapping, ActionForm form,
+//            HttpServletRequest request, HttpServletResponse response) throws Exception {   //ok
+//        ApproveLoanForm loanform = (ApproveLoanForm) form;
+//        RequestLoanBean bean = new RequestLoanBean();
+//        RequestLoanDao loandao = new RequestLoanDao();
+//        ApproveLoanBean abean = new ApproveLoanBean();
+//        RequestLoanDao rdao = new RequestLoanDao();
+//        RequestLoanBean loanbean = new RequestLoanBean();
+//        ApproveLoanDao adao = new ApproveLoanDao();
+//        bankDao bankdao = new bankDao();
+//        bankBean bankbean = new bankBean();
+//        coborrowerDao dao = new coborrowerDao();
+//        String msg = "";
+//        loanbean = (RequestLoanBean) request.getSession().getAttribute("requestLoan");
+//        ArrayList<ApproveLoanBean> list1 = null;
+//        ArrayList<ApproveLoanBean> list = null;
+//        String bank_id = abean.getBank_id();
+//        int loanreq_id = loanbean.getLoanreq_id();
+//        try {
+//            String citizen_id = loanbean.getCitizen_id();
+//            adao.deleteloanreqId(loanform.getApprove_id());    //delete approve by id approve
+//            loandao.deletebycitizenid(loanform.getCitizen_id());   //delete loanrequest system
+//            dao.deleteloanreqId(loanform.getCitizen_id());     ///delete coborrwer user laonrequest
+//            
+//            loanbean = rdao.selectBycitizenid(citizen_id);      //select by citizen id table requestloan
+//            list1 = adao.selectByIdcitizen(citizen_id);        ///select by citizen id bable approve 
+//            list = adao.selectById(loanreq_id);     //select by loanreq id table approve ที่อนุมัติแล้วของคนนี้
+//            bankbean = bankdao.selectById(bank_id);
+//            System.out.println("ok");
+//            msg = "ok";
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("no");
+//            msg = "no";
+//        }
+//        request.getSession().setAttribute("loanList1", list1);
+//        request.getSession().setAttribute("loanList", list);
+//
+//        request.removeAttribute("deletesuccess");
+//        request.setAttribute("deletesuccess", msg);
+//        return mapping.findForward("gotoPageUserViewStatus");
+//    }
 //    ========
 //    admin=======
 
@@ -238,12 +246,20 @@ public class ApproveLoanAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response) throws Exception {   //ok
         ApproveLoanForm loanform = (ApproveLoanForm) form;
         ApproveLoanDao adao = new ApproveLoanDao();
+        ApproveLoanBean bean =  new ApproveLoanBean();
         String msg = "";
         List<ApproveLoanBean> loanList = new ArrayList<ApproveLoanBean>();
         ApproveLoanDao dao = new ApproveLoanDao();
-
+        coborrowerDao cdao = new coborrowerDao();
+        RequestLoanDao rdao = new RequestLoanDao();
         try {
-            adao.deleteloanreqId(loanform.getApprove_id());
+                int approve = (loanform.getApprove_id());
+            bean = adao.selectApprove_id(approve);
+            adao.deleteloanreqId(approve);
+           cdao.deleteloanreqId(bean.getCitizen_id());
+            rdao.deletebycitizenid(bean.getCitizen_id());
+            
+            
             loanList = dao.selectAll_aii();
             System.out.println("ok");
             msg = "ok";

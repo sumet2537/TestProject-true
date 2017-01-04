@@ -27,11 +27,14 @@
                         <strong class="text-center">  <h3> แก้ไขข้อมูลส่วนตัว </h3> </strong>
                         <div class="box-body">
                             <div class="row">
-                                <fieldset class="col-md-8 col-md-offset-1">
-                                    <div class="col-lg-12">
+                                <fieldset class="col-md-8 col-md-offset-2">
+                                    <div class="panel panel-warning">
+                                        <div class="panel-heading">
                                         <h4> :: ข้อมูลส่วนตัว ::</h4>
-                                        <hr/>
-                                    </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            
+                                       
                                     <!-- select -->
 
                                     <div class="form-group col-md-12">
@@ -70,7 +73,7 @@
                                             <input class="form-control" type="number" name="age" value="<%=bean.getAge()%>" >
                                         </div></div>
                                     <div class="form-group col-md-12">
-                                        <label class="col-md-4 control-label" for="statustype">สถานะสมรส <span class="require" style="color:red;">*</span></label>
+                                        <label class="col-md-4 control-label" for="statustype">สถานะ <span class="require" style="color:red;">*</span></label>
                                         <div class="col-md-8 col-lg-4">
                                             <select  name="statustype" class="form-control">
                                                 <option ><%=bean.getStatustype()%></option>
@@ -99,9 +102,10 @@
                                         <div class="col-md-8 col-lg-4">
                                             <select  name="jobtype" class="form-control">
                                                 <option ><%=bean.getJobtype()%></option>
-                                                <option>โสด</option>
-                                                <option>สมรส</option>
-                                                <option>หย่าหร้าง</option>
+                                                            <option value="พนักงานเงินเดือนประจำ">พนักงานเงินเดือนประจำ</option>
+                                                            <option value="ประกอบอาชีพอิสระ">ประกอบอาชีพอิสระ</option>
+                                                            <option value="ไม่ได้ประกอบอาชีพ">ไม่ได้ประกอบอาชีพ</option>
+                                                            <option value="ประกอบธุรกิจส่วนตัว">ประกอบธุรกิจส่วนตัว</option>
                                             </select>
                                         </div></div>
                                       <div class="form-group col-md-12">
@@ -142,11 +146,13 @@
                                     </div>
 
                                     <input type="hidden" name="todo" value="user_update"/>
-                                    <input type="hidden" name="roleId" value="2"/>
+                                    <!--<input type="hidden" name="roleId" value="2"/>-->
                                     <input type="hidden" name="status" value="1"/>
                                     <div align="center">
                                         <button type="submit" name="submit" class="btn btn-primary" >แก้ไข</button>
                                         <button name="reset" type="reset" class="btn btn-danger" >ยกเลิก</button>
+                                    </div>
+                                     </div>
                                     </div>
                                 </fieldset>
                             </div>

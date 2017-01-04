@@ -39,6 +39,7 @@ public class LoanRequstAction extends DispatchAction {
         String msg = "";
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean loanbean = new RequestLoanBean();
+        RequestLoanBean loanbean2 = new RequestLoanBean();
         RequestLoanBean loanbean1 = new RequestLoanBean();
         String bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8;
         bank1 = loanform.getBanktype1();
@@ -249,8 +250,6 @@ public class LoanRequstAction extends DispatchAction {
 ////        webservice
 //        SendRequstLoanService loanService = new SendRequstLoanService();
 //        loanService.sendRequstLoan(loanform);
-//        
-//        
 //        List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
 //        loanList = dao.selectAll();
         request.removeAttribute("requestloanStatus");
@@ -286,7 +285,7 @@ public class LoanRequstAction extends DispatchAction {
 //        return mapping.findForward("gotoapprov");
 //    }
 //    =-=-=-=-=-=-=-=-=-=-=-=check============-=-=-=-=-=-=-
-    public ActionForward DetleRcheck(ActionMapping mapping, ActionForm form,
+    public ActionForward DetleRcheck(ActionMapping mapping, ActionForm form,  //ok
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         RequestLoanForm loanform = (RequestLoanForm) form;
@@ -303,13 +302,17 @@ public class LoanRequstAction extends DispatchAction {
     }
 
     public ActionForward deleteRcheck(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {
+            HttpServletRequest request, HttpServletResponse response) throws Exception {  //ok
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
+        coborrowerDao dao = new coborrowerDao();
         String msg = "";
         try {
-            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            int loanreq = (loanform.getLoanreq_id());
+            bean = loandao.selectById(loanreq);
+           loandao.deleteloanreqId(bean.getLoanreq_id());
+            dao.deleteloanreqId(bean.getCitizen_id());
             System.out.println("ok");
             msg = "ok";
         } catch (Exception e) {
@@ -343,9 +346,13 @@ public class LoanRequstAction extends DispatchAction {
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
+        coborrowerDao dao = new coborrowerDao();
 String msg;
         try {
-             loandao.deleteloanreqId(loanform.getLoanreq_id());
+            int loanreq = (loanform.getLoanreq_id());
+            bean = loandao.selectById(loanreq);
+           loandao.deleteloanreqId(bean.getLoanreq_id());
+            dao.deleteloanreqId(bean.getCitizen_id());
             System.out.println("ok");
             msg = "ok";
         } catch (Exception e) {
@@ -380,17 +387,21 @@ String msg;
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
+        coborrowerDao dao = new coborrowerDao();
+        ApproveLoanDao adao = new ApproveLoanDao();
 String msg;
         try {
-            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            int loanreq = (loanform.getLoanreq_id());
+            bean = loandao.selectById(loanreq);
+           loandao.deleteloanreqId(bean.getLoanreq_id());
+            dao.deleteloanreqId(bean.getCitizen_id());
+             adao.deletecitizen(bean.getCitizen_id());
             System.out.println("ok");
              msg = "ok";
         } catch (Exception e) {
              e.printStackTrace();
             msg ="no";
         }
-        
-
         List<RequestLoanBean> loanList = new ArrayList<RequestLoanBean>();
         loanList = loandao.selectloanstatustypeNoAp();
          request.removeAttribute("msg");
@@ -413,14 +424,17 @@ String msg;
     }
 
     public ActionForward deleteNofile(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {
+            HttpServletRequest request, HttpServletResponse response) throws Exception {   //ok
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
-
+        coborrowerDao dao = new coborrowerDao();
        String msg;
         try {
-            loandao.deleteloanreqId(loanform.getLoanreq_id());
+            int loanreq = (loanform.getLoanreq_id());
+            bean = loandao.selectById(loanreq);
+           loandao.deleteloanreqId(bean.getLoanreq_id());
+            dao.deleteloanreqId(bean.getCitizen_id());
             System.out.println("ok");
              msg = "ok";
         } catch (Exception e) {
@@ -453,9 +467,13 @@ String msg;
         RequestLoanForm loanform = (RequestLoanForm) form;
         RequestLoanBean bean = new RequestLoanBean();
         RequestLoanDao loandao = new RequestLoanDao();
+        coborrowerDao dao = new coborrowerDao();
   String msg;
         try {
-            loandao.deleteloanreqId(loanform.getLoanreq_id());
+              int loanreq = (loanform.getLoanreq_id());
+            bean = loandao.selectById(loanreq);
+           loandao.deleteloanreqId(bean.getLoanreq_id());
+            dao.deleteloanreqId(bean.getCitizen_id());
             System.out.println("ok");
              msg = "ok";
         } catch (Exception e) {

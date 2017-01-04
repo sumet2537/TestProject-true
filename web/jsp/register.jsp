@@ -3,7 +3,10 @@
     Created on : Nov 15, 2016, 10:53:20 PM
     Author     : brass
 --%>
-
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/css/css1/bootstrapValidator.min.css">
+        <script src="<%=request.getContextPath()%>/js/jQuery1.5.2.js" type="text/javascript"></script>
+        <script src="<%=request.getContextPath()%>/js/bootstrapvalidator.min.js" type="text/javascript"></script>
+        <script src="<%=request.getContextPath()%>/js/validate-register.js" type="text/javascript"></script>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.bean.ProvinceBean"%>
@@ -24,8 +27,6 @@
     msg = (String) request.getAttribute("registerStatus");
 %>
 <!DOCTYPE html>
-
-
 <body onload="Success()">
     <!-- Main content -->
     <section class="content">
@@ -46,10 +47,7 @@
                                                 <h4> :: ข้อมูลส่วนตัว ::</h4>
                                             </div>
                                             <div class="panel-body">
-
-
                                                 <!-- select -->
-
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="citizen_id">เลขบัตรประจำตัวประชาชน <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 ">
@@ -226,67 +224,76 @@
                                         <button name="submit" id="submit" type="submit" onclick="insert('save')" class="btn btn-primary"><span class="glyphicon glyphicon-save"></span>สมัครสมาชิก</button>
                                         <button name="reset" type="reset" class="btn btn-danger" ><span class="glyphicon glyphicon-refresh"></span>ยกเลิก</button>
                                     </div>
-                                    </section><!-- /.content -->
-                                    <div>
-                                        <%
-                                            if ("ok".equals(msg)) {
-                                        %>
-                                        <script >
-                                            function Success() {
-                                                $(document).ready(function () {
-                                                    swal({
-                                                        title: "สำเร็จ",
-                                                        text: "คุณสมัครสมาชิกสำเร็จ เข้าสู่ระบบ",
-                                                        type: "success",
-                                                        confirmButtonText: "ตกลง!"
-                                                    },
-                                                            function () {
-                                                                window.location.href = 'PageAction.do?todo=gotoPageLogin';
-                                                            });
-                                                });
-                                            }
-                                        </script>
+                                </fieldset>
+                            </div> 
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+                </section><!-- /.content -->
+                </body>
+                <div>
 
-                                        <%} else if ("no".equals(msg)) {
-                                        %>
-                                        <script >
-                                            function Success() {
-                                                swal({
-                                                    title: "ไม่สำเร็จ",
-                                                    text: "คุณสมัครสไม่สำเร็จ !",
-                                                    type: "error",
-                                                    confirmButtonText: "ตกลง!"
-                                                },
-                                                        function () {
-                                                            window.location.href = 'PageAction.do?todo=gotoPageRegister';
-                                                        });
-                                            }
-                                            ;
+                    <%
+                        if ("ok".equals(msg)) {
+                    %>
+                    <script >
+                        function Success() {
+                            $(document).ready(function () {
+                                swal({
+                                    title: "สำเร็จ",
+                                    text: "คุณสมัครสมาชิกสำเร็จ เข้าสู่ระบบ",
+                                    type: "success",
+                                    confirmButtonText: "ตกลง!"
+                                },
+                                        function () {
+                                            window.location.href = 'PageAction.do?todo=gotoPageLogin';
+                                        });
+                            });
+                        }
+                    </script>
 
-                                        </script>
-                                        <%   }
-                                        %>
-                                    </div>
-                                    </body>
+                    <%} else if ("no".equals(msg)) {
+                    %>
+                    <script >
+                        function Success() {
+                            swal({
+                                title: "ไม่สำเร็จ",
+                                text: "คุณสมัครสไม่สำเร็จ !",
+                                type: "error",
+                                confirmButtonText: "ตกลง!"
+                            },
+                                    function () {
+                                        window.location.href = 'PageAction.do?todo=gotoPageRegister';
+                                    });
+                        }
+                        ;
+
+                    </script>
+                    <%   }
+                    %>
+                </div>
 
 
-                                    <script type="text/javascript">
-                                        function insert(select) {
-                                            document.registerForm.todo.value = select;
-                                             var pass1 = document.getElementById("pass1")
-                                                , pass2 = document.getElementById("pass2");
 
-                                        function validatePassword() {
-                                            if (pass1.value != pass2.value) {
-                                                pass2.setCustomValidity("Passwords Don't Match");
-                                            } else {
-                                                pass2.setCustomValidity('');
-                                                document.registerForm.submit();
-                                            }
-                                        }
+                <script type="text/javascript">
+                    function insert(select) {
+                        document.registerForm.todo.value = select;
+                        var pass1 = document.getElementById("pass1")
+                                , pass2 = document.getElementById("pass2");
 
-                                        pass1.onchange = validatePassword;
-                                        pass2.onkeyup = validatePassword; 
-                                        }
-                                    </script>
+                        function validatePassword() {
+                            if (pass1.value != pass2.value) {
+                                pass2.setCustomValidity("Passwords Don't Match");
+                            } else {
+                                pass2.setCustomValidity('');
+                                document.registerForm.submit();
+                            }
+                        }
+
+                        pass1.onchange = validatePassword;
+                        pass2.onkeyup = validatePassword;
+                    }
+                </script>
 

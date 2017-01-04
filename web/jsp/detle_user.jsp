@@ -78,7 +78,7 @@
                                     <label >อีเมล์  : &nbsp;&nbsp; <%=bean.getEmail()%></label>
 
                                 </div>
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-4">
                                     <label >สัญชาติ : &nbsp;&nbsp; <%=bean.getNationality()%></label>
 
                                 </div>
@@ -86,15 +86,15 @@
                                     <label >อาชีพ : &nbsp;&nbsp; <%=bean.getJobtype()%></label>
 
                                 </div>
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-4">
                                     <label >จังหวัด : &nbsp;&nbsp; <%=bean.getAmphur()%></label>
 
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-4">
                                     <label >อำเภอ : &nbsp;&nbsp; <%=bean.getAmphur()%></label>
 
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-4">
                                     <label >ตำบล   <%=bean.getDistrict()%></label>
 
                                 </div>
@@ -121,7 +121,7 @@
                                     </div>
                                 
                                 <input type="hidden" name="todo"/>
-                                <input type="hidden" name="roleId" value="2"/>
+                                <!--<input type="hidden" name="roleId" value="2"/>-->
                                 <input type="hidden" name="status" value="1"/>
 </fieldset>
                             </fieldset>
