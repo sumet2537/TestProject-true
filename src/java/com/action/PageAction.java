@@ -51,10 +51,10 @@ public class PageAction extends DispatchAction {
         
         request.getSession().removeAttribute("list");
         request.getSession().setAttribute("list", list);
-        request.removeAttribute("regisList1");
-        request.setAttribute("regisList1", list1);
-        request.removeAttribute("regisList2");
-        request.setAttribute("regisList2", list2);
+//        request.removeAttribute("regisList1");
+//        request.setAttribute("regisList1", list1);
+//        request.removeAttribute("regisList2");
+//        request.setAttribute("regisList2", list2);
         return mapping.findForward("gotoPageRegister");
 
     }

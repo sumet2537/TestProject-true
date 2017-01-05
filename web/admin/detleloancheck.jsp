@@ -736,7 +736,7 @@
                     $(document).ready(function () {
                         swal({
                             title: "สำเร็จ",
-                            text: "คุณส่งข้อมูลแก้ไขไปยังลูกค้าสำเร็จ !",
+                            text: "คุณส่งข้อมูลไปยังธนาคารสำเร็จ !",
                             type: "success",
                             confirmButtonText: "ตกลง!"
                         },

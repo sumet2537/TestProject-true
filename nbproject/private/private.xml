@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/brass/Documents/TestProject/web/layout_1/menu.jsp</file>
-            <file>file:/Users/brass/Documents/TestProject/web/user/UserManagermentLoanapprove.jsp</file>
-            <file>file:/Users/brass/Documents/TestProject/web/user/detleuser.jsp</file>
-            <file>file:/Users/brass/Documents/TestProject/src/java/com/dao/RequestLoanDao.java</file>
-            <file>file:/Users/brass/Documents/TestProject/web/user/detlerequest_null.jsp</file>
+            <file>file:/Users/brass/Documents/TestProject/src/java/com/dao/ApproveLoanDao.java</file>
+            <file>file:/Users/brass/Documents/TestProject/web/layout/baseLayout.jsp</file>
             <file>file:/Users/brass/Documents/TestProject/web/user/loanrequst.jsp</file>
             <file>file:/Users/brass/Documents/TestProject/web/layout/body.jsp</file>
-            <file>file:/Users/brass/Documents/TestProject/src/java/com/action/ApproveLoanAction.java</file>
-            <file>file:/Users/brass/Documents/TestProject/src/java/com/action/LoanRequstAction.java</file>
-            <file>file:/Users/brass/Documents/TestProject/web/admin/detleloanNoAp.jsp</file>
-            <file>file:/Users/brass/Documents/TestProject/web/WEB-INF/tiles-defs.xml</file>
-            <file>file:/Users/brass/Documents/TestProject/web/layout/menu.jsp</file>
         </group>
     </open-files>
 </project-private>

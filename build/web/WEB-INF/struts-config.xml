@@ -118,6 +118,7 @@
                 <!--approve-->
                 
             </action>
+            <action name="registerForm" parameter="todo" path="/ProvinceAction" scope="session" type="com.action.ProvinceAction"/>
         </action-mappings>
 
         <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />

@@ -21,7 +21,7 @@
 
         <!--validate-->
         <link rel="stylesheet" href="<%=request.getContextPath()%>/css/css1/bootstrapValidator.min.css">
-        <script src="<%=request.getContextPath()%>/js/jQuery1.5.2.js" type="text/javascript"></script>
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script src="<%=request.getContextPath()%>/js/bootstrapvalidator.min.js" type="text/javascript"></script>
         <script src="<%=request.getContextPath()%>/js/validate-register.js" type="text/javascript"></script>
         <script src="<%=request.getContextPath()%>/js/modal.js" type="text/javascript"></script>
@@ -65,7 +65,7 @@
 
             <!-- jQuery 2.1.4 -->
             <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
-           <!--<script src="<%=request.getContextPath()%>/plugins/jQuery/jquery-3.1.1.min.js" type="text/javascript"></script>-->
+<!--           <script src="<%=request.getContextPath()%>/plugins/jQuery/jquery-3.1.1.min.js" type="text/javascript"></script>-->
             <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
 
             <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
@@ -97,14 +97,13 @@
     $(function () {
         $('#example1').DataTable({
             "paging": true,
-            "ordering": true,
+            "ordering": true
 //             "dom": '<"pull-left"f><"pull-right"l>tip'
 //            "info": true
 //              "dom": '<"top"i>rt<"bottom"flp><"clear">'
         });
 
     });
-
 </script>
 <style>
     /*    .dataTables_filter {
@@ -112,4 +111,5 @@
        float: right;
        text-align: right;
     }*/
+    
 </style>

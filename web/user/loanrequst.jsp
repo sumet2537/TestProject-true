@@ -691,6 +691,7 @@
                                 </div>
                             </div>
                         </div>
+                                                   
                     </form>
                 </div>
             </div>
@@ -710,7 +711,7 @@
                             type: "success"
                         },
                                 function () {
-                                    window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus&loanreq_id=';
+                                    window.location.href = 'ApproveLoanAction.do?todo=gotoPageUserViewStatus';
                                 });
                     });
                 }
@@ -752,6 +753,7 @@
         </script>
     </body>
     <script>
+    $(document).ready(function(){
         $('.btnNext').click(function () {
             $('.nav-tabs > .active').next('li').find('a').trigger('click');
         });
@@ -759,6 +761,8 @@
         $('.btnPrevious').click(function () {
             $('.nav-tabs > .active').prev('li').find('a').trigger('click');
         });
+    });
+
 //        
 //var validator = $("#myForm").validate();
 //

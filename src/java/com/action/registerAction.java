@@ -5,7 +5,9 @@
  */
 package com.action;
 
+import com.bean.ProvinceBean;
 import com.bean.UserBean;
+import com.dao.ProvinceDao;
 import com.dao.UserDao;
 import com.form.registerForm;
 import java.util.*;
@@ -338,4 +340,34 @@ public ActionForward admin_update(ActionMapping mapping, ActionForm form,
       return mapping.findForward("gotoPageAdminManagermentProfile");
       }
       
+         public ActionForward privince(ActionMapping mapping, ActionForm form,
+              HttpServletRequest request, HttpServletResponse response)
+              throws Exception{
+             ProvinceDao dao = new ProvinceDao();
+             ArrayList<ProvinceBean> bean = new ArrayList<ProvinceBean>();
+            bean = dao.selectAllprovince();
+           
+      return null;
+      }
+           public ActionForward amphur(ActionMapping mapping, ActionForm form,
+              HttpServletRequest request, HttpServletResponse response)
+              throws Exception{
+              registerForm regisform = (registerForm) form;
+               ProvinceDao dao = new ProvinceDao();
+               ArrayList<ProvinceBean> bean = new ArrayList<ProvinceBean>();
+          
+               bean = dao.selectamphurByprivinceID(regisform.getPROVINCE_ID());
+              
+      return null;
+      }
+             public ActionForward district(ActionMapping mapping, ActionForm form,
+              HttpServletRequest request, HttpServletResponse response)
+              throws Exception{
+                  registerForm regisform = (registerForm) form;
+               ProvinceDao dao = new ProvinceDao();
+               ArrayList<ProvinceBean> bean = new ArrayList<ProvinceBean>();
+          
+               bean = dao.selectdistrictByamphurID(regisform.getAMPHUR_ID());
+      return null;
+      }
 }

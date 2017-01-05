@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportapproveuser1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="86e8a504-e4cd-4db5-a520-e4414ef43954">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_requestloan.*,
+     tbl_approveloan.*,
+     tbl_bank.*,
+     tbl_requestloan.`loanreq_id` AS tbl_requestloan_loanreq_id,
+     tbl_approveloan.`bank_id` AS tbl_approveloan_bank_id,
+     tbl_approveloan.`loanreq_id` AS tbl_approveloan_loanreq_id,
+     tbl_bank.`bank_id` AS tbl_bank_bank_id
+FROM
+     `tbl_requestloan` tbl_requestloan INNER JOIN `tbl_approveloan` tbl_approveloan ON tbl_requestloan.`loanreq_id` = tbl_approveloan.`loanreq_id`
+     INNER JOIN `tbl_bank` tbl_bank ON tbl_approveloan.`bank_id` = tbl_bank.`bank_id`
+WHERE
+     tbl_requestloan.loanreq_id = 191]]>
+	</queryString>
+	<field name="loanreq_id" class="java.lang.Long">
+		<fieldDescription><![CDATA[รหัสสินเชื่อ]]></fieldDescription>
+	</field>
+	<field name="citizen_id" class="java.lang.String">
+		<fieldDescription><![CDATA[เลขบัตรประชาชน]]></fieldDescription>
+	</field>
+	<field name="title_type" class="java.lang.String">
+		<fieldDescription><![CDATA[คำนำหน้า]]></fieldDescription>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<fieldDescription><![CDATA[ชื่อ]]></fieldDescription>
+	</field>
+	<field name="lastname" class="java.lang.String">
+		<fieldDescription><![CDATA[นามสกุล]]></fieldDescription>
+	</field>
+	<field name="birthdate" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="statustype" class="java.lang.String">
+		<fieldDescription><![CDATA[สถานะ]]></fieldDescription>
+	</field>
+	<field name="mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[เบอร์โทรศัพท์]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[อีเมล์]]></fieldDescription>
+	</field>
+	<field name="nationality" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jobtype" class="java.lang.String">
+		<fieldDescription><![CDATA[อาชีพ]]></fieldDescription>
+	</field>
+	<field name="province" class="java.lang.String">
+		<fieldDescription><![CDATA[ที่อยู่ปัจจุบัน]]></fieldDescription>
+	</field>
+	<field name="amphur" class="java.lang.String">
+		<fieldDescription><![CDATA[ที่อยู่ทะเบียนบ้าน]]></fieldDescription>
+	</field>
+	<field name="district" class="java.lang.String">
+		<fieldDescription><![CDATA[ที่อยู่จัดส่]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[ที่อยู่จ]]></fieldDescription>
+	</field>
+	<field name="hometype" class="java.lang.String">
+		<fieldDescription><![CDATA[ประเภทที่อยู่อาศัย]]></fieldDescription>
+	</field>
+	<field name="tradingprice" class="java.lang.Double">
+		<fieldDescription><![CDATA[ราคาชื่อขาย]]></fieldDescription>
+	</field>
+	<field name="creditloan" class="java.lang.Double">
+		<fieldDescription><![CDATA[วงเงินชินเชื่อที่ขอกู้]]></fieldDescription>
+	</field>
+	<field name="lncome_per_month" class="java.lang.Integer">
+		<fieldDescription><![CDATA[ระยะเวลาที่ขอกู้]]></fieldDescription>
+	</field>
+	<field name="periodloan" class="java.lang.Double">
+		<fieldDescription><![CDATA[รายได้ประจำต่อเดือน]]></fieldDescription>
+	</field>
+	<field name="netprofit" class="java.lang.Double">
+		<fieldDescription><![CDATA[รายได้เสริมทั้งหมดเฉลี่ยต่อเดือน]]></fieldDescription>
+	</field>
+	<field name="copyidcard" class="java.lang.String">
+		<fieldDescription><![CDATA[สำเนาบัตรประจำตัวประชาชน]]></fieldDescription>
+	</field>
+	<field name="copylicenses" class="java.lang.String">
+		<fieldDescription><![CDATA[สำเนาใบอนุญาตประกอบวิชาชีพ (กรณีประกอบวิชาชีพเฉพาะ)]]></fieldDescription>
+	</field>
+	<field name="copydocumenthome" class="java.lang.String">
+		<fieldDescription><![CDATA[สำเนาทะเบียนบ้าน]]></fieldDescription>
+	</field>
+	<field name="copymarriage" class="java.lang.String">
+		<fieldDescription><![CDATA[สำเนาทะเบียนสมรส/ใบหย่า]]></fieldDescription>
+	</field>
+	<field name="copy_rename" class="java.lang.String">
+		<fieldDescription><![CDATA[ใบเปลี่ยนชื่อ-สกุล (ทุกใบ) ]]></fieldDescription>
+	</field>
+	<field name="salary_slip" class="java.lang.String">
+		<fieldDescription><![CDATA[สลิปเงินเดือน]]></fieldDescription>
+	</field>
+	<field name="copy_bankaccount" class="java.lang.String">
+		<fieldDescription><![CDATA[สำเนาบัญชีธนาคาร]]></fieldDescription>
+	</field>
+	<field name="banktype" class="java.lang.String">
+		<fieldDescription><![CDATA[ชื่อธนาคาร]]></fieldDescription>
+	</field>
+	<field name="loanstatustype" class="java.lang.String">
+		<fieldDescription><![CDATA[สถานะขขอสินเชื่อ]]></fieldDescription>
+	</field>
+	<field name="createby" class="java.lang.String">
+		<fieldDescription><![CDATA[ชื่อผู้สร้าง]]></fieldDescription>
+	</field>
+	<field name="created" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[วันที่สร้าง]]></fieldDescription>
+	</field>
+	<field name="updateby" class="java.lang.String">
+		<fieldDescription><![CDATA[ชื่อผู้แก้ไข]]></fieldDescription>
+	</field>
+	<field name="updated" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[วันที่แก้ไข]]></fieldDescription>
+	</field>
+	<field name="approve_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[รหัสอนุมัติ]]></fieldDescription>
+	</field>
+	<field name="bank_id" class="java.lang.String">
+		<fieldDescription><![CDATA[รหัสชื่อธนาคาร]]></fieldDescription>
+	</field>
+	<field name="judgment" class="java.lang.String">
+		<fieldDescription><![CDATA[ผลการพิจารณา]]></fieldDescription>
+	</field>
+	<field name="loanstatusbank" class="java.lang.String">
+		<fieldDescription><![CDATA[สถานะ]]></fieldDescription>
+	</field>
+	<field name="approvedamount" class="java.lang.Double">
+		<fieldDescription><![CDATA[วงเงินอนุมัติเบื่องต้น]]></fieldDescription>
+	</field>
+	<field name="installlments" class="java.lang.Double">
+		<fieldDescription><![CDATA[ยอดผ่อนชำละต่อเดือน]]></fieldDescription>
+	</field>
+	<field name="timerepayment" class="java.lang.String">
+		<fieldDescription><![CDATA[ระยะเวลาการผ่อน]]></fieldDescription>
+	</field>
+	<field name="position" class="java.lang.String">
+		<fieldDescription><![CDATA[ตำแหน่งผู้อนุมัติ]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[ลำดับ]]></fieldDescription>
+	</field>
+	<field name="bankname" class="java.lang.String">
+		<fieldDescription><![CDATA[ชื่อธนาคาร]]></fieldDescription>
+	</field>
+	<field name="emailbank" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="tbl_requestloan_loanreq_id" class="java.lang.Long"/>
+	<field name="tbl_approveloan_bank_id" class="java.lang.String"/>
+	<field name="tbl_approveloan_loanreq_id" class="java.lang.Integer"/>
+	<field name="tbl_bank_bank_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="131" y="15" width="100" height="20" uuid="2ace1772-5a5a-43dd-a312-ca2a770e6e22"/>
+				<textFieldExpression><![CDATA[$F{loanreq_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="15" width="100" height="20" uuid="07fab5d4-5ea7-437b-80c7-7e3a89b88280"/>
+				<textFieldExpression><![CDATA[$F{citizen_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="144" y="37" width="100" height="20" uuid="4f2b3383-eb87-4530-87fa-4a299ac9e21c"/>
+				<textFieldExpression><![CDATA[$F{bankname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="41" width="100" height="20" uuid="45f0ea82-899a-4fae-b3b1-9b5c1af29c74"/>
+				<textFieldExpression><![CDATA[$F{bank_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="41" width="100" height="20" uuid="21503cd2-d236-46d0-a3ad-b550c2b83ab9"/>
+				<textFieldExpression><![CDATA[$F{loanstatusbank}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

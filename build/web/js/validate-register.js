@@ -1,4 +1,4 @@
-$(document).ready(function () {
+  $(document).ready(function() {
 //    $('#contact_form').bootstrapValidator({
     $('#registerForm').bootstrapValidator({
 // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
@@ -168,7 +168,7 @@ $(document).ready(function () {
         }
     })
             .on('success.form.bv', function (e) {
-                $('#success_message').slideDown({opacity: "show"}, "slow") // Do something ...
+                $('#success_message').slideDown({opacity: "show"}, "slow"); // Do something ...
                 $('#contact_form').data('bootstrapValidator').resetForm();
                 // Prevent form submission
                 e.preventDefault();

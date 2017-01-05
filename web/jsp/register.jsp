@@ -27,6 +27,61 @@
     msg = (String) request.getAttribute("registerStatus");
 %>
 <!DOCTYPE html>
+<script type="text/javascript">
+ // Specify a function to execute when the DOM is fully loaded.
+$(function(){
+	var defaultOption = '<option value=""> ------- เลือก ------ </option>';
+	var loadingImage  = '<img src="images/loading4.gif" alt="loading" />';
+	// Bind an event handler to the "change" JavaScript event, or trigger that event on an element.
+	$('#selProvince').change(function() {
+		$("#selAmphur").html(defaultOption);
+		$("#selTumbon").html(defaultOption);
+		// Perform an asynchronous HTTP (Ajax) request.
+		$.ajax({
+			// A string containing the URL to which the request is sent.
+			url: "TestProject/registerAction.do?todo=amphur",
+			// Data to be sent to the server.
+			data: "PROVINCE_ID",
+			// The type of data that you're expecting back from the server.
+			dataType: "json",
+			// beforeSend is called before the request is sent
+			beforeSend: function() {
+				$("#waitAmphur").html(loadingImage);
+			},
+			// success is called if the request succeeds.
+			success: function(json){
+				$("#waitAmphur").html("");
+				// Iterate over a jQuery object, executing a function for each matched element.
+				$.each(json, function(index, value) {
+					// Insert content, specified by the parameter, to the end of each element
+					// in the set of matched elements.
+					 $("#selAmphur").append('<option value="' + value.AMPHUR_ID + 
+											'">' + value.AMPHUR_NAME + '</option>');
+				});
+			}
+		});
+	});
+	
+	$('#selAmphur').change(function() {
+		$("#selTumbon").html(defaultOption);
+		$.ajax({
+			url: "jsonAction.php",
+			data: ({ nextList : 'tumbon', amphurID: $('#selAmphur').val() }),
+			dataType: "json",
+			beforeSend: function() {
+				$("#waitTumbon").html(loadingImage);
+			},
+			success: function(json){
+				$("#waitTumbon").html("");
+				$.each(json, function(index, value) {
+					 $("#selTumbon").append('<option value="' + value.DISTRICT_ID + 
+											'">' + value.DISTRICT_NAME + '</option>');
+				});
+			}
+		});
+	});
+});
+</script>
 <body onload="Success()">
     <!-- Main content -->
     <section class="content">
@@ -134,7 +189,7 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="province">จังหวัด <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 col-lg-4">
-                                                        <select  name="province" class="form-control">
+                                                        <select id="selProvince" name="province" class="form-control" onchange="loadprovice()">
                                                             <option>:: เลือก ::</option>
                                                             <% if (prolist != null && prolist.size() != 0) {
                                                                     for (int i = 0; i < prolist.size(); i++) {
@@ -151,9 +206,10 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="amphur">อำเภอ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 col-lg-4">
-                                                        <select  name="amphur" class="form-control">
-                                                            <option>:: เลือก ::</option>
-                                                            <% if (loanlist1 != null && loanlist1.size() != 0) {
+                                                        <select id="selAmphur"  name="amphur" class="form-control">
+                                                            <option value="">:: เลือก ::</option>
+                                                            
+                                                            <%-- <% if (loanlist1 != null && loanlist1.size() != 0) {
                                                                     for (int i = 0; i < loanlist1.size(); i++) {
                                                                         ProvinceBean bean = (ProvinceBean) loanlist1.get(i);
 
@@ -162,15 +218,15 @@
                                                             <%}%><%} else {%>
                                                             <br><br>
                                                             <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
-                                                            <%}%>
-                                                        </select>
+                                                            <%}%> --%>
+                                                        </select><span id="waitAmphur"></span>
                                                     </div></div>
                                                 <div class="form-group col-md-12">
                                                     <label class="col-md-4 control-label" for="district">ตำลบ <span class="require" style="color:red;">*</span></label>
                                                     <div class="col-md-8 col-lg-4">
-                                                        <select  name="district" class="form-control">
-                                                            <option>:: เลือก ::</option>
-                                                            <% if (loanlist2 != null && loanlist2.size() != 0) {
+                                                        <select id="selTumbon" name="district" class="form-control">
+                                                            <option value="">:: เลือก ::</option>
+                                                            <%--  <% if (loanlist2 != null && loanlist2.size() != 0) {
                                                                     for (int i = 0; i < loanlist2.size(); i++) {
                                                                         ProvinceBean bean = (ProvinceBean) loanlist2.get(i);
 
@@ -179,8 +235,8 @@
                                                             <%}%><%} else {%>
                                                             <br><br>
                                                             <strong style="color: red">ไม่พบข้อมูลสมาชิก</strong>        
-                                                            <%}%>
-                                                        </select>
+                                                            <%}%> --%>
+                                                        </select><span id="waitTumbon"></span>
                                                     </div></div>
 
                                                 <div class="form-group col-md-12">
